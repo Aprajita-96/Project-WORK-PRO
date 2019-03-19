@@ -1,0 +1,354 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="2612d3a0-f6fa-48bb-8237-0c38f59f1701" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/game-service/src/main/resources/bootstrap.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/game-service/src/test/java/com/stackroute/game/Controller/PlayerControllerTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/game-service/src/test/java/com/stackroute/game/Repository/PlayerRepositoryTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/game-service/src/test/java/com/stackroute/game/Service/PlayerServiceImplTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/game-service/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/game-service/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/game-service/src/main/java/com/stackroute/game/Controller/PlayerController.java" beforeDir="false" afterPath="$PROJECT_DIR$/game-service/src/main/java/com/stackroute/game/Controller/PlayerController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/game-service/src/main/java/com/stackroute/game/GameApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/game-service/src/main/java/com/stackroute/game/GameApplication.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/game-service/src/main/java/com/stackroute/game/Repository/PlayerRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/game-service/src/main/java/com/stackroute/game/Repository/PlayerRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/game-service/src/main/java/com/stackroute/game/Service/PlayerService.java" beforeDir="false" afterPath="$PROJECT_DIR$/game-service/src/main/java/com/stackroute/game/Service/PlayerService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/game-service/src/main/java/com/stackroute/game/Service/PlayerServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/game-service/src/main/java/com/stackroute/game/Service/PlayerServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/game-service/src/main/java/com/stackroute/game/config/WebConfiguration.java" beforeDir="false" afterPath="$PROJECT_DIR$/game-service/src/main/java/com/stackroute/game/config/WebConfiguration.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/game-service/src/main/java/com/stackroute/game/domain/Player.java" beforeDir="false" afterPath="$PROJECT_DIR$/game-service/src/main/java/com/stackroute/game/domain/Player.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/game-service/src/main/java/com/stackroute/game/starter/StartupApplicationListener.java" beforeDir="false" afterPath="$PROJECT_DIR$/game-service/src/main/java/com/stackroute/game/starter/StartupApplicationListener.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/game-service/src/main/java/com/stackroute/game/starter/StartupCommandLineRunner.java" beforeDir="false" afterPath="$PROJECT_DIR$/game-service/src/main/java/com/stackroute/game/starter/StartupCommandLineRunner.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/game-service/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/game-service/src/main/resources/application.properties" afterDir="false" />
+    </list>
+    <ignored path="$PROJECT_DIR$/config-service/target/" />
+    <ignored path="$PROJECT_DIR$/eureka-server/target/" />
+    <ignored path="$PROJECT_DIR$/game-service/target/" />
+    <ignored path="$PROJECT_DIR$/target/" />
+    <ignored path="$PROJECT_DIR$/zuul-apigateway/target/" />
+    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileEditorManager">
+    <leaf>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/zuul-apigateway/pom.xml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="19">
+              <caret line="7" column="32" selection-start-line="7" selection-start-column="32" selection-end-line="7" selection-end-column="32" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/game-service/pom.xml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="133">
+              <caret line="7" column="32" selection-start-line="7" selection-start-column="32" selection-end-line="7" selection-end-column="32" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/eureka-server/pom.xml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="304">
+              <caret line="16" column="24" selection-start-line="16" selection-start-column="24" selection-end-line="16" selection-end-column="24" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/config-service/pom.xml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="138">
+              <caret line="50" selection-start-line="50" selection-end-line="50" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/pom.xml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="187">
+              <caret line="15" column="22" selection-start-line="15" selection-start-column="22" selection-end-line="15" selection-end-column="22" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/game-service" />
+  </component>
+  <component name="IdeDocumentHistory">
+    <option name="CHANGED_PATHS">
+      <list>
+        <option value="$PROJECT_DIR$/game-service/bootstrap.properties" />
+        <option value="$PROJECT_DIR$/game-service/src/main/resources/application.properties" />
+        <option value="$PROJECT_DIR$/game-service/src/main/resources/bootstrap.properties" />
+        <option value="$PROJECT_DIR$/config-service/src/main/resources/bootstrap.properties" />
+        <option value="$PROJECT_DIR$/zuul-apigateway/pom.xml" />
+        <option value="$PROJECT_DIR$/game-service/pom.xml" />
+        <option value="$PROJECT_DIR$/config-service/pom.xml" />
+        <option value="$PROJECT_DIR$/pom.xml" />
+        <option value="$PROJECT_DIR$/eureka-server/pom.xml" />
+      </list>
+    </option>
+  </component>
+  <component name="ProjectFrameBounds" extendedState="6">
+    <option name="x" value="67" />
+    <option name="y" value="25" />
+    <option name="width" value="1299" />
+    <option name="height" value="743" />
+  </component>
+  <component name="ProjectView">
+    <navigator proportions="" version="1">
+      <foldersAlwaysOnTop value="true" />
+    </navigator>
+    <panes>
+      <pane id="PackagesPane" />
+      <pane id="Scope" />
+      <pane id="ProjectPane">
+        <subPane>
+          <expand>
+            <path>
+              <item name="myMusic" type="b2602c69:ProjectViewProjectNode" />
+              <item name="mygame" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="myMusic" type="b2602c69:ProjectViewProjectNode" />
+              <item name="mygame" type="462c0819:PsiDirectoryNode" />
+              <item name="config-service" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="myMusic" type="b2602c69:ProjectViewProjectNode" />
+              <item name="mygame" type="462c0819:PsiDirectoryNode" />
+              <item name="config-service" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="myMusic" type="b2602c69:ProjectViewProjectNode" />
+              <item name="mygame" type="462c0819:PsiDirectoryNode" />
+              <item name="config-service" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="myMusic" type="b2602c69:ProjectViewProjectNode" />
+              <item name="mygame" type="462c0819:PsiDirectoryNode" />
+              <item name="config-service" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="myMusic" type="b2602c69:ProjectViewProjectNode" />
+              <item name="mygame" type="462c0819:PsiDirectoryNode" />
+              <item name="config-service" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="resources" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="myMusic" type="b2602c69:ProjectViewProjectNode" />
+              <item name="mygame" type="462c0819:PsiDirectoryNode" />
+              <item name="eureka-server" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="myMusic" type="b2602c69:ProjectViewProjectNode" />
+              <item name="mygame" type="462c0819:PsiDirectoryNode" />
+              <item name="game-service" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="myMusic" type="b2602c69:ProjectViewProjectNode" />
+              <item name="mygame" type="462c0819:PsiDirectoryNode" />
+              <item name="game-service" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="myMusic" type="b2602c69:ProjectViewProjectNode" />
+              <item name="mygame" type="462c0819:PsiDirectoryNode" />
+              <item name="game-service" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="myMusic" type="b2602c69:ProjectViewProjectNode" />
+              <item name="mygame" type="462c0819:PsiDirectoryNode" />
+              <item name="game-service" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="resources" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="myMusic" type="b2602c69:ProjectViewProjectNode" />
+              <item name="mygame" type="462c0819:PsiDirectoryNode" />
+              <item name="zuul-apigateway" type="462c0819:PsiDirectoryNode" />
+            </path>
+          </expand>
+          <select />
+        </subPane>
+      </pane>
+    </panes>
+  </component>
+  <component name="PropertiesComponent">
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1552999327652" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/pom.xml" />
+  </component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/game-service/src/main/resources" />
+    </key>
+  </component>
+  <component name="RunDashboard">
+    <option name="ruleStates">
+      <list>
+        <RuleState>
+          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
+        </RuleState>
+        <RuleState>
+          <option name="name" value="StatusDashboardGroupingRule" />
+        </RuleState>
+      </list>
+    </option>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="2612d3a0-f6fa-48bb-8237-0c38f59f1701" name="Default Changelist" comment="" />
+      <created>1552980792821</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1552980792821</updated>
+    </task>
+    <servers />
+  </component>
+  <component name="ToolWindowManager">
+    <frame x="67" y="25" width="1533" height="875" extended-state="6" />
+    <layout>
+      <window_info id="Favorites" side_tool="true" />
+      <window_info id="Image Layers" />
+      <window_info id="Designer" />
+      <window_info id="UI Designer" />
+      <window_info id="Capture Tool" />
+      <window_info id="Learn" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.24983074" />
+      <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
+      <window_info anchor="bottom" id="Docker" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Version Control" />
+      <window_info active="true" anchor="bottom" id="Terminal" sideWeight="0.49966148" visible="true" weight="0.35123968" />
+      <window_info anchor="bottom" id="Event Log" sideWeight="0.5003385" side_tool="true" weight="0.35123968" />
+      <window_info anchor="bottom" id="Message" order="0" />
+      <window_info anchor="bottom" id="Find" order="1" />
+      <window_info anchor="bottom" id="Run" order="2" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
+      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
+      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
+      <window_info anchor="bottom" id="TODO" order="6" />
+      <window_info anchor="right" id="Palette" />
+      <window_info anchor="right" id="Theme Preview" />
+      <window_info anchor="right" id="Maven" />
+      <window_info anchor="right" id="Capture Analysis" />
+      <window_info anchor="right" id="Palette&#9;" />
+      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
+      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
+      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
+    </layout>
+  </component>
+  <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/docker-compose.yml">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/eureka-server/src/main/resources/bootstrap.yml">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/eureka-server/src/main/resources/application.yml">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/game-service/src/main/java/com/stackroute/game/GameApplication.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="114">
+          <caret line="8" column="13" selection-start-line="8" selection-start-column="13" selection-end-line="8" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/game-service/src/main/resources/bootstrap.properties">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="38">
+          <caret line="2" column="19" lean-forward="true" selection-start-line="2" selection-start-column="19" selection-end-line="2" selection-end-column="19" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/game-service/src/main/resources/application.properties">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="336">
+          <caret line="34" column="21" lean-forward="true" selection-start-line="34" selection-start-column="21" selection-end-line="34" selection-end-column="21" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/config-service/src/main/resources/application.properties">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/config-service/src/main/resources/bootstrap.properties">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret column="16" lean-forward="true" selection-start-column="16" selection-end-column="16" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pom.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="187">
+          <caret line="15" column="22" selection-start-line="15" selection-start-column="22" selection-end-line="15" selection-end-column="22" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/zuul-apigateway/pom.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="19">
+          <caret line="7" column="32" selection-start-line="7" selection-start-column="32" selection-end-line="7" selection-end-column="32" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/game-service/pom.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="133">
+          <caret line="7" column="32" selection-start-line="7" selection-start-column="32" selection-end-line="7" selection-end-column="32" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/eureka-server/pom.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="304">
+          <caret line="16" column="24" selection-start-line="16" selection-start-column="24" selection-end-line="16" selection-end-column="24" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/config-service/pom.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="138">
+          <caret line="50" selection-start-line="50" selection-end-line="50" />
+        </state>
+      </provider>
+    </entry>
+  </component>
+  <component name="masterDetails">
+    <states>
+      <state key="ProjectJDKs.UI">
+        <settings>
+          <last-edited>11</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+    </states>
+  </component>
+</project>

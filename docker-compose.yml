@@ -35,7 +35,6 @@ services:
       - game-service
     restart: always
     network_mode: "host"
-
     hostname: localhost
     ports:
       - 7568:7568

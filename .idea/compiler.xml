@@ -7,25 +7,26 @@
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <module name="config-server" />
-        <module name="demo" />
-        <module name="eureka1" />
-        <module name="game" />
+        <module name="eureka-server" />
+        <module name="zuul-api" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
       <module name="config-server" target="11" />
-      <module name="demo" target="11" />
-      <module name="eureka1" target="11" />
-      <module name="game" target="11" />
-      <module name="myMusic" target="11" />
+      <module name="eureka-server" target="1.8" />
+      <module name="microservice" target="11" />
+      <module name="musix-service" target="1.5" />
+      <module name="user-service" target="1.5" />
+      <module name="zuul-api" target="11" />
     </bytecodeTargetLevel>
   </component>
   <component name="JavacSettings">
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
       <module name="config-server" options="-parameters" />
-      <module name="demo" options="-parameters" />
-      <module name="eureka1" options="-parameters" />
-      <module name="game" options="-parameters" />
+      <module name="eureka-server" options="-parameters" />
+      <module name="musix-service" options="-parameters" />
+      <module name="user-service" options="-parameters" />
+      <module name="zuul-api" options="-parameters" />
     </option>
   </component>
 </project>

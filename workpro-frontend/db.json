@@ -1,0 +1,52 @@
+{
+  "posts": [
+    {
+      "id": 1,
+      "title": "json-server",
+      "author": "typicode"
+    }
+  ],
+        "projects" :[
+        {
+          "name": "RPG Game",
+          "id": 0,
+          "discription": "have to create some buttons for the description given ",
+          "status": false
+        },
+        {
+          "name": "MultiUser Jade Framework",
+          "id": 1,
+          "discription": "Developing a multi-agent platform to test already existed method.",
+          "status": true
+        },
+        {
+          "name": "windows server 2012 R2",
+          "id": 2,
+          "discription": "Goal is simple, I need only to configure windows server 2012 R2 to support test authentication using [login to view URL].",
+          "status": false
+        },
+        {
+          "name": "Telecash Payment gateway",
+          "id": 3,
+          "discription": "I need to develop a small java based web application which will work between telecash payment gateway and .net website. Please bid only if you are experienced/serious freelancer.",
+          "status": false
+        },
+        {
+          "name": "Build Selenium Framework",
+          "id": 4,
+          "discription": "I have a Java+Selenium framework, which is not following the code standards, and not included the proper maven repositories etc.",
+          "status": false
+        }
+      ],
+  "comments": [
+    {
+      "id": 1,
+      "body": "some comment",
+      "postId": 1
+    }
+  ],
+  "profile": {
+    "name": "typicode"
+  }
+
+}

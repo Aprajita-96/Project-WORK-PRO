@@ -4,6 +4,7 @@ import { UserDashboardComponent } from './user-dashboard/user-dashboard.componen
 
 import { RegisterComponent } from './register/register.component';
 import { LoginComponent } from './login/login.component';
+import { FreelancerdetailsComponent } from './freelancerdetails/freelancerdetails.component';
 
 const routes: Routes = [
   {
@@ -14,6 +15,9 @@ const routes: Routes = [
   },
   {
     path: 'userdashboard', component: UserDashboardComponent
+  },
+  {
+    path:"freelancerdetails", component:FreelancerdetailsComponent
   }
 ];
 

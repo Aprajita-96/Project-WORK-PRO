@@ -14,7 +14,8 @@ import {HttpClientModule} from '@angular/common/http';
 
 import { UserDashboardSearchComponent } from './user-dashboard-search/user-dashboard-search.component';
 import { SearchComponent } from './search/search.component';
-
+import { FreelancerdetailsComponent } from './freelancerdetails/freelancerdetails.component';
+import { FreelancerDetailsService} from './freelancer-details.service';
 
 @NgModule({
   declarations: [
@@ -24,7 +25,8 @@ import { SearchComponent } from './search/search.component';
     UserDashboardComponent,
     ProjectCardUserDashboardComponent,
     UserDashboardSearchComponent,
-    SearchComponent
+    SearchComponent,
+    FreelancerdetailsComponent
   ],
   imports: [
     BrowserModule,
@@ -36,7 +38,8 @@ import { SearchComponent } from './search/search.component';
   ],
   providers: [
     UserserviceService,
-    HttpClientModule,FormsModule
+    HttpClientModule,FormsModule,
+    FreelancerDetailsService
   ],
   bootstrap: [AppComponent]
 })

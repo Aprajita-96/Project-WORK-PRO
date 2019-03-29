@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders} from '@angular/common/http';
-
+import {Observable} from 'rxjs';
 @Injectable({
   providedIn: 'root'
 })
@@ -14,4 +14,8 @@ export class UserserviceService {
     return this.http.post("http://localhost:8080/registration",user);
 
    }
+   loginUser(user: any): Observable<any>{
+    const headers = new HttpHeaders({'Access-Control-Allow-Orgin': "*"});
+    return this.http.post("http://localhost:8080/login",user,{headers:headers});  
   }
+   }

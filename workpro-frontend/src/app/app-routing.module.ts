@@ -1,7 +1,7 @@
 import { NgModule, Component } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { UserDashboardComponent } from './user-dashboard/user-dashboard.component';
-
+import {ProjectCardUserDashboardComponent} from './project-card-user-dashboard/project-card-user-dashboard.component';
 import { RegisterComponent } from './register/register.component';
 import { LoginComponent } from './login/login.component';
 
@@ -14,7 +14,10 @@ const routes: Routes = [
   },
   {
     path: 'userdashboard', component: UserDashboardComponent
-  }
+  },
+  {
+  path:'podashboard' , component:ProjectCardUserDashboardComponent
+  } 
 ];
 
 @NgModule({

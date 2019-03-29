@@ -14,6 +14,7 @@ import {HttpClientModule} from '@angular/common/http';
 
 import { UserDashboardSearchComponent } from './user-dashboard-search/user-dashboard-search.component';
 import { SearchComponent } from './search/search.component';
+import { AuthGuard } from './auth-guard';
 
 
 @NgModule({
@@ -36,7 +37,9 @@ import { SearchComponent } from './search/search.component';
   ],
   providers: [
     UserserviceService,
-    HttpClientModule,FormsModule
+    HttpClientModule,
+    FormsModule,
+    AuthGuard
   ],
   bootstrap: [AppComponent]
 })

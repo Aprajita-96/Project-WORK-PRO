@@ -11,11 +11,16 @@ import {ReactiveFormsModule} from '@angular/forms';
 import { UserDashboardComponent } from './user-dashboard/user-dashboard.component';
 import { ProjectCardUserDashboardComponent } from './project-card-user-dashboard/project-card-user-dashboard.component';
 import {HttpClientModule} from '@angular/common/http';
-
+import { ProjectDetailsComponent } from './project-details/project-details.component';
 import { UserDashboardSearchComponent } from './user-dashboard-search/user-dashboard-search.component';
 import { SearchComponent } from './search/search.component';
+<<<<<<< HEAD
 import { AuthGuard } from './auth-guard';
 
+=======
+import { FreelancerdetailsComponent } from './freelancerdetails/freelancerdetails.component';
+import { FreelancerDetailsService} from './freelancer-details.service';
+>>>>>>> 17172b5cb63a8f7c8f56b584981ee241d9bc8553
 
 @NgModule({
   declarations: [
@@ -25,7 +30,9 @@ import { AuthGuard } from './auth-guard';
     UserDashboardComponent,
     ProjectCardUserDashboardComponent,
     UserDashboardSearchComponent,
-    SearchComponent
+    SearchComponent,
+    FreelancerdetailsComponent,
+    ProjectDetailsComponent,
   ],
   imports: [
     BrowserModule,
@@ -37,9 +44,14 @@ import { AuthGuard } from './auth-guard';
   ],
   providers: [
     UserserviceService,
+<<<<<<< HEAD
     HttpClientModule,
     FormsModule,
     AuthGuard
+=======
+    HttpClientModule,FormsModule,
+    FreelancerDetailsService
+>>>>>>> 17172b5cb63a8f7c8f56b584981ee241d9bc8553
   ],
   bootstrap: [AppComponent]
 })

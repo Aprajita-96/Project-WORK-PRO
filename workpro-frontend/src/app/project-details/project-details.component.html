@@ -1,0 +1,61 @@
+<div class="container" style="text-align:start">
+  <ul>
+    <li>
+      <button routerLink="#" class="btn text-white">Edit</button>
+    </li>
+    <li>
+      <button routerLink="#" class="btn text-white ml-4">
+        Delete
+      </button>
+    </li>
+  </ul>
+
+  <h1 class="text-bold text-center">{{ details.name }}</h1>
+  <span style="box-align:right"> </span>
+
+  <table>
+    <tr>
+      <td>Details</td>
+      <td>:{{details.discription}}</td>
+    </tr>
+    <tr>
+      <td>Duration</td>
+      <td>:{{details.requiredTime}}</td>
+    </tr>
+    <tr>
+      <td>Amount</td>
+      <td>:{{details.Amount}}</td>
+    </tr>
+  </table>
+  
+</div>
+<div class="container">
+  <h2>Bids</h2>
+  <div class="card_container container-fluid">
+    <div *ngFor="let bid of details.bids" class="card">
+      <table>
+        <tr>
+          <td>Name</td>
+          <td>:{{bid.name}}</td>
+        </tr>
+        <tr>
+          <td>Amount</td>
+          <td>:{{bid.bidValue}}</td>
+        </tr>
+        <tr>
+          <td>Time</td>
+          <td>:{{bid.timeLimit}}</td>
+        </tr>
+      </table>
+
+
+      <!-- <div class=" text-center">{{ bid.name }}</div>
+      <div class=" text-center">
+        Bid Amount:{{ bid.bidValue }}<br />
+        Time:{{ bid.timeLimit }}
+      </div> -->
+
+      <button routerLink="#" class="btn text-white">Accept</button>
+    </div>
+  </div>
+</div>

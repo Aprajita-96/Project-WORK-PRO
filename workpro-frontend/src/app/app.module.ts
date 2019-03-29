@@ -16,7 +16,8 @@ import { UserDashboardSearchComponent } from './user-dashboard-search/user-dashb
 import { SearchComponent } from './search/search.component';
 import { ProjectDetailFormComponent } from './project-detail-form/project-detail-form.component';
 import { ProjectDetailsService} from './project-details.service';
-
+import { FreelancerdetailsComponent } from './freelancerdetails/freelancerdetails.component';
+import { FreelancerDetailsService} from './freelancer-details.service';
 
 @NgModule({
   declarations: [
@@ -27,6 +28,7 @@ import { ProjectDetailsService} from './project-details.service';
     ProjectCardUserDashboardComponent,
     UserDashboardSearchComponent,
     SearchComponent,
+    FreelancerdetailsComponent,
     ProjectDetailsComponent,
     ProjectDetailFormComponent
   ],
@@ -41,6 +43,7 @@ import { ProjectDetailsService} from './project-details.service';
   providers: [
     UserserviceService,
     ProjectDetailsService,
+    FreelancerDetailsService,
     HttpClientModule,FormsModule
   ],
   bootstrap: [AppComponent]

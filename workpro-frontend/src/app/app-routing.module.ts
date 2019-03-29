@@ -5,7 +5,7 @@ import {  ProjectDetailsComponent } from './project-details/project-details.comp
 import { RegisterComponent } from './register/register.component';
 import { LoginComponent } from './login/login.component';
 import { ProjectDetailFormComponent } from './project-detail-form/project-detail-form.component';
-
+import { FreelancerdetailsComponent } from './freelancerdetails/freelancerdetails.component';
 
 const routes: Routes = [
   {
@@ -23,6 +23,10 @@ const routes: Routes = [
   { 
     path:'projectDetailForm',
     component:ProjectDetailFormComponent
+  },
+  {
+    path:"freelancerdetails",
+     component:FreelancerdetailsComponent
   }
 ];
 

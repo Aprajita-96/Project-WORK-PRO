@@ -43,16 +43,5 @@
             "description": "I would like this software to be developed for Windows using PHP Or Java or any desirable platform through which I can review multiple image in a single go.",
             "Skills": "PHP / Software Architecture / Windows Desktop"
           }
-      ],
-  "comments": [
-    {
-      "id": 1,
-      "body": "some comment",
-      "postId": 1
-    }
-  ],
-  "profile": {
-    "name": "typicode"
-  }
-
+      ]
 }

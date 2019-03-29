@@ -14,13 +14,9 @@ import {HttpClientModule} from '@angular/common/http';
 import { ProjectDetailsComponent } from './project-details/project-details.component';
 import { UserDashboardSearchComponent } from './user-dashboard-search/user-dashboard-search.component';
 import { SearchComponent } from './search/search.component';
-<<<<<<< HEAD
 import { AuthGuard } from './auth-guard';
-
-=======
 import { FreelancerdetailsComponent } from './freelancerdetails/freelancerdetails.component';
 import { FreelancerDetailsService} from './freelancer-details.service';
->>>>>>> 17172b5cb63a8f7c8f56b584981ee241d9bc8553
 
 @NgModule({
   declarations: [
@@ -44,14 +40,10 @@ import { FreelancerDetailsService} from './freelancer-details.service';
   ],
   providers: [
     UserserviceService,
-<<<<<<< HEAD
     HttpClientModule,
     FormsModule,
-    AuthGuard
-=======
-    HttpClientModule,FormsModule,
+    AuthGuard,
     FreelancerDetailsService
->>>>>>> 17172b5cb63a8f7c8f56b584981ee241d9bc8553
   ],
   bootstrap: [AppComponent]
 })

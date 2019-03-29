@@ -3,27 +3,46 @@ import { NgModule } from '@angular/core';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import { RegisterComponent } from './register/register.component';
+import { LoginComponent } from './login/login.component';
+import { UserserviceService } from './userservice.service';
+import {FormsModule} from '@angular/forms';
+import {ReactiveFormsModule} from '@angular/forms';
+import { UserDashboardComponent } from './user-dashboard/user-dashboard.component';
+import { ProjectCardUserDashboardComponent } from './project-card-user-dashboard/project-card-user-dashboard.component';
+import {HttpClientModule} from '@angular/common/http';
+import { ProjectDetailsComponent } from './project-details/project-details.component';
+import { UserDashboardSearchComponent } from './user-dashboard-search/user-dashboard-search.component';
+import { SearchComponent } from './search/search.component';
 import { ProjectDetailFormComponent } from './project-detail-form/project-detail-form.component';
-import { RouterModule,Routes } from '@angular/router';
-import { FormsModule }   from '@angular/forms';
-import { HttpClientModule} from '@angular/common/http';
 import { ProjectDetailsService} from './project-details.service';
-const appRoutes:Routes=[
-  { path:'projectDetailForm',component:ProjectDetailFormComponent}
-]
+
+
 @NgModule({
   declarations: [
     AppComponent,
+    RegisterComponent,
+    LoginComponent,
+    UserDashboardComponent,
+    ProjectCardUserDashboardComponent,
+    UserDashboardSearchComponent,
+    SearchComponent,
+    ProjectDetailsComponent,
     ProjectDetailFormComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    RouterModule.forRoot(appRoutes),
+    HttpClientModule,
     FormsModule,
-    HttpClientModule
+    ReactiveFormsModule
+  
   ],
-  providers: [ProjectDetailsService],
+  providers: [
+    UserserviceService,
+    ProjectDetailsService,
+    HttpClientModule,FormsModule
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -11,7 +11,7 @@ import {ReactiveFormsModule} from '@angular/forms';
 import { UserDashboardComponent } from './user-dashboard/user-dashboard.component';
 import { ProjectCardUserDashboardComponent } from './project-card-user-dashboard/project-card-user-dashboard.component';
 import {HttpClientModule} from '@angular/common/http';
-
+import { ProjectDetailsComponent } from './project-details/project-details.component';
 import { UserDashboardSearchComponent } from './user-dashboard-search/user-dashboard-search.component';
 import { SearchComponent } from './search/search.component';
 import { FreelancerdetailsComponent } from './freelancerdetails/freelancerdetails.component';
@@ -26,7 +26,8 @@ import { FreelancerDetailsService} from './freelancer-details.service';
     ProjectCardUserDashboardComponent,
     UserDashboardSearchComponent,
     SearchComponent,
-    FreelancerdetailsComponent
+    FreelancerdetailsComponent,
+    ProjectDetailsComponent,
   ],
   imports: [
     BrowserModule,

@@ -1,12 +1,15 @@
 import { NgModule, Component } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { UserDashboardComponent } from './user-dashboard/user-dashboard.component';
-
+import {  ProjectDetailsComponent } from './project-details/project-details.component';
 import { RegisterComponent } from './register/register.component';
 import { LoginComponent } from './login/login.component';
 import { FreelancerdetailsComponent } from './freelancerdetails/freelancerdetails.component';
 
 const routes: Routes = [
+  {
+    path: "project", component: ProjectDetailsComponent
+  },
   {
     path:"register", component: RegisterComponent
   },

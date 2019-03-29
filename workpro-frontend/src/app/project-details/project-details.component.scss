@@ -1,0 +1,27 @@
+.card {
+  margin: 2rem 0rem 0rem 0rem;
+//   background-color: #4ea5d9;
+//  width: 50%;
+}
+.container{
+    // background-color:rgb(212, 218, 221); 
+    border-style: ridge;
+}
+button{
+    background-color: #122c34;
+    // color: #122c34;
+}
+button:hover{
+    background-color: #224870;
+}
+ul{
+    list-style: none;
+    display: flex;
+    float: right;
+}
+ul li{
+    justify-content: space-between;
+}
+
+
+

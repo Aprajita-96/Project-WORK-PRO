@@ -1,0 +1,62 @@
+<nav class="mb-1 navbar navbar-expand-lg navbar-dark secondary-color lighten-1">
+    <a class="navbar-brand" href="#">WorkPro</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent-555"
+      aria-controls="navbarSupportedContent-555" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse">
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item">
+          <a class="nav-link" href="#">MyProfile</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">MyBids</a>
+        </li>
+      </ul>
+      </div>
+      <ul class="navbar-nav ml-auto nav-flex-icons">
+        <li class="nav-item freelancer dropdown">
+          <a class="nav-link dropdown-toggle" data-toggle="dropdown" aria-haspopup="true"
+            aria-expanded="false">
+          </a>
+        </li>
+      </ul>  </nav>
+
+      
+      <!-- Banner with search bar -->
+ <div class="heroBanner">
+     <div class="jumbotron-unstyled" >
+         <div class="jumbotron" style="background-image: url('../../assets/images/banner.jpg')">
+             <div class="container-fluid">
+                  <div class="row justify-content-center">
+                     <div class="col-12 col-md-6 col-lg-8">
+                         <form #heroform="ngForm" class="card card-sm" >
+                             <div class="card-body row no-gutters align-items-center" style="margin:0px; padding:0px">
+                                 <div class="col-auto">
+                                     <i class="fas fa-search h5 text-body"></i>
+                                 </div>                                  <div class="col">
+                                     <input #search class="form-control form-control-lg form-control-borderless" type="search" id="search" placeholder="Seach for freelancers">
+                                 </div>                                  <div class="col-auto"></div>
+                                 <button class="btn btn-lg btn-success" type="submit">Search</button>
+                             </div>                          </form>
+                     </div>                  </div>
+             </div>
+             <h1 class="font-weight-bold text-white text-center  my-5" style="color:white;font-size:4rem;">
+                 Explore freelancers
+             </h1>          </div>
+     </div>
+ </div>
+ <!-- Banner with search bar -->
+      <div class="container">  <div *ngFor="let freelancer of freelancers">
+  <app-usercard-project-owner-dashboard [freelancer]=freelancer></app-usercard-project-owner-dashboard>
+
+  
+</div>
+</div>
+<!-- Footer -->
+<footer class="page-footer font-small blue">    <!-- Copyright -->
+  <div class="footer-copyright text-center py-3" style="color:white">© 2019 Copyright:
+    <a href="https://mdbootstrap.com/education/angular/" style="color:white"> WorkPro.com</a>
+  </div>
+  <!-- Copyright -->  </footer>
+<!-- Footer -->

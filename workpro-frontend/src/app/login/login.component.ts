@@ -20,8 +20,7 @@ ngOnInit() {
 }
 loginUser(user:any){  
     this.userService.loginUser(user).subscribe((response)=>{
-    if(response===error){
-    
+    if(response){
       localStorage.setItem('currentUser',JSON.stringify(response));
       console.log(response)
       if(response.user.role === 'PRODUCT OWNER'){

@@ -14,6 +14,7 @@ import {HttpClientModule} from '@angular/common/http';
 import { ProjectDetailsComponent } from './project-details/project-details.component';
 import { UserDashboardSearchComponent } from './user-dashboard-search/user-dashboard-search.component';
 import { SearchComponent } from './search/search.component';
+import { FooterComponent } from './footer/footer.component';
 
 
 @NgModule({
@@ -26,6 +27,7 @@ import { SearchComponent } from './search/search.component';
     UserDashboardSearchComponent,
     SearchComponent,
     ProjectDetailsComponent,
+    FooterComponent,
   ],
   imports: [
     BrowserModule,

@@ -12,7 +12,7 @@ public user:any={};
  constructor(private userservice:UserserviceService,private router:Router) { }  ngOnInit() {
  }
  saveUser(user:any,userForm:any){
-  user.enabled = true;
+  user.enable = true;
    this.userservice.saveUser(user).subscribe((response)=>{
        if(response){
          console.log(response);

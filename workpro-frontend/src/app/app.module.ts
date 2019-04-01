@@ -6,16 +6,21 @@ import { AppComponent } from './app.component';
 import { RegisterComponent } from './register/register.component';
 import { LoginComponent } from './login/login.component';
 import { UserserviceService } from './userservice.service';
-import {FormsModule} from '@angular/forms';
-import {ReactiveFormsModule} from '@angular/forms';
+import { FormsModule } from '@angular/forms';
+import { ReactiveFormsModule } from '@angular/forms';
 import { UserDashboardComponent } from './user-dashboard/user-dashboard.component';
 import { ProjectCardUserDashboardComponent } from './project-card-user-dashboard/project-card-user-dashboard.component';
-import {HttpClientModule} from '@angular/common/http';
+import { HttpClientModule } from '@angular/common/http';
 import { ProjectDetailsComponent } from './project-details/project-details.component';
 import { UserDashboardSearchComponent } from './user-dashboard-search/user-dashboard-search.component';
 import { SearchComponent } from './search/search.component';
+import { ProjectDetailFormComponent } from './project-detail-form/project-detail-form.component';
+import { ProjectDetailsService } from './project-details.service';
+import { AuthGuard } from './auth-guard';
 import { FreelancerdetailsComponent } from './freelancerdetails/freelancerdetails.component';
-import { FreelancerDetailsService} from './freelancer-details.service';
+import { FreelancerDetailsService } from './freelancer-details.service';
+import { FooterComponent } from './footer/footer.component';
+
 
 @NgModule({
   declarations: [
@@ -28,6 +33,8 @@ import { FreelancerDetailsService} from './freelancer-details.service';
     SearchComponent,
     FreelancerdetailsComponent,
     ProjectDetailsComponent,
+    FooterComponent,
+    ProjectDetailFormComponent
   ],
   imports: [
     BrowserModule,
@@ -35,12 +42,14 @@ import { FreelancerDetailsService} from './freelancer-details.service';
     HttpClientModule,
     FormsModule,
     ReactiveFormsModule
-  
+
   ],
   providers: [
     UserserviceService,
-    HttpClientModule,FormsModule,
-    FreelancerDetailsService
+    ProjectDetailsService,
+    FreelancerDetailsService,
+    AuthGuard,
+    HttpClientModule, FormsModule
   ],
   bootstrap: [AppComponent]
 })

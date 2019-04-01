@@ -6,6 +6,8 @@
 /src/test/javascript/coverage/
 /src/test/javascript/PhantomJS*/
 config-server-repo
+.idea
+.idea/*
 
 ######################
 # Node

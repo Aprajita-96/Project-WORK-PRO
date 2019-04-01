@@ -6,42 +6,591 @@
       "author": "typicode"
     }
   ],
-        "projects" :[
-          {
-            "name": "RPG Game",
-            "id": 0,
-            "description": "Have to create some buttons for the description given",
-            "Skills": "Java / JavaFX / Swing (Java)"
-          },
-          {
-            "name": "MultiUser Jade Framework",
-            "id": 1,
-            "description": "Developing a multi-agent platform to test already existed method.",
-            "Skills": "Java / JavaFX"
-          },
-          {
-            "name": "windows server 2012 R2",
-            "id": 2,
-            "description": "Goal is simple, I need only to configure windows server 2012 R2 to support test authentication using [login to view URL].",
-            "Skills": "Java / Software Architecture"
-          },
-          {
-            "name": "Telecash Payment gateway",
-            "id": 3,
-            "description": "I need to develop a small java based web application which will work between telecash payment gateway and .net website. Please bid only if you are experienced/serious freelancer.",
-            "Skills": "Apache / Java / JSP / Web Services"
-          },
-          {
-            "name": "Build Selenium Framework",
-            "id": 4,
-            "description": "I have a Java+Selenium framework, which is not following the code standards, and not included the proper maven repositories etc.",
-            "Skills": "J2EE / Java / Javascript / RESTful / Software Architecture"
-          },
-          {
-            "name": "Image Auditing Software",
-            "id": 5,
-            "description": "I would like this software to be developed for Windows using PHP Or Java or any desirable platform through which I can review multiple image in a single go.",
-            "Skills": "PHP / Software Architecture / Windows Desktop"
-          }
-      ]
+  "projects": [
+    {
+      "name": "RPG Game",
+      "id": 0,
+      "discription": "have to create some buttons for the description given ",
+      "status": false
+    },
+    {
+      "name": "MultiUser Jade Framework",
+      "id": 1,
+      "discription": "Developing a multi-agent platform to test already existed method.",
+      "status": true
+    },
+    {
+      "name": "windows server 2012 R2",
+      "id": 2,
+      "discription": "Goal is simple, I need only to configure windows server 2012 R2 to support test authentication using [login to view URL].",
+      "status": false
+    },
+    {
+      "name": "Telecash Payment gateway",
+      "id": 3,
+      "discription": "I need to develop a small java based web application which will work between telecash payment gateway and .net website. Please bid only if you are experienced/serious freelancer.",
+      "status": false
+    },
+    {
+      "name": "Build Selenium Framework",
+      "id": 4,
+      "discription": "I have a Java+Selenium framework, which is not following the code standards, and not included the proper maven repositories etc.",
+      "status": false
+    }
+  ],
+  "comments": [
+    {
+      "id": 1,
+      "body": "some comment",
+      "postId": 1
+    }
+  ],
+  "profile": {
+    "name": "typicode"
+  },
+  "xyz": [
+    {
+      "name": "Biswadeep",
+      "Email": "hdh",
+      "location": "htd",
+      "SkillName": "ht",
+      "level": "BEGINNER",
+      "SkillExp": "hjtd",
+      "Hours": "hfs",
+      "experience": "sdasd",
+      "skills": [
+        {
+          "yearsOfExp": "hjtd",
+          "level": "BEGINNER",
+          "skillName": "ht"
+        }
+      ],
+      "id": 1
+    },
+    {
+      "name": "Biswadeep",
+      "Email": "hdh",
+      "location": "htd",
+      "SkillName": "ht",
+      "level": "BEGINNER",
+      "SkillExp": "hjtd",
+      "Hours": "hfs",
+      "experience": "sdasd",
+      "skills": [
+        {
+          "yearsOfExp": "hjtd",
+          "level": "BEGINNER",
+          "skillName": "ht"
+        }
+      ],
+      "id": 2
+    },
+    {
+      "name": "bigshowfsgfdh",
+      "Email": "nghgchgcfhfjgfjjf",
+      "location": "davfhjfdjgfda",
+      "SkillName": "bvmhjfssv",
+      "level": "BEGINNER",
+      "SkillExp": "80",
+      "Hours": "8",
+      "experience": "87",
+      "skills": [
+        {
+          "yearsOfExp": "80",
+          "level": "BEGINNER",
+          "skillName": "bvmhjfssv"
+        },
+        {
+          "yearsOfExp": "80",
+          "level": "BEGINNER",
+          "skillName": "bvmhjfssv"
+        }
+      ],
+      "id": 3
+    },
+    {
+      "aboutme": "",
+      "name": "",
+      "Email": "",
+      "location": "",
+      "SkillName": "",
+      "level": "",
+      "SkillExp": "",
+      "Hours": "",
+      "DomainName": "egdsfdafda",
+      "DomainExperience": "4",
+      "skills": [],
+      "id": 4
+    },
+    {
+      "aboutme": "",
+      "name": "",
+      "Email": "",
+      "location": "",
+      "SkillName": "",
+      "level": "",
+      "SkillExp": "",
+      "Hours": "",
+      "DomainName": "hufeahfd",
+      "DomainExperience": "4ab",
+      "skills": [],
+      "id": 5
+    },
+    {
+      "aboutme": "",
+      "name": "",
+      "Email": "",
+      "location": "",
+      "SkillName": "",
+      "level": "",
+      "SkillExp": "",
+      "Hours": "",
+      "DomainName": "hufeahfd",
+      "DomainExperience": "4ab",
+      "skills": [],
+      "id": 6
+    },
+    {
+      "aboutme": "",
+      "name": "",
+      "Email": "",
+      "location": "",
+      "SkillName": "",
+      "level": "",
+      "SkillExp": "",
+      "Hours": "",
+      "DomainName": "hufeahfd",
+      "DomainExperience": "4ab",
+      "skills": [],
+      "id": 7
+    },
+    {
+      "aboutme": "",
+      "name": "",
+      "Email": "",
+      "location": "",
+      "SkillName": "",
+      "level": "",
+      "SkillExp": "",
+      "Hours": "",
+      "DomainName": "hufeahfd",
+      "DomainExperience": "4ab",
+      "skills": [],
+      "id": 8
+    },
+    {
+      "aboutme": "",
+      "name": "",
+      "Email": "",
+      "location": "",
+      "SkillName": "",
+      "level": "",
+      "SkillExp": "",
+      "Hours": "",
+      "DomainName": "hufeahfd",
+      "DomainExperience": "4ab",
+      "skills": [],
+      "id": 9
+    },
+    {
+      "aboutme": "",
+      "name": "",
+      "Email": "",
+      "location": "",
+      "SkillName": "",
+      "level": "",
+      "SkillExp": "",
+      "Hours": "",
+      "DomainName": "hufeahfd",
+      "DomainExperience": "4ab",
+      "skills": [],
+      "id": 10
+    },
+    {
+      "aboutme": "",
+      "name": "",
+      "Email": "",
+      "location": "",
+      "SkillName": "",
+      "level": "",
+      "SkillExp": "",
+      "Hours": "",
+      "DomainName": "hufeahfd",
+      "DomainExperience": "4ab",
+      "skills": [],
+      "id": 11
+    },
+    {
+      "aboutme": "",
+      "name": "",
+      "Email": "",
+      "location": "",
+      "SkillName": "",
+      "level": "",
+      "SkillExp": "",
+      "Hours": "",
+      "DomainName": "hufeahfd",
+      "DomainExperience": "4ab",
+      "skills": [],
+      "id": 12
+    },
+    {
+      "aboutme": "",
+      "name": "",
+      "Email": "",
+      "location": "",
+      "SkillName": "",
+      "level": "",
+      "SkillExp": "",
+      "Hours": "",
+      "DomainName": "hufeahfd",
+      "DomainExperience": "4ab",
+      "skills": [],
+      "id": 13
+    },
+    {
+      "aboutme": "",
+      "name": "",
+      "Email": "",
+      "location": "",
+      "SkillName": "",
+      "level": "",
+      "SkillExp": "",
+      "Hours": "",
+      "DomainName": "hufeahfd",
+      "DomainExperience": "4ab",
+      "skills": [],
+      "id": 14
+    },
+    {
+      "aboutme": "",
+      "name": "",
+      "Email": "",
+      "location": "",
+      "SkillName": "",
+      "level": "",
+      "SkillExp": "",
+      "Hours": "",
+      "DomainName": "hufeahfd",
+      "DomainExperience": "4ab",
+      "skills": [],
+      "id": 15
+    },
+    {
+      "aboutme": "kfeidke",
+      "name": "bcaaf",
+      "Email": "lfeqhfea",
+      "location": "fekjfefeq",
+      "SkillName": "kk",
+      "level": "EXPERT",
+      "SkillExp": "5",
+      "Hours": "65",
+      "DomainName": "vcasvhcsv",
+      "DomainExperience": "3",
+      "skills": [
+        {
+          "yearsOfExp": "1",
+          "level": "BEGINNER",
+          "skillName": "odhudw"
+        },
+        {
+          "yearsOfExp": "3",
+          "level": "INTERMEDIATE",
+          "skillName": "vcakcafd"
+        },
+        {
+          "yearsOfExp": "5",
+          "level": "EXPERT",
+          "skillName": "kk"
+        }
+      ],
+      "id": 16
+    },
+    {
+      "aboutme": "enthusiast",
+      "name": "Biswadeep Bhattacharjee",
+      "Email": "biswadeep",
+      "location": "Bangalore",
+      "SkillName": "Angular",
+      "level": "BEGINNER",
+      "SkillExp": "0",
+      "Hours": "8",
+      "DomainName": "entertainment",
+      "DomainExperience": "0",
+      "skills": [
+        {
+          "yearsOfExp": "1",
+          "level": "INTERMEDIATE",
+          "skillName": "java"
+        },
+        {
+          "yearsOfExp": "0",
+          "level": "BEGINNER",
+          "skillName": "Angular"
+        }
+      ],
+      "id": 17
+    },
+    {
+      "aboutme": "learning front end",
+      "name": "Akshay",
+      "Email": "akshay@gmail.com",
+      "location": "Bangalore",
+      "SkillName": "Angular",
+      "level": "BEGINNER",
+      "SkillExp": "0",
+      "Hours": "8",
+      "DomainName": "entertainment",
+      "DomainExperience": "1",
+      "skills": [
+        {
+          "yearsOfExp": "1",
+          "level": "INTERMEDIATE",
+          "skillName": "java"
+        },
+        {
+          "yearsOfExp": "0",
+          "level": "BEGINNER",
+          "skillName": "Angular"
+        }
+      ],
+      "id": 18
+    },
+    {
+      "aboutme": "learning front end",
+      "name": "Akshay",
+      "Email": "akshay@gmail.com",
+      "location": "Bangalore",
+      "SkillName": "Angular",
+      "level": "BEGINNER",
+      "SkillExp": "0",
+      "Hours": "8",
+      "DomainName": "entertainment",
+      "DomainExperience": "1",
+      "skills": [
+        {
+          "yearsOfExp": "1",
+          "level": "INTERMEDIATE",
+          "skillName": "java"
+        },
+        {
+          "yearsOfExp": "0",
+          "level": "BEGINNER",
+          "skillName": "Angular"
+        }
+      ],
+      "id": 19
+    },
+    {
+      "aboutme": "",
+      "name": "",
+      "Email": "",
+      "location": "",
+      "SkillName": "",
+      "level": "",
+      "SkillExp": "",
+      "Hours": "",
+      "DomainName": "hufeahfd",
+      "DomainExperience": "",
+      "skills": [],
+      "id": 20
+    },
+    {
+      "aboutme": "",
+      "name": "",
+      "Email": "",
+      "location": "",
+      "SkillName": "",
+      "level": "",
+      "SkillExp": "",
+      "Hours": "",
+      "DomainName": "egdsfdafda",
+      "DomainExperience": "sdf",
+      "skills": [],
+      "domaisn": [
+        {
+          "domainName": "egdsfdafda",
+          "yearsOfExp": "sdf"
+        },
+        {
+          "domainName": "egdsfdafda",
+          "yearsOfExp": "sdf"
+        },
+        {
+          "domainName": "egdsfdafda",
+          "yearsOfExp": "sdf"
+        },
+        {
+          "domainName": "egdsfdafda",
+          "yearsOfExp": "sdf"
+        }
+      ],
+      "id": 21
+    },
+    {
+      "aboutme": "",
+      "name": "",
+      "Email": "",
+      "location": "",
+      "SkillName": "",
+      "level": "",
+      "SkillExp": "",
+      "Hours": "",
+      "DomainName": "",
+      "DomainExperience": "",
+      "Link": "jydayfdfadhgsaadfad",
+      "skills": [],
+      "domain": [],
+      "link": [
+        {
+          "link": "adhgsa"
+        },
+        {
+          "link": "jydayfdfadhgsa"
+        },
+        {
+          "link": "jydayfdfadhgsaadfad"
+        }
+      ],
+      "id": 22
+    },
+    {
+      "aboutme": "kjdbkjv",
+      "name": ",n v  dbvf, ",
+      "Email": "kdsbvksbv",
+      "location": "svsvs",
+      "SkillName": "fevf",
+      "level": "BEGINNER",
+      "SkillExp": "5",
+      "Hours": "wd",
+      "DomainName": "entertainment",
+      "DomainExperience": "3",
+      "Link": "hveivondfmv.",
+      "skills": [
+        {
+          "yearsOfExp": "5",
+          "level": "BEGINNER",
+          "skillName": "fevf"
+        },
+        {
+          "yearsOfExp": "5",
+          "level": "BEGINNER",
+          "skillName": "fevf"
+        },
+        {
+          "yearsOfExp": "5",
+          "level": "BEGINNER",
+          "skillName": "fevf"
+        },
+        {
+          "yearsOfExp": "5",
+          "level": "BEGINNER",
+          "skillName": "fevf"
+        },
+        {
+          "yearsOfExp": "5",
+          "level": "BEGINNER",
+          "skillName": "fevf"
+        },
+        {
+          "yearsOfExp": "5",
+          "level": "BEGINNER",
+          "skillName": "fevf"
+        },
+        {
+          "yearsOfExp": "5",
+          "level": "BEGINNER",
+          "skillName": "fevf"
+        }
+      ],
+      "domain": [
+        {
+          "domainName": "it",
+          "yearsOfExp": "5"
+        },
+        {
+          "domainName": "entertainment",
+          "yearsOfExp": "3"
+        }
+      ],
+      "link": [
+        {
+          "link": "hveivondfmv."
+        },
+        {
+          "link": "hveivondfmv."
+        }
+      ],
+      "id": 23
+    },
+    {
+      "aboutme": "kjdbkjv",
+      "name": ",n v  dbvf, ",
+      "Email": "kdsbvksbv",
+      "location": "svsvs",
+      "SkillName": "fevf",
+      "level": "BEGINNER",
+      "SkillExp": "5",
+      "Hours": "wd",
+      "DomainName": "entertainment",
+      "DomainExperience": "3",
+      "Link": "hveivondfmv.",
+      "skills": [
+        {
+          "yearsOfExp": "5",
+          "level": "BEGINNER",
+          "skillName": "fevf"
+        },
+        {
+          "yearsOfExp": "5",
+          "level": "BEGINNER",
+          "skillName": "fevf"
+        },
+        {
+          "yearsOfExp": "5",
+          "level": "BEGINNER",
+          "skillName": "fevf"
+        },
+        {
+          "yearsOfExp": "5",
+          "level": "BEGINNER",
+          "skillName": "fevf"
+        },
+        {
+          "yearsOfExp": "5",
+          "level": "BEGINNER",
+          "skillName": "fevf"
+        },
+        {
+          "yearsOfExp": "5",
+          "level": "BEGINNER",
+          "skillName": "fevf"
+        },
+        {
+          "yearsOfExp": "5",
+          "level": "BEGINNER",
+          "skillName": "fevf"
+        }
+      ],
+      "domain": [
+        {
+          "domainName": "it",
+          "yearsOfExp": "5"
+        },
+        {
+          "domainName": "entertainment",
+          "yearsOfExp": "3"
+        }
+      ],
+      "link": [
+        {
+          "link": "hveivondfmv."
+        },
+        {
+          "link": "hveivondfmv."
+        }
+      ],
+      "id": 24
+    }
+  ]
 }

@@ -11,6 +11,7 @@ export class ProjectDetailFormComponent implements OnInit {
   public user :any ={}; 
   skills = [];
   bid=[];
+  addBidToProjects=false;
   constructor(private projectDetailsService:ProjectDetailsService) { }
   projectDetails=[
     {
@@ -118,6 +119,7 @@ export class ProjectDetailFormComponent implements OnInit {
         }
         this.skills.push(skillDetails)
       }
+
       addBid(bid){
         let bidDetails=
         {
@@ -127,7 +129,11 @@ export class ProjectDetailFormComponent implements OnInit {
           bidLocation:bid.bidLocation,
           bidRate:bid.bidrate
         }
+        this.addBidToProjects=true;
         this.bid.push(bidDetails)
+      }
+      deleteSkill(skill){
+        this.skills = this.skills.filter(e => e.skillName !== skill.skillName)
       }
 
 }

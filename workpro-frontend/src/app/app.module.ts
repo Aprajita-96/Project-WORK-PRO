@@ -18,6 +18,8 @@ import { AuthGuard } from './auth-guard';
 import { FreelancerdetailsComponent } from './freelancerdetails/freelancerdetails.component';
 import { FreelancerDetailsService } from './freelancer-details.service';
 import { FooterComponent } from './footer/footer.component';
+import { ProductownerprofileComponent } from './productownerprofile/productownerprofile.component';
+
 import { ProjectOwnerDashboardComponent } from './project-owner-dashboard/project-owner-dashboard.component';
 import { UsercardProjectOwnerDashboardComponent } from './usercard-project-owner-dashboard/usercard-project-owner-dashboard.component';
 import { MyprojectsComponent } from './myprojects/myprojects.component';
@@ -34,6 +36,8 @@ import { ProjectCardProductOwnerMyprojectComponent } from './project-card-produc
     ProjectDetailsComponent,
     ProjectDetailFormComponent,
     FooterComponent,
+    ProjectDetailFormComponent,
+    ProductownerprofileComponent,
     ProjectOwnerDashboardComponent,
     UsercardProjectOwnerDashboardComponent,
     MyprojectsComponent,

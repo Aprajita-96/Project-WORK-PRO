@@ -17,7 +17,7 @@ export class ProductownerprofileComponent implements OnInit {
     console.log(productowner);
     console.log("user details entered")
     this.po.setDetailsofProductOwner(productowner).subscribe(console.log);
-    this.router.navigateByUrl('podashboard')
+    this.router.navigateByUrl('projectownerdashboard')
   }
 
 }

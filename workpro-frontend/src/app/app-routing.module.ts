@@ -7,6 +7,8 @@ import { RegisterComponent } from "./register/register.component";
 import { LoginComponent } from "./login/login.component";
 import { FreelancerdetailsComponent } from "./freelancerdetails/freelancerdetails.component";
 import { ProjectDetailFormComponent } from './project-detail-form/project-detail-form.component';
+import {ProductownerprofileComponent} from "./productownerprofile/productownerprofile.component";
+
 import { ProjectOwnerDashboardComponent } from './project-owner-dashboard/project-owner-dashboard.component';
 import { MyprojectsComponent } from './myprojects/myprojects.component';
 const routes: Routes = [
@@ -40,11 +42,15 @@ const routes: Routes = [
     component: ProjectCardUserDashboardComponent
   },
   {
+    path: "projectOwnerDetails",
+    component: ProductownerprofileComponent
+  },
+  {
     path: "projectownerdashboard", component: ProjectOwnerDashboardComponent
   },
   {
     path: "productownermyprojects", component: MyprojectsComponent
-  }
+  },
 
 ];
 

@@ -7,8 +7,8 @@ import { RegisterComponent } from "./register/register.component";
 import { LoginComponent } from "./login/login.component";
 import { FreelancerdetailsComponent } from "./freelancerdetails/freelancerdetails.component";
 import { ProjectDetailFormComponent } from './project-detail-form/project-detail-form.component';
-import {ProjectOwnerDashboardComponent} from './project-owner-dashboard/project-owner-dashboard.component';
-
+import { ProjectOwnerDashboardComponent } from './project-owner-dashboard/project-owner-dashboard.component';
+import { MyprojectsComponent } from './myprojects/myprojects.component';
 const routes: Routes = [
   {
     path: "project",
@@ -26,25 +26,29 @@ const routes: Routes = [
     path: "userdashboard",
     component: UserDashboardComponent
   },
-  { 
-    path:'projectDetailForm',
-    component:ProjectDetailFormComponent
+  {
+    path: 'projectDetailForm',
+    component: ProjectDetailFormComponent
   },
   {
-    path:"freelancerdetails",
-     component:FreelancerdetailsComponent
+    path: "freelancerdetails",
+    component: FreelancerdetailsComponent
   },
   {
-     path: "podashboard",
-     component: ProjectCardUserDashboardComponent
+    path: "podashboard",
+    component: ProjectCardUserDashboardComponent
   },
   {
-    path: "projectownerdashboard", component: ProjectOwnerDashboardComponent },
-  
+    path: "projectownerdashboard", component: ProjectOwnerDashboardComponent
+  },
+  {
+    path: "productownermyprojects", component: MyprojectsComponent
+  }
+
 ];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
   exports: [RouterModule]
 })
-export class AppRoutingModule {}
+export class AppRoutingModule { }

@@ -1,9 +1,45 @@
 <!--The content below is only a placeholder and can be replaced.-->
+<!--Navbar -->
+<nav class="mb-1 navbar navbar-expand-lg navbar-dark secondary-color lighten-1">
+    <a class="navbar-brand" href="#">WorkPro</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent-555"
+        aria-controls="navbarSupportedContent-555" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse">
+        <ul class="navbar-nav mr-auto">
+            <li class="nav-item">
+                <a class="nav-link" [routerLink]="['/register']">Register!!</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" [routerLink]="['/login']">Login!!</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" [routerLink]="['/userdashboard']">Userdashboard</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" routerLink="projectownerdashboard">ProjectOwnerDashboard</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" routerLink="productownermyprojects">My project Product Owner</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" routerLink="project">Details</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" routerLink="projectDetailForm">projectDetailForm</a>
+            </li>
+        </ul>
+    </div>
+</nav>
+
+<!-- 
 <button class="btn btn-success" type="button" routerLink="/register">Register Me!!</button> 
 <button class="btn btn-success" type="button" routerLink="/login">Login Me!!</button> 
 <button class="btn btn-success" routerLink="userdashboard">User Dash Board</button>
 <button class="btn btn-success" routerLink="freelancerdetails">freelancerdetails</button>
 <button class="btn btn-success" routerLink="project">Details</button>
 <button class="btn btn-success" routerLink="projectDetailForm" >Project Detail Form</button>
-<button class="btn btn-success" routerLink="projectownerdashboard" >Project Owner Dashboard </button>
+<button class="btn btn-success" routerLink="project">Details</button> -->
+<!-- <button class="btn btn-success" routerLink="projectownerdashboard" >Project Owner Dashboard </button> -->
 <router-outlet></router-outlet>

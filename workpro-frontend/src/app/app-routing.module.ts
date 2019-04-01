@@ -11,9 +11,10 @@ import { ProjectOwnerDashboardComponent } from './project-owner-dashboard/projec
 import { MyprojectsComponent } from './myprojects/myprojects.component';
 const routes: Routes = [
   {
-    path: "project",
+    path: "projectDetailsComponent",
     component: ProjectDetailsComponent
   },
+  
   {
     path: "register",
     component: RegisterComponent
@@ -27,7 +28,7 @@ const routes: Routes = [
     component: UserDashboardComponent
   },
   {
-    path: 'projectDetailForm',
+    path: 'projectDetailFormComponent',
     component: ProjectDetailFormComponent
   },
   {

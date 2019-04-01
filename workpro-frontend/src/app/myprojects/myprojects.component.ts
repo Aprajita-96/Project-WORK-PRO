@@ -12,7 +12,7 @@ export class MyprojectsComponent implements OnInit {
   ngOnInit() {}
 
   filterOpenProjects() {
-    this.projects = this.projects.filter(e => {
+    this.projects = this.projects1.filter(e => {
       if (e.status === "open") {
         return e;
       }
@@ -20,14 +20,14 @@ export class MyprojectsComponent implements OnInit {
   }
 
   filterCloseProjects() {
-    this.projects = this.projects.filter(e => {
+    this.projects = this.projects1.filter(e => {
       if (e.status === "close") {
         return e;
       }
     });
   }
-
-  projects = [
+  projects=[];
+  projects1 = [
     {
       projecttitle: "Holt",
       projectdescription: "Sint in exercitation commodo consectetur.",

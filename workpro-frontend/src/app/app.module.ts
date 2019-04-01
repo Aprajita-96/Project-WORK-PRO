@@ -6,20 +6,26 @@ import { AppComponent } from './app.component';
 import { RegisterComponent } from './register/register.component';
 import { LoginComponent } from './login/login.component';
 import { UserserviceService } from './userservice.service';
-import {FormsModule} from '@angular/forms';
-import {ReactiveFormsModule} from '@angular/forms';
+import { FormsModule } from '@angular/forms';
+import { ReactiveFormsModule } from '@angular/forms';
 import { UserDashboardComponent } from './user-dashboard/user-dashboard.component';
 import { ProjectCardUserDashboardComponent } from './project-card-user-dashboard/project-card-user-dashboard.component';
-import {HttpClientModule} from '@angular/common/http';
+import { HttpClientModule } from '@angular/common/http';
 import { ProjectDetailsComponent } from './project-details/project-details.component';
 import { UserDashboardSearchComponent } from './user-dashboard-search/user-dashboard-search.component';
 import { SearchComponent } from './search/search.component';
 import { ProjectDetailFormComponent } from './project-detail-form/project-detail-form.component';
-import { ProjectDetailsService} from './project-details.service';
+import { ProjectDetailsService } from './project-details.service';
 import { AuthGuard } from './auth-guard';
 import { FreelancerdetailsComponent } from './freelancerdetails/freelancerdetails.component';
-import { FreelancerDetailsService} from './freelancer-details.service';
+import { FreelancerDetailsService } from './freelancer-details.service';
+import { FooterComponent } from './footer/footer.component';
+import { ProductownerprofileComponent } from './productownerprofile/productownerprofile.component';
 
+import { ProjectOwnerDashboardComponent } from './project-owner-dashboard/project-owner-dashboard.component';
+import { UsercardProjectOwnerDashboardComponent } from './usercard-project-owner-dashboard/usercard-project-owner-dashboard.component';
+import { MyprojectsComponent } from './myprojects/myprojects.component';
+import { ProjectCardProductOwnerMyprojectComponent } from './project-card-product-owner-myproject/project-card-product-owner-myproject.component';
 
 @NgModule({
   declarations: [
@@ -32,7 +38,14 @@ import { FreelancerDetailsService} from './freelancer-details.service';
     SearchComponent,
     FreelancerdetailsComponent,
     ProjectDetailsComponent,
-    ProjectDetailFormComponent
+    ProjectDetailFormComponent,
+    FooterComponent,
+    ProjectDetailFormComponent,
+    ProductownerprofileComponent,
+    ProjectOwnerDashboardComponent,
+    UsercardProjectOwnerDashboardComponent,
+    MyprojectsComponent,
+    ProjectCardProductOwnerMyprojectComponent
   ],
   imports: [
     BrowserModule,
@@ -40,14 +53,14 @@ import { FreelancerDetailsService} from './freelancer-details.service';
     HttpClientModule,
     FormsModule,
     ReactiveFormsModule
-  
+
   ],
   providers: [
     UserserviceService,
     ProjectDetailsService,
     FreelancerDetailsService,
     AuthGuard,
-    HttpClientModule,FormsModule
+    HttpClientModule, FormsModule
   ],
   bootstrap: [AppComponent]
 })

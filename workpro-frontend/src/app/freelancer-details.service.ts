@@ -13,4 +13,8 @@ export class FreelancerDetailsService {
        console.log(data)
        return this.http.post('http://localhost:3000/xyz', data)//This is the port where json server runs."ports" specifies the end point in the db.json file
   }
+  setDetailsofProductOwner(productowner){
+    console.log(productowner);
+    return this.http.post('http://localhost:3000/po',productowner);
+  }
 }

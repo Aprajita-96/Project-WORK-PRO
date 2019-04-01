@@ -12,8 +12,6 @@ import { UserDashboardComponent } from './user-dashboard/user-dashboard.componen
 import { ProjectCardUserDashboardComponent } from './project-card-user-dashboard/project-card-user-dashboard.component';
 import { HttpClientModule } from '@angular/common/http';
 import { ProjectDetailsComponent } from './project-details/project-details.component';
-import { UserDashboardSearchComponent } from './user-dashboard-search/user-dashboard-search.component';
-import { SearchComponent } from './search/search.component';
 import { ProjectDetailFormComponent } from './project-detail-form/project-detail-form.component';
 import { ProjectDetailsService } from './project-details.service';
 import { AuthGuard } from './auth-guard';
@@ -34,8 +32,6 @@ import { ProjectCardProductOwnerMyprojectComponent } from './project-card-produc
     LoginComponent,
     UserDashboardComponent,
     ProjectCardUserDashboardComponent,
-    UserDashboardSearchComponent,
-    SearchComponent,
     FreelancerdetailsComponent,
     ProjectDetailsComponent,
     ProjectDetailFormComponent,

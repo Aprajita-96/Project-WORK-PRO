@@ -34,10 +34,13 @@
     </div>
     <!-- project OwnerEmail -->
     <div class="form-group row">
-      <label class="col-lg-4 col-md-4 col-sm-4"for="projectOwnerEmail">Email</label>
+      <div  class="col-lg-4 col-md-4 col-sm-4">
+      <label for="projectOwnerEmail">Email</label>
+    </div>
+    <div  class="col-lg-8 col-md-8 col-sm-8 m-0 p-0">
       <input
         type="email"
-        class="form-control col-lg-8 col-lg-8 col-md-8"
+        class="form-control"
         id="projectOwnerEmail"
         [(ngModel)]="user.projectOwnerEmail"
         placeholder="Project Owner Email"
@@ -45,7 +48,8 @@
         pattern="[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[A-Za-z]{2,3}$"
         #projectOwnerEmail="ngModel"[class.is-invalid]="projectOwnerEmail.invalid && projectOwnerEmail.touched" required
       />
-      <div *ngIf="projectOwnerEmail.errors && (projectOwnerEmail.touched || projectOwnerEmail.dirty)"
+
+      <div  *ngIf="projectOwnerEmail.errors && (projectOwnerEmail.touched || projectOwnerEmail.dirty)"
                                        class="alert alert-danger">
                                        <div *ngIf="projectOwnerEmail.errors.required">
                                                <small>Email required.</small>
@@ -54,7 +58,9 @@
                                                <small>Invalid pattern, must conatin _@_._</small>
                                        </div>
                                </div>
-    </div>
+  </div>
+      
+</div>
     
     <!-- project description -->
     <div class="form-group row">
@@ -76,10 +82,18 @@
 
   
 <!-- ..skills Badge-->
-    <div class="form-group row">
-      <span *ngFor="let skill of skills" class="badge badge-pill badge-primary">{{skill.skillName}}</span>
+    <div class="form-group row d-flex">
+      <span *ngFor="let skill of skills" class="badge badge-pill badge-primary">{{skill.skillName}}
+        <button type="button" class="close" (click)="deleteSkill(skill)" data-dismiss="alert" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+       </button>
+      </span>
     </div>
-<!-- skills -->
+
+
+   
+
+    <!-- skills -->
     <div class="form-group row d-flex ">
       <label class="col-lg-4"for="skills">Skills</label>
         <input type="text" [(ngModel)]=skills.skillName  #skillName="ngModel"[class.is-invalid]="skillName.invalid && skillName.touched"required id=skillName name="skillName" class="form-control col-lg-2 m-0" placeholder="SkillName">
@@ -103,21 +117,24 @@
 
   <!-- bid Rate -->
   <div class="form-group row">
-      <label class="col-lg-4 col-lg-4 col-md-4" for="bidRate"> bid Rate</label>
-      <select
+      <label class="col-lg-4 col-lg-4 col-md-4" for="bidRate"> Bid Rate</label>
+      <input
+        type="number" min="1000" max="50000"
         class="form-control col-lg-8 col-lg-8 col-md-8"
         id="bidRate"
+        pattern="[0-9]{4,5}"
         [(ngModel)]="bid.bidrate"
-        #bidRate="ngModel"[class.is-invalid]="bidRate.invalid && bidRate.touched"required
+        #bidRate="ngModel"[class.is-invalid]="bidRate.invalid && bidRate.touched"
+        required
         name="bidRate"
-      >
-        <option *ngFor="let project of projectDetails">{{
-          project.bidrate
-        }}</option>
-      </select>
+      />
+      <div  class="form-group alert alert-danger m-1"*ngIf="bidRate.errors?.pattern">
+        <small>Please insert between 1000 and 50,000</small>
+  </div>
     </div>
 
     
+   
     <!-- bid Location -->
 
       <div class="form-group row">
@@ -181,7 +198,16 @@
         </select>
       </div>
     <!-- ......add bid............ -->
-    <button class="btn btn-primary"  (click)="addBid(bid)">Add Bid</button>
+    <button class="btn btn-primary" type="submit" (click)="addBid(bid)">Add Bid</button>
+
+    <!-- ..bid Badge-->
+
+
+    <div  class="form-group alert alert-success m-2 p-0 justify-content-center"*ngIf="addBidToProjects">
+      <small>Bid Details has been Added to Projects</small>  
+   </div>
+
+  
     <div>
       <br>
     </div>

@@ -9,6 +9,8 @@ import { FreelancerdetailsComponent } from "./freelancerdetails/freelancerdetail
 import { ProjectDetailFormComponent } from './project-detail-form/project-detail-form.component';
 import {ProductownerprofileComponent} from "./productownerprofile/productownerprofile.component";
 
+import { ProjectOwnerDashboardComponent } from './project-owner-dashboard/project-owner-dashboard.component';
+import { MyprojectsComponent } from './myprojects/myprojects.component';
 const routes: Routes = [
   {
     path: "project",
@@ -42,6 +44,13 @@ const routes: Routes = [
     path: "projectOwnerDetails",
     component: ProductownerprofileComponent
   },
+  {
+    path: "projectownerdashboard", component: ProjectOwnerDashboardComponent
+  },
+  {
+    path: "productownermyprojects", component: MyprojectsComponent
+  },
+
 ];
 
 @NgModule({

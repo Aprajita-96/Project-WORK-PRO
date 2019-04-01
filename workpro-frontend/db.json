@@ -644,10 +644,11 @@
     }
   ],
   "po": {
-    "name": "aprajita",
+    "name": "Aprajita Bajpai",
     "email": "apbajpa1@gmail.com",
+    "address": "banglore",
+    "contact": 99999999999,
     "location": "banglore",
-    "contact": 5678906565,
-    "preference": "ONSITE"
+    "preference": "REMOTE"
   }
 }

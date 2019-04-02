@@ -4,10 +4,11 @@
 	<modelVersion>4.0.0</modelVersion>
 	<parent>
 		<groupId>com.stackroute</groupId>
-		<artifactId>oracle</artifactId>
-		<version>1.0.0</version>
+		<artifactId>workpro</artifactId>
+		<version>1.0.0-SNAPSHOT</version>
+		<relativePath>../pom.xml</relativePath>
 	</parent>
-	<groupId>com.stackroute</groupId>
+	<groupId>co.stackroute</groupId>
 	<artifactId>zuul-api</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<name>zuul-api</name>

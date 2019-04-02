@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FreelancerDetailsService} from '../freelancer-details.service'
 import { from } from 'rxjs';
+import {Router} from "@angular/router";
 @Component({
   selector: 'app-freelancerdetails',
   templateUrl: './freelancerdetails.component.html',
@@ -8,7 +9,7 @@ import { from } from 'rxjs';
 })
 export class FreelancerdetailsComponent implements OnInit {
 
-  constructor(private fservice: FreelancerDetailsService) { }
+  constructor(private fservice: FreelancerDetailsService,private router:Router) { }
   skills = [];
   domains =[];
   samplelinks =[];
@@ -22,6 +23,7 @@ export class FreelancerdetailsComponent implements OnInit {
     data.domain = this.domains
     data.link =this.samplelinks
     this.fservice.setDetailsofFreelancers(data).subscribe(console.log)
+    this.router.navigateByUrl("userdashboard")
   }
 
   // save1(data1) {

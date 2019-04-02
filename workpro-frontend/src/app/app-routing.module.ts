@@ -9,10 +9,20 @@ import { FreelancerdetailsComponent } from "./freelancerdetails/freelancerdetail
 import { ProjectDetailFormComponent } from './project-detail-form/project-detail-form.component';
 import { MybidsComponent } from './mybids/mybids.component';
 
+import { FreelancerProjectDetailsComponent } from './freelancer-project-details/freelancer-project-details.component';
+import { ProductownerprofileComponent } from "./productownerprofile/productownerprofile.component";
+
+import { ProjectOwnerDashboardComponent } from './project-owner-dashboard/project-owner-dashboard.component';
+import { MyprojectsComponent } from './myprojects/myprojects.component';
 const routes: Routes = [
   {
-    path: "project",
+    path: "projectDetailsComponent",
     component: ProjectDetailsComponent
+  },
+
+  {
+    path: "freelancerprojectdetails",
+    component: FreelancerProjectDetailsComponent
   },
   {
     path: "register",
@@ -27,7 +37,7 @@ const routes: Routes = [
     component: UserDashboardComponent
   },
   {
-    path: 'projectDetailForm',
+    path: 'projectDetailFormComponent',
     component: ProjectDetailFormComponent
   },
   {
@@ -41,7 +51,18 @@ const routes: Routes = [
   {
     path: "mybids",
     component: MybidsComponent
-  }
+  },
+  {
+    path: "projectOwnerDetails",
+    component: ProductownerprofileComponent
+  },
+  {
+    path: "projectownerdashboard", component: ProjectOwnerDashboardComponent
+  },
+  {
+    path: "productownermyprojects", component: MyprojectsComponent
+  },
+
 ];
 
 @NgModule({

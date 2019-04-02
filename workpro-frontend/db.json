@@ -4,43 +4,71 @@
       "id": 1,
       "title": "json-server",
       "author": "typicode"
+    },
+    {
+      "projectDomain": "IT",
+      "projectName": "erwhtegte",
+      "projectOwnerEmail": "ccgagc@gmail.com",
+      "projectDesc": "4tfrwrwf",
+      "status": "open",
+      "skills": [
+        {
+          "yearsOfExp": "1",
+          "level": "advance",
+          "skillName": "wvdw"
+        },
+        {
+          "yearsOfExp": "1",
+          "level": "advance",
+          "skillName": "wvdwsdd"
+        }
+      ],
+      "bid": [
+        {
+          "bidDuration": "100",
+          "bidPrefrence": "Onsite",
+          "bidLocation": "bxFXS",
+          "bidRate": 1200
+        }
+      ],
+      "id": 2
     }
   ],
   "projects": [
     {
       "name": "RPG Game",
-        "id": 0,
-        "description": "Have to create some buttons for the description given ",
+      "id": 0,
+      "description": "Have to create some buttons for the description given ",
       "Skills": "Java / SpringBoot"
     },
     {
       "name": "MultiUser Jade Framework",
-        "id": 1,
-        "description": "Developing a multi-agent platform to test already existed method.",
+      "id": 1,
+      "description": "Developing a multi-agent platform to test already existed method.",
       "Skills": "HTML / CSS / JQuery"
     },
     {
-       "name": "windows server 2012 R2",
-        "id": 2,
-        "description": "Goal is simple, I need only to configure windows server 2012 R2 to support test authentication using [login to view URL].",
+      "name": "windows server 2012 R2",
+      "id": 2,
+      "description": "Goal is simple, I need only to configure windows server 2012 R2 to support test authentication using [login to view URL].",
       "Skills": "Android / jQuery / Prototype / Mobile App Development"
     },
     {
       "name": "Telecash Payment gateway",
-        "id": 3,
-        "description": "I need to develop a small java based web application which will work between telecash payment gateway and .net website. Please bid only if you are experienced/serious freelancer.",
+      "id": 3,
+      "description": "I need to develop a small java based web application which will work between telecash payment gateway and .net website. Please bid only if you are experienced/serious freelancer.",
       "Skills": "Prototype / Mobile App Development / PhoneGap / Technical Support"
     },
     {
       "name": "Build Selenium Framework",
-        "id": 4,
-        "description": "I have a Java+Selenium framework, which is not following the code standards, and not included the proper maven repositories etc.",
+      "id": 4,
+      "description": "I have a Java+Selenium framework, which is not following the code standards, and not included the proper maven repositories etc.",
       "Skills": "Java / Android / jQuery / Prototype"
     },
     {
       "name": "Build Selenium Framework",
-        "id": 4,
-        "description": "I have a Java+Selenium framework, which is not following the code standards, and not included the proper maven repositories etc.",
+      "id": 4,
+      "description": "I have a Java+Selenium framework, which is not following the code standards, and not included the proper maven repositories etc.",
       "Skills": "Java / Selenium"
     }
   ],

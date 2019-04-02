@@ -20,6 +20,8 @@ import { AuthGuard } from './auth-guard';
 import { FreelancerdetailsComponent } from './freelancerdetails/freelancerdetails.component';
 import { FreelancerDetailsService } from './freelancer-details.service';
 import { FooterComponent } from './footer/footer.component';
+import { MybidsComponent } from './mybids/mybids.component';
+import { MybidscardComponent } from './mybidscard/mybidscard.component';
 
 
 @NgModule({
@@ -34,7 +36,9 @@ import { FooterComponent } from './footer/footer.component';
     FreelancerdetailsComponent,
     ProjectDetailsComponent,
     FooterComponent,
-    ProjectDetailFormComponent
+    ProjectDetailFormComponent,
+    MybidsComponent,
+    MybidscardComponent
   ],
   imports: [
     BrowserModule,

@@ -7,6 +7,7 @@ import { RegisterComponent } from "./register/register.component";
 import { LoginComponent } from "./login/login.component";
 import { FreelancerdetailsComponent } from "./freelancerdetails/freelancerdetails.component";
 import { ProjectDetailFormComponent } from './project-detail-form/project-detail-form.component';
+import { MybidsComponent } from './mybids/mybids.component';
 
 const routes: Routes = [
   {
@@ -37,6 +38,10 @@ const routes: Routes = [
     path: "podashboard",
     component: ProjectCardUserDashboardComponent
   },
+  {
+    path: "mybids",
+    component: MybidsComponent
+  }
 ];
 
 @NgModule({

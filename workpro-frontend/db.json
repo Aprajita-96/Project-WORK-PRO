@@ -6,42 +6,298 @@
       "author": "typicode"
     }
   ],
-        "projects" :[
-          {
-            "name": "RPG Game",
-            "id": 0,
-            "description": "Have to create some buttons for the description given",
-            "Skills": "Java / JavaFX / Swing (Java)"
-          },
-          {
-            "name": "MultiUser Jade Framework",
-            "id": 1,
-            "description": "Developing a multi-agent platform to test already existed method.",
-            "Skills": "Java / JavaFX"
-          },
-          {
-            "name": "windows server 2012 R2",
-            "id": 2,
-            "description": "Goal is simple, I need only to configure windows server 2012 R2 to support test authentication using [login to view URL].",
-            "Skills": "Java / Software Architecture"
-          },
-          {
-            "name": "Telecash Payment gateway",
-            "id": 3,
-            "description": "I need to develop a small java based web application which will work between telecash payment gateway and .net website. Please bid only if you are experienced/serious freelancer.",
-            "Skills": "Apache / Java / JSP / Web Services"
-          },
-          {
-            "name": "Build Selenium Framework",
-            "id": 4,
-            "description": "I have a Java+Selenium framework, which is not following the code standards, and not included the proper maven repositories etc.",
-            "Skills": "J2EE / Java / Javascript / RESTful / Software Architecture"
-          },
-          {
-            "name": "Image Auditing Software",
-            "id": 5,
-            "description": "I would like this software to be developed for Windows using PHP Or Java or any desirable platform through which I can review multiple image in a single go.",
-            "Skills": "PHP / Software Architecture / Windows Desktop"
-          }
-      ]
+  "projects": [
+    {
+      "name": "RPG Game",
+        "id": 0,
+        "description": "Have to create some buttons for the description given ",
+      "Skills": "Java / SpringBoot"
+    },
+    {
+      "name": "MultiUser Jade Framework",
+        "id": 1,
+        "description": "Developing a multi-agent platform to test already existed method.",
+      "Skills": "HTML / CSS / JQuery"
+    },
+    {
+       "name": "windows server 2012 R2",
+        "id": 2,
+        "description": "Goal is simple, I need only to configure windows server 2012 R2 to support test authentication using [login to view URL].",
+      "Skills": "Android / jQuery / Prototype / Mobile App Development"
+    },
+    {
+      "name": "Telecash Payment gateway",
+        "id": 3,
+        "description": "I need to develop a small java based web application which will work between telecash payment gateway and .net website. Please bid only if you are experienced/serious freelancer.",
+      "Skills": "Prototype / Mobile App Development / PhoneGap / Technical Support"
+    },
+    {
+      "name": "Build Selenium Framework",
+        "id": 4,
+        "description": "I have a Java+Selenium framework, which is not following the code standards, and not included the proper maven repositories etc.",
+      "Skills": "Java / Android / jQuery / Prototype"
+    },
+    {
+      "name": "Build Selenium Framework",
+        "id": 4,
+        "description": "I have a Java+Selenium framework, which is not following the code standards, and not included the proper maven repositories etc.",
+      "Skills": "Java / Selenium"
+    }
+  ],
+  "comments": [
+    {
+      "id": 1,
+      "body": "some comment",
+      "postId": 1
+    }
+  ],
+  "profile": {
+    "name": "typicode"
+  },
+  "xyz": [
+    {
+      "name": "Biswadeep",
+      "Email": "hdh",
+      "location": "htd",
+      "SkillName": "ht",
+      "level": "BEGINNER",
+      "SkillExp": "hjtd",
+      "Hours": "hfs",
+      "experience": "sdasd",
+      "skills": [
+        {
+          "yearsOfExp": "hjtd",
+          "level": "BEGINNER",
+          "skillName": "ht"
+        }
+      ],
+      "id": 1
+    },
+    {
+      "name": "Biswadeep",
+      "Email": "hdh",
+      "location": "htd",
+      "SkillName": "ht",
+      "level": "BEGINNER",
+      "SkillExp": "hjtd",
+      "Hours": "hfs",
+      "experience": "sdasd",
+      "skills": [
+        {
+          "yearsOfExp": "10",
+          "level": "advance"
+        },
+        {
+          "yearsOfExp": "10",
+          "level": "begineers",
+          "skillName": "aaa"
+        }
+      ],
+      "bid": [
+        {
+          "bidDuration": "100",
+          "bidPrefrence": "Onsite",
+          "bidLocation": "aa",
+          "bidRate": 1000
+        }
+      ],
+      "id": 22
+    },
+    {
+      "aboutme": "kjdbkjv",
+      "name": ",n v  dbvf, ",
+      "Email": "kdsbvksbv",
+      "location": "svsvs",
+      "SkillName": "fevf",
+      "level": "BEGINNER",
+      "SkillExp": "5",
+      "Hours": "wd",
+      "DomainName": "entertainment",
+      "DomainExperience": "3",
+      "Link": "hveivondfmv.",
+      "skills": [
+        {
+          "yearsOfExp": "5",
+          "level": "BEGINNER",
+          "skillName": "fevf"
+        },
+        {
+          "yearsOfExp": "5",
+          "level": "BEGINNER",
+          "skillName": "fevf"
+        },
+        {
+          "yearsOfExp": "5",
+          "level": "BEGINNER",
+          "skillName": "fevf"
+        },
+        {
+          "yearsOfExp": "5",
+          "level": "BEGINNER",
+          "skillName": "fevf"
+        },
+        {
+          "yearsOfExp": "5",
+          "level": "BEGINNER",
+          "skillName": "fevf"
+        },
+        {
+          "yearsOfExp": "5",
+          "level": "BEGINNER",
+          "skillName": "fevf"
+        },
+        {
+          "yearsOfExp": "5",
+          "level": "BEGINNER",
+          "skillName": "fevf"
+        }
+      ],
+      "domain": [
+        {
+          "domainName": "it",
+          "yearsOfExp": "5"
+        },
+        {
+          "domainName": "entertainment",
+          "yearsOfExp": "3"
+        }
+      ],
+      "link": [
+        {
+          "link": "hveivondfmv."
+        },
+        {
+          "link": "hveivondfmv."
+        }
+      ],
+      "id": 23
+    },
+    {
+      "aboutme": "kjdbkjv",
+      "name": ",n v  dbvf, ",
+      "Email": "kdsbvksbv",
+      "location": "svsvs",
+      "SkillName": "fevf",
+      "level": "BEGINNER",
+      "SkillExp": "5",
+      "Hours": "wd",
+      "DomainName": "entertainment",
+      "DomainExperience": "3",
+      "Link": "hveivondfmv.",
+      "skills": [
+        {
+          "yearsOfExp": "5",
+          "level": "BEGINNER",
+          "skillName": "fevf"
+        },
+        {
+          "yearsOfExp": "5",
+          "level": "BEGINNER",
+          "skillName": "fevf"
+        },
+        {
+          "yearsOfExp": "5",
+          "level": "BEGINNER",
+          "skillName": "fevf"
+        },
+        {
+          "yearsOfExp": "5",
+          "level": "BEGINNER",
+          "skillName": "fevf"
+        },
+        {
+          "yearsOfExp": "5",
+          "level": "BEGINNER",
+          "skillName": "fevf"
+        },
+        {
+          "yearsOfExp": "5",
+          "level": "BEGINNER",
+          "skillName": "fevf"
+        },
+        {
+          "yearsOfExp": "5",
+          "level": "BEGINNER",
+          "skillName": "fevf"
+        }
+      ],
+      "domain": [
+        {
+          "domainName": "it",
+          "yearsOfExp": "5"
+        },
+        {
+          "domainName": "entertainment",
+          "yearsOfExp": "3"
+        }
+      ],
+      "link": [
+        {
+          "link": "hveivondfmv."
+        },
+        {
+          "link": "hveivondfmv."
+        }
+      ],
+      "id": 24
+    },
+    {
+      "aboutme": "",
+      "name": "",
+      "Email": "",
+      "location": "",
+      "SkillName": "",
+      "level": "",
+      "SkillExp": "",
+      "Hours": "",
+      "DomainName": "",
+      "DomainExperience": "",
+      "Link": "",
+      "skills": [],
+      "domain": [],
+      "link": [],
+      "id": 25
+    },
+    {
+      "aboutme": "",
+      "name": "Aprajita Bajpai",
+      "email": "apbajpa1@gmail.com",
+      "location": "banglore",
+      "SkillName": "django",
+      "level": "BEGINNER",
+      "SkillExp": "1",
+      "Hours": "20",
+      "DomainName": "qq",
+      "DomainExperience": "2",
+      "Link": "yhfissnmf",
+      "skills": [
+        {
+          "yearsOfExp": "1",
+          "level": "BEGINNER",
+          "skillName": "flask"
+        },
+        {
+          "yearsOfExp": "1",
+          "level": "BEGINNER",
+          "skillName": "django"
+        }
+      ],
+      "domain": [
+        {
+          "domainName": "qq",
+          "yearsOfExp": "2"
+        }
+      ],
+      "link": [],
+      "id": 26
+    }
+  ],
+  "po": {
+    "name": "Aprajita Bajpai",
+    "email": "apbajpa1@gmail.com",
+    "address": "banglore",
+    "contact": 99999999999,
+    "location": "banglore",
+    "preference": "REMOTE"
+  }
 }

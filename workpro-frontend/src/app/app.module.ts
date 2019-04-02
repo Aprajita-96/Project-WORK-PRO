@@ -12,16 +12,22 @@ import { UserDashboardComponent } from './user-dashboard/user-dashboard.componen
 import { ProjectCardUserDashboardComponent } from './project-card-user-dashboard/project-card-user-dashboard.component';
 import { HttpClientModule } from '@angular/common/http';
 import { ProjectDetailsComponent } from './project-details/project-details.component';
-import { UserDashboardSearchComponent } from './user-dashboard-search/user-dashboard-search.component';
-import { SearchComponent } from './search/search.component';
 import { ProjectDetailFormComponent } from './project-detail-form/project-detail-form.component';
 import { ProjectDetailsService } from './project-details.service';
 import { AuthGuard } from './auth-guard';
 import { FreelancerdetailsComponent } from './freelancerdetails/freelancerdetails.component';
 import { FreelancerDetailsService } from './freelancer-details.service';
 import { FooterComponent } from './footer/footer.component';
+<<<<<<< HEAD
 import { FreelancerProjectDetailsComponent } from './freelancer-project-details/freelancer-project-details.component';
+=======
+import { ProductownerprofileComponent } from './productownerprofile/productownerprofile.component';
+>>>>>>> 4f2d4185b3c722fcf73485cb8e85641385b5bfba
 
+import { ProjectOwnerDashboardComponent } from './project-owner-dashboard/project-owner-dashboard.component';
+import { UsercardProjectOwnerDashboardComponent } from './usercard-project-owner-dashboard/usercard-project-owner-dashboard.component';
+import { MyprojectsComponent } from './myprojects/myprojects.component';
+import { ProjectCardProductOwnerMyprojectComponent } from './project-card-product-owner-myproject/project-card-product-owner-myproject.component';
 
 @NgModule({
   declarations: [
@@ -30,13 +36,20 @@ import { FreelancerProjectDetailsComponent } from './freelancer-project-details/
     LoginComponent,
     UserDashboardComponent,
     ProjectCardUserDashboardComponent,
-    UserDashboardSearchComponent,
-    SearchComponent,
     FreelancerdetailsComponent,
     ProjectDetailsComponent,
+    ProjectDetailFormComponent,
     FooterComponent,
     ProjectDetailFormComponent,
+<<<<<<< HEAD
     FreelancerProjectDetailsComponent
+=======
+    ProductownerprofileComponent,
+    ProjectOwnerDashboardComponent,
+    UsercardProjectOwnerDashboardComponent,
+    MyprojectsComponent,
+    ProjectCardProductOwnerMyprojectComponent
+>>>>>>> 4f2d4185b3c722fcf73485cb8e85641385b5bfba
   ],
   imports: [
     BrowserModule,

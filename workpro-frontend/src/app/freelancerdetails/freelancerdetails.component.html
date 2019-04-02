@@ -1,18 +1,66 @@
-<div class="card freelancer-details-form ">
+<div class="card freelancer-details-form">
   <form #freelancer="ngForm">
-       <div class="container">
+       <div class="container col-lg-6 border border-success rounded bg-light box">
           <div class="form-group">
               <label for="aboutme">About me</label>
               <input type="text" ngModel class="form-control" id="aboutme" name="aboutme">
             </div>
+            <div class="form-group">
+                <label for="name">Name</label>
+                
+                <input
+                  type="text"
+                  #emailref="ngModel"
+                  pattern="[A-Za-z]+[\s]+[A-Za-z]{2,10}$"
+                  ngModel
+                  class="form-control"
+                  id="name"
+                  name="name"
+                  placeholder="Name"
+                  required
+                />
+                <div
+                *ngIf="emailref.errors && (emailref.touched || emailref.dirty)"
+                class="alert alert-danger"
+              >
+                <div *ngIf="emailref.errors.required">
+                  Name required.
+                </div>
+        
+                <div [hidden]="!emailref.errors?.pattern">
+                  Wrong patterns
+                </div>
+              </div>
+          
+              </div>
+      
       <div class="form-group">
-        <label for="name">Name</label>
-        <input type="text" ngModel class="form-control" id="name" name="name">
-      </div>
-      <div class="form-group">
-        <label for="Email">Email</label>
-        <input type="text" ngModel class="form-control" id="Email" name="Email">
-      </div>
+          <label for="Email"><i class="icon-envelope"> Email</i></label>
+          <input
+            type="email"
+            #name="ngModel"
+            pattern="[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[A-Za-z]{2,3}$"
+            ngModel
+            class="form-control"
+            id="email"
+            name="email"
+            placeholder="email"
+            required
+          />
+  
+          <div
+            *ngIf="name.errors && (name.touched || name.dirty)"
+            class="alert alert-danger"
+          >
+            <div *ngIf="name.errors.required">
+              Email required.
+            </div>
+  
+            <div [hidden]="!name.errors?.pattern">
+              Invalid pattern, must conatin _@_._
+            </div>
+          </div>
+        </div>
 
       <div class="form-group">
         <label for="location">Location</label>
@@ -22,63 +70,48 @@
       <div class="form-row">
         <span *ngFor="let skill of skills" class="badge badge-pill badge-primary">{{skill.skillName}}</span>
       </div>
-      <div class="form-row">
+      <div class="form-row ml-2">
         <label for="skills">Skills</label>
-
-        <div class="col-7">
-          <input type="text" ngModel name="SkillName" class="form-control" placeholder="SkillName">
-        </div>
-        <div class="col">
-          <!-- <input type="text" class="form-control" placeholder="skilllevel"> -->
-          <select ngModel class="form-control" id="level" name="level">
+        
+      </div>
+      <div class="justify-content-around d-flex">
+          <input type="text" ngModel name="SkillName" class="form-control col-lg-3" placeholder="SkillName">
+        <!-- <div class="col"> -->
+          <select ngModel class="form-control col-lg-3" id="level" name="level">
             <option value="">Select Level</option>
             <option value="BEGINNER">BEGINNER</option>
             <option value="INTERMEDIATE">INTERMEDIATE</option>
             <option value="EXPERT">EXPERT</option>
           </select>
-        </div>
-        <div class="col">
-          <input type="text" ngModel name="SkillExp" class="form-control" placeholder="Experience in years">
-        </div>
+        <!-- </div> -->
+        <!-- <div class="col"> -->
+          <input type="text" ngModel name="SkillExp" class="form-control col-lg-3" placeholder="Experience in years">
+        <!-- </div> -->
         <!-- <button type="reset" class="btn btn-primary">ADD</button> -->
         <button class="btn btn-primary" (click)="addSkill(freelancer.value)">Add</button>
       </div>
-      <div class="form-group">
+      <div class="form-group mt-2">
         <label for="Hours">Working Hours per day</label>
         <input type="text" ngModel class="form-control" id="Hours" name="Hours">
       </div>
-      <!-- <div class="form-group">
-        <label for="level">Level of skill</label>
-        <select class="form-control" ngModel id="level" name="level">
-          <option value="">Select Level</option>
-          <option value="BEGINNER">BEGINNER</option>
-          <option value="INTERMEDIATE">INTERMEDIATE</option>
-          <option value="EXPERT">EXPERT</option>
-        </select>
-      </div>
-      <div class="form-group">
-        <label for="experience">Experience</label>
-        <input type="text" ngModel class="form-control" id="experience" name="experience" placeholder="In years">
-      </div> -->
+      
       <div class="form-row">
           <span *ngFor="let domain of domains" class="badge badge-pill badge-primary">{{domain.domainName}}</span>
         </div>
-        <div class="form-row">
+        <div>
           <label for="domains">Domains</label>
-  
-          <div class="col-7">
-            <input type="text" ngModel name="DomainName" class="form-control" placeholder="DomainName">
+        </div>
+          <div class="justify-content-between d-flex">
+            <input type="text" ngModel name="DomainName" class="form-control col-lg-4" placeholder="DomainName">
+            <input type="text" ngModel name="DomainExperience" class="form-control col-lg-4" placeholder="Experience in years">
           </div>
-          
-          <div class="col">
-            <input type="text" ngModel name="DomainExperience" class="form-control" placeholder="Experience in years">
-          </div>
+          <div class="mt-2">
           <!-- <button type="reset" class="btn btn-primary">ADD</button> -->
           <button class="btn btn-primary" (click)="addDomain(freelancer.value)">AddDomain</button>
         </div>
 
 <!-- ......................... -->
-<div class="form-group">
+<div class="form-group mt-2">
     <label for="preference">Work Location Preference</label>
     <select class="form-control"  id="preference" name="preference">
       <option value="">Select Preference</option>
@@ -91,20 +124,24 @@
 <div class="form-row">
     <span *ngFor="let samplelink of samplelinks" class="badge badge-pill badge-primary">{{samplelink.sampleName}}</span>
   </div>
-  <div class="form-row">
+  <div>
     <label for="samplelinks">Samplelinks</label>
-
-    <div class="col-7">
+  </div>
+    <div>
       <input type="text" ngModel name="Link" class="form-control" placeholder="Link">
     </div>
     
-    
-    <button class="btn btn-primary" (click)="addLink(freelancer.value)">AddLink</button>
+    <div>
+    <button class="btn btn-primary mt-2" (click)="addLink(freelancer.value)">AddLink</button>
   </div>
 
+  <div class="form-group mt-2">
+      <label for="Hours">Base Range</label>
+      <input type="text" ngModel class="form-control" id="Hours" name="Hours">
+    </div>
 
       <div class="form-group">
-        <button (click)="save(freelancer.value)" class="btn btn-primary">Submit</button>
+        <button (click)="save(freelancer.value)" class="btn btn-primary mt-4">Submit</button>
       </div>
     </div>
   </form>

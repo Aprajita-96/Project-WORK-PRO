@@ -1,6 +1,11 @@
-<!--The content below is only a placeholder and can be replaced.-->
+
+
+
+
+
+<!-- The content below is only a placeholder and can be replaced.
 <!--Navbar -->
-<nav class="mb-1 navbar navbar-expand-lg navbar-dark secondary-color lighten-1">
+ <nav class="mb-1 navbar navbar-expand-lg navbar-dark secondary-color lighten-1">
     <a class="navbar-brand" href="#">WorkPro</a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent-555"
         aria-controls="navbarSupportedContent-555" aria-expanded="false" aria-label="Toggle navigation">
@@ -18,10 +23,10 @@
                 <a class="nav-link" [routerLink]="['/userdashboard']">Userdashboard</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" routerLink="project-owner-dashboard">ProjectOwnerDashboard</a>
+                <a class="nav-link" routerLink="projectownerdashboard">ProjectOwnerDashboard</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" routerLink="myprojects">My project Product Owner</a>
+                <a class="nav-link" routerLink="productownermyprojects">My project Product Owner</a>
             </li>
             <li class="nav-item">
                 <a class="nav-link" routerLink="project">Details</a>
@@ -30,11 +35,22 @@
                     <a class="nav-link" routerLink="projectDetailForm">projectDetailForm</a>
                 </li>
                 <li class="nav-item">
+<<<<<<< HEAD
                     <a class="nav-link" routerLink="freelancerprojectdetails">freelancerProjectDetails</a>
                 </li>
+=======
+                    <a class="nav-link" routerLink="projectOwnerDetails">projectOwnerDetailForm</a>
+                </li>
+                <li class="nav-item">
+                <a class="nav-link" routerLink="projectDetailForm">projectDetailForm</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" routerLink="freelancerdetails">Freelancer Details Form</a>
+            </li>
+>>>>>>> 4f2d4185b3c722fcf73485cb8e85641385b5bfba
         </ul>
     </div>
-</nav>
+</nav> 
 
 <!-- 
 <button class="btn btn-success" type="button" routerLink="/register">Register Me!!</button> 
@@ -44,4 +60,5 @@
 <button class="btn btn-success" routerLink="project">Details</button>
 <button class="btn btn-success" routerLink="projectDetailForm" >Project Detail Form</button>
 <button class="btn btn-success" routerLink="project">Details</button> -->
+<!-- <button class="btn btn-success" routerLink="projectownerdashboard" >Project Owner Dashboard </button> -->
 <router-outlet></router-outlet>

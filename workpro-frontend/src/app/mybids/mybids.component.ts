@@ -1,27 +1,34 @@
-import { Component, OnInit, Input } from "@angular/core";
+import { Component, OnInit,Input } from '@angular/core';
 
 @Component({
-  selector: "app-myprojects",
-  templateUrl: "./myprojects.component.html",
-  styleUrls: ["./myprojects.component.scss"]
+  selector: 'app-mybids',
+  templateUrl: './mybids.component.html',
+  styleUrls: ['./mybids.component.scss']
 })
-export class MyprojectsComponent implements OnInit {
-  constructor() {}
+export class MybidsComponent implements OnInit {
 
+  constructor() { }
   @Input()
-  ngOnInit() {}
-
-  filterOpenProjects() {
+  ngOnInit() {
+    this.filterOpenBids();
+  }
+  filterOpenBids() {
     this.projects = this.projects1.filter(e => {
       if (e.status === "open") {
         return e;
       }
     });
   }
-
-  filterCloseProjects() {
+  filterCloseBids() {
     this.projects = this.projects1.filter(e => {
       if (e.status === "close") {
+        return e;
+      }
+    });
+  }
+  filterWonBids() {
+    this.projects = this.projects1.filter(e => {
+      if (e.status === "won") {
         return e;
       }
     });
@@ -55,6 +62,18 @@ export class MyprojectsComponent implements OnInit {
       projectdescription:
         "Non incididunt ut sit aute qui ullamco qui sint laboris.",
       status: "close"
+    },
+    {
+      projecttitle: "Hendricks1",
+      projectdescription:
+        "Voluptate et qui in adipisicing nulla officia officia consequat aliqua excepteur voluptate non quis.",
+      status: "won"
+    },
+    {
+      projecttitle: "Hendricks2",
+      projectdescription:
+        "Voluptate et qui in adipisicing nulla officia officia consequat aliqua excepteur voluptate non quis.",
+      status: "won"
     },
     {
       projecttitle: "Hendricks",

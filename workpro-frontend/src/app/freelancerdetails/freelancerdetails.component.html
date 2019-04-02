@@ -5,14 +5,62 @@
               <label for="aboutme">About me</label>
               <input type="text" ngModel class="form-control" id="aboutme" name="aboutme">
             </div>
+            <div class="form-group">
+                <label for="name">Name</label>
+                
+                <input
+                  type="text"
+                  #emailref="ngModel"
+                  pattern="[A-Za-z]+[\s]+[A-Za-z]{2,10}$"
+                  ngModel
+                  class="form-control"
+                  id="name"
+                  name="name"
+                  placeholder="Name"
+                  required
+                />
+                <div
+                *ngIf="emailref.errors && (emailref.touched || emailref.dirty)"
+                class="alert alert-danger"
+              >
+                <div *ngIf="emailref.errors.required">
+                  Name required.
+                </div>
+        
+                <div [hidden]="!emailref.errors?.pattern">
+                  Wrong patterns
+                </div>
+              </div>
+          
+              </div>
+      
       <div class="form-group">
-        <label for="name">Name</label>
-        <input type="text" ngModel class="form-control" id="name" name="name">
-      </div>
-      <div class="form-group">
-        <label for="Email">Email</label>
-        <input type="text" ngModel class="form-control" id="Email" name="Email">
-      </div>
+          <label for="Email"><i class="icon-envelope"> Email</i></label>
+          <input
+            type="email"
+            #name="ngModel"
+            pattern="[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[A-Za-z]{2,3}$"
+            ngModel
+            class="form-control"
+            id="email"
+            name="email"
+            placeholder="email"
+            required
+          />
+  
+          <div
+            *ngIf="name.errors && (name.touched || name.dirty)"
+            class="alert alert-danger"
+          >
+            <div *ngIf="name.errors.required">
+              Email required.
+            </div>
+  
+            <div [hidden]="!name.errors?.pattern">
+              Invalid pattern, must conatin _@_._
+            </div>
+          </div>
+        </div>
 
       <div class="form-group">
         <label for="location">Location</label>
@@ -20,7 +68,12 @@
       </div>
 
       <div class="form-row">
-        <span *ngFor="let skill of skills" class="badge badge-pill badge-primary">{{skill.skillName}}</span>
+        <span *ngFor="let skill of skills" class="badge badge-pill badge-primary">{{skill.skillName}}
+
+            <button type="button" class="close" (click)="deleteSkill(skill)" data-dismiss="alert" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+             </button>
+        </span>
       </div>
       <div class="form-row ml-2">
         <label for="skills">Skills</label>

@@ -7,8 +7,10 @@ import { RegisterComponent } from "./register/register.component";
 import { LoginComponent } from "./login/login.component";
 import { FreelancerdetailsComponent } from "./freelancerdetails/freelancerdetails.component";
 import { ProjectDetailFormComponent } from './project-detail-form/project-detail-form.component';
+import { MybidsComponent } from './mybids/mybids.component';
+
 import { FreelancerProjectDetailsComponent } from './freelancer-project-details/freelancer-project-details.component';
-import {ProductownerprofileComponent} from "./productownerprofile/productownerprofile.component";
+import { ProductownerprofileComponent } from "./productownerprofile/productownerprofile.component";
 
 import { ProjectOwnerDashboardComponent } from './project-owner-dashboard/project-owner-dashboard.component';
 import { MyprojectsComponent } from './myprojects/myprojects.component';
@@ -17,7 +19,7 @@ const routes: Routes = [
     path: "projectDetailsComponent",
     component: ProjectDetailsComponent
   },
-  
+
   {
     path: "freelancerprojectdetails",
     component: FreelancerProjectDetailsComponent
@@ -45,6 +47,10 @@ const routes: Routes = [
   {
     path: "podashboard",
     component: ProjectCardUserDashboardComponent
+  },
+  {
+    path: "mybids",
+    component: MybidsComponent
   },
   {
     path: "projectOwnerDetails",

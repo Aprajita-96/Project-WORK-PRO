@@ -18,14 +18,14 @@ import { AuthGuard } from './auth-guard';
 import { FreelancerdetailsComponent } from './freelancerdetails/freelancerdetails.component';
 import { FreelancerDetailsService } from './freelancer-details.service';
 import { FooterComponent } from './footer/footer.component';
-import { FreelancerProjectDetailsComponent } from './freelancer-project-details/freelancer-project-details.component';
-import { ProductownerprofileComponent } from './productownerprofile/productownerprofile.component';
-
+import { MybidsComponent } from './mybids/mybids.component';
+import { MybidscardComponent } from './mybidscard/mybidscard.component';
 import { ProjectOwnerDashboardComponent } from './project-owner-dashboard/project-owner-dashboard.component';
 import { UsercardProjectOwnerDashboardComponent } from './usercard-project-owner-dashboard/usercard-project-owner-dashboard.component';
 import { MyprojectsComponent } from './myprojects/myprojects.component';
 import { ProjectCardProductOwnerMyprojectComponent } from './project-card-product-owner-myproject/project-card-product-owner-myproject.component';
-
+import { FreelancerProjectDetailsComponent } from './freelancer-project-details/freelancer-project-details.component';
+import { ProductownerprofileComponent } from './productownerprofile/productownerprofile.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -38,6 +38,8 @@ import { ProjectCardProductOwnerMyprojectComponent } from './project-card-produc
     ProjectDetailFormComponent,
     FooterComponent,
     ProjectDetailFormComponent,
+    MybidsComponent,
+    MybidscardComponent,
     FreelancerProjectDetailsComponent,
     ProductownerprofileComponent,
     ProjectOwnerDashboardComponent,

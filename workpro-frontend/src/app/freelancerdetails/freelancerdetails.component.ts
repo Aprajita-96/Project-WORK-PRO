@@ -54,4 +54,7 @@ export class FreelancerdetailsComponent implements OnInit {
     }
     this.samplelinks.push(linkDetails)
   }
+  deleteSkill(skill){
+    this.skills = this.skills.filter(e => e.SkillName !== skill.SkillName)
+  }
 }

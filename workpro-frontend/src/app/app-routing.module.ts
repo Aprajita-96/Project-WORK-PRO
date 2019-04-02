@@ -7,11 +7,8 @@ import { RegisterComponent } from "./register/register.component";
 import { LoginComponent } from "./login/login.component";
 import { FreelancerdetailsComponent } from "./freelancerdetails/freelancerdetails.component";
 import { ProjectDetailFormComponent } from './project-detail-form/project-detail-form.component';
-<<<<<<< HEAD
 import { FreelancerProjectDetailsComponent } from './freelancer-project-details/freelancer-project-details.component';
-=======
 import {ProductownerprofileComponent} from "./productownerprofile/productownerprofile.component";
->>>>>>> 4f2d4185b3c722fcf73485cb8e85641385b5bfba
 
 import { ProjectOwnerDashboardComponent } from './project-owner-dashboard/project-owner-dashboard.component';
 import { MyprojectsComponent } from './myprojects/myprojects.component';

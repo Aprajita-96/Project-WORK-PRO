@@ -7,11 +7,16 @@ import { RegisterComponent } from "./register/register.component";
 import { LoginComponent } from "./login/login.component";
 import { FreelancerdetailsComponent } from "./freelancerdetails/freelancerdetails.component";
 import { ProjectDetailFormComponent } from './project-detail-form/project-detail-form.component';
+import { FreelancerProjectDetailsComponent } from './freelancer-project-details/freelancer-project-details.component';
 
 const routes: Routes = [
   {
     path: "project",
     component: ProjectDetailsComponent
+  },
+  {
+    path: "freelancerprojectdetails",
+    component: FreelancerProjectDetailsComponent
   },
   {
     path: "register",

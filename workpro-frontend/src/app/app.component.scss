@@ -1,11 +1,35 @@
-.navbar{
-    background-color: #122C34;
-    max-height: 50px;
-    }
-    
-    .double-nav .breadcrumb-dn {
-        color: #fff;
-    }
-    .side-nav.wide.slim .sn-ad-avatar-wrapper a span {
-      display: none;
-    }
+.navbar {
+  background-color: #122c34;
+  max-height: 50px;
+}
+
+.nav-pills .nav-link.active {
+  background-color: #222222;
+}
+div {
+  border-right: 1px solid rgb(168, 168, 180);
+  height: 100%;
+}
+.double-nav .breadcrumb-dn {
+    color: #fff;
+}
+.side-nav.wide.slim .sn-ad-avatar-wrapper a span {
+  display: none;
+}
+
+.example-container {
+  height: -webkit-fill-available;
+}
+
+mat-drawer-content {
+  padding: 12px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.navbar-toggler-icon {
+    background-color: #122c34;
+   
+}
+

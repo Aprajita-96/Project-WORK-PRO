@@ -1,5 +1,8 @@
-import { BrowserModule } from '@angular/platform-browser';
-import { NgModule } from '@angular/core';
+import { BrowserModule } from "@angular/platform-browser";
+import { NgModule } from "@angular/core";
+import { MatSidenavModule } from "@angular/material/sidenav";
+import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
+import { MatButtonModule } from "@angular/material/button";
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -52,16 +55,19 @@ import { ProductownerprofileComponent } from './productownerprofile/productowner
     AppRoutingModule,
     HttpClientModule,
     FormsModule,
-    ReactiveFormsModule
-
+    MatSidenavModule,
+    BrowserAnimationsModule,
+    ReactiveFormsModule,
+    MatButtonModule
   ],
   providers: [
     UserserviceService,
     ProjectDetailsService,
     FreelancerDetailsService,
     AuthGuard,
-    HttpClientModule, FormsModule
+    HttpClientModule,
+    FormsModule
   ],
   bootstrap: [AppComponent]
 })
-export class AppModule { }
+export class AppModule {}

@@ -24,6 +24,7 @@
 
       
       <!-- Banner with search bar -->
+     
  <div class="heroBanner">
      <div class="jumbotron-unstyled" >
          <div class="jumbotron" style="background-image: url('../../assets/images/banner.jpg')">
@@ -46,8 +47,10 @@
              </h1>          </div>
      </div>
  </div>
+ <h1>Top Recommendations</h1>
  <!-- Banner with search bar -->
       <div class="container">  <div *ngFor="let freelancer of freelancers">
+         
   <app-usercard-project-owner-dashboard [freelancer]=freelancer></app-usercard-project-owner-dashboard>
 
   
@@ -55,10 +58,3 @@
 </div>
 
 
-<!-- Footer -->
-<!-- <footer class="page-footer font-small blue">    <!-- Copyright -->
-  <!-- <div class="footer-copyright text-center py-3" style="color:white">© 2019 Copyright:
-    <a href="https://mdbootstrap.com/education/angular/" style="color:white"> WorkPro.com</a>
-  </div> --> -->
-  <!-- Copyright  </footer> -->
-<!-- Footer -->

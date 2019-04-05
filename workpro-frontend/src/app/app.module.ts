@@ -32,6 +32,7 @@ import { ProjectCardProductOwnerMyprojectComponent } from './project-card-produc
 import { FreelancerProjectDetailsComponent } from './freelancer-project-details/freelancer-project-details.component';
 import { ProductownerprofileComponent } from './productownerprofile/productownerprofile.component';
 import { HomeComponent } from './home/home.component';
+import { FreelancerprofileComponent } from './freelancerprofile/freelancerprofile.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -52,7 +53,8 @@ import { HomeComponent } from './home/home.component';
     UsercardProjectOwnerDashboardComponent,
     MyprojectsComponent,
     ProjectCardProductOwnerMyprojectComponent,
-    HomeComponent
+    HomeComponent,
+    FreelancerprofileComponent
   ],
   imports: [
     BrowserModule,

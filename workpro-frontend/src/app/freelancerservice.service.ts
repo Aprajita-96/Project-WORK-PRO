@@ -9,16 +9,6 @@ import { HttpClient } from '@angular/common/http';
 export class FreelancerserviceService {
 
   constructor(private http: HttpClient) { }
-<<<<<<< HEAD
-  // getProjectsFreelancer()
-  // {
-  //   return this.http.get("http://localhost:3000/projects")
-  //   // TODO: take the data and add that in the comment section in this call
-  // }
-  // getFreelancerDetails(emailId) {
-  //   return this.http.get("http://localhost:3000/profile/" + emailId )
-  // }
-=======
   getProjectsFreelancer(skills) {
     return this.http.get("http://localhost:3000/projects/" + skills)
     // TODO: take the data and add that in the comment section in this call
@@ -53,6 +43,5 @@ export class FreelancerserviceService {
     return this.http.post("http://localhost:3000/bid", bidData);
   }
 
->>>>>>> 68a82d2e60994b1dc5820f19701487ae3e3255c6
 
 }

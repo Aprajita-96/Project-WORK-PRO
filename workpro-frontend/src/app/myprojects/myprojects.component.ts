@@ -9,94 +9,99 @@ export class MyprojectsComponent implements OnInit {
   constructor() { }
 
   @Input()
-  ngOnInit() { }
+  ngOnInit() {
+    // this.filterOpenProjects();
+   }
 
-  filterOpenProjects() {
-    this.projects = this.projects1.filter(e => {
-      if (e.status === "open") {
+   filterOpenProjects() {
+    this.projects = this.projects1["projectDetails"].filter(e => {
+      // console.log(e);
+      if (e.projectstatus === "Open") {
         return e;
       }
     });
   }
-
   filterCloseProjects() {
-    this.projects = this.projects1.filter(e => {
-      if (e.status === "close") {
+    this.projects = this.projects1["projectDetails"].filter(e => {
+      // console.log(e);
+      if (e.projectstatus === "Close") {
         return e;
       }
     });
   }
+
+
   projects = [];
-  projects1 =
+  projects1:any =
     {
-      projectOwnerName: "Roopali",
-      projectOwnerEmailId: "roopali@gmail.com",
-      projectDetails: [{
-        projectName: "ProjectName",
-        projectstatus: "Open",
-        projectAwarded: false,
-        projectCompletionDate: "some Date",
-        projectPreference: "",
-        projcetLocation: "Mumbai",
-        projectDescription: "this is description",
-        bidSpecProvidedByProjectOwner: {
-          maximumBudget: 093182093,
-          minimumBudget: 09821380,
-          bidLastDate: "this is Date"
-        },
-        skills: [
+      "projectOwnerName": "Roopali",
+      "projectOwnerEmailId": "roopali@gmail.com",
+      "projectDetails": [{
+        "projectName": "ProjectName1",
+        "projectstatus": "Open",
+        "projectAwarded": false,
+        "projectCompletionDate": "some Date",
+        "projectPreference": "onsite",
+        "projcetLocation": "Mumbai",
+        "projectDescription": "this is description",
+        "bidSpecProvidedByProjectOwner": `{
+          "maximumBudget": 093182093,
+          "minimumBudget": 09821380,
+          "bidLastDate": "this is Date"
+        }`,
+        "skills": [
           {
-            skillName: "Angular"
+            "skillName": "Angular"
           },
           {
-            skillName: "Java"
+            "skillName": "Java"
           }
         ]
       },
       {
-        projectName: "ProjectName",
-        projectstatus: "Open",
-        projectAwarded: false,
-        projectCompletionDate: "some Date",
-        projectPreference: "",
-        projcetLocation: "Mumbai",
-        projectDescription: "this is description",
-        bidSpecProvidedByProjectOwner: {
-          maximumBudget: 093182093,
-          minimumBudget: 09821380,
-          bidLastDate: "this is Date"
-        },
-        skills: [
+        "projectName": "ProjectName2",
+        "projectstatus": "Close",
+        "projectAwarded": false,
+        "projectCompletionDate": "some Date",
+        "projectPreference": "",
+        "projcetLocation": "Mumbai",
+        "projectDescription": "this is description",
+        "bidSpecProvidedByProjectOwner": `{
+          "maximumBudget": 093182093,
+          "minimumBudget": 09821380,
+          "bidLastDate": "this is Date"
+        }`,
+        "skills": [
           {
-            skillName: "Angular"
+            "skillName": "Angular"
           },
           {
-            skillName: "Java"
+            "skillName": "Java"
           }
         ]
       },
       {
-        projectName: "ProjectName",
-        projectstatus: "Open",
-        projectAwarded: false,
-        projectCompletionDate: "some Date",
-        projectPreference: "",
-        projcetLocation: "Mumbai",
-        projectDescription: "this is description",
-        bidSpecProvidedByProjectOwner: {
-          maximumBudget: 093182093,
-          minimumBudget: 09821380,
-          bidLastDate: "this is Date"
-        },
-        skills: [
+        "projectName": "ProjectName3",
+        "projectstatus": "Open",
+        "projectAwarded": false,
+        "projectCompletionDate": "some Date",
+        "projectPreference": "",
+        "projcetLocation": "Mumbai",
+        "projectDescription": "this is description",
+        "bidSpecProvidedByProjectOwner": `{
+          "maximumBudget": 093182093,
+          "minimumBudget": 09821380,
+          "bidLastDate": "this is Date"
+        }`,
+        "skills": [
           {
-            skillName: "Angular"
+            "skillName": "Angular"
           },
           {
-            skillName: "Java"
+            "skillName": "Java"
           }
         ]
       }
     ]
-    }
+    };
 }

@@ -15,7 +15,13 @@ import { ProductownerprofileComponent } from "./productownerprofile/productowner
 import { ProjectOwnerDashboardComponent } from './project-owner-dashboard/project-owner-dashboard.component';
 import { MyprojectsComponent } from './myprojects/myprojects.component';
 import{HomeComponent} from'./home/home.component';
+import{ FreelancerprofileComponent} from'./freelancerprofile/freelancerprofile.component';
 const routes: Routes = [
+  {
+    path:"freelanceprofile",
+    component: FreelancerprofileComponent
+
+  },
   {
     path:"home",
     component: HomeComponent

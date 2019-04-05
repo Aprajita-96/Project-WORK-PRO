@@ -55,11 +55,8 @@ import { FreelancerprofileComponent } from './freelancerprofile/freelancerprofil
     MyprojectsComponent,
     ProjectCardProductOwnerMyprojectComponent,
     HomeComponent,
-<<<<<<< HEAD
-    EditfreelancerProfileComponent
-=======
+    EditfreelancerProfileComponent,
     FreelancerprofileComponent
->>>>>>> bfd561fdb6f8c5671164c9192e8ae581489ef719
   ],
   imports: [
     BrowserModule,

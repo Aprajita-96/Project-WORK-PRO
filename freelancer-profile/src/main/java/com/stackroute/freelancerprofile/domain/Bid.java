@@ -1,0 +1,23 @@
+package com.stackroute.freelancerprofile.domain;
+
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
+import org.springframework.data.mongodb.core.mapping.Document;
+import org.springframework.stereotype.Component;
+
+@Document
+@Data
+@NoArgsConstructor
+@AllArgsConstructor
+@Component
+public class Bid {
+    private int projectId;
+    private String projectName;
+    private String freelancerEmail;
+    private float bidAmount;
+    private int duration;
+    private String status;
+    private boolean awarded;
+
+}

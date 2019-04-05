@@ -1,13 +1,14 @@
 .navbar {
   background-color: #122c34;
   max-height: 10%;
+  display: flex;
 }
 
 .nav-pills .nav-link.active {
   background-color: #222222;
 }
 div {
-  border-right: 1px solid rgb(168, 168, 180);
+  // border-right: 1px solid rgb(168, 168, 180);
   height: 100%;
 }
 .double-nav .breadcrumb-dn {
@@ -17,17 +18,34 @@ div {
   display: none;
 }
 
+.container{
+  height: 20%;
+}
+
 .example-container {
   height: 95%;
+
+}
+.inner{
+  overflow: hidden;
 }
 
 mat-drawer {
+  
   height: 86%;
   position: fixed;
   margin: auto;
   background-color: #122c34; /* Black */
 }
 
+.nav-link{
+  color: #fff;
+}
+
+a:hover{
+  color: #85B5AD;
+
+}
 
 .navbar-toggler-icon {
     background-color: #122c34;  
@@ -35,5 +53,12 @@ mat-drawer {
 
 footer{
   background-color: #122C34;
+  margin-top: 0;
+  padding: 0;
   height: 8%;  
 }
+
+
+
+
+// check

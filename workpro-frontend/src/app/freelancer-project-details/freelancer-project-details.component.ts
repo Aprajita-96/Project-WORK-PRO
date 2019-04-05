@@ -10,19 +10,85 @@ export class FreelancerProjectDetailsComponent implements OnInit {
   constructor() { }
 
   ngOnInit() {
-    console.log(this.projectDetails)
+    console.log(this.projects)
   }
-
-
-  projectDetails=
+  projects = [];
+  projects1 = [
     {
-      "name": "Kirkland",
-      "description": "Ipsum tempor occaecat in eiusmod aliquip. Quis eu nisi amet deserunt veniam magna. Esse duis enim reprehenderit minim tempor reprehenderit esse tempor in ipsum.",
-      "requiredTime": "Fri Jan 04 2019 16:06:04 GMT+0530 (India Standard Time)",
-      "Amount": 6816,
-      "location": "Croom",
-      "preference": "onsite"
-    }
-  
+      projectOwnerName: "Roopali",
+      projectOwnerEmailId: "roopali@gmail.com",
+      projectDetails: [
+        {
+          projectId: 1,
+          projectName: "ProjectName",
+          projectstatus: "Open",
+          projectAwarded: false,
+          projectCompletionDate: "some Date",
+          projectPreference: "onsite",
+          projcetLocation: "Mumbai",
+          projectDescription: "this is description",
+          bidSpecProvidedByProjectOwner: {
+            maximumBudget:2093,
+            minimumBudget: 1380,
+            bidLastDate: "this is Date"
+          },
+          skills: [
+            {
+              skillName: "Angular"
+            },
+            {
+              skillName: "Java"
+            }
+          ]
+        },
+        {
+          projectId: 2,
+          projectName: "ProjectName",
+          projectstatus: "Open",
+          projectAwarded: false,
+          projectCompletionDate: "some Date",
+          projectPreference: "",
+          projcetLocation: "Mumbai",
+          projectDescription: "this is description",
+          bidSpecProvidedByProjectOwner: {
+            maximumBudget: 2093,
+            minimumBudget: 1380,
+            bidLastDate: "this is Date"
+          },
+          skills: [
+            {
+              skillName: "Angular"
+            },
+            {
+              skillName: "Java"
+            }
+          ]
 
+        },
+        {
+          projectId: 3,
+          projectName: "ProjectName",
+          projectstatus: "Open",
+          projectAwarded: false,
+          projectCompletionDate: "some Date",
+          projectPreference: "",
+          projcetLocation: "Mumbai",
+          projectDescription: "this is description",
+          bidSpecProvidedByProjectOwner: {
+            maximumBudget: 2093,
+            minimumBudget: 1380,
+            bidLastDate: "this is Date"
+          },
+          skills: [
+            {
+              skillName: "Angular"
+            },
+            {
+              skillName: "Java"
+            }
+          ]
+        }
+      ]
+    }
+  ];
 }

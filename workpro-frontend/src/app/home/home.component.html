@@ -40,24 +40,19 @@
   </a>
 </div>
 <!-- Top freelancers -->
-<div class="container-fluid text-center bg-grey">
-    <h2 style="font-weight: bolder;font-style:Canela Deck Web">Our Top freelancers</h2>
-    <div class="card-group row">
-        <div class="card-group1 col-4"  *ngFor="let freelancer of freelancers">
-                <div class="col-md-2"> 
-              
-                  <img style = "height: 150px; width:150px" src="{{freelancer.profilePicUrl}}" alt="freelancer">
-                
-                 </div>
-              
-                 <div class="card-body">
-                    <h4 class="card-title">{{freelancer.name}}</h4>
-                    <p class="card-text" style="color:blue">{{freelancer.skills}}</p>
-                    <a routerLink="freelancerdetails" class="btn btn-primary">See Profile</a>
-                  </div>
-              </div>
+<div class="container">
+    <div class="card-deck">
+      <div *ngFor="let freelancer of freelancers" class="card my-3">
+        <img src={{freelancer.profilePicUrl}} class="card-img-top">
+        <div class="card-body">
+          <h4 class="card-title">{{freelancer.name}}</h4>
+          <p class="card-text" style="color:blue">{{freelancer.skills}}</p>
+          <button class="btn btn-primary" type="button">See Profile</button>
         </div>
+      </div>
+      </div>
     </div>
+  
 
   <!-- Top freelancers -->
 <!-- Top Projects -->

@@ -41,12 +41,6 @@ export class HomeComponent implements OnInit {
       "email": "garzaterrell@pharmex.com",
       "skills": " Android / Ionic Framework / iOS Development / iPhone node.js ",
       "profilePicUrl": "../assets/images/dummy-user.png"
-    },
-    {
-      "name": "Roopali Gandhi",
-      "email": "garzaterrell@pharmex.com",
-      "skills": " Android / Ionic Framework / iOS Development / iPhone node.js ",
-      "profilePicUrl": "../assets/images/dummy-user.png"
     }
   ]
 projects = [
@@ -72,7 +66,7 @@ projects = [
     "name": "Telecash Payment gateway",
     "id": 3,
     "description": "I need to develop a small java based web application which will work between telecash payment gateway and .net website. Please bid only if you are experienced/serious freelancer.",
-    "Skills": "Prototype / Mobile App Development / PhoneGap / Technical Support"
+    "Skills": "Prototype / Mobile App Development"
   },
   {
     "name": "Build Selenium Framework",

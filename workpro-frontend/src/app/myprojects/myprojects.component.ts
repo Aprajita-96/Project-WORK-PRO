@@ -6,66 +6,102 @@ import { Component, OnInit, Input } from "@angular/core";
   styleUrls: ["./myprojects.component.scss"]
 })
 export class MyprojectsComponent implements OnInit {
-  constructor() {}
+  constructor() { }
 
   @Input()
-  ngOnInit() {}
+  ngOnInit() {
+    // this.filterOpenProjects();
+   }
 
-  filterOpenProjects() {
-    this.projects = this.projects1.filter(e => {
-      if (e.status === "open") {
+   filterOpenProjects() {
+    this.projects = this.projects1["projectDetails"].filter(e => {
+      // console.log(e);
+      if (e.projectstatus === "Open") {
         return e;
       }
     });
   }
-
   filterCloseProjects() {
-    this.projects = this.projects1.filter(e => {
-      if (e.status === "close") {
+    this.projects = this.projects1["projectDetails"].filter(e => {
+      // console.log(e);
+      if (e.projectstatus === "Close") {
         return e;
       }
     });
   }
-  projects=[];
-  projects1 = [
+
+
+  projects = [];
+  projects1:any =
     {
-      projecttitle: "Holt",
-      projectdescription: "Sint in exercitation commodo consectetur.",
-      status: "open"
-    },
-    {
-      projecttitle: "Barr",
-      projectdescription:
-        "Ipsum elit consectetur aliquip fugiat consequat est minim voluptate dolor in.",
-      status: "open"
-    },
-    {
-      projecttitle: "Alissa",
-      projectdescription:
-        "In consectetur occaecat elit duis irure est ex aute exercitation ea.",
-      status: "open"
-    },
-    {
-      projecttitle: "Henson",
-      projectdescription: "Elit incididunt ut nostrud officia deserunt id.",
-      status: "open"
-    },
-    {
-      projecttitle: "Bullock",
-      projectdescription:
-        "Non incididunt ut sit aute qui ullamco qui sint laboris.",
-      status: "close"
-    },
-    {
-      projecttitle: "Hendricks",
-      projectdescription:
-        "Voluptate et qui in adipisicing nulla officia officia consequat aliqua excepteur voluptate non quis.",
-      status: "close"
-    },
-    {
-      projecttitle: "Sharp",
-      projectdescription: "Consectetur cupidatat in magna irure.",
-      status: "close"
-    }
-  ];
+      "projectOwnerName": "Roopali",
+      "projectOwnerEmailId": "roopali@gmail.com",
+      "projectDetails": [{
+        "projectName": "ProjectName1",
+        "projectstatus": "Open",
+        "projectAwarded": false,
+        "projectCompletionDate": "some Date",
+        "projectPreference": "onsite",
+        "projcetLocation": "Mumbai",
+        "projectDescription": "this is description",
+        "bidSpecProvidedByProjectOwner": `{
+          "maximumBudget": 093182093,
+          "minimumBudget": 09821380,
+          "bidLastDate": "this is Date"
+        }`,
+        "skills": [
+          {
+            "skillName": "Angular"
+          },
+          {
+            "skillName": "Java"
+          }
+        ]
+      },
+      {
+        "projectName": "ProjectName2",
+        "projectstatus": "Close",
+        "projectAwarded": false,
+        "projectCompletionDate": "some Date",
+        "projectPreference": "",
+        "projcetLocation": "Mumbai",
+        "projectDescription": "this is description",
+        "bidSpecProvidedByProjectOwner": `{
+          "maximumBudget": 093182093,
+          "minimumBudget": 09821380,
+          "bidLastDate": "this is Date"
+        }`,
+        "skills": [
+          {
+            "skillName": "Angular"
+          },
+          {
+            "skillName": "Java"
+          }
+        ]
+      },
+      {
+        "projectName": "ProjectName3",
+        "projectstatus": "Open",
+        "projectAwarded": false,
+        "projectCompletionDate": "some Date",
+        "projectPreference": "",
+        "projcetLocation": "Mumbai",
+        "projectDescription": "this is description",
+        "bidSpecProvidedByProjectOwner": `{
+          "maximumBudget": 093182093,
+          "minimumBudget": 09821380,
+          "bidLastDate": "this is Date"
+        }`,
+        "skills": [
+          {
+            "skillName": "Angular"
+          },
+          {
+            "skillName": "Java"
+          }
+        ]
+      }
+    ]
+    };
 }

@@ -15,7 +15,21 @@ import { ProductownerprofileComponent } from "./productownerprofile/productowner
 import { ProjectOwnerDashboardComponent } from './project-owner-dashboard/project-owner-dashboard.component';
 import { MyprojectsComponent } from './myprojects/myprojects.component';
 import{HomeComponent} from'./home/home.component';
+<<<<<<< HEAD
+import {EditfreelancerProfileComponent} from './editfreelancer-profile/editfreelancer-profile.component';
 const routes: Routes = [
+  {
+    path:"editfreelancerprofile",
+    component: EditfreelancerProfileComponent
+=======
+import{ FreelancerprofileComponent} from'./freelancerprofile/freelancerprofile.component';
+const routes: Routes = [
+  {
+    path:"freelanceprofile",
+    component: FreelancerprofileComponent
+
+>>>>>>> bfd561fdb6f8c5671164c9192e8ae581489ef719
+  },
   {
     path:"home",
     component: HomeComponent

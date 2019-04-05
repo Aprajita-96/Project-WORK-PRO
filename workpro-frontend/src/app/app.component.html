@@ -8,60 +8,105 @@
 
 
   <a class="navbar-brand ml-2" href="#">WorkPro</a>
-  <button
+  <!-- <button
     class="navbar-toggler"
     type="button"
     data-toggle="collapse"
     data-target="#navbarSupportedContent-555"
     aria-controls="navbarSupportedContent-555"
-    aria-expanded="false"
-    aria-label="Toggle navigation">
-    <span class="navbar-toggler-icon"></span>
-  </button>
+    aria-expanded="true"
+    aria-label="Toggle navigation"
+  > -->
+  <!-- <span class="navbar-toggler-icon"></span> -->
+  <!-- </button> -->
   <div class="collapse navbar-collapse">
+    <div *ngIf="!isLogin; else elseBlock2">
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item">
+          <a class="nav-link" [routerLink]="['/register']">Register!!</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" [routerLink]="['/login']">Login!!</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+  <ng-template #elseBlock2>
     <ul class="navbar-nav mr-auto">
       <li class="nav-item">
-        <a class="nav-link" [routerLink]="['/register']">Register!!</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" [routerLink]="['/login']">Login!!</a>
+        <a class="nav-link" [routerLink]="['/#']">Logout!!</a>
       </li>
       
     </ul>
-  </div>
+  </ng-template>
 </nav>
 
+<mat-sidenav-container class="example-container">
 
-
-<mat-drawer-container class="example-container">
   <mat-drawer #drawer class="example-sidenav" mode="side">
-      <ul style=" list-style-type: none">
-        <li class="nav-item">
-                <a class="nav-link" [routerLink]="['/userdashboard']">Userdashboard</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" routerLink="projectownerdashboard"
-                  >ProjectOwnerDashboard</a
-                >
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" routerLink="productownermyprojects"
-                  >My project Product Owner</a
-                >
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" routerLink="project">Details</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" routerLink="projectDetailForm">ProjectDetailForm</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" routerLink="freelancerdetails">Freelancer Details Form</a>
-              </li>
-            </ul>
+    <div class="inner">
+      <div class="container">
+
+      </div>
+      <mat-divider></mat-divider>
+
+    <div *ngIf="role == 'ADMIN'; else elseBlock">
+      <mat-nav-list>
+        <mat-list-item>
+          <a class="nav-link" routerLink="projectownerdashboard"
+            >ProjectOwnerDashboard</a
+          >
+        </mat-list-item>
+        <mat-list-item>
+          <a class="nav-link" routerLink="productownermyprojects"
+            >My project Product Owner</a
+          >
+        </mat-list-item>
+        <mat-list-item>
+          <a class="nav-link" routerLink="project">Details</a>
+        </mat-list-item>
+        <mat-list-item>
+          <a class="nav-link" routerLink="projectDetailForm"
+            >ProjectDetailForm</a
+          >
+        </mat-list-item>
+        <mat-list-item>
+          <a class="nav-link" routerLink="freelancerdetails"
+            >Freelancer Details Form</a
+          >
+        </mat-list-item>
+      </mat-nav-list>
+    </div>
+
+    <ng-template #elseBlock>
+      <div *ngIf="role == 'USER'; else elseBlock1">
+        <mat-nav-list>
+        <mat-list-item>
+            <a class="nav-link" [routerLink]="['/userdashboard']"
+              >Userdashboard</a
+            >
+        </mat-list-item>
+        </mat-nav-list>
+      </div>
+    </ng-template>
+
+    <ng-template #elseBlock1>
+        <mat-nav-list>
+            <mat-list-item>
+          <a class="nav-link">About Us</a>
+            </mat-list-item>
+        </mat-nav-list>
+    </ng-template>
+    </div>
   </mat-drawer>
-  
- <router-outlet></router-outlet>
-</mat-drawer-container>
+  <router-outlet></router-outlet>
+</mat-sidenav-container>
 
-
+<footer class="page-footer font-small blue">
+  <div class="footer-copyright text-center py-3" style="color:white">
+    © 2019 Copyright:
+    <a href="https://mdbootstrap.com/education/angular/" style="color:white">
+      WorkPro.com</a
+    >
+  </div>
+</footer>

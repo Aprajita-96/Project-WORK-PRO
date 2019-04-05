@@ -407,5 +407,19 @@
     "contact": 99999999999,
     "location": "banglore",
     "preference": "REMOTE"
-  }
+  },
+  "auth":{
+    "user": {
+        "id": 1,
+        "firstName": "Aprajitaa",
+        "lastName": "Bhajpai",
+        "email": "aprajithaa8711@gmail.com",
+        "password": "$2a$10$PQQKZwN9bOOu3pvABRUtIeSHsa6XjZ4q7cRTZt3ncey3i4d4ZFr9e",
+        "enable": true,
+        "role": "USER",
+        "phonenumber": "9741084525",
+        "date": "2019-04-04T09:46:19.000+0000"
+    },
+    "token": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhcHJhaml0aGFhODcxMUBnbWFpbC5jb20iLCJjcmVhdGVkIjoxNTU0MzcxMTg5ODE5LCJleHAiOjE1NTQ5NzU5ODl9.7ZPdpMB4R9HJOFMRerwkqxKDjODEp9D-V-Oyt51BrG95yQmJN7w8w8sHTlVK--peDqvouMLNUabLbATyfrNuPw"
+ }
 }

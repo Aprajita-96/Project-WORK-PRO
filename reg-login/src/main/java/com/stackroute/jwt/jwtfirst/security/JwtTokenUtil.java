@@ -20,6 +20,7 @@ public class JwtTokenUtil implements Serializable {
     private static final long serialVersionUID=-13l;
 
     static  final String CLAM_KEY_USERNAME="sub";
+    static final String CLAM_KEY_ROLE="role";
     static  final String CLAM_KEY_AUDIANCE="audiance";
     static  final String CLAM_KEY_CREATED="created";
 
@@ -41,6 +42,21 @@ public class JwtTokenUtil implements Serializable {
         }
         return username;
     }
+
+    public String getClamKeyRole(String token){
+        String role=null;
+        try{
+            final Claims claims= getClaimsFromToken(token);
+            role=claims.getSubject();
+
+        }catch (Exception e)
+        {
+
+        }
+        return role;
+    }
+
+
 
     private Claims getClaimsFromToken(String token) {
         Claims claims= null;
@@ -88,6 +104,7 @@ public class JwtTokenUtil implements Serializable {
     public String generateToken(JwtUser userDetails) {
         Map<String, Object> claims= new HashMap<String , Object>();
         claims.put(CLAM_KEY_USERNAME, userDetails.getUsername());
+        claims.put(CLAM_KEY_ROLE,userDetails.getRole());
         claims.put(CLAM_KEY_CREATED, new Date());
         return generateToken(claims);
     }

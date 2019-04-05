@@ -1,15 +1,19 @@
-
-<div class="card-holder">
-  <div class="card" >
-     <div class="card-body">
-       <h5 class="card-title">{{freelancer.name}}</h5>
-       <p class="card-text">{{freelancer.email}}</p>
-       <p class="card-text" style="color:blue">{{freelancer.skills}}</p>
-       <button  class="card-link btn btn-primary">Details</button>
-       <button class="card-link btn btn-warning">Invite</button>
-     </div>
-   </div>
-  </div>
-
-
+<div class="card-body row">
+    <div class="col-md-2"> 
   
+      <img style = "height: 150px; width:150px" src="{{freelancer.profilePicUrl}}" alt="freelancer">
+    
+     </div>
+  
+     <div class="col-md-10">
+   <h5 class="card-title">{{freelancer.name}}</h5>
+  
+   <p class="card-text">{{freelancer.email}}</p>
+  
+   <p class="card-text" style="color:blue">{{freelancer.skills}}</p>
+  
+   <button  class="card-link btn btn-primary">Details</button>
+  
+  <button class="card-link btn btn-warning">Invite</button>
+  </div>
+  </div>

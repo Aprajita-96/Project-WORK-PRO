@@ -61,15 +61,15 @@
 
   <!-- Top freelancers -->
 <!-- Top Projects -->
-<div class="container-fluid text-center bg-grey">
-    <h2 style="font-weight: bolder;font-style:Canela Deck Web">Top Projects</h2>
-    <div class="card-group row">
-        <div class="card-group1 col-4"  *ngFor="let project of projects">
-                 <div class="card-body">
-                    <h4 class="card-title">{{project.name}}</h4>
-                    <p class="card-text" style="color:blue">{{project.skills}}</p>
-                    <a routerLink="freelancerdetails" class="btn btn-primary">Details</a>
-                  </div>
+<h1>Top Projects</h1>
+        <div class="container">
+            <div class="card-deck">
+              <div *ngFor="let project of projects" class="card my-3">
+                <div class="card-body">
+                  <h4 class="card-title">{{project.name}}</h4>
+                  <p class="card-text">{{project.skills}}</p>
+                  <button class="btn btn-primary" type="button">View details</button>
+                </div>
               </div>
-        </div>
-    </div>
+              </div>
+            </div>

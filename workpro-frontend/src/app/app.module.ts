@@ -31,6 +31,7 @@ import { MyprojectsComponent } from './myprojects/myprojects.component';
 import { ProjectCardProductOwnerMyprojectComponent } from './project-card-product-owner-myproject/project-card-product-owner-myproject.component';
 import { FreelancerProjectDetailsComponent } from './freelancer-project-details/freelancer-project-details.component';
 import { ProductownerprofileComponent } from './productownerprofile/productownerprofile.component';
+import { HomeComponent } from './home/home.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -50,7 +51,8 @@ import { ProductownerprofileComponent } from './productownerprofile/productowner
     ProjectOwnerDashboardComponent,
     UsercardProjectOwnerDashboardComponent,
     MyprojectsComponent,
-    ProjectCardProductOwnerMyprojectComponent
+    ProjectCardProductOwnerMyprojectComponent,
+    HomeComponent
   ],
   imports: [
     BrowserModule,

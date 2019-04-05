@@ -12,6 +12,8 @@ export class MybidsComponent implements OnInit {
   ngOnInit() {
     this.filterOpenBids();
   }
+
+  
   filterOpenBids() {
     this.projects = this.projects1.filter(e => {
       if (e.status === "open") {
@@ -36,55 +38,44 @@ export class MybidsComponent implements OnInit {
   projects=[];
   projects1 = [
     {
-      projecttitle: "Holt",
-      projectdescription: "Sint in exercitation commodo consectetur.",
-      status: "open"
+      projectName: "Project1",
+      freeLanceremail:"someemail@gmail.com",
+      bidAmount: 23323,
+      duration: "33",
+      status: "close",
+      awarded: true
     },
     {
-      projecttitle: "Barr",
-      projectdescription:
-        "Ipsum elit consectetur aliquip fugiat consequat est minim voluptate dolor in.",
-      status: "open"
+      projectName: "Project2",
+      freeLanceremail:"someemail@gmail.com",
+      bidAmount: 23323,
+      duration: "33",
+      status: "open",
+      awarded: false
     },
     {
-      projecttitle: "Alissa",
-      projectdescription:
-        "In consectetur occaecat elit duis irure est ex aute exercitation ea.",
-      status: "open"
+      projectName: "Project3",
+      freeLanceremail:"someemail@gmail.com",
+      bidAmount: 23323,
+      duration: "33",
+      status: "close",
+      awarded: true
     },
     {
-      projecttitle: "Henson",
-      projectdescription: "Elit incididunt ut nostrud officia deserunt id.",
-      status: "open"
+      projectName: "Project4",
+      freeLanceremail:"someemail@gmail.com",
+      bidAmount: 23323,
+      duration: "33",
+      status: "open",
+      awarded: false
     },
     {
-      projecttitle: "Bullock",
-      projectdescription:
-        "Non incididunt ut sit aute qui ullamco qui sint laboris.",
-      status: "close"
-    },
-    {
-      projecttitle: "Hendricks1",
-      projectdescription:
-        "Voluptate et qui in adipisicing nulla officia officia consequat aliqua excepteur voluptate non quis.",
-      status: "won"
-    },
-    {
-      projecttitle: "Hendricks2",
-      projectdescription:
-        "Voluptate et qui in adipisicing nulla officia officia consequat aliqua excepteur voluptate non quis.",
-      status: "won"
-    },
-    {
-      projecttitle: "Hendricks",
-      projectdescription:
-        "Voluptate et qui in adipisicing nulla officia officia consequat aliqua excepteur voluptate non quis.",
-      status: "close"
-    },
-    {
-      projecttitle: "Sharp",
-      projectdescription: "Consectetur cupidatat in magna irure.",
-      status: "close"
+      projectName: "Project5",
+      freeLanceremail:"someemail@gmail.com",
+      bidAmount: 23323,
+      duration: "33",
+      status: "open",
+      awarded: false
     }
   ];
 }

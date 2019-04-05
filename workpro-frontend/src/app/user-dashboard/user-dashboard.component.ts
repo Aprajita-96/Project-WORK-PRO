@@ -9,10 +9,10 @@ import { FreelancerserviceService } from "../freelancerservice.service";
 export class UserDashboardComponent implements OnInit {
 
   constructor( private freelancerserviceService: FreelancerserviceService) { 
-    this.freelancerserviceService.getProjects().subscribe(data => {
-      this.projects = data
-      console.log(data) 
-    })
+    // this.freelancerserviceService.getProjects().subscribe(data => {
+    //   this.projects = data
+    //   console.log(data) 
+    // })
   }
   projects;
   

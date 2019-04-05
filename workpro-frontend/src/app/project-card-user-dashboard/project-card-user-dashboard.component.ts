@@ -17,6 +17,6 @@ export class ProjectCardUserDashboardComponent implements OnInit {
   value(data)
   {
     console.log(data)
-    this.freelancerserviceService.getProjects().subscribe(console.log)
+    // this.freelancerserviceService.getProjects().subscribe(console.log);
   }
 }

@@ -25,15 +25,22 @@ export class HomeComponent implements OnInit {
       "profilePicUrl": "../assets/images/dummy-user.png"
     },
     {
-      "name": "Sadie Olson",
-      "email": "sadieolson@pharmex.com",
-      "skills": " Android / Java / Mobile App Development / MySQL / PHP ",
+      "name": "Arline Skinner",
+      "email": "arlineskinner@pharmex.com",
+      "skills": " Android / Java / Mobile App Development",
       "profilePicUrl": "../assets/images/dummy-user.png"
     },
+    
     {
       "name": "Eileen Harris",
       "email": "eileenharris@pharmex.com",
       "skills": " Android / iPhone / Mobile App Development / Objective C / Swift",
+      "profilePicUrl": "../assets/images/dummy-user.png"
+    },
+    {
+      "name": "Arline Skinner",
+      "email": "arlineskinner@pharmex.com",
+      "skills": " Android / Java / Mobile App Development",
       "profilePicUrl": "../assets/images/dummy-user.png"
     },
     {

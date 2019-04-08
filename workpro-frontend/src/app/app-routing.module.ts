@@ -16,13 +16,16 @@ import { ProjectOwnerDashboardComponent } from './project-owner-dashboard/projec
 import { MyprojectsComponent } from './myprojects/myprojects.component';
 import{HomeComponent} from'./home/home.component';
 import {EditfreelancerProfileComponent} from './editfreelancer-profile/editfreelancer-profile.component';
-import{ FreelancerprofileComponent} from './freelancerprofile/FreelancerprofileComponent';
+import{ FreelancerprofileComponent} from './freelancerprofile/freelancerprofile.component';
 import{ EditProjectOwnerProfileComponent} from './edit-project-owner-profile/edit-project-owner-profile.component';
 import{ProjectOwnerProfileComponent} from'./project-owner-profile/project-owner-profile.component';
-import { from } from 'rxjs';
+import{ProjectDetailsViewComponent}from'./project-details-view/project-details-view.component';
 
 const routes: Routes = [
- 
+ {
+   path:"detailsview",
+   component:ProjectDetailsViewComponent
+ },
 {
   path:"poprofile",
   component:ProjectOwnerProfileComponent

@@ -1,49 +1,41 @@
 package com.stackroute.freelancerprofile.controller;
 
 import com.stackroute.freelancerprofile.domain.Bid;
-import com.stackroute.freelancerprofile.domain.EmailMessage;
 import com.stackroute.freelancerprofile.domain.Freelancer;
 import com.stackroute.freelancerprofile.domain.Skill;
 import com.stackroute.freelancerprofile.exception.UnauthorizedException;
-import com.stackroute.freelancerprofile.exception.UserNotFound;
 //import com.stackroute.freelancerprofile.listener.Consumer;
 import com.stackroute.freelancerprofile.listener.Producer;
-import com.stackroute.freelancerprofile.repository.FreelancerRepository;
-import com.stackroute.freelancerprofile.service.BidService;
-import com.stackroute.freelancerprofile.service.FreelancerService;
-import com.stackroute.freelancerprofile.service.GeneratemailApplication;
-import com.stackroute.freelancerprofile.service.SkillService;
+import com.stackroute.freelancerprofile.service.BidServiceImpl;
+import com.stackroute.freelancerprofile.service.FreelancerServiceImpl;
+import com.stackroute.freelancerprofile.service.SkillServiceImpl;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
-import org.springframework.messaging.MessagingException;
 import org.springframework.web.bind.annotation.*;
 
-import javax.mail.internet.AddressException;
 import javax.servlet.http.HttpServletRequest;
-import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Map;
 
 @RestController
 @RequestMapping("api/v1")
 @CrossOrigin("*")
 public class FreelancerController {
-    private FreelancerService freelancerService;
-    private BidService bidService;
-    private SkillService skillService;
+    private FreelancerServiceImpl freelancerService;
+    private BidServiceImpl bidService;
+    private SkillServiceImpl skillService;
     private Skill skillObject;
     private List<Freelancer> list;
     private Freelancer freelancer;
     private Producer producer;
-    private static final Logger LOGGER = LoggerFactory.getLogger(SkillService.class);
+    private static final Logger LOGGER = LoggerFactory.getLogger(SkillServiceImpl.class);
 
     @Autowired
-    public FreelancerController(Producer producer, FreelancerService freelancerService, BidService bidService, SkillService skillService, List<Freelancer> list, Skill skillObject, Freelancer freelancer) {
+    public FreelancerController(Producer producer, FreelancerServiceImpl freelancerService, BidServiceImpl bidService, SkillServiceImpl skillService, List<Freelancer> list, Skill skillObject, Freelancer freelancer) {
         this.freelancerService = freelancerService;
         this.bidService = bidService;
         this.skillService = skillService;
@@ -155,15 +147,7 @@ public class FreelancerController {
     }
 
 
-    @PostMapping("/produce")
-    public Bid produceData(@RequestBody Bid bid) {
-        LOGGER.info("REQUEST BODY..!! "+  bid);
 
-        producer.send(bid);
-
-        return bid;
-
-    }
 //
 //    @Autowired
 //    private Consumer consumer;

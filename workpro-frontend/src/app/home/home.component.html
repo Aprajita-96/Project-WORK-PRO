@@ -41,18 +41,45 @@
 </div>
 <!-- Top freelancers -->
 <p class="TopFreelancers">Top Freelancers</p>
-<div class="container">
-    <div class="card-deck">
-      <div *ngFor="let freelancer of freelancers" class="card my-3">
-        <img src={{freelancer.profilePicUrl}} class="card-img-top">
-        <div class="card-body">
-          <h4 class="card-title">{{freelancer.name}}</h4>
-          <p class="card-text" style="color:blue">{{freelancer.skills}}</p>
-          <button class="btn btn-primary" type="button">See Profile</button>
-        </div>
-      </div>
-      </div>
-    </div>
+<section>
+    <div class="container">
+        <div class="row">
+            <div *ngFor="let freelancer of freelancers" class="col-my-3">
+                <!-- Card Flip -->
+                <div  class="card-flip">
+                    <div class="flip">
+                        <div class="front">
+                            <!-- front content -->
+                            <div class="card">
+                              <img src="../assets/images/avatar.jpg" alt="user image" style="height: 180px; width: 100%; display: block;" data-holder-rendered="true">
+                              <div class="card-block">
+                                <h4 class="card-title">{{freelancer.name}}</h4>
+                                <!-- <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                                <a href="#" class="btn btn-primary">Go somewhere</a> -->
+                              </div>
+                            </div>
+                        </div>
+                        <div class="back">
+                            <!-- back content -->
+                            <div class="card">
+                              <div class="card-block">
+                                <!-- <h4 class="card-title">Card Flip</h4> -->
+                                <!-- <h6 class="card-subtitle text-muted">Support card subtitle</h6> -->
+                              </div>
+                              <!-- <img data-src="holder.js/100px180/?text=Image" alt="Image [100%x180]" data-holder-rendered="true" style="height: 180px; width: 100%; display: block;"> -->
+                              <div class="card-block">
+                                <p class="card-text">{{freelancer.skills}}</p>
+                                <button class="btn btn-primary" type="button" routerLink="['./freelancerprofile']">View Profile</button>
+                              </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- End Card Flip -->
+            </div>
+            </div>
+            </div>
+            </section>
   
 
   <!-- Top freelancers -->

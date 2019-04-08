@@ -1,12 +1,12 @@
 import { Component, OnInit } from '@angular/core';
-import {FormBuilder, FormGroup, Validators} from '@angular/forms';
+import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 
 @Component({
-  selector: 'app-editfreelancer-profile',
-  templateUrl: './editfreelancer-profile.component.html',
-  styleUrls: ['./editfreelancer-profile.component.scss']
+  selector: 'app-edit-project-owner-profile',
+  templateUrl: './edit-project-owner-profile.component.html',
+  styleUrls: ['./edit-project-owner-profile.component.scss']
 })
-export class EditfreelancerProfileComponent implements OnInit {
+export class EditProjectOwnerProfileComponent implements OnInit {
   isLinear = false;
   firstFormGroup: FormGroup;
   secondFormGroup: FormGroup;
@@ -21,7 +21,6 @@ export class EditfreelancerProfileComponent implements OnInit {
       secondCtrl: ['', Validators.required]
     });
   }
-
   addSkill(skill) {
     console.log("skill is being added", skill )
     let s = {
@@ -69,7 +68,5 @@ export class EditfreelancerProfileComponent implements OnInit {
     }
   ]
 }
-
-  
 
 

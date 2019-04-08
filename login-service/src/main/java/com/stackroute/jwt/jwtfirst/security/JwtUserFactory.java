@@ -1,4 +1,4 @@
-package com.stackroute.jwt.jwtfirst;
+package com.stackroute.jwt.jwtfirst.security;
 
 import com.stackroute.jwt.jwtfirst.model.User;
 import com.stackroute.jwt.jwtfirst.security.JwtUser;

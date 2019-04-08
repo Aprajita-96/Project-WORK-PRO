@@ -1,4 +1,4 @@
-package com.stackroute.jwt.jwtfirst;
+package com.stackroute.jwt.jwtfirst.exception;
 
 import org.springframework.context.support.MessageSourceAccessor;
 import org.springframework.http.HttpStatus;

@@ -2,6 +2,7 @@ package com.stackroute.jwt.jwtfirst.service;
 
 import com.stackroute.jwt.jwtfirst.model.User;
 import com.stackroute.jwt.jwtfirst.repo.UserRepository;
+import com.stackroute.jwt.jwtfirst.security.PasswordUtil;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;

@@ -1,4 +1,4 @@
-package com.stackroute.jwt.jwtfirst.service;
+package com.stackroute.jwt.jwtfirst.security;
 
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 

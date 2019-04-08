@@ -1,6 +1,7 @@
 import { Component, OnInit } from "@angular/core";
 import { JwtHelperService } from "@auth0/angular-jwt";
 import { UserserviceService } from './userservice.service';
+import {LoginAuthService} from './login-auth.service';
 
 
 
@@ -11,19 +12,19 @@ import { UserserviceService } from './userservice.service';
 })
 export class AppComponent implements OnInit {
   title = "workpro-frontend";
-   constructor(private userService:UserserviceService){
+   constructor(private userService:UserserviceService,private loginauthservice:LoginAuthService){
      this.userService=userService;
    }
    role:any;
    isLogin:boolean=false;
+   decodedToken:any;
 
   ngOnInit() {
     
-    const helper = new JwtHelperService();
-    const decodedToken = helper.decodeToken(localStorage.getItem('token'));
-    console.log(decodedToken);
-    if(decodedToken){
-      this.role=decodedToken.role;
+    this.decodedToken=this.loginauthservice.checkToken();
+    console.log(this.decodedToken);
+    if(this.decodedToken){
+      this.role=this.decodedToken.role;
       this.isLogin=true;
     }
     

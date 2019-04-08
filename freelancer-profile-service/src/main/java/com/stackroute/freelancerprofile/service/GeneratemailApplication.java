@@ -13,29 +13,17 @@ import javax.mail.internet.MimeMessage;
 
 import com.stackroute.freelancerprofile.domain.EmailMessage;
 import org.springframework.beans.factory.annotation.Value;
-import org.springframework.boot.SpringApplication;
-import org.springframework.boot.autoconfigure.SpringBootApplication;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.context.annotation.Configuration;
 
-@SpringBootApplication
-@RestController
+@Configuration
 public class GeneratemailApplication{
 
     @Value("${gmail.username}")
     private String username;
     @Value("${gmail.password}")
     private String password;
-    @RequestMapping(value="/send", method=RequestMethod.POST)
-    public String sendEmail(@RequestBody EmailMessage emailmessage) throws AddressException, MessagingException, IOException {
-        sendmail(emailmessage);
-        return "Email sent successfully";
-    }
 
-
-    private void sendmail(EmailMessage emailmessage) throws AddressException, MessagingException, IOException {
+    public void sendmail(EmailMessage emailmessage) throws AddressException, MessagingException, IOException {
 
         Properties props = new Properties();
         props.put("mail.smtp.auth", "true");

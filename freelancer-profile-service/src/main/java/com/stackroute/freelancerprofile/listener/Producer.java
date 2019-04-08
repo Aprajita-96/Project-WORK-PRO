@@ -11,7 +11,7 @@ import org.springframework.kafka.core.KafkaTemplate;
 
 
 public class Producer {
-//    private static final Logger LOGGER = LoggerFactory.getLogger(KafkaSender.class);
+    private static final Logger LOGGER = LoggerFactory.getLogger(Producer.class);
 
     @Value("${kafka.topic.json}")
     private String jsonTopic;
@@ -20,7 +20,6 @@ public class Producer {
     private KafkaTemplate<String, Bid> kafkaTemplate;
 
     public void  send(Bid bid) {
-//        LOGGER.info("sending car='{}'", car.toString());
         kafkaTemplate.send(jsonTopic, bid);
     }
 }

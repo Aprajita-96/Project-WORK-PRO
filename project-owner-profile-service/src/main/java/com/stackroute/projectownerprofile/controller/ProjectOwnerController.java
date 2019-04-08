@@ -12,6 +12,7 @@ import java.util.Optional;
 
 @RestController
 @RequestMapping("/api/v1")
+@CrossOrigin("*")
 public class ProjectOwnerController {
 
     private ProjectOwnerServices projectOwnerServices;
@@ -26,7 +27,7 @@ public class ProjectOwnerController {
     @PostMapping("/projectOwner/projectOwnerId")
         public ResponseEntity<?> post(ProjectOwner projectOwner){
             ProjectOwner po=projectOwnerServices.post(projectOwner);
-            return new ResponseEntity<ProjectOwner>(po, HttpStatus.OK);
+            return new ResponseEntity<ProjectOwner>(po, HttpStatus.CREATED);
         }
         @GetMapping("/projectOwner/{projectownerId}")
         public ResponseEntity<?> getProjectOwner(@PathVariable("projectownerId") String id){

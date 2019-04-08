@@ -31,6 +31,7 @@ import java.util.Map;
 
 @RestController
 @RequestMapping("api/v1")
+@CrossOrigin("*")
 public class FreelancerController {
     private FreelancerService freelancerService;
     private BidService bidService;

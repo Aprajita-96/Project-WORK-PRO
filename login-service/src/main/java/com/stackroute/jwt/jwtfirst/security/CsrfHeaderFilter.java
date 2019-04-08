@@ -1,4 +1,4 @@
-package com.stackroute.jwt.jwtfirst;
+package com.stackroute.jwt.jwtfirst.security;
 
 
 import org.springframework.security.web.csrf.CsrfToken;

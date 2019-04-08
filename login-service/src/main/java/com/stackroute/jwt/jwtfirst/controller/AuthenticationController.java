@@ -1,6 +1,6 @@
 package com.stackroute.jwt.jwtfirst.controller;
 
-import com.stackroute.jwt.jwtfirst.UnauthorizedException;
+import com.stackroute.jwt.jwtfirst.exception.UnauthorizedException;
 import com.stackroute.jwt.jwtfirst.domain.UserDTO;
 import com.stackroute.jwt.jwtfirst.model.User;
 import com.stackroute.jwt.jwtfirst.security.JwtTokenUtil;

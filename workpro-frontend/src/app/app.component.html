@@ -1,10 +1,9 @@
-
 <!--The content below is only a placeholder and can be replaced.-->
 <!--Navbar -->
-<nav class="mb-1 navbar navbar-expand-lg navbar navbar-expand-lg navbar-dark secondary-color lighten-1" >
+<nav class="mb-1 navbar navbar-expand-lg navbar navbar-expand-lg navbar-dark secondary-color lighten-1">
   <button mat-icon-button (click)="drawer.toggle()">
-      <span class="navbar-toggler-icon"></span>
-    </button>
+    <span class="navbar-toggler-icon"></span>
+  </button>
 
 
   <a class="navbar-brand ml-2" href="#">WorkPro</a>
@@ -36,7 +35,7 @@
       <li class="nav-item">
         <a class="nav-link" [routerLink]="['/#']">Logout!!</a>
       </li>
-      
+
     </ul>
   </ng-template>
 </nav>
@@ -50,53 +49,52 @@
       </div>
       <mat-divider></mat-divider>
 
-    <div *ngIf="role == 'ADMIN'; else elseBlock">
-      <mat-nav-list>
-        <mat-list-item>
-          <a class="nav-link" routerLink="projectownerdashboard"
-            >ProjectOwnerDashboard</a
-          >
-        </mat-list-item>
-        <mat-list-item>
-          <a class="nav-link" routerLink="productownermyprojects"
-            >My project Product Owner</a
-          >
-        </mat-list-item>
-        <mat-list-item>
-          <a class="nav-link" routerLink="project">Details</a>
-        </mat-list-item>
-        <mat-list-item>
-          <a class="nav-link" routerLink="projectDetailForm"
-            >ProjectDetailForm</a
-          >
-        </mat-list-item>
-        <mat-list-item>
-          <a class="nav-link" routerLink="freelancerdetails"
-            >Freelancer Details Form</a
-          >
-        </mat-list-item>
-      </mat-nav-list>
-    </div>
-
-    <ng-template #elseBlock>
-      <div *ngIf="role == 'USER'; else elseBlock1">
+      <div *ngIf="role == 'ADMIN'; else elseBlock">
         <mat-nav-list>
-        <mat-list-item>
-            <a class="nav-link" [routerLink]="['/userdashboard']"
-              >Userdashboard</a
-            >
-        </mat-list-item>
+          <mat-list-item>
+            <a class="nav-link" routerLink="projectownerdashboard">ProjectOwnerDashboard</a>
+          </mat-list-item>
+          <mat-list-item>
+            <a class="nav-link" routerLink="productownermyprojects">My project Product Owner</a>
+          </mat-list-item>
+          <mat-list-item>
+            <a class="nav-link" routerLink="project">Details</a>
+          </mat-list-item>
+          <mat-list-item>
+            <a class="nav-link" routerLink="projectDetailForm">ProjectDetailForm</a>
+          </mat-list-item>
+          <mat-list-item>
+            <a class="nav-link" routerLink="freelancerdetails">Freelancer Details Form</a>
+          </mat-list-item>
         </mat-nav-list>
       </div>
-    </ng-template>
 
-    <ng-template #elseBlock1>
-        <mat-nav-list>
+      <ng-template #elseBlock>
+        <div *ngIf="role == 'USER'; else elseBlock1">
+          <mat-nav-list>
             <mat-list-item>
-          <a class="nav-link">About Us</a>
+              <a class="nav-link" [routerLink]="['/userdashboard']">Userdashboard</a>
             </mat-list-item>
+
+            <mat-list-item>
+              <a class="nav-link" [routerLink]="['/freelanceprofile']">My Profile</a>
+            </mat-list-item>
+
+            <mat-list-item>
+              <a class="nav-link" [routerLink]="['/mybids']">My Bids</a>
+            </mat-list-item>
+
+          </mat-nav-list>
+        </div>
+      </ng-template>
+
+      <ng-template #elseBlock1>
+        <mat-nav-list>
+          <mat-list-item>
+            <a class="nav-link">About Us</a>
+          </mat-list-item>
         </mat-nav-list>
-    </ng-template>
+      </ng-template>
     </div>
   </mat-drawer>
   <router-outlet></router-outlet>
@@ -106,7 +104,6 @@
   <div class="footer-copyright text-center py-3" style="color:white">
     © 2019 Copyright:
     <a href="https://mdbootstrap.com/education/angular/" style="color:white">
-      WorkPro.com</a
-    >
+      WorkPro.com</a>
   </div>
 </footer>

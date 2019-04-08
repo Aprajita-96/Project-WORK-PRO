@@ -16,12 +16,9 @@ import { ProjectOwnerDashboardComponent } from './project-owner-dashboard/projec
 import { MyprojectsComponent } from './myprojects/myprojects.component';
 import{HomeComponent} from'./home/home.component';
 import {EditfreelancerProfileComponent} from './editfreelancer-profile/editfreelancer-profile.component';
-import{ FreelancerprofileComponent} from'./freelancerprofile/freelancerprofile.component';
+
 const routes: Routes = [
-  {
-    path:"freelanceprofile",
-    component: FreelancerprofileComponent
-  },
+ 
   {
     path:"editfreelancerprofile",
     component: EditfreelancerProfileComponent

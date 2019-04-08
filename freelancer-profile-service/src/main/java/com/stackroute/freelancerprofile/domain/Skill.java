@@ -1,6 +1,7 @@
 package com.stackroute.freelancerprofile.domain;
 
 import lombok.AllArgsConstructor;
+import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -16,6 +17,7 @@ import java.util.*;
 @NoArgsConstructor
 @AllArgsConstructor
 @Component
+@Builder
 public class Skill {
 //    private Map<String, List<Freelancer>> hm=new HashMap<String, List<Freelancer>>();
 
@@ -23,28 +25,4 @@ public class Skill {
 private String id;
     private String skill;
     private List<Freelancer> list;
-
-    public String getId() {
-        return id;
-    }
-
-    public void setId(String id) {
-        this.id = id;
-    }
-
-    public String getSkill() {
-        return skill;
-    }
-
-    public void setSkill(String skill) {
-        this.skill = skill;
-    }
-
-    public List<Freelancer> getList() {
-        return list;
-    }
-
-    public void setList(List<Freelancer> list) {
-        this.list = list;
-    }
 }

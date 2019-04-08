@@ -9,9 +9,9 @@
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
 	<groupId>com.stackroute</groupId>
-	<artifactId>project-owner-profile</artifactId>
+	<artifactId>project-owner-profile-service</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>project-owner-profile</name>
+	<name>project-owner-profile-service</name>
 	<description>Demo project for Spring Boot</description>
 
 	<properties>

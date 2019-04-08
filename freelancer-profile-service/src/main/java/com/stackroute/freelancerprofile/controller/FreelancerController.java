@@ -13,6 +13,8 @@ import com.stackroute.freelancerprofile.service.BidService;
 import com.stackroute.freelancerprofile.service.FreelancerService;
 import com.stackroute.freelancerprofile.service.GeneratemailApplication;
 import com.stackroute.freelancerprofile.service.SkillService;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpStatus;
@@ -36,13 +38,11 @@ public class FreelancerController {
     private Skill skillObject;
     private List<Freelancer> list;
     private Freelancer freelancer;
+    private Producer producer;
+    private static final Logger LOGGER = LoggerFactory.getLogger(SkillService.class);
 
     @Autowired
-    Producer producer;
-
-
-    @Autowired
-    public FreelancerController(FreelancerService freelancerService, BidService bidService, SkillService skillService, List<Freelancer> list, Skill skillObject, Freelancer freelancer) {
+    public FreelancerController(Producer producer, FreelancerService freelancerService, BidService bidService, SkillService skillService, List<Freelancer> list, Skill skillObject, Freelancer freelancer) {
         this.freelancerService = freelancerService;
         this.bidService = bidService;
         this.skillService = skillService;
@@ -67,7 +67,7 @@ public class FreelancerController {
 
             List<Skill> listSkill = skillService.getAll();
             if (listSkill.isEmpty()) {
-                System.out.println("Inside isEmpty\n\n");
+                LOGGER.info("Inside isEmpty\n\n");
                 newSkill.setSkill(string);
                 freelancersList.add(newfreelancer);
                 newSkill.setList(freelancersList);
@@ -75,20 +75,20 @@ public class FreelancerController {
                 result = skillService.save(newSkill);
             } else {
                 for (Skill s : listSkill) {
-                    System.out.println("Inside FOR\n\n");
+                    LOGGER.info("Inside FOR\n\n");
 
 
                     if (s.getSkill().equals(string)) {
 
-                        System.out.println("Inside IF\n\n");
-                        System.out.println("\n\nSkill ID : " + s.getId());
+                        LOGGER.info("Inside IF\n\n");
+                        LOGGER.info("\n\nSkill ID : " + s.getId());
 
                         result = skillService.findById(s.getId());
                         List<Freelancer> list1 = s.getList();
                         list1.add(newfreelancer);
                         result.setList(list1);
 
-                        System.out.println("newSkill ID : " + result.getId());
+                        LOGGER.info("newSkill ID : " + result.getId());
 
                         result = skillService.save(result);
                         found = true;
@@ -97,7 +97,7 @@ public class FreelancerController {
             }
 
             if (found == false && !listSkill.isEmpty()) {
-                System.out.println("Inside ELSE\n\n");
+                LOGGER.info("Inside ELSE\n\n");
                 newSkill.setSkill(string);
                 freelancersList.add(newfreelancer);
                 newSkill.setList(freelancersList);
@@ -156,7 +156,7 @@ public class FreelancerController {
 
     @PostMapping("/produce")
     public Bid produceData(@RequestBody Bid bid) {
-        System.out.println("REQUEST BODY..!! "+  bid);
+        LOGGER.info("REQUEST BODY..!! "+  bid);
 
         producer.send(bid);
 
@@ -170,7 +170,7 @@ public class FreelancerController {
 //    @GetMapping("/produce")
 //    public String consumeData() {
 //
-////        System.out.println("REQUEST BODY..!! "+  car);
+////        LOGGER.info("REQUEST BODY..!! "+  car);
 //
 ////        producer.send("hjghjgf");
 //

@@ -4,6 +4,8 @@ package com.stackroute.freelancerprofile.service;
 import com.stackroute.freelancerprofile.domain.Freelancer;
 import com.stackroute.freelancerprofile.domain.Skill;
 import com.stackroute.freelancerprofile.repository.SkillRepository;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Sort;
 import org.springframework.stereotype.Service;
@@ -11,8 +13,10 @@ import org.springframework.stereotype.Service;
 import java.util.*;
 
 @Service
-public class SkillService {
+public class SkillService implements Services {
     private SkillRepository skillRepository;
+    private static final Logger LOGGER = LoggerFactory.getLogger(SkillService.class);
+
 
     @Autowired
     SkillService(SkillRepository skillRepository) {
@@ -35,11 +39,10 @@ public class SkillService {
         Skill result=new Skill();
         List<Skill> list=(List<Skill>)skillRepository.findAll();
         for(Skill skill1:list){
-//            System.out.println(skill1.getSkill());
-//            System.out.println(skill);
+//
              if((skill1.getSkill()).equals(skill)){
-                 System.out.println("inside if............................."+skill);
-                 System.out.println(skill1.getSkill());
+                 LOGGER.info("inside if............................."+skill);
+                 LOGGER.info(skill1.getSkill());
                  result.setSkill(skill1.getSkill());
                  result.setList(skill1.getList());
 

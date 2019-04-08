@@ -15,7 +15,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import java.util.Optional;
 
 @Service
-public class ProjectOwnerServices {
+public class ProjectOwnerServices implements ProjectOwnerServiceInterface{
     private ProjectOwnerRepository repository;
     @Autowired
 

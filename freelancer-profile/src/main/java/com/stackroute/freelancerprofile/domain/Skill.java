@@ -24,27 +24,5 @@ private String id;
     private String skill;
     private List<Freelancer> list;
 
-    public String getId() {
-        return id;
-    }
 
-    public void setId(String id) {
-        this.id = id;
-    }
-
-    public String getSkill() {
-        return skill;
-    }
-
-    public void setSkill(String skill) {
-        this.skill = skill;
-    }
-
-    public List<Freelancer> getList() {
-        return list;
-    }
-
-    public void setList(List<Freelancer> list) {
-        this.list = list;
-    }
 }

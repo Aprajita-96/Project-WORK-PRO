@@ -26,7 +26,7 @@ public class ProjectOwnerController {
     @PostMapping("/projectOwner/projectOwnerId")
         public ResponseEntity<?> post(ProjectOwner projectOwner){
             ProjectOwner po=projectOwnerServices.post(projectOwner);
-            return new ResponseEntity<ProjectOwner>(po, HttpStatus.OK);
+            return new ResponseEntity<ProjectOwner>(po, HttpStatus.CREATED);
         }
         @GetMapping("/projectOwner/{projectownerId}")
         public ResponseEntity<?> getProjectOwner(@PathVariable("projectownerId") String id){

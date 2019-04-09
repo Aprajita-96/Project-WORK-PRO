@@ -32,15 +32,9 @@ export class HomeComponent implements OnInit {
       "profilePicUrl": "../assets/images/dummy-user.png"
     },
     {
-      "name": "Cristina Bernard",
-      "email": "cristinabernard@pharmex.com",
-      "skills": " Android / jQuery / Prototype / Mobile App Development / PhoneGap / Technical Support ",
-      "profilePicUrl": "../assets/images/dummy-user.png"
-    },
-    {
-      "name": "Eileen Harris",
-      "email": "eileenharris@pharmex.com",
-      "skills": " Android / iPhone / Mobile App Development / Objective C / Swift",
+      "name": "Arline Skinner",
+      "email": "arlineskinner@pharmex.com",
+      "skills": " Android / Java / Mobile App Development",
       "profilePicUrl": "../assets/images/dummy-user.png"
     },
     {
@@ -49,10 +43,17 @@ export class HomeComponent implements OnInit {
       "skills": " Android / Java / Mobile App Development / MySQL / PHP ",
       "profilePicUrl": "../assets/images/dummy-user.png"
     },
+    
     {
       "name": "Eileen Harris",
       "email": "eileenharris@pharmex.com",
       "skills": " Android / iPhone / Mobile App Development / Objective C / Swift",
+      "profilePicUrl": "../assets/images/dummy-user.png"
+    },
+    {
+      "name": "Arline Skinner",
+      "email": "arlineskinner@pharmex.com",
+      "skills": " Android / Java / Mobile App Development",
       "profilePicUrl": "../assets/images/dummy-user.png"
     },
     {
@@ -91,7 +92,7 @@ projects = [
     "name": "Build Selenium Framework",
     "id": 4,
     "description": "I have a Java+Selenium framework, which is not following the code standards, and not included the proper maven repositories etc.",
-    "Skills": "Java / Android / jQuery / Prototype"
+    "Skills": "Java / Android / jQuery / JavaScript"
   }
 ]
 }

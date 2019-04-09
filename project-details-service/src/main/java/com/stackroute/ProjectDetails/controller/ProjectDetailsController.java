@@ -1,15 +1,13 @@
 package com.stackroute.ProjectDetails.controller;
 
 
-import com.stackroute.ProjectDetails.domain.BidOfFreelancer;
-import com.stackroute.ProjectDetails.domain.ProjectDetails;
-import com.stackroute.ProjectDetails.domain.ProjectsOfProjectOwner;
-import com.stackroute.ProjectDetails.domain.Skills;
+import com.stackroute.ProjectDetails.domain.*;
 import com.stackroute.ProjectDetails.exceptions.UnauthorizedException;
 import com.stackroute.ProjectDetails.listener.Producer;
 import com.stackroute.ProjectDetails.exceptions.ProjectAlreadyExistsException;
 import com.stackroute.ProjectDetails.exceptions.ProjectBidAlreadyAwardedException;
 import com.stackroute.ProjectDetails.exceptions.ProjectDoesNotExistException;
+import com.stackroute.ProjectDetails.service.BidService;
 import com.stackroute.ProjectDetails.service.ProjectOwnerProjectsServiceImpl;
 import com.stackroute.ProjectDetails.service.SkillsServiceImpl;
 import org.slf4j.LoggerFactory;
@@ -32,13 +30,15 @@ public class ProjectDetailsController {
     private ProjectOwnerProjectsServiceImpl projectOwnerProjectsService;
     private SkillsServiceImpl skillsService;
     private  Producer producer;
+    private BidService bidService;
 
 
     @Autowired
-    public ProjectDetailsController(ProjectOwnerProjectsServiceImpl projectOwnerProjectsService,SkillsServiceImpl skillsService,Producer producer) {
+    public ProjectDetailsController(ProjectOwnerProjectsServiceImpl projectOwnerProjectsService,SkillsServiceImpl skillsService,Producer producer,BidService bidService) {
         this.projectOwnerProjectsService = projectOwnerProjectsService;
         this.skillsService=skillsService;
         this.producer=producer;
+        this.bidService=bidService;
     }
 
 
@@ -155,7 +155,7 @@ public class ProjectDetailsController {
         }
 
 
-        producer.send(projectsOfProjectOwner);
+
 
 
         return new ResponseEntity<String>("Project owner adds a project", HttpStatus.OK);
@@ -170,23 +170,35 @@ public class ProjectDetailsController {
     }
 
 
-    @PutMapping("/projectowner/{projectownerid}/projects/{projectid}/bid/accept")
-    public ResponseEntity<?> ownerAcceptsBid(@PathVariable("projectid") String projectid, @PathVariable("projectownerid") String projectownerid) throws ProjectBidAlreadyAwardedException {
+    @PutMapping("/projectowner/{projectownerid}/projects/{projectid}/bid/accept/{FreelancerEmail}")
+    public ResponseEntity<?> ownerAcceptsBid(@PathVariable("FreelancerEmail") String email,@PathVariable("projectid") String projectid, @PathVariable("projectownerid") String projectownerid) throws ProjectBidAlreadyAwardedException {
         ProjectsOfProjectOwner list = projectOwnerProjectsService.getProjectsByEmailId(projectownerid);
+        List<BidKafka> listBid=bidService.getAll();
 
 
         for (ProjectDetails details : list.getProjectDetailsList()) {
-            if (details.getProjectId() == projectid) {
+            if (details.getProjectId().equals(projectid)) {
+
                 details.setProjectStatus("closed");
+
                 for (BidOfFreelancer freelancer : details.getAllBidsOfFreelancers()) {
-                    if (freelancer.getFreelancerEmailId().equals("mussag@gmail.ocm")) {
+                    if (freelancer.getFreelancerEmailId().equals(email)) {
                         freelancer.setProjectAwarded(true);
+                        System.out.println(freelancer.isProjectAwarded());
                         this.projectOwnerProjectsService.addProjects(list);
                         break;
                     }
 
                 }
                 break;
+            }
+        }
+
+        for(BidKafka bid:listBid) {
+            if (bid.getFreelancerEmail().equals(email)){
+                bid.setAwarded(true);
+                producer.send(bid);
+                System.out.println(bid+"produced..........................................");
             }
         }
 

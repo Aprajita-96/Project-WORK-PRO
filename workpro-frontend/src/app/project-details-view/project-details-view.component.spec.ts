@@ -1,19 +1,20 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
-import { ViewProfileDailogComponent } from './view-profile-dailog.component';
 
-describe('ViewProfileDailogComponent', () => {
-  let component: ViewProfileDailogComponent;
-  let fixture: ComponentFixture<ViewProfileDailogComponent>;
+import { ProjectDetailsViewComponent } from './project-details-view.component';
+
+describe('ProjectDetailsViewComponent', () => {
+  let component: ProjectDetailsViewComponent;
+  let fixture: ComponentFixture<ProjectDetailsViewComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ ViewProfileDailogComponent ]
+      declarations: [ ProjectDetailsViewComponent ]
     })
     .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(ViewProfileDailogComponent);
+    fixture = TestBed.createComponent(ProjectDetailsViewComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

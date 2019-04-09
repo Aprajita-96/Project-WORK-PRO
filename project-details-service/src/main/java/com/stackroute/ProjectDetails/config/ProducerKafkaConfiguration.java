@@ -1,6 +1,7 @@
 package com.stackroute.ProjectDetails.config;
 
 //import com.fasterxml.jackson.databind.ser.std.StringSerializer;
+import com.stackroute.ProjectDetails.domain.BidKafka;
 import com.stackroute.ProjectDetails.domain.ProjectsOfProjectOwner;
 import org.apache.kafka.common.serialization.StringSerializer;
         import com.stackroute.ProjectDetails.listener.Producer;
@@ -34,7 +35,7 @@ public class ProducerKafkaConfiguration {
     @Bean
 //    public ProducerFactory<String, String> producerFactory() {
 
-    public ProducerFactory<String, ProjectsOfProjectOwner> producerFactory() {
+    public ProducerFactory<String, BidKafka> producerFactory() {
         Map<String, Object> props = new HashMap<>();
         props.put(ProducerConfig.BOOTSTRAP_SERVERS_CONFIG, bootstrapServers);
         props.put(ProducerConfig.KEY_SERIALIZER_CLASS_CONFIG, StringSerializer.class);
@@ -47,9 +48,9 @@ public class ProducerKafkaConfiguration {
 
 
     @Bean
-    public KafkaTemplate<String, ProjectsOfProjectOwner> kafkaTemplate() {
+    public KafkaTemplate<String, BidKafka> kafkaTemplate() {
 //        return new KafkaTemplate<String, String>(producerFactory());
-        return new KafkaTemplate<String, ProjectsOfProjectOwner>(producerFactory());
+        return new KafkaTemplate<String, BidKafka>(producerFactory());
 
     }
 

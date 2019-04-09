@@ -1,5 +1,6 @@
 package com.stackroute.freelancerprofile.domain;
 
+
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
@@ -13,7 +14,7 @@ import org.springframework.stereotype.Component;
 @AllArgsConstructor
 @Component
 @Builder
-public class Bid {
+public class BidKafka {
     private String projectId;
     private String projectName;
     private String freelancerEmail;
@@ -21,5 +22,4 @@ public class Bid {
     private int duration;
     private String status;
     private boolean awarded;
-
 }

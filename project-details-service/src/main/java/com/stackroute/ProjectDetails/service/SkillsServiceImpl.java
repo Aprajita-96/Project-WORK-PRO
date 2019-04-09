@@ -19,14 +19,10 @@ public class SkillsServiceImpl implements SkillsService {
 
     @Override
     public void addProjectWrtSkills(Skills skills) {
-        System.out.println("hahaha   "+skills);
         skillRepository.save(skills);
     }
     public Skills findBySkillName(String skillName)
     {
-        System.out.println("here in service");
-//        System.out.println(skillRepository.findBySkillName(skillName));
-//        return skillRepository.findBySkillName(skillName);
         List<Skills>  skillsList=skillRepository.findAll();
         for(Skills skills:skillsList)
         {
@@ -34,14 +30,11 @@ public class SkillsServiceImpl implements SkillsService {
             {
                 return skills;
             }
-
-
         }
         return null;
-
     }
 
-
+    @Override
     public List<ProjectDetails> searchBySkill(String skillName){
         List<Skills>  skillsList=skillRepository.findAll();
         for(Skills skills:skillsList)
@@ -51,10 +44,7 @@ public class SkillsServiceImpl implements SkillsService {
                 List<ProjectDetails> projectDetailsList=skills.getProjectDetailsList();
                 return projectDetailsList;
             }
-
-
         }
         return null;
     }
-
 }

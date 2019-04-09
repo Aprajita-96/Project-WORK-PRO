@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+// nothing
 
 @Component({
   selector: 'app-project-details-view',

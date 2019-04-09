@@ -122,6 +122,7 @@ public class FreelancerController {
         String token = request.getHeader("token");
 //        if (token != null) {
             Bid resultbid = bidService.save(bid);
+
             producer.send(bid);
             return new ResponseEntity<Bid>(resultbid, HttpStatus.ACCEPTED);
 //        } else

@@ -19,4 +19,9 @@ public class BidService {
     public List<BidKafka> getAll(){
     return bidRepo.findAll();
     }
+
+    public BidKafka save(BidKafka bidKafka){
+
+    return bidRepo.save(bidKafka);
+    }
 }

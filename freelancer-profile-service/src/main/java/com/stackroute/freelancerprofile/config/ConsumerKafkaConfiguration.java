@@ -51,8 +51,8 @@ public class ConsumerKafkaConfiguration {
         return factory;
     }
 
-    @Bean
-    public Consumer receiver() {
-        return new Consumer();
-    }
+//    @Bean
+//    public Consumer receiver() {
+//        return new Consumer();
+//    }
 }

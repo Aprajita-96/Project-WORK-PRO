@@ -20,6 +20,7 @@ public class Producer {
     private KafkaTemplate<String, Bid> kafkaTemplate;
 
     public void  send(Bid bid) {
+        System.out.println("Sending");
         kafkaTemplate.send(jsonTopic, bid);
     }
 }

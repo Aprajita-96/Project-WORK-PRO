@@ -1,228 +1,77 @@
-<h1 class="text-center"> Add a Project </h1>
-<div class="container form-container">
-  <form #userForm="ngForm" >
+<!-- <button mat-raised-button (click)="isLinear = !isLinear" id="toggle-linear">
+    {{!isLinear ? 'Enable linear mode' : 'Disable linear mode'}} -->
+<mat-horizontal-stepper [linear]="isLinear" #stepper>
+  <mat-step [stepControl]="firstFormGroup">
+      <form #first="ngForm" >
+       
+
+          <label for="domain">Domain</label>
+          <select class="form-control" name="domain" ngModel  id="domain">
+            <option>IT</option>
+            <option>EM</option>
+          </select>
+            <label for="POemail">Email </label>
+            <input type="email" class="form-control" id="POemail" placeholder="name@example.com">
+            <label for="name">Project Name </label>
+            <input type="text" name="projectName" ngModel class="form-control" id="name">
+
+            <label for="ProjectDesc">Project Description</label>
+            <textarea class="form-control" name="projectDescription" ngModel id="ProjectDesc" rows="3"></textarea>
 
 
-    <!-- project domain -->
-    <div class="form-group row">
-      <label class="col-lg-4 col-md-4 col-sm-4" for="projectDomain">Domain</label>
+            <!-- ..skills Badge
+    <div class="row d-flex">
+        <span *ngFor="let skill of skills" class="badge badge-pill badge-primary">{{skill.skillName}}
+          <button type="button" class="close" (click)="deleteSkill(skill)" data-dismiss="alert" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+         </button>
+        </span>
+      </div> -->
+  
+  
+     
+  
+      <!-- skills -->
+      <div >
+        <label for="skills">Skills</label>
+          <input type="text" #skill id=skillName name="skillName" class="form-control col-lg-2 m-0" placeholder="SkillName">
+          <button class="btn btn-primary"  (click)="addSkill(skill.value)">Add</button>
+      </div>
       
-      <select
-        class="form-control col-lg-8 col-lg-8 col-md-8"
-        id="projectDomain"
-        [(ngModel)]="user.projectDomain"
-        name="projectDomain" #projectDomain="ngModel"[class.is-invalid]="projectDomain.invalid && projectDomain.touched"required
-      >
-        <option *ngFor="let project of projectDetails">{{
-          project.Domain
-        }}</option>
-      </select>
-    </div>
-
-
-    <!-- project name -->
-    <div class="form-group row">
-      <label class="col-lg-4  col-md-4 col-sm-4"for="projectName">Project Name</label>
-      <input
-        type="text"
-        class="form-control col-lg-8 col-lg-8 col-md-8"
-        id="projectName"
-        [(ngModel)]="user.projectName"
-        placeholder="Project Name"
-        name="projectName" #projectName="ngModel"[class.is-invalid]="projectName.invalid && projectName.touched"required
-      />
-    </div>
-    <!-- project OwnerEmail -->
-    <div class="form-group row">
-      <div  class="col-lg-4 col-md-4 col-sm-4">
-      <label for="projectOwnerEmail">Email</label>
-    </div>
-    <div  class="col-lg-8 col-md-8 col-sm-8 m-0 p-0">
-      <input
-        type="email"
-        class="form-control"
-        id="projectOwnerEmail"
-        [(ngModel)]="user.projectOwnerEmail"
-        placeholder="Project Owner Email"
-        name="projectOwnerEmail" 
-        pattern="[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[A-Za-z]{2,3}$"
-        #projectOwnerEmail="ngModel"[class.is-invalid]="projectOwnerEmail.invalid && projectOwnerEmail.touched" required
-      />
-
-      <div  *ngIf="projectOwnerEmail.errors && (projectOwnerEmail.touched || projectOwnerEmail.dirty)"
-                                       class="alert alert-danger">
-                                       <div *ngIf="projectOwnerEmail.errors.required">
-                                               <small>Email required.</small>
-                                       </div>
-                                       <div [hidden]="!projectOwnerEmail.errors?.pattern">
-                                               <small>Invalid pattern, must conatin _@_._</small>
-                                       </div>
-                               </div>
-  </div>
-      
-</div>
-    
-    <!-- project description -->
-    <div class="form-group row">
-      <label class="col-lg-4 col-md-4 col-sm-4"for="projectDesc">Project Description</label>
-      <textarea
-        class="form-control col-lg-8 col-lg-8 col-md-8"
-        id="projectDesc"
-        placeholder="Project Description"
-        [(ngModel)]="user.projectDesc"
-        name="projectDesc"
-        rows="10"
-        #projectDesc="ngModel"[class.is-invalid]="projectDesc.invalid && projectDesc.touched"required
-      >
-      </textarea>
-    </div>
-
-   
-    
-
-  
-<!-- ..skills Badge-->
-    <div class="form-group row d-flex">
-      <span *ngFor="let skill of skills" class="badge badge-pill badge-primary">{{skill.skillName}}
-        <button type="button" class="close" (click)="deleteSkill(skill)" data-dismiss="alert" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
-       </button>
-      </span>
-    </div>
-
-
-   
-
-    <!-- skills -->
-    <div class="form-group row d-flex ">
-      <label class="col-lg-4"for="skills">Skills</label>
-        <input type="text" [(ngModel)]=skills.skillName  #skillName="ngModel"[class.is-invalid]="skillName.invalid && skillName.touched"required id=skillName name="skillName" class="form-control col-lg-2 m-0" placeholder="SkillName">
-      <div class="col-lg-3">
-        <!-- <input type="text" class="form-control" placeholder="skilllevel"> -->
-        <select [(ngModel)]=skills.level #level="ngModel"[class.is-invalid]="level.invalid && level.touched"required class="form-control" id="level" name="level">
-            <option *ngFor="let project of projectDetails"
-            >{{ project.skillset }}
-          </option>
-        </select>
-      </div>
-
-      <div class="col-lg-2">
-        <input type="text" [(ngModel)]=skills.skillExp #skillExp="ngModel"[class.is-invalid]="skillExp.invalid && skillExp.touched"required id="skillExp" name="skillExp" class="form-control" placeholder="Experience in years">
-      </div>
-
-      <!-- <button type="reset" class="btn btn-primary">ADD</button> -->
-      <button class="btn btn-primary col-1"  [disabled]="skills.invalid" (click)="addSkill(skills)">Add</button>
-    </div>
-
-
-  <!-- bid Rate -->
-  <div class="form-group row">
-      <label class="col-lg-4 col-lg-4 col-md-4" for="bidRate"> Bid Rate</label>
-      <input
-        type="number" min="1000" max="50000"
-        class="form-control col-lg-8 col-lg-8 col-md-8"
-        id="bidRate"
-        pattern="[0-9]{4,5}"
-        [(ngModel)]="bid.bidrate"
-        #bidRate="ngModel"[class.is-invalid]="bidRate.invalid && bidRate.touched"
-        required
-        name="bidRate"
-      />
-      <div  class="form-group alert alert-danger m-1"*ngIf="bidRate.errors?.pattern">
-        <small>Please insert between 1000 and 50,000</small>
-  </div>
-    </div>
-
-    
-   
-    <!-- bid Location -->
-
-      <div class="form-group row">
-        <label class="col-lg-4 col-lg-4 col-md-4" for="bidLocation">Location</label>
-        <input
-          type="text"
-          class="form-control col-lg-8 col-lg-8 col-md-8"
-          id="bidLocation"
-          [(ngModel)]="bid.bidLocation"
-          #bidLocation="ngModel"[class.is-invalid]="bidLocation.invalid && bidLocation.touched"required
-          name="bidLocation"
-        />
-      </div>
   
 
-     <!-- bid Preference -->
-     <div class="form-group row">
-      <label class="col-lg-4 col-lg-4 col-md-4"for="bidpreference">Preference</label>
-      <select
-        class="form-control col-lg-8 col-lg-8 col-md-8"
-        id="bidpreference"
-        [(ngModel)]="bid.bidpreference"
-        #bidpreference="ngModel"[class.is-invalid]="bidpreference.invalid && bidpreference.touched"required
-        name="bidpreference"
-      >
-        <option *ngFor="let project of projectDetails">{{
-          project.preference
-        }}</option>
-      </select>
-    </div>
+            <label for="status">Project Status</label>
+          <!-- <select class="form-control" name="projectStatus" ngModel id="status">
+            <option>open</option>
+          </select> -->
 
-    <!-- bid duration -->
-    <div class="form-group row">
-      <label class="col-lg-4 col-lg-4 col-md-4" for="bidduration">Bid for duration</label>
-      <select
-        class="form-control col-lg-8 col-lg-8 col-md-8"
-        id="bidduration"
-        [(ngModel)]="bid.bidduration"
-        #bidduration="ngModel"[class.is-invalid]="bidduration.invalid && bidduration.touched"required
-        name="duration"
-      >
-        <option *ngFor="let project of projectDetails">{{
-          project.duration
-        }}</option>
-      </select>
-    </div>
+          <label for="name">Complition Date </label>
+          <input type="text" name="projectCompletionDate" ngModel class="form-control" id="complitionDate">
 
-     <!-- bid status -->
-     <div class="form-group row">
-        <label class="col-lg-4 col-lg-4 col-md-4"for="status">Project Status</label>
-        <select
-          class="form-control col-lg-8 col-lg-8 col-md-8"
-          id="status"
-          #status="ngModel"[class.is-invalid]="status.invalid && status.touched"required
-          [(ngModel)]="user.status"
-          name="status"
-        >
-          <option *ngFor="let project of projectDetails">{{
-            project.status
-          }}</option>
-        </select>
-      </div>
-    <!-- ......add bid............ -->
-    <button class="btn btn-primary" type="submit" (click)="addBid(bid)">Add Bid</button>
+          <label for="name">Location </label>
+          <input type="text"  name="projectLocation" ngModel class="form-control" id="location">
 
-    <!-- ..bid Badge-->
+          <label for="name">Preference</label>
+          <input type="text" name="projectPreference" ngModel class="form-control" id="preference">
 
+          <button matStepperNext type="button" class="btn btn-primary" (click)="addfirstDetails(first.value)">Save Changes</button>
 
-    <div  class="form-group alert alert-success m-2 p-0 justify-content-center"*ngIf="addBidToProjects">
-      <small>Bid Details has been Added to Projects</small>  
-   </div>
+        </form>
+    
+  </mat-step>
+  <mat-step [stepControl]="secondFormGroup">
+      <form #Second="ngForm" >
 
+          <label for="name">Max Budget</label>
+          <input type="text" name="maximumBudget" ngModel class="form-control" id="maximumBudget">
+
+          <label for="name">Min Budget</label>
+          <input type="text" name="minimumBudget" ngModel class="form-control" id="minimumBudget">
+
+          <label for="name">Bid Duration</label>
+          <input type="text" name="bidLastDate" ngModel class="form-control" id="bidLastDate">
+        </form>
+        <button matStepperNext type="button" class="btn btn-primary" (click)="addBid(Second.value)" (click)="saveUser(first.value,user,userForm)" [routerLink]="['/productownermyprojects']">Submit</button>
+  </mat-step>
   
-    <div>
-      <br>
-    </div>
-    <!-- submit -->
-    <div class="postProject">
-    <button
-      type="submit"
-      class="btn btn-primary " [disabled]="userForm.invalid"
-      (click)="saveUser(user, userForm)"
-    >
-      Post the Project
-    </button>
-  </div>
-  </form>
-</div>
-
-
-
+</mat-horizontal-stepper>

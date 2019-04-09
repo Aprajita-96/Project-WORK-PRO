@@ -18,17 +18,4 @@ public class ProjectDetailsApplication {
 		SpringApplication.run(ProjectDetailsApplication.class, args);
 	}
 
-//	@Override
-//	public void run(String... args) throws Exception {
-//		ProjectDetails details=new ProjectDetails
-//				("name","active",
-//						true,"10",
-//						"onsite","bangalore",
-//						"nice project",new ArrayList<>(),new ArrayList<>());
-//		List<ProjectDetails> list=new ArrayList<>();
-//		list.add(details);
-//		ProjectsOfProjectOwner p=new ProjectsOfProjectOwner("m@m.com","anurag",list);
-//		Gson gson =new Gson();
-//		System.out.println(gson.toJson(p));
-//	}
 }

@@ -5,14 +5,16 @@ import { HttpClient } from '@angular/common/http';
   providedIn: 'root'
 })
 export class ProductownerdetailsService {
-  value:any;
-  data:any;
-  constructor(private http:HttpClient) { }
-  getDtailsOfProjectOwner(value){
-    return this.http.get("http://localhost:8083/api/v1/projectOwner/"+value);
-  }
-  updateDetailsOfProjectOwner(value,data)
-  {
-    return this.http.put("http://localhost:8083/api/v1/projectOwner/"+value,data);
-  }
+
+  constructor(private http:HttpClient) {}
+  
+    setProjectDetails(value){
+     return this.http.post("http://localhost:8090/api/v1/projects/project",value, {responseType: "text"});
+
+    }
+
+    getProjectDetails(value){
+      return this.http.get("http://localhost:8090/api/v1/projectowner/"+value+"/project");
+    }
+   
 }

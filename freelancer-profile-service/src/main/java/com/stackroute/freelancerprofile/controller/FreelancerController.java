@@ -1,16 +1,10 @@
 package com.stackroute.freelancerprofile.controller;
 
-import com.stackroute.freelancerprofile.domain.Bid;
-import com.stackroute.freelancerprofile.domain.EmailMessage;
-import com.stackroute.freelancerprofile.domain.Freelancer;
-import com.stackroute.freelancerprofile.domain.Skill;
+import com.stackroute.freelancerprofile.domain.*;
 import com.stackroute.freelancerprofile.exception.UnauthorizedException;
 //import com.stackroute.freelancerprofile.listener.Consumer;
 import com.stackroute.freelancerprofile.listener.Producer;
-import com.stackroute.freelancerprofile.service.BidServiceImpl;
-import com.stackroute.freelancerprofile.service.FreelancerServiceImpl;
-import com.stackroute.freelancerprofile.service.GeneratemailApplication;
-import com.stackroute.freelancerprofile.service.SkillServiceImpl;
+import com.stackroute.freelancerprofile.service.*;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -38,10 +32,11 @@ public class FreelancerController {
     private Freelancer freelancer;
     private Producer producer;
     private GeneratemailApplication generatemailApplication;
+    private BidKafkaService bidKafkaService;
     private static final Logger LOGGER = LoggerFactory.getLogger(SkillServiceImpl.class);
 
     @Autowired
-    public FreelancerController(GeneratemailApplication generatemailApplication,Producer producer, FreelancerServiceImpl freelancerService, BidServiceImpl bidService, SkillServiceImpl skillService, List<Freelancer> list, Skill skillObject, Freelancer freelancer) {
+    public FreelancerController(GeneratemailApplication generatemailApplication,BidKafkaService bidKafkaService,Producer producer, FreelancerServiceImpl freelancerService, BidServiceImpl bidService, SkillServiceImpl skillService, List<Freelancer> list, Skill skillObject, Freelancer freelancer) {
         this.freelancerService = freelancerService;
         this.bidService = bidService;
         this.skillService = skillService;
@@ -50,6 +45,7 @@ public class FreelancerController {
         this.freelancer = freelancer;
         this.producer=producer;
         this.generatemailApplication=generatemailApplication;
+        this.bidKafkaService=bidKafkaService;
 
     }
 
@@ -122,6 +118,7 @@ public class FreelancerController {
         String token = request.getHeader("token");
 //        if (token != null) {
             Bid resultbid = bidService.save(bid);
+
             producer.send(bid);
             return new ResponseEntity<Bid>(resultbid, HttpStatus.ACCEPTED);
 //        } else
@@ -129,22 +126,18 @@ public class FreelancerController {
 
     }
 
-<<<<<<< HEAD
-    @GetMapping("/bid/allbids")
-    public ResponseEntity<?> getBidinformation() {
-        List<Bid> result = bidService.allBids();
-=======
+
     @GetMapping("/bid/{freelancerEmail}")
     public ResponseEntity<?> getBidinformation(@PathVariable("freelancerEmail") String freelancerEmail) {
         List<Bid> result = bidService.allBids(freelancerEmail);
->>>>>>> 550ee0062243d96baab515693484f1709f69d012
         return new ResponseEntity<List<Bid>>(result, HttpStatus.OK);
 
     }
 
-    @GetMapping("/bid/awardedBids")
-    public ResponseEntity<?> getAwardedBids() {
-        return new ResponseEntity<String>("awarded Bid", HttpStatus.OK);
+    @GetMapping("/bid/awardedBids/{freelancerEmail}")
+    public ResponseEntity<?> getAwardedBids(@PathVariable("freelancerEmail") String id) {
+        List<BidKafka> result=bidKafkaService.search(id);
+        return new ResponseEntity<List<BidKafka>>(result, HttpStatus.OK);
 
     }
 

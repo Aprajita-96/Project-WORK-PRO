@@ -7,6 +7,7 @@ import lombok.NoArgsConstructor;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 
+import javax.validation.constraints.NotNull;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -17,6 +18,7 @@ import java.util.List;
 public class ProjectsOfProjectOwner {
 
     @Id
+    @NotNull(message = "Project Owner Email id can't be null")
     private String projectOwnerEmailId;
     private String projectOwnerName;
     private List<ProjectDetails> projectDetailsList=new ArrayList<>();

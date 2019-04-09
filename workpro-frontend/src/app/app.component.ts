@@ -18,6 +18,7 @@ export class AppComponent implements OnInit {
    role:any;
    isLogin:boolean=false;
    decodedToken:any;
+   email:any;
 
   ngOnInit() {
     
@@ -26,6 +27,9 @@ export class AppComponent implements OnInit {
     if(this.decodedToken){
       this.role=this.decodedToken.role;
       this.isLogin=true;
+      this.email=this.decodedToken.sub;
+      localStorage.setItem("email",this.email);
+      localStorage.setItem("role",this.role);
     }
     
   }

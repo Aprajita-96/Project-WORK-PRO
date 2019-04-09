@@ -122,6 +122,7 @@ public class FreelancerController {
         String token = request.getHeader("token");
 //        if (token != null) {
             Bid resultbid = bidService.save(bid);
+
             producer.send(bid);
             return new ResponseEntity<Bid>(resultbid, HttpStatus.ACCEPTED);
 //        } else
@@ -129,15 +130,10 @@ public class FreelancerController {
 
     }
 
-<<<<<<< HEAD
-    @GetMapping("/bid/allbids")
-    public ResponseEntity<?> getBidinformation() {
-        List<Bid> result = bidService.allBids();
-=======
+
     @GetMapping("/bid/{freelancerEmail}")
     public ResponseEntity<?> getBidinformation(@PathVariable("freelancerEmail") String freelancerEmail) {
         List<Bid> result = bidService.allBids(freelancerEmail);
->>>>>>> 550ee0062243d96baab515693484f1709f69d012
         return new ResponseEntity<List<Bid>>(result, HttpStatus.OK);
 
     }

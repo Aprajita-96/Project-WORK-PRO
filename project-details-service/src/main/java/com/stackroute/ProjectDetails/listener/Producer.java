@@ -9,7 +9,7 @@ import org.springframework.kafka.core.KafkaTemplate;
 public class Producer {
     //    private static final Logger LOGGER = LoggerFactory.getLogger(KafkaSender.class);
 
-    @Value("${kafka.topic.json}")
+    @Value("${kafka.topic.details}")
     private String jsonTopic;
 
     @Autowired

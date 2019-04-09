@@ -29,11 +29,10 @@ public class ProjectOwnerController {
             ProjectOwner po=projectOwnerServices.post(projectOwner);
             return new ResponseEntity<ProjectOwner>(po, HttpStatus.CREATED);
         }
-        @GetMapping("/projectOwner/{projectownerId}")
-        public ResponseEntity<?> getProjectOwner(@PathVariable("projectownerId") String id){
-            ProjectOwner po=projectOwnerServices.getProjectOwner(id);
+        @GetMapping("/projectOwner/{email}")
+        public ResponseEntity<?> getProjectOwner(@PathVariable("email") String email){
+            ProjectOwner po=projectOwnerServices.getProjectOwner(email);
             return new ResponseEntity<ProjectOwner>(po,HttpStatus.OK);
         }
-
 
 }

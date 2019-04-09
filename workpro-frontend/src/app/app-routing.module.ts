@@ -77,7 +77,7 @@ component:FreelancerprofileComponent
   },
   {
     path: "podashboard",
-    component: ProjectCardUserDashboardComponent
+    component: ProjectOwnerDashboardComponent
   },
   {
     path: "mybids",

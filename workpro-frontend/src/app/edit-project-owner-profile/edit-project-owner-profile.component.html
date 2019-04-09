@@ -442,84 +442,10 @@
           </form>
         </div>
       </div>
-      <!-- <div>
-        <button mat-raised-button color="primary" matStepperPrevious>Submit</button>
-        <button mat-raised-button color="accent" (click)="stepper.reset()">Reset</button>
-      </div> -->
-    </form>
-  </mat-step>
-  <mat-step [stepControl]="thirdFormGroup">
-    <form [formGroup]="thirdFormGroup">
-      <ng-template matStepLabel>Professional Details</ng-template>
-      <div class="row form-container">
-
-
-        <div class="col-sm-9 personal-info">
-          <form class="form-horizontal" role="form" #professionalDetails="ngForm">
-            <div class="form-group">
-              <label class="col-sm-3 control-label">
-                <h3><i class="fab fa-facebook-square"></i></h3>
-              </label>
-              <div class="col-sm-8">
-                <input id="facebook link" name="facebook" type="text" placeholder="facebook" class="form-control">
-
-              </div>
-            </div>
-            <div class="form-group">
-              <label class="col-sm-3 control-label">
-                <h3><i class="fab fa-twitter-square"></i></h3>
-              </label>
-              <div class="col-sm-8">
-                <input id="Twitter link" name="Twitter" type="text" placeholder="Twitter" class="form-control">
-
-              </div>
-            </div>
-            <div class="form-group">
-              <label class="col-sm-3 control-label">
-                <h3><i class="fab fa-linkedin"></i></h3>
-              </label>
-              <div class="col-sm-8">
-                <input id="linkedin link" name="linkedin" type="text" placeholder="linkedin" class="form-control">
-
-              </div>
-            </div>
-            <div class="form-group">
-              <label class="col-sm-3 control-label">
-                <h3><i class="fab fa-github-square"></i></h3>
-              </label>
-              <div class="col-sm-8">
-                <input id="github" name="github" type="text" placeholder="github" class="form-control">
-
-              </div>
-            </div>
-            <div class="form-group">
-              <label class="col-sm-3 control-label">
-                <h3><i class="fas fa-plus-circle"></i></h3>
-              </label>
-              <div class="col-sm-8">
-                <div class="skill-container">
-                  <input id="github link" #skillName name="github" type="text" placeholder="Add your Skills"
-                    class="form-control">
-                  <button class="btn btn-primary" (click)="addSkill(skillName.value)"> Add Skill</button>
-                </div>
-              </div>
-
-
-              <div *ngFor="let skill of addedSkills">
-                <h3><span class="badge badge-pill badge-info">
-                    {{skill.name}}
-                    <button (click)="removeSkill(skill.name)" type="button" class="close" aria-label="Close">
-                      <span aria-hidden="true">&times;</span>
-                    </button>
-                  </span></h3>
-              </div>
-            </div>
-          </form>
-        </div>
-      </div>
       <div>
-        <button mat-raised-button color="primary"  (click)="saveUser(personalDetails.value, editAddress.value, professionalDetails.value)">Submit</button>
-        <button mat-raised-button color="accent" >Reset</button>
+        <button mat-raised-button color="primary" matStepperPrevious
+          [routerLink]="['/freelancerprofile']">Submit</button>
+        <button mat-raised-button color="accent" (click)="stepper.reset()">Reset</button>
       </div>
     </form>
   </mat-step>

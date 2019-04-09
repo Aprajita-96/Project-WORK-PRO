@@ -91,7 +91,7 @@ projects = [
     "name": "Build Selenium Framework",
     "id": 4,
     "description": "I have a Java+Selenium framework, which is not following the code standards, and not included the proper maven repositories etc.",
-    "Skills": "Java / Android / jQuery / Prototype"
+    "Skills": "Java / Android / jQuery / JavaScript"
   }
 ]
 }

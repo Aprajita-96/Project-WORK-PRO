@@ -22,7 +22,6 @@ public class ProjectDetails {
     private String projectId= UUID.randomUUID().toString();
     private String projectName;
     private String projectStatus;
-//    private boolean projectAwarded;
     private List<BidOfFreelancer> allBidsOfFreelancers;
     private String projectCompletionDate;
     private String projectPreference;
@@ -31,5 +30,4 @@ public class ProjectDetails {
     private List<BidSpecsProvidedByProjectOwner> bidSpecsProvidedByProjectOwners=new ArrayList<>();
     private List<String> skillsSetList=new ArrayList<>();
 
-    //private List<Skills> skillsSetList=new ArrayList<>();
 }

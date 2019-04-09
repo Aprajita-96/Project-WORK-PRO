@@ -3,6 +3,7 @@ package com.stackroute.freelancerprofile.config;
 import com.stackroute.freelancerprofile.domain.Bid;
 import com.stackroute.freelancerprofile.listener.Producer;
 import org.apache.kafka.clients.producer.ProducerConfig;
+import org.apache.kafka.common.serialization.StringDeserializer;
 import org.apache.kafka.common.serialization.StringSerializer;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Bean;
@@ -22,24 +23,24 @@ public class ProducerKafkaConfiguration {
     private String bootstrapServers;
 
     @Bean
-    public ProducerFactory<String, Bid> producerFactory() {
+    public Map<String, Object> producerConfigs() {
         Map<String, Object> config = new HashMap<>();
-        config.put(org.apache.kafka.clients.producer.ProducerConfig.BOOTSTRAP_SERVERS_CONFIG, "localhost:9092");
-        config.put(org.apache.kafka.clients.producer.ProducerConfig.KEY_SERIALIZER_CLASS_CONFIG, StringSerializer.class);
+        config.put(org.apache.kafka.clients.producer.ProducerConfig.BOOTSTRAP_SERVERS_CONFIG, bootstrapServers);
+        config.put(org.apache.kafka.clients.producer.ProducerConfig.KEY_SERIALIZER_CLASS_CONFIG, JsonSerializer.class);
         config.put(org.apache.kafka.clients.producer.ProducerConfig.VALUE_SERIALIZER_CLASS_CONFIG, JsonSerializer.class);
 
-        return new DefaultKafkaProducerFactory<>(config);
+        return config;
     }
 
-//    @Bean
-//    public ProducerFactory<String, Bid> producerFactory() {
-//        return new DefaultKafkaProducerFactory<>(producerConfigs());
-//    }
+    @Bean
+    public ProducerFactory<String, Bid> producerFactory() {
+        return new DefaultKafkaProducerFactory<>(producerConfigs());
+    }
 
 
     @Bean
     public KafkaTemplate<String, Bid> kafkaTemplate() {
-        return new KafkaTemplate<>(producerFactory());
+        return new KafkaTemplate<String, Bid>(producerFactory());
     }
 
     @Bean

@@ -1,5 +1,15 @@
-import { BrowserModule } from '@angular/platform-browser';
-import { NgModule } from '@angular/core';
+import { BrowserModule } from "@angular/platform-browser";
+import { NgModule } from "@angular/core";
+import { MatSidenavModule } from "@angular/material/sidenav";
+import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
+import { MatButtonModule } from "@angular/material/button";
+import {MatListModule} from '@angular/material/list';
+import {MatDividerModule} from '@angular/material/divider';
+import {MatStepperModule} from '@angular/material/stepper';
+import {MatFormFieldModule} from '@angular/material/form-field';
+import {MatInputModule} from '@angular/material';
+import {MatDialogModule} from '@angular/material';
+
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -12,20 +22,28 @@ import { UserDashboardComponent } from './user-dashboard/user-dashboard.componen
 import { ProjectCardUserDashboardComponent } from './project-card-user-dashboard/project-card-user-dashboard.component';
 import { HttpClientModule } from '@angular/common/http';
 import { ProjectDetailsComponent } from './project-details/project-details.component';
-import { UserDashboardSearchComponent } from './user-dashboard-search/user-dashboard-search.component';
-import { SearchComponent } from './search/search.component';
 import { ProjectDetailFormComponent } from './project-detail-form/project-detail-form.component';
 import { ProjectDetailsService } from './project-details.service';
 import { AuthGuard } from './auth-guard';
 import { FreelancerdetailsComponent } from './freelancerdetails/freelancerdetails.component';
 import { FreelancerDetailsService } from './freelancer-details.service';
 import { FooterComponent } from './footer/footer.component';
-import { ProductownerprofileComponent } from './productownerprofile/productownerprofile.component';
-
+import { MybidsComponent } from './mybids/mybids.component';
+import { MybidscardComponent } from './mybidscard/mybidscard.component';
 import { ProjectOwnerDashboardComponent } from './project-owner-dashboard/project-owner-dashboard.component';
 import { UsercardProjectOwnerDashboardComponent } from './usercard-project-owner-dashboard/usercard-project-owner-dashboard.component';
 import { MyprojectsComponent } from './myprojects/myprojects.component';
 import { ProjectCardProductOwnerMyprojectComponent } from './project-card-product-owner-myproject/project-card-product-owner-myproject.component';
+import { FreelancerProjectDetailsComponent } from './freelancer-project-details/freelancer-project-details.component';
+import { ProductownerprofileComponent } from './productownerprofile/productownerprofile.component';
+import { HomeComponent } from './home/home.component';
+import { EditfreelancerProfileComponent } from './editfreelancer-profile/editfreelancer-profile.component';
+import { FreelancerprofileComponent } from './freelancerprofile/freelancerprofile.component';
+import { EditProjectOwnerProfileComponent } from './edit-project-owner-profile/edit-project-owner-profile.component';
+import { ProjectOwnerProfileComponent } from './project-owner-profile/project-owner-profile.component';
+import { ViewProfileDailogComponent } from './view-profile-dailog/view-profile-dailog.component';
+
+
 
 @NgModule({
   declarations: [
@@ -34,34 +52,53 @@ import { ProjectCardProductOwnerMyprojectComponent } from './project-card-produc
     LoginComponent,
     UserDashboardComponent,
     ProjectCardUserDashboardComponent,
-    UserDashboardSearchComponent,
-    SearchComponent,
     FreelancerdetailsComponent,
     ProjectDetailsComponent,
     ProjectDetailFormComponent,
     FooterComponent,
     ProjectDetailFormComponent,
+    MybidsComponent,
+    MybidscardComponent,
+    FreelancerProjectDetailsComponent,
     ProductownerprofileComponent,
     ProjectOwnerDashboardComponent,
     UsercardProjectOwnerDashboardComponent,
     MyprojectsComponent,
-    ProjectCardProductOwnerMyprojectComponent
+    ProjectCardProductOwnerMyprojectComponent,
+    HomeComponent,EditfreelancerProfileComponent,
+    FreelancerprofileComponent,
+    EditProjectOwnerProfileComponent,
+    ProjectOwnerProfileComponent,
+    EditfreelancerProfileComponent,
+    ProjectDetailsComponent,
+    ViewProfileDailogComponent
+
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
     FormsModule,
-    ReactiveFormsModule
-
+    MatSidenavModule,
+    BrowserAnimationsModule,
+    ReactiveFormsModule,
+    MatButtonModule,
+    MatListModule,
+    MatDividerModule,
+    MatStepperModule,
+    MatFormFieldModule,
+    MatInputModule,
+    MatDialogModule
   ],
   providers: [
     UserserviceService,
     ProjectDetailsService,
     FreelancerDetailsService,
     AuthGuard,
-    HttpClientModule, FormsModule
+    HttpClientModule,
+    FormsModule
   ],
+  entryComponents: [ViewProfileDailogComponent],
   bootstrap: [AppComponent]
 })
-export class AppModule { }
+export class AppModule {}

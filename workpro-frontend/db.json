@@ -1,11 +1,115 @@
 {
   "posts": [
     {
-      "projectDomain": "EVENT MANAGEMENT",
-      "projectName": "aaaaaaaaaaaaaaaaaaaaaa",
-      "projectOwnerEmail": "angular@gmail.com",
-      "projectDesc": "aaaaaaaa",
+      "id": 1,
+      "title": "json-server",
+      "author": "typicode"
+    },
+    {
+      "projectDomain": "IT",
+      "projectName": "erwhtegte",
+      "projectOwnerEmail": "ccgagc@gmail.com",
+      "projectDesc": "4tfrwrwf",
       "status": "open",
+      "skills": [
+        {
+          "yearsOfExp": "1",
+          "level": "advance",
+          "skillName": "wvdw"
+        },
+        {
+          "yearsOfExp": "1",
+          "level": "advance",
+          "skillName": "wvdwsdd"
+        }
+      ],
+      "bid": [
+        {
+          "bidDuration": "100",
+          "bidPrefrence": "Onsite",
+          "bidLocation": "bxFXS",
+          "bidRate": 1200
+        }
+      ],
+      "id": 2
+    }
+  ],
+  "projects": [
+    {
+      "name": "RPG Game",
+      "id": 0,
+      "description": "Have to create some buttons for the description given ",
+      "Skills": "Java / SpringBoot"
+    },
+    {
+      "name": "MultiUser Jade Framework",
+      "id": 1,
+      "description": "Developing a multi-agent platform to test already existed method.",
+      "Skills": "HTML / CSS / JQuery"
+    },
+    {
+      "name": "windows server 2012 R2",
+      "id": 2,
+      "description": "Goal is simple, I need only to configure windows server 2012 R2 to support test authentication using [login to view URL].",
+      "Skills": "Android / jQuery / Prototype / Mobile App Development"
+    },
+    {
+      "name": "Telecash Payment gateway",
+      "id": 3,
+      "description": "I need to develop a small java based web application which will work between telecash payment gateway and .net website. Please bid only if you are experienced/serious freelancer.",
+      "Skills": "Prototype / Mobile App Development / PhoneGap / Technical Support"
+    },
+    {
+      "name": "Build Selenium Framework",
+      "id": 4,
+      "description": "I have a Java+Selenium framework, which is not following the code standards, and not included the proper maven repositories etc.",
+      "Skills": "Java / Android / jQuery / Prototype"
+    },
+    {
+      "name": "Build Selenium Framework",
+      "id": 4,
+      "description": "I have a Java+Selenium framework, which is not following the code standards, and not included the proper maven repositories etc.",
+      "Skills": "Java / Selenium"
+    }
+  ],
+  "comments": [
+    {
+      "id": 1,
+      "body": "some comment",
+      "postId": 1
+    }
+  ],
+  "profile": {
+    "name": "typicode"
+  },
+  "xyz": [
+    {
+      "name": "Biswadeep",
+      "Email": "hdh",
+      "location": "htd",
+      "SkillName": "ht",
+      "level": "BEGINNER",
+      "SkillExp": "hjtd",
+      "Hours": "hfs",
+      "experience": "sdasd",
+      "skills": [
+        {
+          "yearsOfExp": "hjtd",
+          "level": "BEGINNER",
+          "skillName": "ht"
+        }
+      ],
+      "id": 1
+    },
+    {
+      "name": "Biswadeep",
+      "Email": "hdh",
+      "location": "htd",
+      "SkillName": "ht",
+      "level": "BEGINNER",
+      "SkillExp": "hjtd",
+      "Hours": "hfs",
+      "experience": "sdasd",
       "skills": [
         {
           "yearsOfExp": "10",
@@ -214,6 +318,86 @@
       ],
       "link": [],
       "id": 26
+    },
+    {
+      "aboutme": "Space enthusiast",
+      "name": "Biswadeep Bhattacharjee",
+      "email": "biswbha1@in.ibm.com",
+      "location": "blr",
+      "SkillName": "java",
+      "level": "INTERMEDIATE",
+      "SkillExp": "2",
+      "Hours": "20",
+      "DomainName": "it",
+      "DomainExperience": "2",
+      "Link": "nlkcsflnlkfsv",
+      "skills": [
+        {
+          "yearsOfExp": "1",
+          "level": "BEGINNER",
+          "skillName": "angular"
+        },
+        {
+          "yearsOfExp": "2",
+          "level": "INTERMEDIATE",
+          "skillName": "java"
+        }
+      ],
+      "domain": [
+        {
+          "domainName": "it",
+          "yearsOfExp": "2"
+        }
+      ],
+      "link": [],
+      "id": 27
+    },
+    {
+      "aboutme": "",
+      "name": "",
+      "email": "",
+      "location": "",
+      "SkillName": "",
+      "level": "",
+      "SkillExp": "",
+      "Hours": "",
+      "DomainName": "",
+      "DomainExperience": "",
+      "Link": "",
+      "skills": [],
+      "domain": [],
+      "link": [],
+      "id": 28
+    },
+    {
+      "aboutme": "",
+      "name": "",
+      "email": "",
+      "location": "",
+      "SkillName": "X CS1",
+      "level": "BEGINNER",
+      "SkillExp": "12",
+      "Hours": "4",
+      "DomainName": "it1",
+      "DomainExperience": "qfe",
+      "Link": "wgrgrsvds",
+      "skills": [],
+      "domain": [
+        {
+          "domainName": "it",
+          "yearsOfExp": "qfe"
+        },
+        {
+          "domainName": "it1",
+          "yearsOfExp": "qfe"
+        }
+      ],
+      "link": [
+        {
+          "link": "wgrgrsvds"
+        }
+      ],
+      "id": 29
     }
   ],
   "po": {
@@ -223,5 +407,19 @@
     "contact": 99999999999,
     "location": "banglore",
     "preference": "REMOTE"
-  }
+  },
+  "auth":{
+    "user": {
+        "id": 1,
+        "firstName": "Aprajitaa",
+        "lastName": "Bhajpai",
+        "email": "aprajithaa8711@gmail.com",
+        "password": "$2a$10$PQQKZwN9bOOu3pvABRUtIeSHsa6XjZ4q7cRTZt3ncey3i4d4ZFr9e",
+        "enable": true,
+        "role": "USER",
+        "phonenumber": "9741084525",
+        "date": "2019-04-04T09:46:19.000+0000"
+    },
+    "token": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhcHJhaml0aGFhODcxMUBnbWFpbC5jb20iLCJjcmVhdGVkIjoxNTU0MzcxMTg5ODE5LCJleHAiOjE1NTQ5NzU5ODl9.7ZPdpMB4R9HJOFMRerwkqxKDjODEp9D-V-Oyt51BrG95yQmJN7w8w8sHTlVK--peDqvouMLNUabLbATyfrNuPw"
+ }
 }

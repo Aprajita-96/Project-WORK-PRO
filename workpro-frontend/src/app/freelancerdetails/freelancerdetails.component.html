@@ -11,7 +11,7 @@
                 <input
                   type="text"
                   #emailref="ngModel"
-                  pattern="[A-Za-z]+[\s]+[A-Za-z]{2,10}$"
+                  pattern="[A-Za-z]+[\s]+[A-Za-z]{1,100}$"
                   ngModel
                   class="form-control"
                   id="name"
@@ -68,7 +68,12 @@
       </div>
 
       <div class="form-row">
-        <span *ngFor="let skill of skills" class="badge badge-pill badge-primary">{{skill.skillName}}</span>
+        <span *ngFor="let skill of skills" class="badge badge-pill badge-primary">{{skill.skillName}}
+
+            <button type="button" class="close" (click)="deleteSkill(skill)" data-dismiss="alert" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+             </button>
+        </span>
       </div>
       <div class="form-row ml-2">
         <label for="skills">Skills</label>
@@ -96,7 +101,13 @@
       </div>
       
       <div class="form-row">
-          <span *ngFor="let domain of domains" class="badge badge-pill badge-primary">{{domain.domainName}}</span>
+          <span *ngFor="let domain of domains" class="badge badge-pill badge-primary">{{domain.domainName}}
+            <button type="button" class="close" (click)="deleteDomain(domain)" data-dismiss="alert" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+           </button>
+
+          </span>
+          
         </div>
         <div>
           <label for="domains">Domains</label>

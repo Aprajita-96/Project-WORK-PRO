@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { FreelancerDetailsService} from '../freelancer-details.service'
+import { FreelancerDetailsService } from '../freelancer-details.service'
 import { from } from 'rxjs';
-import {Router} from "@angular/router";
+import { Router } from "@angular/router";
 @Component({
   selector: 'app-freelancerdetails',
   templateUrl: './freelancerdetails.component.html',
@@ -9,10 +9,10 @@ import {Router} from "@angular/router";
 })
 export class FreelancerdetailsComponent implements OnInit {
 
-  constructor(private fservice: FreelancerDetailsService,private router:Router) { }
+  constructor(private fservice: FreelancerDetailsService, private router: Router) { }
   skills = [];
-  domains =[];
-  samplelinks =[];
+  domains = [];
+  samplelinks = [];
   // domainName:any;
   ngOnInit() {
 
@@ -21,7 +21,7 @@ export class FreelancerdetailsComponent implements OnInit {
   save(data) {
     data.skills = this.skills
     data.domain = this.domains
-    data.link =this.samplelinks
+    data.link = this.samplelinks
     this.fservice.setDetailsofFreelancers(data).subscribe(console.log)
     this.router.navigateByUrl("userdashboard")
   }
@@ -30,7 +30,7 @@ export class FreelancerdetailsComponent implements OnInit {
   //   data1.domains = this.domains
   //   this.fservice.setDetailsofFreelancers(data1).subscribe(console.log)
   // }
-  
+
   addSkill(skill) {
     let skillDetails = {
       yearsOfExp: skill.SkillExp,
@@ -40,18 +40,65 @@ export class FreelancerdetailsComponent implements OnInit {
     this.skills.push(skillDetails)
   }
 
-  addDomain(domain){
+  addDomain(domain) {
     let domainDetails = {
-      domainName:domain.DomainName,
-      yearsOfExp:domain.DomainExperience
+      domainName: domain.DomainName,
+      yearsOfExp: domain.DomainExperience
     }
-     this.domains.push(domainDetails)
+    this.domains.push(domainDetails)
   }
 
-  addLink(samplelink){
+  addLink(samplelink) {
     let linkDetails = {
-      link:samplelink.Link
+      link: samplelink.Link
     }
     this.samplelinks.push(linkDetails)
   }
+  deleteSkill(skill) {
+    this.skills = this.skills.filter(e => e.skillName !== skill.skillName)
+  }
+  deleteDomain(domain) {
+    this.domains = this.domains.filter(e => e.domainName !== domain.domainName)
+  }
+  freelancers = []
+  freelancer1 = 
+{
+  id: 1,
+    freelancerName: "Prateema",
+      freelancerEmail: "pratima447@gmail.com",
+        freelancerAddress: "ythtkyuyuku143432345345",
+          yearsOfExpertise: 2,
+            skills: "java/Angular",
+            
+};
+freelancer2 = 
+{
+  id: 1,
+    freelancerName: "Prateema",
+      freelancerEmail: "pratima447@gmail.com",
+        freelancerAddress: "ythtkyuyuku143432345345",
+          yearsOfExpertise: 2,
+            skills: "java/Angular",
+            
+};
+freelancer3 = 
+{
+  id: 1,
+    freelancerName: "Prateema",
+      freelancerEmail: "pratima447@gmail.com",
+        freelancerAddress: "ythtkyuyuku143432345345",
+          yearsOfExpertise: 2,
+            skills: "java/Angular",
+            
+};
+freelancer4 = 
+{
+  id: 1,
+    freelancerName: "Prateema",
+      freelancerEmail: "pratima447@gmail.com",
+        freelancerAddress: "ythtkyuyuku143432345345",
+          yearsOfExpertise: 2,
+            skills: "java/Angular",
+            
+}
 }

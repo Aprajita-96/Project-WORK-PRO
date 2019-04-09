@@ -17,4 +17,8 @@ export class FreelancerDetailsService {
     console.log(productowner);
     return this.http.post('http://localhost:3000/po',productowner);
   }
+
+  getBidsofFreelancer(){
+    return this.http.get("http://localhost:8081/api/v1/bid/allbids");
+  }
 }

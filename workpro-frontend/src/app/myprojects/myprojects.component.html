@@ -1,75 +1,29 @@
-<div>
+<!-- <div> -->
   <!-- <button type="button" class="btn btn-primary" style= "margin-left: 4px; margin-right : 4px; float: right">Open Projects</button>
 <button type="button" class="btn btn-primary" style = "margin-left: 4px; margin-right: 4px; float: right">Close Projects</button> 
 <button type="button" class="btn btn-primary" style = "margin-left: 4px; margin-right: 4px; float: right;">Add Projects</button> -->
+<!-- <nav class="nav nav-pills nav-justified">
+  <a class="nav-item nav-link active " (click)="filterOpenProjects()">Open Projects</a>
+  <a class="nav-item nav-link active" (click)="filterCloseProjects()">Close Projects</a>
+  <a class="nav-item nav-link active" >Add Projects</a>
+ </nav> -->
 
-  <ul class="nav nav-tabs" id="myTab" role="tablist">
-    <li class="nav-item">
-      <a
-        class="nav-link active"
-        (click)="filterOpenProjects()"
-        id="home-tab"
-        data-toggle="tab"
-        role="tab"
-        aria-controls="home"
-        aria-selected="true"
-        >Open Projects</a
-      >
-    </li>
-    <li class="nav-item">
-      <a
-        class="nav-link"
-        (click)="filterCloseProjects()"
-        id="profile-tab"
-        data-toggle="tab"
-        role="tab"
-        aria-controls="profile"
-        aria-selected="false"
-        >Close Projects</a
-      >
-    </li>
-    <li class="nav-item">
-      <a
-        class="nav-link"
-        id="contact-tab"
-        data-toggle="tab"
-        role="tab"
-        aria-controls="contact"
-        aria-selected="false"
-        >Add Projects</a
-      >
-    </li>
-  </ul>
-  <div class="tab-content" id="myTabContent">
-    <div
-      class="tab-pane fade show active"
-      id="home"
-      role="tabpanel"
-      aria-labelledby="home-tab"
-    >
-      ...
-    </div>
-    <div
-      class="tab-pane fade"
-      id="profile"
-      role="tabpanel"
-      aria-labelledby="profile-tab"
-    >
-      ...
-    </div>
-    <div
-      class="tab-pane fade"
-      id="contact"
-      role="tabpanel"
-      aria-labelledby="contact-tab"
-    >
-      ...
-    </div>
-  </div>
+
+ <div class="container mr-3"> 
+<div class="btn btn-outline-primary col-md-3 mr-2" (click)="filterOpenProjects()" role="group" aria-label="...">Open Projects</div>
+<div class="btn btn-outline-primary  col-md-3 mr-2" role="group" (click)="filterCloseProjects()" aria-label="...">Close Projects</div>
+<div class="btn btn-outline-primary  col-md-3" routerLink = "/projectDetailFormComponent" role="group" aria-label="...">Add Projects</div>
+ 
+</div>
+<!--         
+<div class="btn btn-outline-warning" role="group" aria-label="...">...</div>
+<div class="btn-group" role="group" aria-label="...">...</div>
+<div class="btn-group" role="group" aria-label="...">...</div> -->
+     
+
+<div class="container" *ngFor="let project of projects">
+  <app-project-card-product-owner-myproject [project]="project"></app-project-card-product-owner-myproject>
+
 </div>
 
-<div *ngFor="let project of projects">
-  <app-project-card-product-owner-myproject
-    [project]="project"
-  ></app-project-card-product-owner-myproject>
-</div>
+

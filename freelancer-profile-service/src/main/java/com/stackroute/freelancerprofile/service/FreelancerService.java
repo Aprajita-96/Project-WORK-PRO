@@ -7,6 +7,6 @@ import java.util.List;
 public interface FreelancerService {
     public Freelancer save(Freelancer freelancer);
     public List<Freelancer> getAll();
-    public Freelancer edit(Freelancer freelancer,int id);
-    public Freelancer search(int id);
+    public Freelancer edit(Freelancer freelancer,String id);
+    public Freelancer search(String id);
 }

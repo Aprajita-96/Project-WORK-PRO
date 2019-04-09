@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import {MatDialog} from '@angular/material';
+import { ViewProfileDailogComponent } from '../view-profile-dailog/view-profile-dailog.component';
+
 
 @Component({
   selector: 'app-home',
@@ -7,10 +10,20 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HomeComponent implements OnInit {
 
-  constructor() { }
+  constructor(public dialog: MatDialog) { }
 
   ngOnInit() {
   }
+
+  openDialog() {
+    const dialogRef = this.dialog.open(ViewProfileDailogComponent);
+
+    dialogRef.afterClosed().subscribe(result => {
+      console.log(`Dialog result: ${result}`);
+    });
+    console.log("this is happening ??")
+  }
+
   freelancers = [
     {
       "name": "Arline Skinner",
@@ -22,6 +35,12 @@ export class HomeComponent implements OnInit {
       "name": "Cristina Bernard",
       "email": "cristinabernard@pharmex.com",
       "skills": " Android / jQuery / Prototype / Mobile App Development / PhoneGap / Technical Support ",
+      "profilePicUrl": "../assets/images/dummy-user.png"
+    },
+    {
+      "name": "Eileen Harris",
+      "email": "eileenharris@pharmex.com",
+      "skills": " Android / iPhone / Mobile App Development / Objective C / Swift",
       "profilePicUrl": "../assets/images/dummy-user.png"
     },
     {

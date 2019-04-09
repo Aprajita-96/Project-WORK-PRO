@@ -11,7 +11,7 @@ import org.springframework.stereotype.Component;
 @NoArgsConstructor
 @AllArgsConstructor
 @Component
-@Builder
+//@Builder
 public class EmailMessage {
     private String to;
     private String subject;

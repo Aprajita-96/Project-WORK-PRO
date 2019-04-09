@@ -1,6 +1,7 @@
 package com.stackroute.freelancerprofile.controller;
 
 import com.stackroute.freelancerprofile.domain.Bid;
+import com.stackroute.freelancerprofile.domain.EmailMessage;
 import com.stackroute.freelancerprofile.domain.Freelancer;
 import com.stackroute.freelancerprofile.domain.Skill;
 import com.stackroute.freelancerprofile.exception.UnauthorizedException;
@@ -8,6 +9,7 @@ import com.stackroute.freelancerprofile.exception.UnauthorizedException;
 import com.stackroute.freelancerprofile.listener.Producer;
 import com.stackroute.freelancerprofile.service.BidServiceImpl;
 import com.stackroute.freelancerprofile.service.FreelancerServiceImpl;
+import com.stackroute.freelancerprofile.service.GeneratemailApplication;
 import com.stackroute.freelancerprofile.service.SkillServiceImpl;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -17,12 +19,15 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+import javax.mail.MessagingException;
+import javax.mail.internet.AddressException;
 import javax.servlet.http.HttpServletRequest;
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
 @RestController
-@RequestMapping("api/v1")
+@RequestMapping("/api/v1")
 @CrossOrigin("*")
 public class FreelancerController {
     private FreelancerServiceImpl freelancerService;
@@ -32,10 +37,11 @@ public class FreelancerController {
     private List<Freelancer> list;
     private Freelancer freelancer;
     private Producer producer;
+    private GeneratemailApplication generatemailApplication;
     private static final Logger LOGGER = LoggerFactory.getLogger(SkillServiceImpl.class);
 
     @Autowired
-    public FreelancerController(Producer producer, FreelancerServiceImpl freelancerService, BidServiceImpl bidService, SkillServiceImpl skillService, List<Freelancer> list, Skill skillObject, Freelancer freelancer) {
+    public FreelancerController(GeneratemailApplication generatemailApplication,Producer producer, FreelancerServiceImpl freelancerService, BidServiceImpl bidService, SkillServiceImpl skillService, List<Freelancer> list, Skill skillObject, Freelancer freelancer) {
         this.freelancerService = freelancerService;
         this.bidService = bidService;
         this.skillService = skillService;
@@ -43,8 +49,10 @@ public class FreelancerController {
         this.skillObject = skillObject;
         this.freelancer = freelancer;
         this.producer=producer;
+        this.generatemailApplication=generatemailApplication;
 
     }
+
 
     @PostMapping("/freelancerprofile/postDetails")
     public ResponseEntity<?> postDetail(@RequestBody Freelancer newfreelancer) {
@@ -103,27 +111,33 @@ public class FreelancerController {
 
 
     @GetMapping("/freelancer/{id}")
-    public ResponseEntity<?> getDetails(@PathVariable("id") int id) {
+    public ResponseEntity<?> getDetails(@PathVariable("id") String id) {
         Freelancer freelancer = freelancerService.search(id);
-        return new ResponseEntity<Freelancer>(freelancer, HttpStatus.OK);
+        return new ResponseEntity<Freelancer>(freelancer, HttpStatus.FOUND);
     }
 
     @PostMapping("/bid/bidDetails")
     public ResponseEntity<?> postBidInformation(@RequestBody Bid bid, @RequestHeader HttpHeaders header, HttpServletRequest request) {
         long contentLength = header.getContentLength();
         String token = request.getHeader("token");
-        if (token != null) {
+//        if (token != null) {
             Bid resultbid = bidService.save(bid);
             producer.send(bid);
             return new ResponseEntity<Bid>(resultbid, HttpStatus.ACCEPTED);
-        } else
-            throw new UnauthorizedException("login please");
+//        } else
+//            throw new UnauthorizedException("login please");
 
     }
 
+<<<<<<< HEAD
     @GetMapping("/bid/allbids")
     public ResponseEntity<?> getBidinformation() {
         List<Bid> result = bidService.allBids();
+=======
+    @GetMapping("/bid/{freelancerEmail}")
+    public ResponseEntity<?> getBidinformation(@PathVariable("freelancerEmail") String freelancerEmail) {
+        List<Bid> result = bidService.allBids(freelancerEmail);
+>>>>>>> 550ee0062243d96baab515693484f1709f69d012
         return new ResponseEntity<List<Bid>>(result, HttpStatus.OK);
 
     }
@@ -135,7 +149,7 @@ public class FreelancerController {
     }
 
     @PutMapping("/freelancerprofile/{id}")
-    public ResponseEntity<?> editProfile(@RequestBody Freelancer freelancer, @PathVariable("id") int id) {
+    public ResponseEntity<?> editProfile(@RequestBody Freelancer freelancer, @PathVariable("id") String id) {
 
         return new ResponseEntity<Freelancer>(freelancerService.edit(freelancer, id), HttpStatus.OK);
     }
@@ -144,6 +158,14 @@ public class FreelancerController {
     public ResponseEntity<?> searchBySkill(@PathVariable("skill") String skill) {
 
         return new ResponseEntity<Skill>(skillService.search(skill), HttpStatus.OK);
+    }
+
+
+    @PostMapping("/send")
+    public String sendEmail(@RequestBody EmailMessage emailmessage) throws AddressException, MessagingException, IOException {
+
+        generatemailApplication.sendmail(emailmessage);
+        return "Email sent successfully";
     }
 
 

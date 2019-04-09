@@ -8,6 +8,8 @@ import {MatDividerModule} from '@angular/material/divider';
 import {MatStepperModule} from '@angular/material/stepper';
 import {MatFormFieldModule} from '@angular/material/form-field';
 import {MatInputModule} from '@angular/material';
+import {MatDialogModule} from '@angular/material';
+
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -39,6 +41,10 @@ import { EditfreelancerProfileComponent } from './editfreelancer-profile/editfre
 import { FreelancerprofileComponent } from './freelancerprofile/freelancerprofile.component';
 import { EditProjectOwnerProfileComponent } from './edit-project-owner-profile/edit-project-owner-profile.component';
 import { ProjectOwnerProfileComponent } from './project-owner-profile/project-owner-profile.component';
+import { ViewProfileDailogComponent } from './view-profile-dailog/view-profile-dailog.component';
+
+
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -63,7 +69,10 @@ import { ProjectOwnerProfileComponent } from './project-owner-profile/project-ow
     FreelancerprofileComponent,
     EditProjectOwnerProfileComponent,
     ProjectOwnerProfileComponent,
-    EditfreelancerProfileComponent
+    EditfreelancerProfileComponent,
+    ProjectDetailsComponent,
+    ViewProfileDailogComponent
+
   ],
   imports: [
     BrowserModule,
@@ -78,7 +87,8 @@ import { ProjectOwnerProfileComponent } from './project-owner-profile/project-ow
     MatDividerModule,
     MatStepperModule,
     MatFormFieldModule,
-    MatInputModule
+    MatInputModule,
+    MatDialogModule
   ],
   providers: [
     UserserviceService,
@@ -88,6 +98,7 @@ import { ProjectOwnerProfileComponent } from './project-owner-profile/project-ow
     HttpClientModule,
     FormsModule
   ],
+  entryComponents: [ViewProfileDailogComponent],
   bootstrap: [AppComponent]
 })
 export class AppModule {}

@@ -43,6 +43,19 @@ export class EditfreelancerProfileComponent implements OnInit {
         return e.name !== skill
       })
   }
+
+  addPersonalDetails(value) {
+    console.log(value, "First Form in the stepper !!");
+  }
+
+  addEditAddress(value){
+    console.log(value, "Second Form in the stepper !!");
+  }
+
+  addprofessionaldetails(value){
+    console.log(value, "third Form in the stepper !!");
+  }
+
   freelancers = [
     {
       "name": "Arline Skinner",

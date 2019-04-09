@@ -41,10 +41,8 @@ import { EditfreelancerProfileComponent } from './editfreelancer-profile/editfre
 import { FreelancerprofileComponent } from './freelancerprofile/freelancerprofile.component';
 import { EditProjectOwnerProfileComponent } from './edit-project-owner-profile/edit-project-owner-profile.component';
 import { ProjectOwnerProfileComponent } from './project-owner-profile/project-owner-profile.component';
+import { ProjectDetailsViewComponent } from './project-details-view/project-details-view.component';
 import { ViewProfileDailogComponent } from './view-profile-dailog/view-profile-dailog.component';
-
-
-
 @NgModule({
   declarations: [
     AppComponent,
@@ -70,9 +68,9 @@ import { ViewProfileDailogComponent } from './view-profile-dailog/view-profile-d
     EditProjectOwnerProfileComponent,
     ProjectOwnerProfileComponent,
     EditfreelancerProfileComponent,
+    ProjectDetailsViewComponent,
     ProjectDetailsComponent,
     ViewProfileDailogComponent
-
   ],
   imports: [
     BrowserModule,

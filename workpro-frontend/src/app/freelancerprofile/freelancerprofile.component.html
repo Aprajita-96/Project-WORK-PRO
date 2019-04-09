@@ -38,8 +38,8 @@
 					<a href="">Website Link</a><br />
 					<a href="">Linkedin Profile</a><br />
 					<a href="">GitHub Profile</a>
-					<!-- <p *ngFor=let skill in profile.skills>SKILLS</p> -->
-					<a href="">skill</a><br />
+					<p>SKILLS</p>
+					<a *ngFor="let skill of profile.skills">{{skill}}  </a><br />
 					<!-- <a href="">Web Developer</a><br />
 					<a href="">WordPress</a><br />
 					<a href="">WooCommerce</a><br />

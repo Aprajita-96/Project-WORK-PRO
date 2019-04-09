@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { FreelancerDetailsService } from '../freelancer-details.service';
 
 @Component({
   selector: 'app-freelancerprofile',
@@ -7,9 +8,17 @@ import { Component, OnInit } from '@angular/core';
 })
 export class FreelancerprofileComponent implements OnInit {
 
-  constructor() { }
+  constructor(private freelancerdetails:FreelancerDetailsService) { }
 
+  email:String
+  profile:any;
+  role:String;
   ngOnInit() {
+    this.role=localStorage.getItem("role");
+    this.email=localStorage.getItem("email");
+    this.freelancerdetails.getDetailsOfFreelancers(this.email).subscribe(data=>{
+      this.profile=data;
+    });
   }
 
 }

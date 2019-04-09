@@ -16,7 +16,7 @@
                 <i class="fa fa-coffee"></i>
                 This is an <strong>.alert</strong>. Use this to show important messages to the user.
               </div> -->
-          <form class="form-horizontal" role="form">
+          <form class="form-horizontal" role="form" #personalDetails="ngForm">
             <div class="form-group">
               <div class="col-md-3 control-label">
                 <img src="../assets/images/avatar.jpg" alt="avatar">
@@ -133,7 +133,7 @@
     </form>
   </mat-step>
   <mat-step [stepControl]="secondFormGroup">
-    <form [formGroup]="secondFormGroup">
+    <form [formGroup]="secondFormGroup" >
       <ng-template matStepLabel>Edit address</ng-template>
       <div class="row form-container">
         <!-- <form class="form-horizontal">
@@ -141,7 +141,7 @@
         <!-- Address form -->
         <!-- address-line1 input-->
         <div class="col-sm-9 personal-info">
-          <form class="form-horizontal" role="form">
+          <form class="form-horizontal" role="form" #editAddress="ngForm">
             <div class="form-group">
               <label class="col-sm-3 control-label">Address Line 1</label>
               <div class="col-sm-8">
@@ -453,7 +453,7 @@
         <!-- Address form -->
         <!-- address-line1 input-->
         <div class="col-sm-9 personal-info">
-          <form class="form-horizontal" role="form">
+          <form class="form-horizontal" role="form" #professionaldetails="ngForm">
               <div class="form-group">
                   <label class="col-sm-3 control-label"><h3><i class="fas fa-plus-circle"></i></h3></label>
                   <div class="col-sm-8">
@@ -508,7 +508,7 @@
       </div>
       <div>
         <button mat-raised-button color="primary" matStepperPrevious
-          [routerLink]="['/freelanceprofile']">Submit</button>
+          [routerLink]="['/freelancerprofile']" (click)="saveUser(personalDetails.value, editAddress.value, professionalDetails.value)">Submit</button>
         <button mat-raised-button color="accent" (click)="stepper.reset()">Reset</button>
       </div>
     </form>

@@ -36,7 +36,7 @@ import { FreelancerProjectDetailsComponent } from './freelancer-project-details/
 import { ProductownerprofileComponent } from './productownerprofile/productownerprofile.component';
 import { HomeComponent } from './home/home.component';
 import { EditfreelancerProfileComponent } from './editfreelancer-profile/editfreelancer-profile.component';
-import { FreelancerprofileComponent } from './freelancerprofile/Freelancerprofile.component';
+import { FreelancerprofileComponent } from './freelancerprofile/freelancerprofile.component';
 import { EditProjectOwnerProfileComponent } from './edit-project-owner-profile/edit-project-owner-profile.component';
 import { ProjectOwnerProfileComponent } from './project-owner-profile/project-owner-profile.component';
 @NgModule({

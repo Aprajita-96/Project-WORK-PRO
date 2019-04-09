@@ -1,6 +1,8 @@
 package com.stackroute.freelancerprofile.config;
 
 
+import com.stackroute.freelancerprofile.domain.Bid;
+import com.stackroute.freelancerprofile.domain.BidKafka;
 import com.stackroute.freelancerprofile.domain.ProjectsOfProjectOwner;
 import com.stackroute.freelancerprofile.listener.Consumer;
 import org.apache.kafka.clients.consumer.ConsumerConfig;
@@ -27,30 +29,63 @@ public class ConsumerKafkaConfiguration {
 
     @Bean
     public Map<String, Object> consumerConfigs() {
+
+        JsonDeserializer<BidKafka> deserializer = new JsonDeserializer<>(BidKafka.class);
+        deserializer.setRemoveTypeHeaders(false);
+        deserializer.addTrustedPackages("*");
+        deserializer.setUseTypeMapperForKey(true);
+
+
         Map<String, Object> props = new HashMap<>();
         props.put(ConsumerConfig.BOOTSTRAP_SERVERS_CONFIG, bootstrapServers);
         props.put(ConsumerConfig.KEY_DESERIALIZER_CLASS_CONFIG, StringDeserializer.class);
-        props.put(ConsumerConfig.VALUE_DESERIALIZER_CLASS_CONFIG, JsonDeserializer.class);
+        props.put(ConsumerConfig.VALUE_DESERIALIZER_CLASS_CONFIG, deserializer);
         props.put(ConsumerConfig.GROUP_ID_CONFIG, "json");
 
         return props;
     }
 
     @Bean
-    public ConsumerFactory<String, ProjectsOfProjectOwner> consumerFactory() {
-        return new DefaultKafkaConsumerFactory<>(consumerConfigs(), new StringDeserializer(),
-                new JsonDeserializer<>(ProjectsOfProjectOwner.class));
+    public ConsumerFactory<String, BidKafka> consumerFactory() {
+        JsonDeserializer<BidKafka> deserializer = new JsonDeserializer<>(BidKafka.class);
+        deserializer.setRemoveTypeHeaders(false);
+        deserializer.addTrustedPackages("*");
+        deserializer.setUseTypeMapperForKey(true);
+
+
+        return new DefaultKafkaConsumerFactory<>(consumerConfigs(), new StringDeserializer(), deserializer);
     }
-
-
+    //
+//
     @Bean
-    public ConcurrentKafkaListenerContainerFactory<String, ProjectsOfProjectOwner> kafkaListenerContainerFactory() {
-        ConcurrentKafkaListenerContainerFactory<String, ProjectsOfProjectOwner> factory = new ConcurrentKafkaListenerContainerFactory<>();
+    public ConcurrentKafkaListenerContainerFactory<String, BidKafka> kafkaListenerContainerFactory() {
+        ConcurrentKafkaListenerContainerFactory<String, BidKafka> factory = new ConcurrentKafkaListenerContainerFactory<>();
         factory.setConsumerFactory(consumerFactory());
 
         return factory;
     }
+//@Bean
+//public ConsumerFactory<String, String> consumerFactory() {
+//    Map<String, Object> props = new HashMap<>();
+//    props.put(ConsumerConfig.BOOTSTRAP_SERVERS_CONFIG, bootstrapServers);
+//    props.put(ConsumerConfig.KEY_DESERIALIZER_CLASS_CONFIG, StringDeserializer.class);
+//    props.put(ConsumerConfig.VALUE_DESERIALIZER_CLASS_CONFIG, StringDeserializer.class);
+//    props.put(ConsumerConfig.GROUP_ID_CONFIG, "json");
+//    return new DefaultKafkaConsumerFactory<>(props);    }
 
+//
+//    @Bean
+//    public ConcurrentKafkaListenerContainerFactory<String, String> kafkaListenerContainerFactory() {
+//        ConcurrentKafkaListenerContainerFactory<String, String> factory = new ConcurrentKafkaListenerContainerFactory<>();
+//        factory.setConsumerFactory(consumerFactory());
+//
+//        return factory;
+//    }
+
+    @Bean
+    public Consumer receiver(BidKafka bidKafka) {
+        return new Consumer();
+    }
 //    @Bean
 //    public Consumer receiver() {
 //        return new Consumer();

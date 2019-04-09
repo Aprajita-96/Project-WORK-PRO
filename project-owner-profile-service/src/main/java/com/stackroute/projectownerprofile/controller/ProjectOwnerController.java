@@ -19,19 +19,22 @@ public class ProjectOwnerController {
 
     @Autowired
 
-    public ProjectOwnerController(ProjectOwnerServices projectOwnerServices) {
+    public ProjectOwnerController(@RequestBody ProjectOwnerServices projectOwnerServices) {
         this.projectOwnerServices = projectOwnerServices;
     }
 
 
     @PostMapping("/projectOwner/projectOwnerId")
-        public ResponseEntity<?> post(ProjectOwner projectOwner){
-            ProjectOwner po=projectOwnerServices.post(projectOwner);
-            return new ResponseEntity<ProjectOwner>(po, HttpStatus.CREATED);
-        }
-        @GetMapping("/projectOwner/{email}")
-        public ResponseEntity<?> getProjectOwner(@PathVariable("email") String email){
-            ProjectOwner po=projectOwnerServices.getProjectOwner(email);
+        public ResponseEntity<?> post(@RequestBody ProjectOwner projectOwner) {
+       // System.out.println(projectOwner+"before.........................................");
+        ProjectOwner po = projectOwnerServices.post(projectOwner);
+    //    System.out.printf("im in controller................."+po);
+        return new ResponseEntity<ProjectOwner>(po, HttpStatus.CREATED);
+    }
+    @GetMapping("/projectOwner/{email}")
+        public ResponseEntity<?> getProjectOwner(@PathVariable("email") String id){
+            ProjectOwner po=projectOwnerServices.getProjectOwner(id);
+        System.out.println(id+"here in controller.............................");
             return new ResponseEntity<ProjectOwner>(po,HttpStatus.OK);
         }
 

@@ -1,116 +1,202 @@
 h1{
     
-    text-align: center;
+  text-align: center;
 }
-    #carouselExampleIndicators{
+  #carouselExampleIndicators{
 overflow: hidden;
 height: 80%;
 }
 .carousel-inner img{
-    position:center;
+  position:center;
 }
 #searchForm {
-	position:absolute;
-      top:60%;
-      left: 35%;
-      border-radius: 2px;
+position:absolute;
+    top:60%;
+    left: 35%;
+    border-radius: 2px;
 }
 .carousel-caption{
-    position: absolute;
-    left: 5%;
-    bottom: 80%;
-    right: auto;
-    color: #fff;
-    font-family: Canela Deck Web;
-    font-weight: bolder;
+  position: absolute;
+  left: 5%;
+  bottom: 80%;
+  right: auto;
+  color: #fff;
+  font-family: Canela Deck Web;
+  font-weight: bolder;
 }
 .card-group1{
-     padding-top: 15px;
-         margin-bottom: 10px;
-         margin-top: 10px;
-        box-shadow: 2px 2px 2px 2px rgba(0, 0, 0, 0.55);
-        }
+   padding-top: 15px;
+       margin-bottom: 10px;
+       margin-top: 10px;
+      box-shadow: 2px 2px 2px 2px rgba(0, 0, 0, 0.55);
+      }
 .card-group1 img{
-    align-content: center;
+  align-content: center;
 }
 $grid-breakpoints: (
-    xs: 0,
-    sm: 576px,
-    md: 768px,
-    lg: 992px,
-    xl: 1200px
- ) !default;
- $grid-gutter-width: 30px !default;
- // number of cards per line for each breakpoint
- $cards-per-line: (
-    xs: 1,
-    sm: 2,
-    md: 3,
-    lg: 4,
-    xl: 5
- );
- @each $name, $breakpoint in $grid-breakpoints {
-     @media (min-width: $breakpoint) {
-         .card-deck .card {
-             flex: 0 0 calc(#{100/map-get($cards-per-line, $name)}% - #{$grid-gutter-width});
-         }
-     }
- }
- .TopFreelancers{
-    font-family: Canela Deck Web;
-    color: #012f43;
-    text-align: center;
+  xs: 0,
+  sm: 576px,
+  md: 768px,
+  lg: 992px,
+  xl: 1200px
+) !default;
+$grid-gutter-width: 30px !default;
+// number of cards per line for each breakpoint
+$cards-per-line: (
+  xs: 1,
+  sm: 2,
+  md: 3,
+  lg: 4,
+  xl: 5
+);
+@each $name, $breakpoint in $grid-breakpoints {
+   @media (min-width: $breakpoint) {
+       .card-deck .card {
+           flex: 0 0 calc(#{100/map-get($cards-per-line, $name)}% - #{$grid-gutter-width});
+       }
+   }
+}
+.TopFreelancers{
+  font-family: Canela Deck Web;
+  color: #012f43;
+  text-align: center;
 font-size: 48px;
 font-weight: bold;
 text-decoration: underline;
- }
- .TopProjects{
-    font-family: Canela Deck Web;
-    color: #012f43;
-    text-align: center;
+}
+.TopProjects{
+  font-family: Canela Deck Web;
+  color: #012f43;
+  text-align: center;
 font-size: 48px; 
 font-weight: bold;  
 text-decoration: underline;
- }
- .card-flip {
-    perspective: 1000px;
-    &:hover .flip,
-    &.hover .flip {
-      transform: rotateY(180deg);
-    }
-  }
-  
-  .card-flip,
-  .front,
-  .back {
-    width: 277px;
-    height: 249px;
-    margin: 15px;
-  }
-  
-  .flip {
-    transition: 0.6s;
-    transform-style: preserve-3d;
-    position: relative;
-  }
-  
-  .front,
-  .back {
-    backface-visibility: hidden;
-    position: absolute;
-    top: 0;
-    left: 0;
-  }
-  
-  .front {
-    z-index: 2;
-    transform: rotateY(0deg);
-  }
-  
-  .back {
+}
+.card-flip {
+  perspective: 1000px;
+  &:hover .flip,
+  &.hover .flip {
     transform: rotateY(180deg);
   }
-  .card{
-    box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.55);
-    justify-content: space-between;
-  }
+}
+
+.card-flip,
+.front,
+.back {
+  width: 277px;
+  height: 249px;
+  margin: 15px;
+}
+
+.flip {
+  transition: 0.6s;
+  transform-style: preserve-3d;
+  position: relative;
+}
+
+.front,
+.back {
+  backface-visibility: hidden;
+  position: absolute;
+html{
+ font-size:15px;
+}
+body{
+font-family: "Helvetica", sans-serif;
+width:94%;
+margin: 0 auto;
+}
+*, *::after, *::before{
+box-sizing: border-box;
+}
+.modal-trigger{
+text-decoration: none;
+padding:1rem;
+background:#f93434;
+display:inline-block;
+border-radius:3px;
+margin-top:50px;
+color:#fff;
+}
+.modal{
+display:none;
+background:rgba(0, 0, 0, .8);
+position:fixed;
+left:0;
+top:0;
+height:100%;
+width:100%;
+}
+.modal:target{
+display:table;
+}
+.modal__dialog{
+display:table-cell;
+vertical-align:middle;
+}
+
+.modal__content{
+background:rgb(255, 255, 255);
+width:60%;
+min-width:300px;
+margin:auto;
+position:relative;
+
+animation: slideUp 0.3s ease-in-out;
+}
+
+.modal__header{
+background:#2980b9;
+color:rgba(255, 255, 255, 0.8);
+padding:1rem;
+position:relative;
+}
+.modal__title{
+margin:0;
+}
+.modal__close{
+color:#fff;
+text-decoration: none;
+position:absolute;
+top:1rem;
+right:1rem;
+}
+.modal__image{
+display:block;
+margin:1rem auto;
+}
+.modal__text{
+padding:0 1rem;
+line-height:1.5;
+}
+.modal__footer{
+padding:1rem;
+border-top:1px solid #ccc;
+}
+
+@keyframes slideUp{
+from{
+  opacity:0;
+  bottom: -200px;
+}
+to{
+  opacity:1;
+  bottom:0;
+}
+}  top: 0;
+  left: 0;
+}
+
+.front {
+  z-index: 2;
+  transform: rotateY(0deg);
+}
+
+.back {
+  transform: rotateY(180deg);
+}
+.card{
+  box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.55);
+  justify-content: space-between;
+}
+

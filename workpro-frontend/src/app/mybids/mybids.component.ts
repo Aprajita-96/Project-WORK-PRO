@@ -11,35 +11,37 @@ export class MybidsComponent implements OnInit {
   decodeToken:any;
   projects1:any=[];
   projects=[];
+  email:String;
   constructor(private freelancerdetails:FreelancerDetailsService,private loginauth:LoginAuthService) { }
   @Input()
   ngOnInit() {
-    this.filterOpenBids();
-    this.decodeToken=this.loginauth.checkToken();
+    // this.filterOpenBids();
+   this.email=localStorage.getItem("email");
     this.freelancerdetails.getBidsofFreelancer().subscribe(data=>{
       this.projects1=data;
+      console.log(this.projects1);
     });
-    console.log(this.projects1);
+    
   }
 
   
   filterOpenBids() {
     this.projects = this.projects1.filter(e => {
-      if (e.status === "open" && e.freeLanceremail===this.decodeToken.sub) {
+      if (e.status === "open" && e.freelancerEmail===this.email) {
         return e;
       }
     });
   }
   filterCloseBids() {
     this.projects = this.projects1.filter(e => {
-      if (e.status === "close" && e.freeLanceremail===this.decodeToken.sub) {
+      if (e.status === "close" && e.freelancerEmail===this.email) {
         return e;
       }
     });
   }
   filterWonBids() {
     this.projects = this.projects1.filter(e => {
-      if (e.status === "won" && e.freeLanceremail===this.decodeToken.sub) {
+      if (e.status === "won" && e.freelancerEmail===this.email) {
         return e;
       }
     });

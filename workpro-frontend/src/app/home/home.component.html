@@ -62,14 +62,13 @@
                         <div class="back">
                             <!-- back content -->
                             <div class="card">
-                              <div class="card-block">
-                                <!-- <h4 class="card-title">Card Flip</h4> -->
-                                <!-- <h6 class="card-subtitle text-muted">Support card subtitle</h6> -->
+                              <div class="card-block">                              
+                                
                               </div>
                               <!-- <img data-src="holder.js/100px180/?text=Image" alt="Image [100%x180]" data-holder-rendered="true" style="height: 180px; width: 100%; display: block;"> -->
                               <div class="card-block">
                                 <p class="card-text">{{freelancer.skills}}</p>
-                                <button class="btn btn-primary" type="button" routerLink="['./freelancerprofile']">View Profile</button>
+                                <button class="btn btn-primary"  (click)="openDialog()" >View Profile</button>
                               </div>
                             </div>
                         </div>

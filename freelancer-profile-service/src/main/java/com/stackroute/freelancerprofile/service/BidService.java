@@ -7,5 +7,5 @@ import java.util.List;
 
 public interface BidService {
     public Bid save(Bid bid);
-    public List<Bid> allBids();
+    public List<Bid> allBids(String email);
 }

@@ -22,7 +22,7 @@ import{ProjectOwnerProfileComponent} from'./project-owner-profile/project-owner-
 import{ProjectDetailsViewComponent}from'./project-details-view/project-details-view.component';
 
 const routes: Routes = [
- {
+  {
    path:"detailsview",
    component:ProjectDetailsViewComponent
  },
@@ -78,7 +78,7 @@ const routes: Routes = [
   },
   {
     path: "podashboard",
-    component: ProjectCardUserDashboardComponent
+    component: ProjectOwnerDashboardComponent
   },
   {
     path: "mybids",

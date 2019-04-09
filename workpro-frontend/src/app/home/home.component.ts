@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import {MatDialog} from '@angular/material';
+import { ViewProfileDailogComponent } from '../view-profile-dailog/view-profile-dailog.component';
+
 
 @Component({
   selector: 'app-home',
@@ -7,10 +10,20 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HomeComponent implements OnInit {
 
-  constructor() { }
+  constructor(public dialog: MatDialog) { }
 
   ngOnInit() {
   }
+
+  openDialog() {
+    const dialogRef = this.dialog.open(ViewProfileDailogComponent);
+
+    dialogRef.afterClosed().subscribe(result => {
+      console.log(`Dialog result: ${result}`);
+    });
+    console.log("this is happening ??")
+  }
+
   freelancers = [
     {
       "name": "Arline Skinner",
@@ -28,6 +41,12 @@ export class HomeComponent implements OnInit {
       "name": "Arline Skinner",
       "email": "arlineskinner@pharmex.com",
       "skills": " Android / Java / Mobile App Development",
+      "profilePicUrl": "../assets/images/dummy-user.png"
+    },
+    {
+      "name": "Sadie Olson",
+      "email": "sadieolson@pharmex.com",
+      "skills": " Android / Java / Mobile App Development / MySQL / PHP ",
       "profilePicUrl": "../assets/images/dummy-user.png"
     },
     
@@ -79,7 +98,7 @@ projects = [
     "name": "Build Selenium Framework",
     "id": 4,
     "description": "I have a Java+Selenium framework, which is not following the code standards, and not included the proper maven repositories etc.",
-    "Skills": "Java / Android / jQuery / Prototype"
+    "Skills": "Java / Android / jQuery / JavaScript"
   }
 ]
 }

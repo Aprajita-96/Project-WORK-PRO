@@ -111,27 +111,33 @@ public class FreelancerController {
 
 
     @GetMapping("/freelancer/{id}")
-    public ResponseEntity<?> getDetails(@PathVariable("id") int id) {
+    public ResponseEntity<?> getDetails(@PathVariable("id") String id) {
         Freelancer freelancer = freelancerService.search(id);
-        return new ResponseEntity<Freelancer>(freelancer, HttpStatus.OK);
+        return new ResponseEntity<Freelancer>(freelancer, HttpStatus.FOUND);
     }
 
     @PostMapping("/bid/bidDetails")
     public ResponseEntity<?> postBidInformation(@RequestBody Bid bid, @RequestHeader HttpHeaders header, HttpServletRequest request) {
         long contentLength = header.getContentLength();
         String token = request.getHeader("token");
-        if (token != null) {
+//        if (token != null) {
             Bid resultbid = bidService.save(bid);
             producer.send(bid);
             return new ResponseEntity<Bid>(resultbid, HttpStatus.ACCEPTED);
-        } else
-            throw new UnauthorizedException("login please");
+//        } else
+//            throw new UnauthorizedException("login please");
 
     }
 
-    @GetMapping("/bid/allbids/{freelancerEmail}")
+<<<<<<< HEAD
+    @GetMapping("/bid/allbids")
     public ResponseEntity<?> getBidinformation() {
         List<Bid> result = bidService.allBids();
+=======
+    @GetMapping("/bid/{freelancerEmail}")
+    public ResponseEntity<?> getBidinformation(@PathVariable("freelancerEmail") String freelancerEmail) {
+        List<Bid> result = bidService.allBids(freelancerEmail);
+>>>>>>> 550ee0062243d96baab515693484f1709f69d012
         return new ResponseEntity<List<Bid>>(result, HttpStatus.OK);
 
     }
@@ -143,7 +149,7 @@ public class FreelancerController {
     }
 
     @PutMapping("/freelancerprofile/{id}")
-    public ResponseEntity<?> editProfile(@RequestBody Freelancer freelancer, @PathVariable("id") int id) {
+    public ResponseEntity<?> editProfile(@RequestBody Freelancer freelancer, @PathVariable("id") String id) {
 
         return new ResponseEntity<Freelancer>(freelancerService.edit(freelancer, id), HttpStatus.OK);
     }

@@ -22,6 +22,13 @@ export class EditfreelancerProfileComponent implements OnInit {
     });
   }
 
+  saveUser(user: any, a, b, c) {
+ 
+    console.log(a, b, c)
+
+  }
+
+
   addSkill(skill) {
     console.log("skill is being added", skill )
     let s = {

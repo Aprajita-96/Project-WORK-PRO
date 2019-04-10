@@ -43,6 +43,7 @@ import { EditProjectOwnerProfileComponent } from './edit-project-owner-profile/e
 import { ProjectOwnerProfileComponent } from './project-owner-profile/project-owner-profile.component';
 import { ProjectDetailsViewComponent } from './project-details-view/project-details-view.component';
 import { ViewProfileDailogComponent } from './view-profile-dailog/view-profile-dailog.component';
+import { BidviewComponent } from './bidview/bidview.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -70,7 +71,8 @@ import { ViewProfileDailogComponent } from './view-profile-dailog/view-profile-d
     EditfreelancerProfileComponent,
     ProjectDetailsViewComponent,
     ProjectDetailsComponent,
-    ViewProfileDailogComponent
+    ViewProfileDailogComponent,
+    BidviewComponent
   ],
   imports: [
     BrowserModule,
@@ -96,7 +98,7 @@ import { ViewProfileDailogComponent } from './view-profile-dailog/view-profile-d
     HttpClientModule,
     FormsModule
   ],
-  entryComponents: [ViewProfileDailogComponent],
+  entryComponents: [ViewProfileDailogComponent, BidviewComponent],
   bootstrap: [AppComponent]
 })
 export class AppModule {}

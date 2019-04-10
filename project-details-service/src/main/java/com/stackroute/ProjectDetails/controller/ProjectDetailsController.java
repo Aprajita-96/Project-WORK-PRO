@@ -24,7 +24,7 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/api/v1")
-@CrossOrigin
+@CrossOrigin("*")
 public class ProjectDetailsController {
     private ProjectOwnerProjectsServiceImpl projectOwnerProjectsService;
     private SkillsServiceImpl skillsService;

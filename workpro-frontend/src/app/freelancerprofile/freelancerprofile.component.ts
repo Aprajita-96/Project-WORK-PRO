@@ -17,8 +17,8 @@ export class FreelancerprofileComponent implements OnInit {
     this.role=localStorage.getItem("role");
     this.email=localStorage.getItem("email");
     this.freelancerdetails.getDetailsOfFreelancers(this.email).subscribe(data=>{
-      this.profile=data;
       console.log(data);
+      this.profile=data;
     });
   }
 

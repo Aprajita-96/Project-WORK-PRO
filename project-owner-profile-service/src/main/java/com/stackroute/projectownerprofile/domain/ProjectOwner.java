@@ -6,9 +6,8 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
-import org.springframework.stereotype.Component;
 
-@Component
+
 @Data
 @Document
 @NoArgsConstructor
@@ -20,6 +19,6 @@ public class ProjectOwner {
     private String email;
     private String address;
     private String location;
-    private int number;
+    private long number;
 
 }

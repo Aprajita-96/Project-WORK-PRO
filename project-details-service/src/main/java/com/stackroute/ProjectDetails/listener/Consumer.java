@@ -24,6 +24,7 @@ public class Consumer {
 
     @KafkaListener(topics = "myTopic")
     public void receive(BidKafka bidKafka) {
+
         System.out.println(bidKafka);
         bidService.save(bidKafka);
 

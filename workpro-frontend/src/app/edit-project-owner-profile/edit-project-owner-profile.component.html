@@ -3,7 +3,7 @@
   </button> -->
 <mat-horizontal-stepper [linear]="isLinear" #stepper>
   <mat-step [stepControl]="firstFormGroup" style="color:#012F43">
-    <form [formGroup]="firstFormGroup" >
+    <form >
       <ng-template matStepLabel>Personal Details</ng-template>
       <!-- <div class="container"> -->
       <div class="row form-container">
@@ -133,7 +133,7 @@
     </form>
   </mat-step>
   <mat-step [stepControl]="secondFormGroup">
-    <form [formGroup]="secondFormGroup">
+    <form >
       <ng-template matStepLabel>Edit address</ng-template>
       <div class="row form-container">
         <!-- <form class="form-horizontal">
@@ -444,7 +444,7 @@
       </div>
       <div>
         <button mat-raised-button color="primary" matStepperPrevious
-          [routerLink]="['/freelancerprofile']">Submit</button>
+          [routerLink]="['/poprofile']">Submit</button>
         <button mat-raised-button color="accent" (click)="stepper.reset()">Reset</button>
       </div>
     </form>

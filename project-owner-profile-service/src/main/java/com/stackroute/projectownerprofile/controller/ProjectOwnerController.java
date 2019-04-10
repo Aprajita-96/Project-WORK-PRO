@@ -19,7 +19,7 @@ public class ProjectOwnerController {
 
     @Autowired
 
-    public ProjectOwnerController(ProjectOwnerServices projectOwnerServices) {
+    public ProjectOwnerController(@RequestBody ProjectOwnerServices projectOwnerServices) {
         this.projectOwnerServices = projectOwnerServices;
     }
 
@@ -29,6 +29,7 @@ public class ProjectOwnerController {
             ProjectOwner po=projectOwnerServices.post(projectOwner);
             return new ResponseEntity<ProjectOwner>(po, HttpStatus.CREATED);
         }
+
         @GetMapping("/projectOwner/{email}")
         public ResponseEntity<?> getProjectOwner(@PathVariable("email") String email){
             ProjectOwner po=projectOwnerServices.getProjectOwner(email);

@@ -16,7 +16,7 @@ export class ProductownerprofileComponent implements OnInit {
   save(productowner){
     console.log(productowner);
     console.log("user details entered")
-    this.po.setDetailsofProductOwner(productowner).subscribe(console.log);
+    // this.po.setDetailsofProductOwner(productowner).subscribe(console.log);
     this.router.navigateByUrl('projectownerdashboard')
   }
 

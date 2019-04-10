@@ -21,6 +21,9 @@ export class AppComponent implements OnInit {
    email:any;
 
   ngOnInit() {
+
+
+    
     
     this.decodedToken=this.loginauthservice.checkToken();
     console.log(this.decodedToken);
@@ -31,6 +34,7 @@ export class AppComponent implements OnInit {
       localStorage.setItem("email",this.email);
       localStorage.setItem("role",this.role);
     }
+
     
   }
 

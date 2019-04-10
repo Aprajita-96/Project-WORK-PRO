@@ -9,6 +9,7 @@ import { ViewProfileDailogComponent } from '../view-profile-dailog/view-profile-
   styleUrls: ['./home.component.scss']
 })
 export class HomeComponent implements OnInit {
+  
 
   constructor(public dialog: MatDialog) { }
 
@@ -25,18 +26,6 @@ export class HomeComponent implements OnInit {
   }
 
   freelancers = [
-    {
-      "name": "Arline Skinner",
-      "email": "arlineskinner@pharmex.com",
-      "skills": " Android / Java / Mobile App Development",
-      "profilePicUrl": "../assets/images/dummy-user.png"
-    },
-    {
-      "name": "Arline Skinner",
-      "email": "arlineskinner@pharmex.com",
-      "skills": " Android / Java / Mobile App Development",
-      "profilePicUrl": "../assets/images/dummy-user.png"
-    },
     {
       "name": "Sadie Olson",
       "email": "sadieolson@pharmex.com",
@@ -87,12 +76,6 @@ projects = [
     "id": 3,
     "description": "I need to develop a small java based web application which will work between telecash payment gateway and .net website. Please bid only if you are experienced/serious freelancer.",
     "Skills": "Prototype / Mobile App Development"
-  },
-  {
-    "name": "Build Selenium Framework",
-    "id": 4,
-    "description": "I have a Java+Selenium framework, which is not following the code standards, and not included the proper maven repositories etc.",
-    "Skills": "Java / Android / jQuery / JavaScript"
   }
 ]
 }

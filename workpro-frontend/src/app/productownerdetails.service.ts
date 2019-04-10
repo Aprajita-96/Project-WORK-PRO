@@ -18,7 +18,7 @@ export class ProductownerdetailsService {
     }
 
     getProjectDetails(value){
-      return this.http.get("http://localhost:8090/api/v1/projectowner/"+value+"/project");
+      return this.http.get("http://localhost:8090/api/v1/projectOwner/"+value+"/project");
     }
    
 }

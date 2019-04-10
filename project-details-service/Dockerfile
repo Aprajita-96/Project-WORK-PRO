@@ -11,4 +11,4 @@ RUN mvn clean package -DskipTests
 
 WORKDIR /app/target
 
-CMD ["java", "-jar", "Project-Details-0.0.1-SNAPSHOT"]
+CMD ["java", "-jar", "Project-Details-0.0.1-SNAPSHOT.jar"]

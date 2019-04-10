@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FreelancerserviceService } from "../freelancerservice.service";
+import { ProductownerdetailsService } from '../productownerdetails.service';
 
 @Component({
   selector: 'app-user-dashboard',
@@ -8,19 +9,16 @@ import { FreelancerserviceService } from "../freelancerservice.service";
 })
 export class UserDashboardComponent implements OnInit {
 
-  constructor( private freelancerserviceService: FreelancerserviceService) { 
-    // this.freelancerserviceService.getProjects().subscribe(data => {
-    //   this.projects = data
-    //   console.log(data) 
-    // })
-  }
+  constructor(private projectService: ProductownerdetailsService ) { }
   projects;
-  
 
-  ngOnInit() {
-      
-  }
-  
+   ngOnInit() {
+}
+searchProject(skill) {
+  this.projectService.getResults(skill).subscribe((data: any) => {
+    this.projects = data.list;
+  });
+}
 }
 
 

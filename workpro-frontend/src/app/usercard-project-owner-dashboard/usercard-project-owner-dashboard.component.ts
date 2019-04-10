@@ -1,4 +1,6 @@
 import { Component, OnInit, Input } from '@angular/core';
+import { FreelancerDetailsService } from '../freelancer-details.service';
+import { FreelancerserviceService } from '../freelancerservice.service';
 
 
 @Component({
@@ -8,9 +10,10 @@ import { Component, OnInit, Input } from '@angular/core';
 })
 export class UsercardProjectOwnerDashboardComponent implements OnInit {
   @Input() freelancer;
-  constructor() { }
-
+  constructor(private search:FreelancerserviceService) { }
+ arraySearch:any=[];
   ngOnInit() {
+ 
   }
 
 }

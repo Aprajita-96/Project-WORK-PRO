@@ -21,4 +21,8 @@ export class ProductownerdetailsService {
       return this.http.get("http://localhost:8090/api/v1/projectowner/"+value+"/project");
     }
    
+    getResults(skillName){
+    return this.http.get("http://localhost:8090/api/v1/skill/"+skillName+"/projects");
+   }
+  
 }

@@ -11,9 +11,11 @@ export class EditfreelancerProfileComponent implements OnInit {
   firstFormGroup: FormGroup;
   secondFormGroup: FormGroup;
   addedSkills = [];
+  public user: any = {};
   constructor(private _formBuilder: FormBuilder) { }
-
+  email: String;
   ngOnInit() {
+    this.email = localStorage.getItem("email");
     this.firstFormGroup = this._formBuilder.group({
       firstCtrl: ['', Validators.required]
     });
@@ -21,11 +23,14 @@ export class EditfreelancerProfileComponent implements OnInit {
       secondCtrl: ['', Validators.required]
     });
   }
-
-  saveUser(user: any, a, b, c) {
- 
-    console.log(a, b, c)
-
+  saveUser(user: any, userForm: any) {
+    user.skills = this.addedSkills;
+    console.log(this.addedSkills)
+    user.freelancerName = user.freelancerName;
+    user.freelancerAddress = user.freelancerAddress;
+    // this.addPersonalDetails(user);
+    // this.addEditAddress(user);
+    // this.addprofessionaldetails(user);
   }
 
 

@@ -27,4 +27,9 @@ export class FreelancerDetailsService {
   getBidsofFreelancer(){
     return this.http.get("http://localhost:8082/api/v1/bid/allbids");
   }
+  setFreelancerDetails(value)
+  {
+      return this.http.get("http://localhost:8082/api/v1/freelancer/"+value);
+    
+  }
 }

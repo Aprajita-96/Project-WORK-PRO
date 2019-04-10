@@ -127,7 +127,7 @@ public class FreelancerController {
     }
 
 
-    @GetMapping("/bid/{freelancerEmail}")
+    @GetMapping("/bid/allbids/{freelancerEmail}")
     public ResponseEntity<?> getBidinformation(@PathVariable("freelancerEmail") String freelancerEmail) {
         List<Bid> result = bidService.allBids(freelancerEmail);
         return new ResponseEntity<List<Bid>>(result, HttpStatus.OK);

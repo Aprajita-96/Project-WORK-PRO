@@ -9,6 +9,7 @@ import { ViewProfileDailogComponent } from '../view-profile-dailog/view-profile-
   styleUrls: ['./home.component.scss']
 })
 export class HomeComponent implements OnInit {
+  
 
   constructor(public dialog: MatDialog) { }
 

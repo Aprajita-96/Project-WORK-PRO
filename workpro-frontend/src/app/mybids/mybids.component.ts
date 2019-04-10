@@ -17,31 +17,32 @@ export class MybidsComponent implements OnInit {
   ngOnInit() {
     // this.filterOpenBids();
    this.email=localStorage.getItem("email");
-    this.freelancerdetails.getBidsofFreelancer().subscribe(data=>{
+    this.freelancerdetails.getBidsofFreelancer(this.email).subscribe(data=>{
       this.projects1=data;
       console.log(this.projects1);
     });
+    this.projects=this.projects1;
     
   }
 
   
   filterOpenBids() {
     this.projects = this.projects1.filter(e => {
-      if (e.status === "open" && e.freelancerEmail===this.email) {
+      if (e.status === "open" ) {
         return e;
       }
     });
   }
   filterCloseBids() {
     this.projects = this.projects1.filter(e => {
-      if (e.status === "close" && e.freelancerEmail===this.email) {
+      if (e.status === "close" ) {
         return e;
       }
     });
   }
   filterWonBids() {
     this.projects = this.projects1.filter(e => {
-      if (e.status === "won" && e.freelancerEmail===this.email) {
+      if (e.status === "won" ) {
         return e;
       }
     });

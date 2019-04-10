@@ -26,6 +26,7 @@ export class ProjectDetailFormComponent implements OnInit {
 
     user.projectName = user.projectName;
     user.projectStatus = "open";
+    user.allBidsOfFreelancers=[];
     user.projectDescription = user.projectDescription;
     user.projectCompletionDate = user.projectCompletionDate;
     user.projectPreference = user.projectPreference;

@@ -1,6 +1,6 @@
 package com.stackroute.ProjectDetails;
 
-import com.google.gson.Gson;
+
 import com.stackroute.ProjectDetails.domain.ProjectDetails;
 import com.stackroute.ProjectDetails.domain.ProjectsOfProjectOwner;
 import org.springframework.boot.CommandLineRunner;

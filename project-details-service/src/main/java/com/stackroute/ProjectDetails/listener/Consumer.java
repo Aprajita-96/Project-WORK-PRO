@@ -2,8 +2,6 @@ package com.stackroute.ProjectDetails.listener;
 
 import com.stackroute.ProjectDetails.domain.BidKafka;
 import com.stackroute.ProjectDetails.service.BidService;
-import org.json.simple.JSONObject;
-import org.json.simple.JSONValue;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.kafka.annotation.KafkaListener;
 

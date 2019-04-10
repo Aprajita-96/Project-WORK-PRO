@@ -50,8 +50,8 @@ public class ConsumerKafkaConfiguration {
 
         return new DefaultKafkaConsumerFactory<>(consumerConfigs(), new StringDeserializer(), deserializer);
     }
-//
-//
+
+
     @Bean
     public ConcurrentKafkaListenerContainerFactory<String, BidKafka> kafkaListenerContainerFactory() {
         ConcurrentKafkaListenerContainerFactory<String, BidKafka> factory = new ConcurrentKafkaListenerContainerFactory<>();

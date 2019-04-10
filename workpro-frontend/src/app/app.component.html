@@ -63,9 +63,7 @@
           <mat-list-item>
             <a class="nav-link" routerLink="projectDetailForm">ProjectDetailForm</a>
           </mat-list-item>
-          <mat-list-item>
-            <a class="nav-link" routerLink="freelancerdetails">Freelancer Details Form</a>
-          </mat-list-item>
+         
         </mat-nav-list>
       </div>
 
@@ -84,6 +82,10 @@
               <a class="nav-link" [routerLink]="['/mybids']">My Bids</a>
             </mat-list-item>
 
+            <mat-list-item>
+              <a class="nav-link" routerLink="freelancerdetails">Freelancer Details Form</a>
+            </mat-list-item>
+
           </mat-nav-list>
         </div>
       </ng-template>
@@ -91,7 +93,7 @@
       <ng-template #elseBlock1>
         <mat-nav-list>
           <mat-list-item>
-            <a class="nav-link">About Us</a>
+            <a class="nav-link" href="#">About Us</a>
           </mat-list-item>
         </mat-nav-list>
       </ng-template>

@@ -15,23 +15,31 @@
       </ul>
     </div>
     <div class="card-body">
-      <h4 class="card-title">{{ details.name }}</h4>
-      <p class="card-text">{{ details.discription }}</p>
-      <p class="card-text">{{ details.Amount }}</p>
-      <p class="card-text">{{ details.requiredTime }}</p>
+      <h4 class="card-title">{{ projects1.projectName }}</h4>
+      <p class="card-text">{{ projects1.projectDescription }}</p>
+     
+      <p class="card-text">{{bidsInfromation.maximumBudget}}</p>
+      <p class="card-text">{{ bidsInfromation.minimumBudget }}</p>
+      <p class="card-text">{{ projects1.projectCompletionDate}}</p>
     </div>
   </div>
-  <div class="text-center"><h3>Bids</h3></div>
-  <div *ngFor="let bid of details.bids" class="card mt-3">
+  <div class="text-center">
+    <h3>Bids</h3>
+  </div>
+  <div *ngFor="let bid of biders" class="card mt-3">
     <div class="card-body">
-      <h4 class="card-title">{{ bid.name }}</h4>
-      <p class="card-text">{{ bid.bidValue }}</p>
-      <p class="card-text">{{ bid.timeLimit }}</p>
+      <h4 class="card-title">{{ bid.freelancerEmailId }}</h4>
+      <p class="card-text">{{ bid.bidAmount }}</p>
+      <p class="card-text">{{ bid.proposedCompletionDate }}</p>
       <div>
-        <button routerLink="#" class="btn btn-primary text-white">
+        <button routerLink="/productownermyprojects" (click)="projectassign(bid.freelancerEmailId)" class="btn btn-primary text-white">
           Accept
         </button>
+        <button routerLink="/freelancerprofile/{{bid.freelancerEmailId}}" class="btn btn-primary text-white">
+          Details
+        </button>
       </div>
+      
     </div>
   </div>
 </div>

@@ -20,8 +20,12 @@ import{ FreelancerprofileComponent} from './freelancerprofile/freelancerprofile.
 import{ EditProjectOwnerProfileComponent} from './edit-project-owner-profile/edit-project-owner-profile.component';
 import{ProjectOwnerProfileComponent} from'./project-owner-profile/project-owner-profile.component';
 import{ProjectDetailsViewComponent}from'./project-details-view/project-details-view.component';
-
+import{SearchComponentComponent}from'./search-component/search-component.component';
 const routes: Routes = [
+  {
+    path:"search",
+    component:SearchComponentComponent
+  },
   {
    path:"detailsview",
    component:ProjectDetailsViewComponent

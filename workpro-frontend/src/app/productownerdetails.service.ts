@@ -28,4 +28,8 @@ export class ProductownerdetailsService {
       return this.http.put("http://localhost:8090/api/v1/projectOwner/"+value+"/projects/"+value1+"/bid/accept/"+value2,{});
     }
    
+    getResults(skillName){
+    return this.http.get("http://localhost:8090/api/v1/skill/"+skillName+"/projects");
+   }
+  
 }

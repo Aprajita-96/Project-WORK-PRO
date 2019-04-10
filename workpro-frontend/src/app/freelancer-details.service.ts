@@ -10,6 +10,7 @@ export class FreelancerDetailsService {
   getDetailsOfFreelancers(value) {
     return this.http.get("http://localhost:8082/api/v1/freelancer/"+value);
   }
+  
 
   updateDetailsofFreelancers(value,data){
     return this.http.put("http://localhost:8082/api/v1/freelancerprofile/"+value,data);
@@ -33,5 +34,9 @@ export class FreelancerDetailsService {
     
   }
 
+
+  getSearchResults(skill) {
+    return this.http.get("http://localhost:8082/api/v1/skill/" + skill);
+  }
   
 }

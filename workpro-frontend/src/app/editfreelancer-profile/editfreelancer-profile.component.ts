@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {FormBuilder, FormGroup, Validators} from '@angular/forms';
+import { FreelancerDetailsService } from '../freelancer-details.service';
 
 @Component({
   selector: 'app-editfreelancer-profile',
@@ -12,7 +13,7 @@ export class EditfreelancerProfileComponent implements OnInit {
   secondFormGroup: FormGroup;
   addedSkills = [];
   public user: any = {};
-  constructor(private _formBuilder: FormBuilder) { }
+  constructor(private _formBuilder: FormBuilder,private freelancerDetailsService:FreelancerDetailsService) { }
   email: String;
   ngOnInit() {
     this.email = localStorage.getItem("email");
@@ -23,15 +24,20 @@ export class EditfreelancerProfileComponent implements OnInit {
       secondCtrl: ['', Validators.required]
     });
   }
-  saveUser(user: any, userForm: any) {
+  saveUser(user, userForm: any) {
+
     user.skills = this.addedSkills;
     console.log(this.addedSkills)
     user.freelancerName = user.freelancerName;
     user.freelancerAddress = user.freelancerAddress;
+    user.yearsOfExpertise=2;
     // this.addPersonalDetails(user);
     // this.addEditAddress(user);
     // this.addprofessionaldetails(user);
+
   }
+
+ 
 
 
   addSkill(skill) {

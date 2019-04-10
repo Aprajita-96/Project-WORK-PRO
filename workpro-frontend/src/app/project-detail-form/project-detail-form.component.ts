@@ -23,7 +23,9 @@ export class ProjectDetailFormComponent implements OnInit {
     user.skillsSetList = this.skills;
     console.log(this.skills)
     user.projectName = user.projectName;
-    user.freelancerAddress = user.freelancerAddress;
+    user.projectStatus = "open";
+    user.allBidsOfFreelancers=[];
+    user.projectDescription = user.projectDescription;
     user.projectCompletionDate = user.projectCompletionDate;
     user.projectPreference = user.projectPreference;
     user.projectLocation = user.projectLocation;

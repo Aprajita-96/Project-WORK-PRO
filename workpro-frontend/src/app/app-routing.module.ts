@@ -48,7 +48,7 @@ const routes: Routes = [
 
   },
   {
-    path: "projectDetailsComponent",
+    path: "projectDetailsComponent/:id",
     component: ProjectDetailsComponent
   },
 
@@ -94,6 +94,9 @@ const routes: Routes = [
   {
     path: "productownermyprojects", component: MyprojectsComponent
   },
+  {
+    path: "freelancerprofile/:id",component: FreelancerprofileComponent
+  }
 
 ];
 

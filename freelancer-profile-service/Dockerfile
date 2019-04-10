@@ -1,14 +1,7 @@
-FROM maven:3.6.0-jdk-11
+FROM openjdk:11
 
-WORKDIR /app
+ADD ./target/freelancer-profile-service-0.0.1-SNAPSHOT.jar /usr/src/freelancer-profile-service-0.0.1-SNAPSHOT.jar
 
-COPY . .
+WORKDIR usr/src
 
-
-RUN mvn clean
-
-RUN mvn clean package -DskipTests
-
-WORKDIR /app/target
-
-CMD ["java", "-jar", "freelancer-profile-service-0.0.1-SNAPSHOT"]
+ENTRYPOINT ["java","-jar", "freelancer-profile-service-0.0.1-SNAPSHOT.jar"]

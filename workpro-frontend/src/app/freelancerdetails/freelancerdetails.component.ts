@@ -22,7 +22,7 @@ export class FreelancerdetailsComponent implements OnInit {
     data.skills = this.skills
     data.domain = this.domains
     data.link = this.samplelinks
-    this.fservice.setDetailsofFreelancers(data).subscribe(console.log)
+    // this.fservice.setDetailsofFreelancers(data).subscribe(console.log)
     this.router.navigateByUrl("userdashboard")
   }
 

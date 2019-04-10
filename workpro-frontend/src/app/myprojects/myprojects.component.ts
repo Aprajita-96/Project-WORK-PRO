@@ -31,9 +31,9 @@ export class MyprojectsComponent implements OnInit {
     });
   }
   filterCloseProjects() {
-    this.projects = this.projects1["projectDetails"].filter(e => {
+    this.projects = this.projects1["projectDetailsList"].filter(e => {
       // console.log(e);
-      if (e.projectStatus === "close") {
+      if (e.projectStatus === "closed") {
         return e;
       }
     });

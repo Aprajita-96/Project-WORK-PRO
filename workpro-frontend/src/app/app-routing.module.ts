@@ -47,12 +47,12 @@ const routes: Routes = [
     component: EditfreelancerProfileComponent
   },
   {
-    path:"home",
+    path:'',
     component: HomeComponent
 
   },
   {
-    path: "projectDetailsComponent",
+    path: "projectDetailsComponent/:id",
     component: ProjectDetailsComponent
   },
 
@@ -98,6 +98,9 @@ const routes: Routes = [
   {
     path: "productownermyprojects", component: MyprojectsComponent
   },
+  {
+    path: "freelancerprofile/:id",component: FreelancerprofileComponent
+  }
 
 ];
 

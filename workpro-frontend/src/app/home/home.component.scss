@@ -10,19 +10,32 @@ height: 80%;
   position:center;
 }
 #searchForm {
-position:absolute;
-    top:60%;
-    left: 35%;
-    border-radius: 2px;
+// position:absolute;
+//     top:60%;
+//     left: 35%;
+//     border-radius: 2px;
+top: 60%;
+    position: absolute;
+    height: 100%;
+}
+
+.search-input-holder {
+  display: flex;
+  justify-content: center;
+}
+#search-input {
+  width: 33%;
 }
 .carousel-caption{
-  position: absolute;
-  left: 5%;
-  bottom: 80%;
-  right: auto;
-  color: #fff;
-  font-family: Canela Deck Web;
-  font-weight: bolder;
+  // position: absolute;
+  // left: 5%;
+  // bottom: 80%;
+  // right: auto;
+  // color: #fff;
+  // font-family: Canela Deck Web;
+  // font-weight: bolder;
+  font-size: -webkit-xxx-large;
+  bottom: 103%;
 }
 .card-group1{
    padding-top: 15px;
@@ -33,6 +46,7 @@ position:absolute;
 .card-group1 img{
   align-content: center;
 }
+
 $grid-breakpoints: (
   xs: 0,
   sm: 576px,
@@ -199,4 +213,140 @@ to{
   box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.55);
   justify-content: space-between;
 }
+.our-team {
+  padding: 30px 0 40px;
+  margin-bottom: 30px;
+  background-color: #f7f5ec;
+  text-align: center;
+  overflow: hidden;
+  position: relative;
+  margin-top: 20px;
+}
 
+.our-team .picture {
+  display: inline-block;
+  height: 130px;
+  width: 130px;
+  margin-bottom: 50px;
+  z-index: 1;
+  position: relative;
+}
+
+.our-team .picture::before {
+  content: "";
+  width: 100%;
+  height: 0;
+  border-radius: 50%;
+  background-color: #1369ce;
+  position: absolute;
+  bottom: 135%;
+  right: 0;
+  left: 0;
+  opacity: 0.9;
+  transform: scale(3);
+  transition: all 0.3s linear 0s;
+}
+
+.our-team:hover .picture::before {
+  height: 100%;
+}
+
+.our-team .picture::after {
+  content: "";
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  background-color: #1369ce;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -1;
+}
+
+.our-team .picture img {
+  width: 100%;
+  height: auto;
+  border-radius: 50%;
+  transform: scale(1);
+  transition: all 0.9s ease 0s;
+}
+
+.our-team:hover .picture img {
+  box-shadow: 0 0 0 14px #f7f5ec;
+  transform: scale(0.7);
+}
+
+.our-team .title {
+  display: block;
+  font-size: 15px;
+  color: #4e5052;
+  text-transform: capitalize;
+}
+.shape{    
+	border-style: solid; border-width: 0 70px 40px 0; float:right; height: 0px; width: 0px;
+	-ms-transform:rotate(360deg); /* IE 9 */
+	-o-transform: rotate(360deg);  /* Opera 10.5 */
+	-webkit-transform:rotate(360deg); /* Safari and Chrome */
+	transform:rotate(360deg);
+}
+
+.shape-text{
+    color:#fff; font-size:12px; font-weight:bold; position:relative; right:-40px; top:2px; white-space: nowrap;
+	-ms-transform:rotate(30deg); /* IE 9 */
+	-o-transform: rotate(360deg);  /* Opera 10.5 */
+	-webkit-transform:rotate(30deg); /* Safari and Chrome */
+	transform:rotate(30deg);
+}
+
+.project {
+    min-height:300px;
+    height:auto;
+}
+
+.project{
+    background:#fff; border:1px solid #ddd; box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2); margin: 15px 0; overflow:hidden;
+}
+
+.project-radius{
+    border-radius:7px;
+}
+
+.project-default {    border-color: #999999; }
+.project-default .shape{
+	border-color: transparent #999999 transparent transparent;
+	border-color: rgba(255,255,255,0) #999999 rgba(255,255,255,0) rgba(255,255,255,0);
+}
+
+.project-danger {    border-color:red; }
+.project-danger .shape{
+	border-color: transparent red transparent transparent;
+	border-color: rgba(255,255,255,0) red rgba(255,255,255,0) rgba(255,255,255,0);
+}
+
+.project-success {	border-color:green; }
+.project-success .shape{
+	border-color: transparent green transparent transparent;
+	border-color: rgba(255,255,255,0) green rgba(255,255,255,0) rgba(255,255,255,0);
+}
+
+.project-primary {	border-color: #428bca; }
+.project-primary .shape{
+	border-color: transparent #428bca transparent transparent;
+	border-color: rgba(255,255,255,0) #428bca rgba(255,255,255,0) rgba(255,255,255,0);
+}
+
+.project-info {	border-color: #5bc0de; }
+.project-info .shape{
+	border-color: transparent #5bc0de transparent transparent;
+	border-color: rgba(255,255,255,0) #5bc0de rgba(255,255,255,0) rgba(255,255,255,0);
+}
+
+.project-warning {	border-color: #f0ad4e; }
+.project-warning .shape{
+	border-color: transparent #f0ad4e transparent transparent;
+	border-color: rgba(255,255,255,0) #f0ad4e rgba(255,255,255,0) rgba(255,255,255,0);
+}
+
+.project-content {
+    padding:0 20px 10px;
+}

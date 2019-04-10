@@ -16,17 +16,17 @@ export class FreelancerDetailsService {
     return this.http.put("http://localhost:8082/api/v1/freelancerprofile/"+value,data);
   }
 
-  setDetailsofFreelancers(data) {
-       console.log(data)
-       return this.http.post('http://localhost:3000/xyz', data)//This is the port where json server runs."ports" specifies the end point in the db.json file
-  }
-  setDetailsofProductOwner(productowner){
-    console.log(productowner);
-    return this.http.post('http://localhost:3000/po',productowner);
-  }
+  // setDetailsofFreelancers(data) {
+  //      console.log(data)
+  //      return this.http.post('http://localhost:3000/xyz', data)//This is the port where json server runs."ports" specifies the end point in the db.json file
+  // }
+  // setDetailsofProductOwner(productowner){
+  //   console.log(productowner);
+  //   return this.http.post('http://localhost:3000/po',productowner);
+  // }
 
-  getBidsofFreelancer(){
-    return this.http.get("http://localhost:8082/api/v1/bid/allbids");
+  getBidsofFreelancer(value){
+    return this.http.get("http://localhost:8082/api/v1/bid/allbids/"+value);
   }
 
   getSearchResults(skill) {

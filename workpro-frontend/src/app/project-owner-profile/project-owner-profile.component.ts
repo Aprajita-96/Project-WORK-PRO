@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ProductownerdetailsService } from '../productownerdetails.service';
 
 @Component({
   selector: 'app-project-owner-profile',
@@ -7,9 +8,16 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ProjectOwnerProfileComponent implements OnInit {
 
-  constructor() { }
-
+  constructor(private productownerdetails:ProductownerdetailsService) { }
+  email:String
+  profile:any=[];
+  role:String;
   ngOnInit() {
-  }
-
+    this.role=localStorage.getItem("role");
+    this.email=localStorage.getItem("email");
+    this.productownerdetails.getDtailsOfProjectOwner(this.email).subscribe(data=>{
+      this.profile=data;
+      console.log(data)
+  });
+}
 }

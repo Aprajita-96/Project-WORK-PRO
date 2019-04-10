@@ -43,7 +43,7 @@ const routes: Routes = [
     component: EditfreelancerProfileComponent
   },
   {
-    path:"home",
+    path:'',
     component: HomeComponent
 
   },

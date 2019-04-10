@@ -11,4 +11,7 @@ RUN mvn clean package -DskipTests
 
 WORKDIR /app/target
 
-CMD ["java", "-jar", "freelancer-profile-service-0.0.1-SNAPSHOT"]
+RUN ls -la
+
+
+CMD ["java", "-jar", "freelancer-profile-service-0.0.1-SNAPSHOT.jar"]

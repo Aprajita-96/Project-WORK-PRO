@@ -16,7 +16,8 @@ export class UserDashboardComponent implements OnInit {
 }
 searchProject(skill) {
   this.projectService.getResults(skill).subscribe((data: any) => {
-    this.projects = data.list;
+    console.log(data)
+    this.projects = data;
   });
 }
 }

@@ -80,7 +80,7 @@
               <div class="col-md-8">
                 <button matStepperNext type="button" class="btn btn-primary" (click) = "addPersonalDetails(personalDetails.value)">Save Changes</button>
                 <span></span>
-                <input type="reset" class="btn btn-default" value="Cancel">
+                <button type="reset" class="btn btn-warning" value="Cancel">Cancel</button>
               </div>
             </div>
           </form>
@@ -386,9 +386,9 @@
             <div class="form-group">
               <label class="col-sm-3 control-label"></label>
               <div class="col-sm-8">
-                <input type="button" matStepperNext (click) = "addEditAddress(editAddress.value)" class="btn btn-primary" value="Save Changes">
+                <button matStepperNext (click) = "addEditAddress(editAddress.value)" class="btn btn-primary" value="Save Changes">Save</button>
                 <span></span>
-                <input type="reset" class="btn" value="Cancel">
+                <button matStepperNext type="reset" class="btn btn-warning" value="Cancel" (click)="stepper.reset()">Cancel</button>
               </div>
             </div>
           </form>
@@ -406,7 +406,7 @@
                   <label class="col-sm-3 control-label"><h3><i class="fas fa-plus-circle"></i></h3></label>
                   <div class="col-sm-8">
                     <div class="skill-container">
-                    <input id="github link" name="skill" ngModel #skillName type="text" placeholder="Add your Skills"
+                    <input id="skill" name="skill" ngModel #skillName type="text" placeholder="Add your Skills"
                       class="form-control">
                     <button class="btn btn-primary" (click)="addSkill(skillName.value)"> Add Skill</button>
                   </div>
@@ -415,7 +415,7 @@
     
                   <div *ngFor="let skill of addedSkills">
                     <h3><span class="badge badge-pill badge-info">
-                        {{skill.name}}
+                        {{skill.skillName}}
                         <button (click)="removeSkill(skill.name)" type="button" class="close" aria-label="Close">
                           <span aria-hidden="true">&times;</span>
                         </button>
@@ -456,7 +456,7 @@
       </div>
       <div>
         <button mat-raised-button color="primary" 
-          [routerLink]="['/freelancerprofile']" (click) = "addprofessionaldetails(professionaldetails.value)" (click)="saveUser(personalDetails.value,professionaldetails.value,editAddress.value,user,userForm)">Submit</button>
+          [routerLink]="['/freelancerprofile']"  (click)="saveUser()">Submit</button>
         <button mat-raised-button color="accent" (click)="stepper.reset()">Reset</button>
       </div>
     <!-- </form> -->

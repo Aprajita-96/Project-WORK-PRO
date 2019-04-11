@@ -21,7 +21,7 @@ import java.util.List;
 @Builder
 public class Freelancer {
     @Id
-    private int id;
+    private String id;
     private String freelancerName;
     private String freelancerEmail;
     private String freelancerAddress;

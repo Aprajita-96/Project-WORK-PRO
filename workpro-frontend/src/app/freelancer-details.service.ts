@@ -12,8 +12,8 @@ export class FreelancerDetailsService {
   }
   
 
-  updateDetailsofFreelancers(value,data){
-    return this.http.put("http://localhost:8082/api/v1/freelancerprofile/"+value,data);
+  updateDetailsofFreelancers(data){
+    return this.http.put("http://localhost:8082/api/v1/freelancerprofile/"+data.freelancerEmail,data);
   }
 
   setDetailsofFreelancers(data) {
@@ -28,6 +28,12 @@ export class FreelancerDetailsService {
   getBidsofFreelancer(value){
     return this.http.get("http://localhost:8082/api/v1/bid/allbids"+value);
   }
+  setFreelancerDetails(value)
+  {
+      return this.http.get("http://localhost:8082/api/v1/freelancer/"+value);
+    
+  }
+
 
   getSearchResults(skill) {
     return this.http.get("http://localhost:8082/api/v1/skill/" + skill);

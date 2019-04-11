@@ -14,6 +14,7 @@ import org.springframework.stereotype.Component;
 @Component
 @Builder
 public class Bid {
+
     private String projectId;
     private String projectName;
     private String freelancerEmail;

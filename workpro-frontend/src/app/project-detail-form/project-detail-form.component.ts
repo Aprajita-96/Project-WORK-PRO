@@ -22,8 +22,6 @@ export class ProjectDetailFormComponent implements OnInit {
   saveUser(user: any, userForm: any) {
     user.skillsSetList = this.skills;
     console.log(this.skills)
-    user.bidSpecsProvidedByProjectOwners = this.bid;
-
     user.projectName = user.projectName;
     user.projectStatus = "open";
     user.allBidsOfFreelancers=[];

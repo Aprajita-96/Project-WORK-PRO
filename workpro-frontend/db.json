@@ -34,6 +34,33 @@
       "id": 2
     }
   ],
+  "freelancers" : [
+    {
+      "name": "Sadie Olson",
+      "email": "sadieolson@pharmex.com",
+      "skills": " Android / Java / Mobile App Development / MySQL / PHP ",
+      "profilePicUrl": "../assets/images/dummy-user.png"
+    },
+    
+    {
+      "name": "Eileen Harris",
+      "email": "eileenharris@pharmex.com",
+      "skills": " Android / iPhone / Mobile App Development / Objective C / Swift",
+      "profilePicUrl": "../assets/images/dummy-user.png"
+    },
+    {
+      "name": "Arline Skinner",
+      "email": "arlineskinner@pharmex.com",
+      "skills": " Android / Java / Mobile App Development",
+      "profilePicUrl": "../assets/images/dummy-user.png"
+    },
+    {
+      "name": "Garza Terrell",
+      "email": "garzaterrell@pharmex.com",
+      "skills": " Android / Ionic Framework / iOS Development / iPhone node.js ",
+      "profilePicUrl": "../assets/images/dummy-user.png"
+    }
+  ],
   "projects": [
     {
       "name": "RPG Game",

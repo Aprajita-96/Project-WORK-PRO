@@ -23,7 +23,7 @@ import{ProjectDetailsViewComponent}from'./project-details-view/project-details-v
 import{SearchComponentComponent}from'./search-component/search-component.component';
 const routes: Routes = [
   {
-    path:"search",
+    path:"search/:id",
     component:SearchComponentComponent
   },
   {

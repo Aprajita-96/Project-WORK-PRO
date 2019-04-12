@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { ProductownerdetailsService } from '../productownerdetails.service';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-search-component',
@@ -7,9 +9,19 @@ import { Component, OnInit } from '@angular/core';
 })
 export class SearchComponentComponent implements OnInit {
 
-  constructor() { }
+  id:String;
+  constructor(private projectService: ProductownerdetailsService,private route:ActivatedRoute) { }
+  projects;
 
   ngOnInit() {
-  }
+    this.route.params.subscribe(data=>{
+      this.id=data.id;
+      console.log(this.id)
+    })
+    this.projectService.getResults(this.id).subscribe((data: any) => {
+      console.log(data)
+      this.projects = data;
+    });
+}
 
 }

@@ -20,6 +20,7 @@ public class ProjectDetails {
 @Id
 //    private String projectId;
     private String projectId= UUID.randomUUID().toString();
+    private String projectOwnerEmailId;
     private String projectName;
     private String projectStatus;
     private List<BidOfFreelancer> allBidsOfFreelancers;

@@ -8,7 +8,6 @@ import { HttpClient } from '@angular/common/http';
 
 export class FreelancerserviceService {
 
-
   constructor(private http: HttpClient) { }
   getProjectsFreelancer(skills) {
     return this.http.get("http://localhost:3000/projects/" + skills)
@@ -43,8 +42,6 @@ export class FreelancerserviceService {
   addFreelancerBid(bidData) {
     return this.http.post("http://localhost:3000/bid", bidData);
   }
-  getSearchResults(skill) {
-    return this.http.get("http://localhost:8082/api/v1/skill/" + skill);
-  }
+ 
 
 }

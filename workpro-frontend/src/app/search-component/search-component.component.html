@@ -1,4 +1,4 @@
-<div class="container">
+<!-- <div class="container">
   <div class="row ng-scope">
       <div class="col-md-3 col-md-push-9">
           <h4>Results <span class="fw-semi-bold">Filtering</span></h4>
@@ -7,79 +7,40 @@
       </div>
       <div class="col-md-9 col-md-pull-3">
           <p class="search-results-count">About 94 700 000 (0.39 sec.) results</p>
-          <section class="search-result-item">
-              <a class="image-link" href="#"><img class="image" src="https://bootdey.com/img/Content/avatar/avatar1.png">
-              </a>
+          <section *ngFor="let project of projects" class="search-result-item">
               <div class="search-result-item-body">
                   <div class="row">
                       <div class="col-sm-9">
-                          <h2 class="search-result-item-heading"><a href="#">John doe</a></h2>
+                          <h2 class="card-title">{{project.projectName}}</h2>
                           <br>
                           <h5>Skills:</h5>
-                          <p class="description">"Android / jQuery / Prototype / Mobile App Development"</p>
+                          <p class="description">{{project.skillsSetList}}</p>
                       </div>
                       <div class="col-sm-3 text-align-center">
                          
-                          <a class="btn btn-primary btn-info btn-sm" href="#">View profile</a>
+                          <a class="btn btn-primary btn-info btn-sm" href="#">View Details</a>
                       </div>
                   </div>
               </div>
           </section>
-          <section class="search-result-item">
-              <a class="image-link" href="#"><img class="image" src="https://bootdey.com/img/Content/avatar/avatar6.png">
-              </a>
-              <div class="search-result-item-body">
-                  <div class="row">
-                      <div class="col-sm-9">
-                          <h2 class="search-result-item-heading"><a href="#">John doe</a></h2>
-                          <br>
-                          <h5>Skills:</h5>
-                          <p class="description">"Prototype / Mobile App Development / PhoneGap / Technical Support"</p>
-                          
-                      </div>
-                      <div class="col-sm-3 text-align-center">
-                          
-                          <a class="btn btn-primary btn-info btn-sm" href="#">View profile</a>
-                      </div>
-                  </div>
-              </div>
-          </section>
-          <section class="search-result-item">
-              <a class="image-link" href="#"><img class="image" src="https://bootdey.com/img/Content/avatar/avatar2.png">
-              </a>
-              <div class="search-result-item-body">
-                  <div class="row">
-                      <div class="col-sm-9">
-                          <h2 class="search-result-item-heading"><a href="#">John doe</a></h2>
-                          <br>
-                          <h5>Skills:</h5>
-                          <p class="description">"Java / Android / jQuery / Prototype"</p>
-                      </div>
-                      <div class="col-sm-3 text-align-center">
-                          
-                          <a class="btn btn-info btn-sm" href="#">View Profile</a>
-                      </div>
-                  </div>
-              </div>
-          </section>
-          <section class="search-result-item">
-              <a class="image-link" href="#"><img class="image" src="https://bootdey.com/img/Content/avatar/avatar3.png">
-              </a>
-              <div class="search-result-item-body">
-                  <div class="row">
-                      <div class="col-sm-9">
-                          <h2 class="search-result-item-heading"><a href="#">John doe</a></h2>
-                          <br>
-                          <h5>Skills:</h5>
-              
-                          <p class="description">"Prototype / Mobile App Development / PhoneGap / Technical Support"</p>
-                      </div>
-                      <div class="col-sm-3 text-align-center">
-                          <a class="btn btn-info btn-sm" href="#">View Profile</a>
-                      </div>
-                  </div>
-              </div>
-          </section>
+         
       </div>
   </div>
-  </div>
+  </div> -->
+  <div class="card-holder">
+    <div class="card" *ngFor="let project of projects" >
+        <div class="card-body">
+          <h5 class="card-title">{{project.projectName}}</h5>
+          <p class="card-text">{{project.description}}</p>
+          <p class="card-text1" style="color: blue">{{project.skillsSetList}}</p>
+          <button  class="card-link btn btn-primary">Details</button>
+          <button class="card-link btn btn-warning">Bid</button>
+        </div>
+      </div>
+    </div>
+    
+<!--     
+        <div>
+          <app-project-card-user-dashboard [project]=project></app-project-card-user-dashboard>
+        </div>
+       -->

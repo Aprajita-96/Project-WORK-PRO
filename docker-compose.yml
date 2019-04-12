@@ -2,30 +2,6 @@ version: '2'
 
 services:
 
-#  freelancer-service:
-#    build: freelancer-profile-service/
-#    restart: always
-#    network_mode: "host"
-#    hostname: localhost
-#    ports:
-#      - 8082:8082
-#
-#  projectDetails-service:
-#    build: project-details-service/
-#    restart: always
-#    network_mode: "host"
-#    hostname: localhost
-#    ports:
-#      - 8090:8090
-#
-#  projectOwner-service:
-#    build: project-owner-profile-service/
-#    restart: always
-#    network_mode: "host"
-#    hostname: localhost
-#    ports:
-#      - 8083:8083
-
   eureka-server:
     build: eureka-server/
     restart: always
@@ -33,6 +9,7 @@ services:
     hostname: localhost
     ports:
       - 8761:8761
+
 
   config-service:
     build: config-server/
@@ -48,6 +25,10 @@ services:
     depends_on:
       - config-service
       - eureka-server
+      - freelancer-profile-service
+      - reglogin-service
+      - project-details-service
+      - project-owner-profile-service
     restart: always
     network_mode: "host"
     hostname: localhost
@@ -119,6 +100,7 @@ services:
       - 8081:8081
     depends_on:
       - mysql
+      - eureka-server
 
   freelancer-profile-service:
     build: freelancer-profile-service/
@@ -132,6 +114,7 @@ services:
       - mongo
       - zookeeper
       - kafka
+      - eureka-server
 
   project-details-service:
     build: project-details-service/
@@ -145,6 +128,7 @@ services:
       - mongo
       - zookeeper
       - kafka
+      - eureka-server
 
   project-owner-profile-service:
     build: project-owner-profile-service/
@@ -156,3 +140,4 @@ services:
       - 8083:8083
     depends_on:
       - mongo
+      - eureka-server

@@ -27,7 +27,7 @@ const routes: Routes = [
     component:SearchComponentComponent
   },
   {
-   path:"detailsview",
+   path:"detailsview/:id",
    component:ProjectDetailsViewComponent
  },
 {
@@ -100,7 +100,8 @@ const routes: Routes = [
   },
   {
     path: "freelancerprofile/:id",component: FreelancerprofileComponent
-  }
+  },
+ 
 
 ];
 

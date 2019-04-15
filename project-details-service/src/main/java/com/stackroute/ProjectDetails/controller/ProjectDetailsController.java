@@ -82,48 +82,48 @@ public class ProjectDetailsController {
      * @throws ProjectDoesNotExistException
      * @throws UnauthorizedException
      */
-    @PostMapping("/projectOwner/{projectOwnerId}/projects/{projectId}/bid")
-    public ResponseEntity<?> freelancerBidOnAProject (@RequestHeader HttpHeaders header, HttpServletRequest request, @RequestBody BidOfFreelancer bidOfFreelancer, @PathVariable("projectId") String projectId, @PathVariable("projectOwnerId") String projectOwnerId) throws ProjectDoesNotExistException, UnauthorizedException {
-
-        //long contentLength = header.getContentLength();
-        //String token=request.getHeader("token");
-        //if(token!=null){
-            ProjectsOfProjectOwner allProjectsOfProjectOwner = projectOwnerProjectsService.getProjectsByEmailId(projectOwnerId);
-            for (ProjectDetails details : allProjectsOfProjectOwner.getProjectDetailsList()) {
-                if (details.getProjectId().equals(projectId) ){
-                  //  System.out.println(details.getAllBidsOfFreelancers());
-
-                    if(details.getAllBidsOfFreelancers().isEmpty())
-                    {
-                        List<BidOfFreelancer> bidOfFreelancers = details.getAllBidsOfFreelancers();
-                        bidOfFreelancers.add(bidOfFreelancer);
-                        details.setAllBidsOfFreelancers(bidOfFreelancers);
-                    }
-                    else {
-                        if(details.getProjectStatus().equals("closed"))
-                        {
-                            return new ResponseEntity<String>(" You(Freelancer)  can't bid. Project has been closed", HttpStatus.OK);
-                        }
-                        else if(details.getAllBidsOfFreelancers().get(0).getFreelancerEmailId().equals(bidOfFreelancer.getFreelancerEmailId()))
-                        {
-                            return new ResponseEntity<String>(" You(Freelancer)  can't bid more than once", HttpStatus.OK);
-                        }
-                        else {
-                            List<BidOfFreelancer> bidOfFreelancers = details.getAllBidsOfFreelancers();
-                            bidOfFreelancers.add(bidOfFreelancer);
-                            details.setAllBidsOfFreelancers(bidOfFreelancers);
-                        }
-                    }
-                    projectOwnerProjectsService.addProjects(allProjectsOfProjectOwner);
-                    break;
-                }
-            }
-            return new ResponseEntity<String>(" You(Freelancer)  bid on a project", HttpStatus.OK);
-       // }
-        //else
-          //  throw new UnauthorizedException("Login Please");
-
-    }
+//    @PostMapping("/projectOwner/{projectOwnerId}/projects/{projectId}/bid")
+//    public ResponseEntity<?> freelancerBidOnAProject (@RequestHeader HttpHeaders header, HttpServletRequest request, @RequestBody BidOfFreelancer bidOfFreelancer, @PathVariable("projectId") String projectId, @PathVariable("projectOwnerId") String projectOwnerId) throws ProjectDoesNotExistException, UnauthorizedException {
+//
+//        //long contentLength = header.getContentLength();
+//        //String token=request.getHeader("token");
+//        //if(token!=null){
+//            ProjectsOfProjectOwner allProjectsOfProjectOwner = projectOwnerProjectsService.getProjectsByEmailId(projectOwnerId);
+//            for (ProjectDetails details : allProjectsOfProjectOwner.getProjectDetailsList()) {
+//                if (details.getProjectId().equals(projectId) ){
+//                  //  System.out.println(details.getAllBidsOfFreelancers());
+//
+//                    if(details.getAllBidsOfFreelancers().isEmpty())
+//                    {
+//                        List<BidOfFreelancer> bidOfFreelancers = details.getAllBidsOfFreelancers();
+//                        bidOfFreelancers.add(bidOfFreelancer);
+//                        details.setAllBidsOfFreelancers(bidOfFreelancers);
+//                    }
+//                    else {
+//                        if(details.getProjectStatus().equals("closed"))
+//                        {
+//                            return new ResponseEntity<String>(" You(Freelancer)  can't bid. Project has been closed", HttpStatus.OK);
+//                        }
+//                        else if(details.getAllBidsOfFreelancers().get(0).getFreelancerEmailId().equals(bidOfFreelancer.getFreelancerEmailId()))
+//                        {
+//                            return new ResponseEntity<String>(" You(Freelancer)  can't bid more than once", HttpStatus.OK);
+//                        }
+//                        else {
+//                            List<BidOfFreelancer> bidOfFreelancers = details.getAllBidsOfFreelancers();
+//                            bidOfFreelancers.add(bidOfFreelancer);
+//                            details.setAllBidsOfFreelancers(bidOfFreelancers);
+//                        }
+//                    }
+//                    projectOwnerProjectsService.addProjects(allProjectsOfProjectOwner);
+//                    break;
+//                }
+//            }
+//            return new ResponseEntity<String>(" You(Freelancer)  bid on a project", HttpStatus.OK);
+//       // }
+//        //else
+//          //  throw new UnauthorizedException("Login Please");
+//
+//    }
 
     /**
      * Freelancer has won the project bid

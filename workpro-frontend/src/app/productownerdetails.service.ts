@@ -31,6 +31,7 @@ data:any
    
     getResults(skillName){
     return this.http.get("http://localhost:8090/api/v1/skill/"+skillName+"/projects");
+    
    }
   updateDetailsOfProjectOwner(data)
   {

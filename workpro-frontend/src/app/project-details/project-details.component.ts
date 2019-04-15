@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ProductownerdetailsService } from '../productownerdetails.service';
-import { Params, ActivatedRoute } from '@angular/router';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-project-details',
@@ -12,6 +12,8 @@ export class ProjectDetailsComponent implements OnInit {
   // project:any;
   email:String;
   projects1:any;
+  role:String;
+  isrole:boolean=false;
  
   bidsInfromation=[];
   biders=[];
@@ -25,12 +27,18 @@ export class ProjectDetailsComponent implements OnInit {
 
 
   ngOnInit() {
+
     this.route.params.subscribe(data=>{
       this.id=data.id;
       console.log(this.id)
     })
 
+    this.role=localStorage.getItem("role");
     this.email=localStorage.getItem("email");
+    if(this.role==="USER"){
+      this.isrole=true;
+
+    }
     this.productownerdetailsService.getProjectDetailsById(this.email, this.id).subscribe(data=>{
       this.projects1= data;
       console.log(this.projects1)

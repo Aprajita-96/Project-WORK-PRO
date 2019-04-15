@@ -23,11 +23,11 @@ import{ProjectDetailsViewComponent}from'./project-details-view/project-details-v
 import{SearchComponentComponent}from'./search-component/search-component.component';
 const routes: Routes = [
   {
-    path:"search",
+    path:"search/:id",
     component:SearchComponentComponent
   },
   {
-   path:"detailsview",
+   path:"detailsview/:id",
    component:ProjectDetailsViewComponent
  },
 {
@@ -100,7 +100,8 @@ const routes: Routes = [
   },
   {
     path: "freelancerprofile/:id",component: FreelancerprofileComponent
-  }
+  },
+ 
 
 ];
 

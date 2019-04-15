@@ -21,6 +21,11 @@
       <p class="card-text">{{bidsInfromation.maximumBudget}}</p>
       <p class="card-text">{{ bidsInfromation.minimumBudget }}</p>
       <p class="card-text">{{ projects1.projectCompletionDate}}</p>
+      <div *ngIf=isrole>
+          <button routerLink="/detailsview/{{id}}" class="btn btn-primary text-white">
+            Bid
+          </button>
+      </div>
     </div>
   </div>
   <div class="text-center">

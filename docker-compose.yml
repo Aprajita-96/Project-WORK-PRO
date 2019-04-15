@@ -2,29 +2,7 @@ version: '2'
 
 services:
 
-#  freelancer-service:
-#    build: freelancer-profile-service/
-#    restart: always
-#    network_mode: "host"
-#    hostname: localhost
-#    ports:
-#      - 8082:8082
-#
-#  projectDetails-service:
-#    build: project-details-service/
-#    restart: always
-#    network_mode: "host"
-#    hostname: localhost
-#    ports:
-#      - 8090:8090
-#
-#  projectOwner-service:
-#    build: project-owner-profile-service/
-#    restart: always
-#    network_mode: "host"
-#    hostname: localhost
-#    ports:
-#      - 8083:8083
+
 
   eureka-server:
     build: eureka-server/
@@ -100,7 +78,7 @@ services:
       - 9092
     depends_on:
       - zookeeper
-    network_mode: host
+    network_mode: "host"
     hostname: localhost
     environment:
       KAFKA_ADVERTISED_LISTENERS: PLAINTEXT://localhost:9092

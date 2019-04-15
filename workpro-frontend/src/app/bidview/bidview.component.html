@@ -1,12 +1,12 @@
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-<form style="max-width:500px;margin:auto">
+<form style="max-width:500px;margin:auto" #form=ngForm>
   <h2>Enter Bid Details</h2>
   <div class="input-container">
     <div class="icon">
         <h3><i class="fas fa-rupee-sign"></i></h3>
     </div>
       
-    <input class="input-field" type="text" placeholder="Enter Amount" name="amount">
+    <input class="input-field" type="text" placeholder="Enter Amount" ngModel name="amount">
   </div>
 
   <div class="input-container">
@@ -14,9 +14,9 @@
         <h3><i class="far fa-clock"></i></h3>
     </div>
       
-    <input class="input-field" type="text" placeholder="Duration of project" name="duration">
+    <input class="input-field" type="text" placeholder="Complition date" ngModel name="duration">
   </div>
   
 
-  <button type="submit" class="btn">Submit</button>
+  <button type="submit" class="btn" (click)="savebid(form.value,user)">Submit</button>
 </form>

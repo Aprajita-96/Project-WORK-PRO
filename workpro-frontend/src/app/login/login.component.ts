@@ -21,7 +21,7 @@ ngOnInit() {
 loginUser(user:any){  
     this.userService.loginUser(user).subscribe((response)=>{
     if(response){
-      localStorage.setItem('currentUser',JSON.stringify(response));
+      localStorage.setItem('token',JSON.stringify(response));
       console.log(response)
       if(response.user.role === 'PRODUCT OWNER'){
          this.router.navigate(['/podashboard']);

@@ -1,77 +1,113 @@
-<!-- <button mat-raised-button (click)="isLinear = !isLinear" id="toggle-linear">
-    {{!isLinear ? 'Enable linear mode' : 'Disable linear mode'}} -->
 <mat-horizontal-stepper [linear]="isLinear" #stepper>
-  <mat-step [stepControl]="firstFormGroup">
-      <form #first="ngForm" >
-       
-
-          <label for="domain">Domain</label>
-          <select class="form-control" name="domain" ngModel  id="domain">
-            <option>IT</option>
-            <option>EM</option>
-          </select>
-            <!-- <label for="POemail">Email </label>
-            <input type="email" class="form-control" id="POemail" placeholder="name@example.com"> -->
-            <label for="name">Project Name </label>
-            <input type="text" name="projectName" ngModel class="form-control" id="name">
-
-            <label for="ProjectDesc">Project Description</label>
-            <textarea class="form-control" name="projectDescription" ngModel id="ProjectDesc" rows="3"></textarea>
-
-
-            <!-- ..skills Badge
-    <div class="row d-flex">
-        <span *ngFor="let skill of skills" class="badge badge-pill badge-primary">{{skill.skillName}}
-          <button type="button" class="close" (click)="deleteSkill(skill)" data-dismiss="alert" aria-label="Close">
-            <span aria-hidden="true">&times;</span>
-         </button>
-        </span>
-      </div> -->
-  
-  
-     
-  
-      <!-- skills -->
-      <div >
-        <label for="skills">Skills</label>
-          <input type="text" #skill id=skillName name="skillName" class="form-control col-lg-2 m-0" placeholder="SkillName">
-          <button class="btn btn-primary"  (click)="addSkill(skill.value)">Add</button>
-      </div>
-      
-  
-
-            <!-- <label for="status">Project Status</label> -->
-          <!-- <select class="form-control" name="projectStatus" ngModel id="status">
-            <option>open</option>
-          </select> -->
-
-          <label for="name">Complition Date </label>
-          <input type="text" name="projectCompletionDate" ngModel class="form-control" id="complitionDate">
-
-          <label for="name">Location </label>
-          <input type="text"  name="projectLocation" ngModel class="form-control" id="location">
-
-          <label for="name">Preference</label>
-          <input type="text" name="projectPreference" ngModel class="form-control" id="preference">
-
-          <button matStepperNext type="button" class="btn btn-primary" (click)="addfirstDetails(first.value)">Save Changes</button>
-
-        </form>
+    <mat-step [stepControl]="firstFormGroup" style="color:#012F43">
+      <form [formGroup]="firstFormGroup">
+        <ng-template matStepLabel>Project Details</ng-template>
+        <div class="row form-container">
+          <div class="col-sm-9 personal-info">
+            <!--Project Details-->
+            <form class="form-horizontal" role="form" #personalDetails="ngForm">
+              
+              <div class="form-group">
+                <label class="col-md-3 control-label">Domain:</label>
+                <div class="col-md-8">
+                    <select class="form-control" name="domain" ngModel  id="domain">
+                        <option>IT</option>
+                        <option>EM</option>
+                      </select>
+                </div>
+              </div>
+              <div class="form-group">
+                <label class="col-md-3 control-label">Project Name:</label>
+                <div class="col-md-8">
+                  <input name="projectName" ngModel class="form-control" type="text" value="">
+                </div>
+              </div>
+                            <div class="form-group">
+                <label class="col-md-3 control-label">Project Description:</label>
+                <div class="col-md-8">
+                    <textarea class="form-control" id="projectDescription" rows="3"></textarea>
+                </div>
+              </div>
+              <div class="form-group">
+                  <label class="col-md-3 control-label">Skills:</label>
+                  <div class="col-sm-8">
+                    <div class="skill-container">
+                    <input id="skill" name="skill" ngModel #skillName type="text" placeholder="Add Skills required for Project"
+                      class="form-control">
+                    <button class="btn btn-primary" (click)="addSkill(skillName.value)"> Add Skill</button>
+                  </div>
+                  </div>
     
-  </mat-step>
+                  <div *ngFor="let skill of skills">
+                    <h3><span class="badge badge-pill badge-info">
+                        {{skill.skillName}}
+                        <button (click)="removeSkill(skill.name)" type="button" class="close" aria-label="Close">
+                          <span aria-hidden="true">&times;</span>
+                        </button>
+                      </span></h3>
+                  </div>
+                </div>
+                <div class="form-group">
+              <label class="col-md-3 control-label">Completion Date:</label>
+              <div class="col-md-8">
+                <input type="date" name="projectCompletionDate" ngModel class="form-control" placeholder="Date of projectCompletion" id="completionDate">
+              </div>
+            </div>
+            <div class="form-group">
+                <label class="col-md-3 control-label">Location:</label>
+                <div class="col-md-8">
+                  <input name="projectLocation" ngModel class="form-control" type="text" value="">
+                </div>
+              </div>
+              <div class="form-group">
+                  <label class="col-md-3 control-label">Preference:</label>
+                  <div class="col-md-8">
+                    <input name="projectPreference" ngModel class="form-control" type="text" value="">
+                  </div>
+                </div>
+              <div class="form-group">
+                <label class="col-md-3 control-label"></label>
+                <div class="col-md-8">
+                  <button matStepperNext type="button" class="btn btn-primary" (click) ="addfirstDetails(personalDetails.value)">Save Changes</button>
+                  <span></span>
+                  <button type="reset" class="btn btn-warning" value="Cancel">Cancel</button>
+                </div>
+              </div>
+            </form>
+          </div>
+        </div>
+      </form>
+    </mat-step>
   <mat-step [stepControl]="secondFormGroup">
-      <form #Second="ngForm" >
-
-          <label for="name">Max Budget</label>
-          <input type="text" name="maximumBudget" ngModel class="form-control" id="maximumBudget">
-
-          <label for="name">Min Budget</label>
-          <input type="text" name="minimumBudget" ngModel class="form-control" id="minimumBudget">
-
-          <label for="name">Bid Duration</label>
-          <input type="text" name="bidLastDate" ngModel class="form-control" id="bidLastDate">
-        </form>
-        <button matStepperNext type="button" class="btn btn-primary" (click)="addBid(Second.value)" (click)="saveUser(first.value,user,userForm)" [routerLink]="['/productownermyprojects']">Submit</button>
-  </mat-step>
-  
-</mat-horizontal-stepper>
+          <ng-template matStepLabel>Professional Details</ng-template>
+          <div class="row form-container">
+              <div class="col-sm-9 personal-info">
+                <form class="form-horizontal" role="form" #bidDetails="ngForm">
+                    <div class="form-group">
+                        <label class="col-md-3 control-label">Max Budget:</label>
+                        <div class="col-md-8">
+                          <input name="maximumBudget" ngModel class="form-control" type="text" value="">
+                        </div>
+                      </div>
+                      <div class="form-group">
+                          <label class="col-md-3 control-label">Min Budget:</label>
+                          <div class="col-md-8">
+                            <input name="minimumBudget" ngModel class="form-control" type="text" value="">
+                          </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-md-3 control-label">Bid Duration:</label>
+                            <div class="col-md-8">
+                              <input name="bidLastDate" ngModel class="form-control" type="text" value="">
+                            </div>
+                          </div>   
+                </form>
+              </div>
+            </div>
+            <div class="mat-button">
+              <button class="btn btn-primary" 
+                [routerLink]="['/productownermyprojects']"  (click)="addBid(bidDetails.value)" (click)="saveUser(personalDetails.value,user,userForm)">Submit</button>
+              <button class="btn btn-warning" (click)="stepper.reset()">Reset</button>
+            </div>
+        </mat-step>
+      </mat-horizontal-stepper>

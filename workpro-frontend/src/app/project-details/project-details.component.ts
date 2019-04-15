@@ -14,6 +14,7 @@ export class ProjectDetailsComponent implements OnInit {
   projects1:any;
   role:String;
   isrole:boolean=false;
+  isroleAdmin:boolean=false;
  
   bidsInfromation=[];
   biders=[];
@@ -30,15 +31,22 @@ export class ProjectDetailsComponent implements OnInit {
 
     this.route.params.subscribe(data=>{
       this.id=data.id;
+      this.email=data.email;
       console.log(this.id)
-    })
+      console.log(this.email)
+    });
+
 
     this.role=localStorage.getItem("role");
-    this.email=localStorage.getItem("email");
-    if(this.role==="USER"){
-      this.isrole=true;
-
+    // this.email=localStorage.getItem("email");
+    if(localStorage.getItem('role')){
+      this.isroleAdmin=true;
+      if(this.role==="USER"){
+        this.isrole=true;
+        this.isroleAdmin=false 
+      }
     }
+  
     this.productownerdetailsService.getProjectDetailsById(this.email, this.id).subscribe(data=>{
       this.projects1= data;
       console.log(this.projects1)

@@ -1,5 +1,5 @@
 <div class="card">
-    <h1>RPG Game</h1>
+    <h1>{{project.projectName}}</h1>
     <p>- Experienced language Specialist with a demonstrated history of working in the translation.Experienced in game
         localization.Responsible and responsive
         -we need :
@@ -7,7 +7,9 @@
         English (native English speaker preferred)
         Currently have a card RPG project. This project is urgent, and there will be a test. If you can proceed the test
         today, please apply for the project.</p>
-    <p class="skill">Java / Angular</p>
+        <div *ngFor="let skill of skills" >
+    <p class="skill">{{skill}}  </p>
+    </div>
     <p *ngIf="isLoggedIn">
         <button class="btn btn-outline-secondary" (click)="openDialog()">Bid</button>
     </p>

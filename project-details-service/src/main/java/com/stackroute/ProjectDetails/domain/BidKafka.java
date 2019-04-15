@@ -14,6 +14,7 @@ import org.springframework.stereotype.Component;
 public class BidKafka {
 
     private String projectId;
+    private String projectOwnerEmail;
     private String projectName;
     private String freelancerEmail;
     private float bidAmount;
@@ -21,4 +22,7 @@ public class BidKafka {
     private String status;
     private boolean awarded;
 
+    public boolean isAwarded() {
+        return awarded;
+    }
 }

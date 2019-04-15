@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
+import { ProductownerdetailsService } from '../productownerdetails.service';
 
 @Component({
   selector: 'app-edit-project-owner-profile',
@@ -10,14 +11,47 @@ export class EditProjectOwnerProfileComponent implements OnInit {
   isLinear = false;
   firstFormGroup: FormGroup;
   secondFormGroup: FormGroup;
-  addedSkills = [];
-  constructor(private _formBuilder: FormBuilder) { }
+  public user: any = {};
+  constructor(private _formBuilder: FormBuilder , private productownerdetailservice: ProductownerdetailsService) { }
+  email: String;
+  personalDetails;
+  address;
+  location;
+
 
   ngOnInit() {
-   
+    this.email = localStorage.getItem("email");
+    this.firstFormGroup = this._formBuilder.group({
+      firstCtrl: ['', Validators.required]
+    });
+    this.secondFormGroup = this._formBuilder.group({
+      secondCtrl: ['', Validators.required]
+    });
   }
 
-  
+  saveUser() {
+
+    let user = {
+      "name": this.personalDetails.name,
+      "email": this.personalDetails.email,
+      "address": this.address.address,
+      "location":this.location.location,
+      "number": this.personalDetails.number
+    }
+
+    console.log(user);
+    this.productownerdetailservice.updateDetailsOfProjectOwner(user).subscribe(data => {
+      console.log(data, "this is  the response from the backend!!")
+    })
+  }
+  addPersonalDetails(value) {
+    this.personalDetails = value
+  }
+
+  addEditAddress(value) {
+    this.address = value;
+    this.location=value;
+  }
 }
 
 

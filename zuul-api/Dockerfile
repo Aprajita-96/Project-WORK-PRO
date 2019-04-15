@@ -1,10 +1,14 @@
 FROM openjdk:11
 
-ADD ./target/zuul-api-0.0.1-SNAPSHOT.jar /usr/src/zuul-api-0.0.1-SNAPSHOT.jar
+WORKDIR /app
 
-WORKDIR usr/src
+COPY . .
 
-ENTRYPOINT ["java","-jar", "zuul-api-0.0.1-SNAPSHOT.jar"]
+WORKDIR /app/target
+
+RUN ls -la
+
+CMD ["java","-jar", "zuul-api-0.0.1-SNAPSHOT.jar"]
 
 
 

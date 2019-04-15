@@ -11,7 +11,7 @@ import lombok.NoArgsConstructor;
 public class BidOfFreelancer {
 
   private String freelancerEmailId ;
-  private String proposedCompletionDate;
-  private Double bidAmount;
+  private int proposedCompletionDate;
+  private float bidAmount;
   private boolean projectAwarded;
 }

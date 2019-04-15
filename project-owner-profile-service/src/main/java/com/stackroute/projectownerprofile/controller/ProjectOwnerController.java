@@ -18,7 +18,6 @@ public class ProjectOwnerController {
     private ProjectOwnerServices projectOwnerServices;
 
     @Autowired
-
     public ProjectOwnerController(@RequestBody ProjectOwnerServices projectOwnerServices) {
         this.projectOwnerServices = projectOwnerServices;
     }

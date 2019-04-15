@@ -4,7 +4,11 @@
       <ng-template matStepLabel>Personal Details</ng-template>
       <div class="row form-container">
         <div class="col-sm-9 personal-info">
-          <!-- Personal Details -->
+          <!-- <div class="alert alert-info alert-dismissable">
+                <a class="panel-close close" data-dismiss="alert">×</a> 
+                <i class="fa fa-coffee"></i>
+                This is an <strong>.alert</strong>. Use this to show important messages to the user.
+              </div> -->
           <form class="form-horizontal" role="form" #personalDetails="ngForm">
             <div class="form-group">
               <div class="col-md-3 control-label">
@@ -15,10 +19,23 @@
                 </div>
               </div>
             </div>
+
             <div class="form-group">
               <label class="col-md-3 control-label">Name:</label>
               <div class="col-md-8">
-                <input name="freelancerName" ngModel class="form-control" type="text" value="">
+                <input name="name" ngModel class="form-control" type="text" value="">
+              </div>
+            </div>
+            <!-- <div class="form-group">
+              <label class="col-md-3 control-label">Last name:</label>
+              <div class="col-md-8">
+                <input  name="lastName" ngModel class="form-control" type="text" value="">
+              </div>
+            </div> -->
+            <div class="form-group">
+              <label class="col-md-3 control-label">Email:</label>
+              <div class="col-md-8">
+                <input name="email" ngModel class="form-control" type="text" value="">
               </div>
             </div>
             <div class="form-group">
@@ -27,64 +44,35 @@
                 <input name="number" ngModel class="form-control" type="text" value="">
               </div>
             </div>
-            <div class="form-group">
-              <label class="col-md-3 control-label">Email:</label>
-              <div class="col-md-8">
-                <input name="email" ngModel class="form-control" type="text" value="">
-              </div>
-            </div>
             <!-- <div class="form-group">
               <label class="col-md-3 control-label">Date of Birth</label>
               <div class="col-md-8">
-                <input type="date" class="form-control" placeholder="Date of Birth">
+                <input type="date" name="dateOfBirth" ngModel class="form-control" placeholder="Date of Birth">
               </div>
             </div> -->
+                <!-- <label class="col-md-3 control-label">Gender:</label>
+  <div class="form-group"> 
+       <div class="col-sm-3">
+            <label class="radio-inline">
+                 <input name="gender" ngModel id="input-gender-male" value="Male" type="radio" />Male
+             </label>
+        </div>
+        <div class="col-sm-3">
+             <label class="radio-inline">
+                  <input name="gender" ngModel id="input-gender-female" value="Female" type="radio" />Female
+             </label>
+         </div>
+   </div> -->
             <!-- <div class="form-group">
-                      <label class="col-lg-3 control-label">Time Zone:</label>
-                      <div class="col-lg-8">
-                        <div class="ui-select">
-                          <select id="user_time_zone" class="form-control">
-                            <option value="Hawaii">(GMT-10:00) Hawaii</option>
-                            <option value="Alaska">(GMT-09:00) Alaska</option>
-                            <option value="Pacific Time (US &amp; Canada)">(GMT-08:00) Pacific Time (US &amp; Canada)</option>
-                            <option value="Arizona">(GMT-07:00) Arizona</option>
-                            <option value="Mountain Time (US &amp; Canada)">(GMT-07:00) Mountain Time (US &amp; Canada)</option>
-                            <option value="Central Time (US &amp; Canada)" selected="selected">(GMT-06:00) Central Time (US &amp; Canada)</option>
-                            <option value="Eastern Time (US &amp; Canada)">(GMT-05:00) Eastern Time (US &amp; Canada)</option>
-                            <option value="Indiana (East)">(GMT-05:00) Indiana (East)</option>
-                          </select>
-                        </div>
-                      </div>
-                    </div> -->
-            <!-- <div class="form-group">
-                      <label class="col-md-3 control-label">Username:</label>
-                      <div class="col-md-8">
-                        <input class="form-control" type="text" value="janeuser">
-                      </div>
-                    </div> -->
-            <!-- <label class="col-md-3 control-label">Gender:</label>
-            <div class="form-group">
-              <div class="col-sm-3">
-                <label class="radio-inline">
-                  <input name="gender" id="input-gender-male" value="Male" type="radio" />Male
-                </label>
-              </div>
-              <div class="col-sm-3">
-                <label class="radio-inline">
-                  <input name="gender" id="input-gender-female" value="Female" type="radio" />Female
-                </label>
-              </div>
-            </div>
-            <div class="form-group">
               <label class="col-md-3 control-label">About:</label>
               <div class="col-md-8">
-                <textarea class="form-control" rows="5" id="About"></textarea>
+                <textarea class="form-control" name="description" ngModel  rows="5" id="About"></textarea>
               </div>
             </div> -->
             <div class="form-group">
               <label class="col-md-3 control-label">Password:</label>
               <div class="col-md-8">
-                <input class="form-control" type="password" value="11111122333">
+                <input class="form-control" name="password" ngModel type="password" value="11111122333">
               </div>
             </div>
             <div class="form-group">
@@ -96,80 +84,74 @@
             <div class="form-group">
               <label class="col-md-3 control-label"></label>
               <div class="col-md-8">
-                <input type="button" class="btn btn-primary" value="Save Changes">
+                <button matStepperNext type="button" class="btn btn-primary" (click) = "addPersonalDetails(personalDetails.value)">Save Changes</button>
                 <span></span>
-                <input type="reset" class="btn btn-default" value="Cancel">
+                <button type="reset" class="btn btn-warning" value="Cancel">Cancel</button>
               </div>
             </div>
           </form>
         </div>
       </div>
-      <!-- </div> -->
-
-      <!-- <mat-form-field>
-              <input matInput placeholder="Last name, First name" formControlName="firstCtrl" required>
-            </mat-form-field> -->
-      <!-- <div>
-              <button mat-button matStepperNext>Next</button>
-            </div> -->
     </form>
   </mat-step>
   <mat-step [stepControl]="secondFormGroup">
-    <form >
+    <form [formGroup]="secondFormGroup" >
       <ng-template matStepLabel>Edit address</ng-template>
       <div class="row form-container">
-        <!-- <form class="form-horizontal">
-                        <fieldset> -->
-        <!-- Address form -->
-        <!-- address-line1 input-->
         <div class="col-sm-9 personal-info">
           <form class="form-horizontal" role="form" #editAddress="ngForm">
             <div class="form-group">
-              <label class="col-sm-3 control-label">Address Line 1</label>
+              <label class="col-sm-3 control-label">address</label>
               <div class="col-sm-8">
-                <input id="address-line1" name="address-line1" type="text" placeholder="address line 1"
+                <input id="address" name="address" ngModel type="text" placeholder="address"
                   class="form-control">
 
               </div>
             </div>
-            <!-- address-line2 input-->
             <div class="form-group">
+              <label class="col-md-3 control-label">Location:</label>
+              <div class="col-md-8">
+                <input name="location" ngModel class="form-control" type="text" placeholder="location of project" value="">
+              </div>
+            </div>
+            <!-- address-line2 input -->
+            <!-- <div class="form-group">
               <label class="col-sm-3 control-label">Address Line 2</label>
               <div class="col-sm-8">
-                <input id="address-line2" name="address-line2" type="text" placeholder="address line 2"
+                <input id="address-line2" name="address-line2" ngModel type="text" placeholder="address line 2"
                   class="form-control">
 
               </div>
             </div>
-            <!-- city input-->
-            <div class="form-group">
+            <!- city input-->
+            <!-- <div class="form-group">
               <label class="col-sm-3 control-label">City / Town</label>
               <div class="col-sm-8">
-                <input id="city" name="city" type="text" placeholder="city" class="form-control">
+                <input id="city" name="city" type="text" placeholder="city" ngModel class="form-control">
 
               </div>
             </div>
-            <!-- region input-->
-            <div class="form-group">
+            <!-region input-->
+            <!-- <div class="form-group">
               <label class="col-sm-3 control-label">State / Region</label>
               <div class="col-sm-8">
-                <input id="region" name="region" type="text" placeholder="state / province / region"
+                <input id="region" name="region" type="text" ngModel placeholder="state / province / region"
                   class="form-control">
               </div>
             </div>
-            <!-- postal-code input-->
-            <div class="form-group">
+            <!- postal-code input-->
+            <!-- <div class="form-group">
               <label class="col-md-3 control-label">Zip / Postal Code</label>
               <div class="col-md-8">
-                <input id="postal-code" name="postal-code" type="text" placeholder="zip or postal code"
+                <input id="postal-code" name="postal-code" type="text" ngModel placeholder="zip or postal code"
                   class="form-control">
               </div>
             </div>
-            <!-- country select -->
-            <div class="form-group">
+            <!- country select -->
+            <!-- <div class="form-group">
               <label class="col-sm-3 control-label">Country</label>
               <div class="col-sm-8">
-                <select id="country" name="country" class="form-control">
+                <select id="country" name="country" ngModel class="form-control">
                   <option value="" selected="selected">(please select a country)</option>
                   <option value="AF">Afghanistan</option>
                   <option value="AL">Albania</option>
@@ -412,21 +394,76 @@
                   <option value="ZW">Zimbabwe</option>
                 </select>
               </div>
-            </div>
+            </div> -->
             <div class="form-group">
               <label class="col-sm-3 control-label"></label>
               <div class="col-sm-8">
-                <input type="button" class="btn btn-primary" value="Save Changes">
+                <button matStepperNext (click) = "addEditAddress(editAddress.value)" class="btn btn-primary" value="Save">Save</button>
                 <span></span>
-                <input type="reset" class="btn" value="Cancel">
+                <button matStepperNext type="reset" class="btn btn-warning" value="Cancel" (click)="stepper.reset()">Cancel</button>
               </div>
             </div>
           </form>
         </div>
       </div>
-      <div>
-        <button mat-raised-button color="primary" matStepperPrevious
-          [routerLink]="['/poprofile']">Submit</button>
+    <!-- </form> -->
+  <!-- <mat-step [stepControl]="secondFormGroup">
+  <ng-template matStepLabel>Professional Details</ng-template>
+      <div class="row form-container">
+        <div class="col-sm-9 personal-info">
+          <form class="form-horizontal" role="form" #professionaldetails="ngForm">
+              <div class="form-group">
+                  <label class="col-sm-3 control-label"><h3><i class="fas fa-plus-circle"></i></h3></label>
+                  <div class="col-sm-8">
+                    <div class="skill-container">
+                    <input id="skill" name="skill" ngModel #skillName type="text" placeholder="Add your Skills"
+                      class="form-control">
+                    <button class="btn btn-primary" (click)="addSkill(skillName.value)"> Add Skill</button>
+                  </div>
+                  </div>
+    
+    
+                  <div *ngFor="let skill of addedSkills">
+                    <h3><span class="badge badge-pill badge-info">
+                        {{skill.skillName}}
+                        <button (click)="removeSkill(skill.name)" type="button" class="close" aria-label="Close">
+                          <span aria-hidden="true">&times;</span>
+                        </button>
+                      </span></h3>
+                  </div>
+                </div> -->
+            <!-- <div class="form-group">
+              <label class="col-sm-3 control-label"><h3><i class="fab fa-facebook-square"></i></h3></label>
+              <div class="col-sm-8">
+                <input id="facebook link" name="facebook" ngModel type="text" placeholder="facebook" class="form-control">
+
+              </div>
+            </div>
+            <div class="form-group">
+              <label class="col-sm-3 control-label"><h3><i class="fab fa-twitter-square"></i></h3></label>
+              <div class="col-sm-8">
+                <input id="Twitter link" name="Twitter" ngModel type="text" placeholder="Twitter" class="form-control">
+
+              </div>
+            </div>
+            <div class="form-group">
+              <label class="col-sm-3 control-label"><h3><i class="fab fa-linkedin"></i></h3></label>
+              <div class="col-sm-8">
+                <input id="linkedin link" name="linkedin"  ngModel type="text" placeholder="linkedin" class="form-control">
+
+              </div>
+            </div>
+            <div class="form-group">
+              <label class="col-sm-3 control-label"><h3><i class="fab fa-github-square"></i></h3></label>
+              <div class="col-sm-8">
+                <input id="github link" name="github" type="text" ngModel placeholder="github" class="form-control">
+
+              </div>
+            </div>
+             -->
+      <div class="mat-button">
+        <button mat-raised-button color="primary" 
+          [routerLink]="['/poprofile']"  (click)="saveUser()">Submit</button>
         <button mat-raised-button color="accent" (click)="stepper.reset()">Reset</button>
       </div>
     </form>

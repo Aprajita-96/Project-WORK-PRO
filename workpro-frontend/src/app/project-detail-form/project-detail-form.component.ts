@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ProductownerdetailsService } from '../productownerdetails.service';
+import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 
 
 @Component({
@@ -8,16 +9,25 @@ import { ProductownerdetailsService } from '../productownerdetails.service';
   styleUrls: ['./project-detail-form.component.scss']
 })
 export class ProjectDetailFormComponent implements OnInit {
+  isLinear = false;
+  firstFormGroup: FormGroup;
+  secondFormGroup: FormGroup;
   public user: any = {};
   skills = [];
   bid = [];
   addBidToProjects = false;
-  constructor(private productownerdetailsService: ProductownerdetailsService) { }
+  constructor(private _formBuilder: FormBuilder,private productownerdetailsService: ProductownerdetailsService) { }
   email: String;
 
 
   ngOnInit() {
     this.email = localStorage.getItem("email");
+    this.firstFormGroup = this._formBuilder.group({
+      firstCtrl: ['', Validators.required]
+    });
+    this.secondFormGroup = this._formBuilder.group({
+      secondCtrl: ['', Validators.required]
+    });
   }
   saveUser(user: any, userForm: any) {
     user.skillsSetList = this.skills;
@@ -29,22 +39,22 @@ export class ProjectDetailFormComponent implements OnInit {
     user.projectCompletionDate = user.projectCompletionDate;
     user.projectPreference = user.projectPreference;
     user.projectLocation = user.projectLocation;
+    user.projectOwnerEmailId=this.email;
+    user.bidSpecsProvidedByProjectOwners=this.bid;
 
-    // console.log(user);
-    this.addproject(user);
+    console.log(user,"user");
+  
     let project = {
       projectOwnerEmailId: this.email,
-      projectDetailsList: [user]
+      projectDetailsList: [user],
     }
-    console.log(project)
+    console.log(project,"project")
 
     this.productownerdetailsService.setProjectDetails(project).subscribe(console.log);
 
   }
 
-  addproject(user) {
-
-  }
+ 
   addSkill(skill) {
     // console.log(skill, "slkdjflkjsdlkfjsd")
     this.skills.push(skill)
@@ -65,8 +75,11 @@ export class ProjectDetailFormComponent implements OnInit {
     this.skills = this.skills.filter(e => e.skillName !== skill.skillName)
   }
 
-  addfirstDetails(value) {
-    console.log(value, "first");
-  }
 
+
+  removeSkill(skill) {
+    this.skills = this.skills.filter(e => {
+      return e.name !== skill
+    })
+  }
 }

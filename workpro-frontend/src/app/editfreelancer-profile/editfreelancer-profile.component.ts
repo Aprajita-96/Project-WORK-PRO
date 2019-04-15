@@ -19,6 +19,8 @@ export class EditfreelancerProfileComponent implements OnInit {
   personalDetails;
   address;
   professionalDetails;
+  details:any=[];
+  userPresent:boolean=false;
 
 
   ngOnInit() {
@@ -29,36 +31,52 @@ export class EditfreelancerProfileComponent implements OnInit {
     this.secondFormGroup = this._formBuilder.group({
       secondCtrl: ['', Validators.required]
     });
+
+    this.freelancerDetailsService.getDetailsOfFreelancers(this.email).subscribe(data=>{
+      this.details=data;
+      this.addedSkills = this.details.skills 
+
+    });
+    if(this.details.freelancerName!==null){
+      this.userPresent=true;
+    }
+    console.log(this.addedSkills)
   }
   saveUser() {
 
     let user = {
-      "freelancerName": this.personalDetails.freelancerName,
+      "freelancerName": this.personalDetails.Name,
       "freelancerEmail": this.personalDetails.email,
       "freelancerAddress": this.address.address,
       "yearsOfExpertise": 1,
       "skills": this.addedSkills
     }
-
+    console.log(user)
+    if(this.details.freelancerEmail===null){
+      this.freelancerDetailsService.postFreelancerDetails(user).subscribe(console.log);
+    }
+    else{
     this.freelancerDetailsService.updateDetailsofFreelancers(user).subscribe(data => {
       console.log(data, "this is  the response from the backend!!")
     })
+    }
   }
 
 
 
 
   addSkill(skill) {
-    let s = {
-      name: skill
-    }
+    console.log(skill)
+
     this.addedSkills.push(skill);
 
   }
 
   removeSkill(skill) {
+    console.log(skill)
     this.addedSkills = this.addedSkills.filter(e => {
-      return e.name !== skill
+      console.log(e, skill, "this is some va")
+      return e !== skill
     })
   }
 

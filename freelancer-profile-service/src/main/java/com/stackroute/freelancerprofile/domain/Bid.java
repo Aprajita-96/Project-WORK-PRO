@@ -17,6 +17,7 @@ public class Bid {
 
     private String projectId;
     private String projectName;
+    private String projectOwnerEmail;
     private String freelancerEmail;
     private float bidAmount;
     private int duration;

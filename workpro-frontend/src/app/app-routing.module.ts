@@ -40,7 +40,7 @@ const routes: Routes = [
   {
     path: "poprofile",
     component: ProjectOwnerProfileComponent,
-    canActivate: [AuthGuard1Guard,AuthGuard]
+    // canActivate: [AuthGuard1Guard,AuthGuard]
   },
   {
     path: "editpoprofile",
@@ -53,7 +53,7 @@ const routes: Routes = [
   {
     path: "editfreelancerprofile",
     component: EditfreelancerProfileComponent,
-    canActivate: [AuthGuard]
+    // canActivate: [AuthGuard]
   },
   {
     path: '',
@@ -62,7 +62,7 @@ const routes: Routes = [
   {
     path: "projectDetailsComponent/:id/:email",
     component: ProjectDetailsComponent,
-    canActivate: [AuthGuard]
+    // canActivate: [AuthGuard]
   },
 
   {
@@ -76,12 +76,12 @@ const routes: Routes = [
   {
     path: "login",
     component: LoginComponent,
-    canActivate: [AuthGuard]
+    // canActivate: [AuthGuard]
   },
   {
     path: "userdashboard",
     component: UserDashboardComponent,
-    canActivate:[AuthGuard]
+    // canActivate:[AuthGuard]
   },
   {
     path: 'projectDetailFormComponent',
@@ -106,7 +106,7 @@ const routes: Routes = [
   {
     path: "projectownerdashboard",
     component: ProjectOwnerDashboardComponent,
-    canActivate:[AuthGuard]
+    // canActivate:[AuthGuard]
   },
   {
     path: "productownermyprojects",

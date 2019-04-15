@@ -4,8 +4,8 @@
       <h5 class="card-title">{{project.projectName}}</h5>
       <p class="card-text">{{project.description}}</p>
       <p class="card-text1" style="color: blue">{{project.skillsSetList}}</p>
-      <button  class="card-link btn btn-primary">Details</button>
-      <button class="card-link btn btn-warning">Bid</button>
+      <button  class="card-link btn btn-primary" routerLink="/projectDetailsComponent/{{project.projectId}}/{{project.projectOwnerEmailId}}">Details</button>
+      <!-- <button class="card-link btn btn-warning">Bid</button> -->
     </div>
   </div>
 </div>

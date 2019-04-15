@@ -32,8 +32,8 @@ export class FreelancerDetailsService {
     return this.http.get("http://localhost:8082/api/v1/skill/" + skill);
   }
 
-  postBids(poemail,pid,body){
-    return this.http.post("http://localhost:8090/api/v1//projectOwner/"+poemail+"/projects/"+pid+"/bid",body);
+  postBids(body){
+    return this.http.post("http://localhost:8082/api/v1//bid/bidDetails",body);
   }
   
 }

@@ -15,6 +15,7 @@ export class ProjectDetailsViewComponent implements OnInit {
   email:String;
   project:any=[];
   skills:any;
+  pname:String
 
   constructor(public dialog: MatDialog,private route:  ActivatedRoute,private productownerdetailsService:ProductownerdetailsService) { }
   
@@ -30,6 +31,7 @@ export class ProjectDetailsViewComponent implements OnInit {
     });
     this.productownerdetailsService.getProjectDetailsById(this.email,this.id).subscribe(data=>{
       this.project=data;
+      this.pname=this.project.projectName;
       this.skills=this.project['skillsSetList']
     })
 
@@ -37,7 +39,10 @@ export class ProjectDetailsViewComponent implements OnInit {
 }
 
   openDialog(){
-    const dialogRef = this.dialog.open(BidviewComponent);
+    const dialogRef = this.dialog.open(BidviewComponent,{
+        data: { pid:this.id,pname:this.pname,poemail:this.email }
+    
+    });
     dialogRef.afterClosed().subscribe(result => {
       console.log(`Dialog result: ${result}`);
     });

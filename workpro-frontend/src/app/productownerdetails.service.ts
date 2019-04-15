@@ -35,6 +35,6 @@ data:any
    }
   updateDetailsOfProjectOwner(data)
   {
-    return this.http.put("http://localhost:8083/api/v1/projectOwner/projectOwnerId"+data.email,data)
+    return this.http.put("http://localhost:8083/api/v1/projectOwner/"+data.email,data);
   }
 }

@@ -29,22 +29,22 @@ export class ProjectDetailFormComponent implements OnInit {
     user.projectCompletionDate = user.projectCompletionDate;
     user.projectPreference = user.projectPreference;
     user.projectLocation = user.projectLocation;
+    user.projectOwnerEmailId=this.email;
+    user.bidSpecsProvidedByProjectOwners=this.bid;
 
-    // console.log(user);
-    this.addproject(user);
+    console.log(user,"user");
+  
     let project = {
       projectOwnerEmailId: this.email,
-      projectDetailsList: [user]
+      projectDetailsList: [user],
     }
-    console.log(project)
+    console.log(project,"project")
 
     this.productownerdetailsService.setProjectDetails(project).subscribe(console.log);
 
   }
 
-  addproject(user) {
-
-  }
+ 
   addSkill(skill) {
     // console.log(skill, "slkdjflkjsdlkfjsd")
     this.skills.push(skill)
@@ -65,8 +65,6 @@ export class ProjectDetailFormComponent implements OnInit {
     this.skills = this.skills.filter(e => e.skillName !== skill.skillName)
   }
 
-  addfirstDetails(value) {
-    console.log(value, "first");
-  }
+
 
 }

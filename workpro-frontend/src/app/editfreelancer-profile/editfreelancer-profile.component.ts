@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import {FormBuilder, FormGroup, Validators} from '@angular/forms';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { FreelancerDetailsService } from '../freelancer-details.service';
 
 @Component({
@@ -13,8 +13,16 @@ export class EditfreelancerProfileComponent implements OnInit {
   secondFormGroup: FormGroup;
   addedSkills = [];
   public user: any = {};
-  constructor(private _formBuilder: FormBuilder,private freelancerDetailsService:FreelancerDetailsService) { }
+  constructor(private _formBuilder: FormBuilder, private freelancerDetailsService: FreelancerDetailsService) { }
+
   email: String;
+  personalDetails;
+  address;
+  professionalDetails;
+  details:any=[];
+  userPresent:boolean=false;
+
+
   ngOnInit() {
     this.email = localStorage.getItem("email");
     this.firstFormGroup = this._formBuilder.group({
@@ -23,84 +31,68 @@ export class EditfreelancerProfileComponent implements OnInit {
     this.secondFormGroup = this._formBuilder.group({
       secondCtrl: ['', Validators.required]
     });
-  }
-  saveUser(user, userForm: any) {
 
-    user.skills = this.addedSkills;
+    this.freelancerDetailsService.getDetailsOfFreelancers(this.email).subscribe(data=>{
+      this.details=data;
+      this.addedSkills = this.details.skills 
+
+    });
+    if(this.details.freelancerName!==null){
+      this.userPresent=true;
+    }
     console.log(this.addedSkills)
-    user.freelancerName = user.freelancerName;
-    user.freelancerAddress = user.freelancerAddress;
-    user.yearsOfExpertise=2;
-    // this.addPersonalDetails(user);
-    // this.addEditAddress(user);
-    // this.addprofessionaldetails(user);
+  }
+  saveUser() {
 
+    let user = {
+      "freelancerName": this.personalDetails.Name,
+      "freelancerEmail": this.personalDetails.email,
+      "freelancerAddress": this.address.address,
+      "yearsOfExpertise": 1,
+      "skills": this.addedSkills
+    }
+    console.log(user)
+    if(this.details.freelancerEmail===null){
+      this.freelancerDetailsService.postFreelancerDetails(user).subscribe(console.log);
+    }
+    else{
+    this.freelancerDetailsService.updateDetailsofFreelancers(user).subscribe(data => {
+      console.log(data, "this is  the response from the backend!!")
+    })
+    }
   }
 
- 
+
 
 
   addSkill(skill) {
-    console.log("skill is being added", skill )
-    let s = {
-      name: skill
-    }
-    this.addedSkills.push(s);
+    console.log(skill)
+
+    this.addedSkills.push(skill);
+
   }
 
   removeSkill(skill) {
-      console.log(skill)
-      this.addedSkills = this.addedSkills.filter(e => {
-        return e.name !== skill
-      })
+    console.log(skill)
+    this.addedSkills = this.addedSkills.filter(e => {
+      console.log(e, skill, "this is some va")
+      return e !== skill
+    })
   }
 
   addPersonalDetails(value) {
-    console.log(value, "First Form in the stepper !!");
+    this.personalDetails = value
   }
 
-  addEditAddress(value){
-    console.log(value, "Second Form in the stepper !!");
+  addEditAddress(value) {
+    this.address = value;
   }
 
-  addprofessionaldetails(value){
-    console.log(value, "third Form in the stepper !!");
+  addprofessionaldetails(value) {
+    this.professionalDetails = this.addedSkills;
   }
-
-  freelancers = [
-    {
-      "name": "Arline Skinner",
-      "email": "arlineskinner@pharmex.com",
-      "skills": " Android / Java / Mobile App Development",
-      "profilePicUrl": "https://previews.123rf.com/images/pandavector/pandavector1704/pandavector170406117/76645972-man-with-beard-icon-flat-single-avatar-icon-.jpg"
-    },
-    {
-      "name": "Cristina Bernard",
-      "email": "cristinabernard@pharmex.com",
-      "skills": " Android / jQuery / Prototype / Mobile App Development / PhoneGap / Technical Support ",
-      "profilePicUrl": "https://previews.123rf.com/images/pandavector/pandavector1704/pandavector170406117/76645972-man-with-beard-icon-flat-single-avatar-icon-.jpg"
-    },
-    {
-      "name": "Sadie Olson",
-      "email": "sadieolson@pharmex.com",
-      "skills": " Android / Java / Mobile App Development / MySQL / PHP ",
-      "profilePicUrl": "https://previews.123rf.com/images/pandavector/pandavector1704/pandavector170406117/76645972-man-with-beard-icon-flat-single-avatar-icon-.jpg"
-    },
-    {
-      "name": "Eileen Harris",
-      "email": "eileenharris@pharmex.com",
-      "skills": " Android / iPhone / Mobile App Development / Objective C / Swift",
-      "profilePicUrl": "https://previews.123rf.com/images/pandavector/pandavector1704/pandavector170406117/76645972-man-with-beard-icon-flat-single-avatar-icon-.jpg"
-    },
-    {
-      "name": "Garza Terrell",
-      "email": "garzaterrell@pharmex.com",
-      "skills": " Android / Ionic Framework / iOS Development / iPhone node.js ",
-      "profilePicUrl": "https://previews.123rf.com/images/pandavector/pandavector1704/pandavector170406117/76645972-man-with-beard-icon-flat-single-avatar-icon-.jpg"
-    }
-  ]
 }
 
-  
+
 
 

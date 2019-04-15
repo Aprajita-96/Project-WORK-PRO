@@ -1,6 +1,7 @@
 <div class="container mt-5">
   <div class="card">
     <div>
+        <div *ngIf="isroleAdmin">
       <ul>
         <li>
           <button routerLink="#" class="btn btn-primary text-white">
@@ -13,16 +14,25 @@
           </button>
         </li>
       </ul>
+      </div>
     </div>
     <div class="card-body">
-      <h4 class="card-title">{{ projects1.projectName }}</h4>
+      <label>Project Name:</label>
+      <h4 class="card-title">{{projects1.projectName}}</h4>
       <p class="card-text">{{ projects1.projectDescription }}</p>
      
       <p class="card-text">{{bidsInfromation.maximumBudget}}</p>
       <p class="card-text">{{ bidsInfromation.minimumBudget }}</p>
       <p class="card-text">{{ projects1.projectCompletionDate}}</p>
+      <div *ngIf="isrole; else elseBlock">
+          <button routerLink="/detailsview/{{id}}/{{email}}" class="btn btn-primary text-white">
+            Bid
+          </button>
+      </div>
     </div>
   </div>
+
+    <div *ngIf="isroleAdmin">
   <div class="text-center">
     <h3>Bids</h3>
   </div>
@@ -42,4 +52,6 @@
       
     </div>
   </div>
+</div>
+
 </div>

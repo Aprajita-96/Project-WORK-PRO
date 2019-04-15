@@ -5,7 +5,8 @@ import { HttpClient } from '@angular/common/http';
   providedIn: 'root'
 })
 export class ProductownerdetailsService {
-
+value:any
+data:any
   constructor(private http:HttpClient) {}
 
   getDtailsOfProjectOwner(value){
@@ -30,6 +31,11 @@ export class ProductownerdetailsService {
    
     getResults(skillName){
     return this.http.get("http://localhost:8090/api/v1/skill/"+skillName+"/projects");
+    
    }
-  
+  updateDetailsOfProjectOwner(data)
+  {
+    return this.http.put("http://localhost:8083/api/v1/projectOwner/"+data.email,data);
+  }
+ 
 }

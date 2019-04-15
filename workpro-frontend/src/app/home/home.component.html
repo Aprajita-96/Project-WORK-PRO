@@ -32,8 +32,8 @@
           <!-- form-group col-sm-4 col-sm-offset-4 |  form-control -->
         
         <div class="center-block search-input-holder">
-          <input id="search-input" type="text" class="form-control" placeholder="Whom you want to hire?">
-          <button class="btn btn-success" style="margin-left: 5px"type="submit">Search</button>
+          <input id="search-input" type="text" class="form-control" placeholder="Search for Projects" name="search" #search type="search">
+          <button class="btn btn-success"  routerLink="search/{{search.value}}" style="margin-left: 5px"type="submit" >Search</button>
         </div>
       
           

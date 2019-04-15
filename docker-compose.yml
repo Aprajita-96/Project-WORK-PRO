@@ -141,3 +141,13 @@ services:
     depends_on:
       - mongo
       - eureka-server
+
+  workpro-frontend:
+    image: workpro-frontend
+    build: workpro-frontend/
+    container_name: workpro-frontend
+    network_mode: "host"
+    hostname: localhost
+    ports:
+      - 8000:8000
+    restart: always

@@ -109,7 +109,7 @@ public class FreelancerController {
     @GetMapping("/freelancer/{id}")
     public ResponseEntity<?> getDetails(@PathVariable("id") String id) {
         Freelancer freelancer = freelancerService.search(id);
-        return new ResponseEntity<Freelancer>(freelancer, HttpStatus.FOUND);
+        return new ResponseEntity<Freelancer>(freelancer, HttpStatus.OK);
     }
 
     @PostMapping("/bid/bidDetails")
@@ -120,7 +120,7 @@ public class FreelancerController {
             Bid resultbid = bidService.save(bid);
 
             producer.send(bid);
-            return new ResponseEntity<Bid>(resultbid, HttpStatus.ACCEPTED);
+            return new ResponseEntity<Bid>(resultbid, HttpStatus.OK);
 //        } else
 //            throw new UnauthorizedException("login please");
 

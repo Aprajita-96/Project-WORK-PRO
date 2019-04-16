@@ -12,8 +12,8 @@ export class FreelancerDetailsService {
   }
   
 
-  updateDetailsofFreelancers(data){
-    return this.http.put("http://localhost:8082/api/v1/freelancerprofile/"+data.freelancerEmail,data);
+  updateDetailsofFreelancers(email,data){
+    return this.http.put("http://localhost:8082/api/v1/freelancerprofile/"+email,data);
   }
 
   
@@ -23,7 +23,7 @@ export class FreelancerDetailsService {
   }
   postFreelancerDetails(value)
   {
-      return this.http.post("http://localhost:8082/api/v1/freelancerprofile/postDetails",value);
+      return this.http.post("http://localhost:8082/api/v1/freelancerprofile/postDetails",value, {responseType: 'text'});
     
   }
 
@@ -32,8 +32,8 @@ export class FreelancerDetailsService {
     return this.http.get("http://localhost:8082/api/v1/skill/" + skill);
   }
 
-  postBids(poemail,pid,body){
-    return this.http.post("http://localhost:8090/api/v1//projectOwner/"+poemail+"/projects/"+pid+"/bid",body);
+  postBids(body){
+    return this.http.post("http://localhost:8082/api/v1//bid/bidDetails",body);
   }
   
 }

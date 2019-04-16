@@ -1,26 +1,28 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { FreelancerDetailsService } from '../freelancer-details.service';
+import { Router } from '@angular/router';
 
 @Component({
-  selector: 'app-editfreelancer-profile',
-  templateUrl: './editfreelancer-profile.component.html',
-  styleUrls: ['./editfreelancer-profile.component.scss']
+ selector: 'app-editfreelancer-profile',
+ templateUrl: './editfreelancer-profile.component.html',
+ styleUrls: ['./editfreelancer-profile.component.scss']
 })
 export class EditfreelancerProfileComponent implements OnInit {
+
   isLinear = false;
   firstFormGroup: FormGroup;
   secondFormGroup: FormGroup;
-  addedSkills = [];
+  addedSkills: any;
   public user: any = {};
-  constructor(private _formBuilder: FormBuilder, private freelancerDetailsService: FreelancerDetailsService) { }
-
   email: String;
-  personalDetails;
+  personalDetails: any = [];
   address;
   professionalDetails;
-  details:any=[];
-  userPresent:boolean=false;
+  details: any = [];
+  userPresent: boolean = false;
+
+  constructor(private _formBuilder: FormBuilder, private freelancerDetailsService: FreelancerDetailsService,private route:Router) { }
 
 
   ngOnInit() {
@@ -32,15 +34,16 @@ export class EditfreelancerProfileComponent implements OnInit {
       secondCtrl: ['', Validators.required]
     });
 
-    this.freelancerDetailsService.getDetailsOfFreelancers(this.email).subscribe(data=>{
-      this.details=data;
-      this.addedSkills = this.details.skills 
+    this.freelancerDetailsService.getDetailsOfFreelancers(this.email).subscribe(data => {
+      this.details = data;
+      this.addedSkills = this.details.skills
 
+      if (this.details.freelancerName !== null) {
+        this.userPresent = true;
+      }
     });
-    if(this.details.freelancerName!==null){
-      this.userPresent=true;
-    }
-    console.log(this.addedSkills)
+
+    // console.log(this.addedSkills)
   }
   saveUser() {
 
@@ -52,23 +55,35 @@ export class EditfreelancerProfileComponent implements OnInit {
       "skills": this.addedSkills
     }
     console.log(user)
-    if(this.details.freelancerEmail===null){
-      this.freelancerDetailsService.postFreelancerDetails(user).subscribe(console.log);
-    }
-    else{
-    this.freelancerDetailsService.updateDetailsofFreelancers(user).subscribe(data => {
-      console.log(data, "this is  the response from the backend!!")
-    })
-    }
+
+    this.freelancerDetailsService.getDetailsOfFreelancers(this.email).subscribe(data => {
+      this.details = data;
+
+      console.log(this.details.freelancerEmail)
+
+      if (this.details.freelancerEmail === null) {
+        this.freelancerDetailsService.postFreelancerDetails(user).subscribe(console.log);
+       
+      }
+      else {
+        this.freelancerDetailsService.updateDetailsofFreelancers(this.email, user).subscribe(data => {
+          console.log(data, "this is  the response from the backend!!")
+        })
+        this.route.navigate(['freelancerprofile']);
+      }
+    });
+
+
+
   }
 
 
-
-
   addSkill(skill) {
+    this.addedSkills = this.addedSkills || [];
     console.log(skill)
+    this.addedSkills.push(skill)
+    console.log(this.addedSkills)
 
-    this.addedSkills.push(skill);
 
   }
 
@@ -81,14 +96,17 @@ export class EditfreelancerProfileComponent implements OnInit {
   }
 
   addPersonalDetails(value) {
+    console.log(value)
     this.personalDetails = value
   }
 
   addEditAddress(value) {
+    console.log(value)
     this.address = value;
   }
 
   addprofessionaldetails(value) {
+    console.log(value)
     this.professionalDetails = this.addedSkills;
   }
 }

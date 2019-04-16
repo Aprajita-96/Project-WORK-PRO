@@ -15,27 +15,13 @@ export class AppComponent implements OnInit {
    constructor(private userService:UserserviceService,private loginauthservice:LoginAuthService){
      this.userService=userService;
    }
-   role:any;
+   
    isLogin:boolean=false;
-   decodedToken:any;
-   email:any;
-
+   
   ngOnInit() {
-
-
-    
-    
-    this.decodedToken=this.loginauthservice.checkToken();
-    console.log(this.decodedToken);
-    if(this.decodedToken){
-      this.role=this.decodedToken.role;
-      this.isLogin=true;
-      this.email=this.decodedToken.sub;
-      localStorage.setItem("email",this.email);
-      localStorage.setItem("role",this.role);
-    }
-
-    
+    if(localStorage.getItem("role")){
+      this.isLogin=true
+    }      
   }
 
 }

@@ -13,6 +13,9 @@ export class LoginComponent implements OnInit {
   
 
 public user: any = {};  
+decodedToken:any;
+role:any
+email:any
 constructor(private userService: UserserviceService,private router:Router,private authService: LoginAuthService) {
   this.authService.isLoggedIn();
 }  
@@ -24,10 +27,21 @@ loginUser(user:any){
       localStorage.setItem('token',JSON.stringify(response.token));
       console.log(response)
       console.log(response.user.role)
-      if(response.user.role === 'USER'){
+   
+      this.decodedToken=this.authService.checkToken();
+      console.log(this.decodedToken);
+      if(this.decodedToken){
+        this.role=this.decodedToken.role;
+        this.email=this.decodedToken.sub;
+        localStorage.setItem("email",this.email);
+        localStorage.setItem("role",this.role);
+      }
+
+      if(localStorage.getItem("role") === 'USER'){
         this.router.navigateByUrl('/userdashboard')
          
-      }else{
+      }
+      else{
         this.router.navigateByUrl('/podashboard');
       }
     }

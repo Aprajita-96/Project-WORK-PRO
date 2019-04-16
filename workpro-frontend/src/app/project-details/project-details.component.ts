@@ -11,7 +11,7 @@ export class ProjectDetailsComponent implements OnInit {
 
   // project:any;
   email:String;
-  projects1:any;
+  projects1:any=[];
   role:String;
   isrole:boolean=false;
   isroleAdmin:boolean=false;

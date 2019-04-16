@@ -9,11 +9,12 @@
      <div class="col-md-10">
    <h5 class="card-title">{{freelancer.freelancerName}}</h5>
   
-   <p class="card-text">{{freelancer.email}}</p>
+   <p class="card-text">{{freelancer.freelancerEmail}}</p>
+  
   
    <p class="card-text" style="color:blue">{{freelancer.skills}}</p>
   
-   <button  class="card-link btn btn-primary">Details</button>
+   <button  class="card-link btn btn-primary" routerLink="/freelancerprofile/{{freelancer.freelancerEmail}}">Details</button>
   
   <button class="card-link btn btn-warning">Invite</button>
   </div>

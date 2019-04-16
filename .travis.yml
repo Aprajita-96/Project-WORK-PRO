@@ -1,6 +1,6 @@
 language: java
 jdk: openjdk11
-script: echo "npm test temporarily disabled"
+#script: echo "npm test temporarily disabled"
 cache:
   directories:
     - "$HOME/.m2/repository"

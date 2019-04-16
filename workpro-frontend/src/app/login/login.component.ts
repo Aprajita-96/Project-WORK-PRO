@@ -28,15 +28,7 @@ loginUser(user:any){
       console.log(response)
       console.log(response.user.role)
    
-      this.decodedToken=this.authService.checkToken();
-      console.log(this.decodedToken);
-      if(this.decodedToken){
-        this.role=this.decodedToken.role;
-        this.email=this.decodedToken.sub;
-        localStorage.setItem("email",this.email);
-        localStorage.setItem("role",this.role);
-      }
-
+      
       if(localStorage.getItem("role") === 'USER'){
         this.router.navigateByUrl('/userdashboard')
          

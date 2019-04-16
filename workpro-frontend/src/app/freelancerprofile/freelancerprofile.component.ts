@@ -17,9 +17,10 @@ export class FreelancerprofileComponent implements OnInit {
   id:String;
   ngOnInit() {
     this.route.params.subscribe(data=>{
-      this.id=data.id;
-      console.log(this.id)
+      this.id=data.email;
+     
     })
+    console.log(this.id)
     this.role=localStorage.getItem("role");
     this.email=localStorage.getItem("email");
     if(this.role==='USER'){

@@ -24,11 +24,13 @@ export class BidviewComponent implements OnInit {
       "projectName":this.data.pname,
       "projectOwnerEmail":this.data.poemail,
 
-      freelancerEmailId:localStorage.getItem('email'),
+      "freelancerEmail":this.data.freelanceremail,
       "proposedCompletionDate":user.duration,
       "bidAmount":+user.amount,
-      "projectAwarded":false
+      "projectAwarded":false,
+      "status":"open"
     }
+    console.log(bidinfo)
     this.freelancerDetailsService.postBids(bidinfo).subscribe(console.log);
     console.log(bidinfo);
   }

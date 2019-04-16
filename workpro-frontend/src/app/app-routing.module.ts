@@ -87,7 +87,7 @@ const routes: Routes = [
   {
     path: "userdashboard",
     component: UserDashboardComponent,
-    canActivate:[AuthGuard]
+    // canActivate:[AuthGuard]
   },
   {
     path: 'projectDetailFormComponent',
@@ -100,7 +100,7 @@ const routes: Routes = [
   {
     path: "podashboard",
     component: ProjectOwnerDashboardComponent,
-    canActivate:[AuthGuard]
+    // canActivate:[AuthGuard]
 
   },
   {
@@ -129,7 +129,7 @@ const routes: Routes = [
 ];
 
 @NgModule({
-  imports: [RouterModule.forRoot(routes)],
+  imports: [RouterModule.forRoot(routes, {useHash: true})],
   exports: [RouterModule]
 })
 export class AppRoutingModule { }

@@ -13,6 +13,9 @@ export class LoginComponent implements OnInit {
   
 
 public user: any = {};  
+decodedToken:any;
+role:any
+email:any
 constructor(private userService: UserserviceService,private router:Router,private authService: LoginAuthService) {
   this.authService.isLoggedIn();
 }  
@@ -24,10 +27,13 @@ loginUser(user:any){
       localStorage.setItem('token',JSON.stringify(response.token));
       console.log(response)
       console.log(response.user.role)
-      if(response.user.role === 'USER'){
+   
+      
+      if(localStorage.getItem("role") === 'USER'){
         this.router.navigateByUrl('/userdashboard')
          
-      }else{
+      }
+      else{
         this.router.navigateByUrl('/podashboard');
       }
     }

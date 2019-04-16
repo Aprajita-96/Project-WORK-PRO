@@ -12,8 +12,8 @@ import org.springframework.context.annotation.Bean;
 
 @SpringBootApplication
 @EnableZuulProxy
-@EnableDiscoveryClient
-@RibbonClient(name = "server", configuration = RibbonConfiguration.class)
+//@EnableDiscoveryClient
+//@RibbonClient(name = "server", configuration = RibbonConfiguration.class)
 public class ZuulApiApplication {
 
 	public static void main(String[] args) {

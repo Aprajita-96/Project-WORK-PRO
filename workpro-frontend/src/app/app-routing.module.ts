@@ -81,7 +81,7 @@ const routes: Routes = [
   {
     path: "userdashboard",
     component: UserDashboardComponent,
-    // canActivate:[AuthGuard]
+    canActivate:[AuthGuard]
   },
   {
     path: 'projectDetailFormComponent',
@@ -91,10 +91,12 @@ const routes: Routes = [
     path: "freelancerdetails",
     component: FreelancerdetailsComponent
   },
-  // {
-  //   path: "podashboard",
-  //   component: ProjectOwnerDashboardComponent,
-  // },
+  {
+    path: "podashboard",
+    component: ProjectOwnerDashboardComponent,
+    canActivate:[AuthGuard]
+
+  },
   {
     path: "mybids",
     component: MybidsComponent
@@ -103,11 +105,11 @@ const routes: Routes = [
     path: "projectOwnerDetails",
     component: ProductownerprofileComponent,
   },
-  {
-    path: "projectownerdashboard",
-    component: ProjectOwnerDashboardComponent,
-    // canActivate:[AuthGuard]
-  },
+  // {
+  //   path: "projectownerdashboard",
+  //   component: ProjectOwnerDashboardComponent,
+   
+  // },
   {
     path: "productownermyprojects",
     component: MyprojectsComponent,

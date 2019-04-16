@@ -23,7 +23,7 @@ loginUser(user:any){
     if(response){
       localStorage.setItem('token',JSON.stringify(response.token));
       console.log(response)
-      if(response.user.role === 'PRODUCT OWNER'){
+      if(response.user.role === 'ADMIN'){
          this.router.navigate(['/podashboard']);
       }else{
         this.router.navigate(['/userdashboard'])

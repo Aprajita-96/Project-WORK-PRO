@@ -4,9 +4,9 @@ import { FreelancerDetailsService } from '../freelancer-details.service';
 import { Router } from '@angular/router';
 
 @Component({
-  selector: 'app-editfreelancer-profile',
-  templateUrl: './editfreelancer-profile.component.html',
-  styleUrls: ['./editfreelancer-profile.component.scss']
+ selector: 'app-editfreelancer-profile',
+ templateUrl: './editfreelancer-profile.component.html',
+ styleUrls: ['./editfreelancer-profile.component.scss']
 })
 export class EditfreelancerProfileComponent implements OnInit {
 

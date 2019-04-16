@@ -45,7 +45,7 @@ services:
     network_mode: "host"
     hostname: localhost
     volumes:
-      - ./data:/data/db
+      - /data/mongo:/data/db
 
 
   mysql:
@@ -59,7 +59,7 @@ services:
       MYSQL_DATABASE: userdb
       MYSQL_PASSWORD: Root@123
     volumes:
-      - /opt/mysql_data:/var/lib/mysql
+      - /data/mysql:/var/lib/mysql
     ports:
       - "3306:3306"
 

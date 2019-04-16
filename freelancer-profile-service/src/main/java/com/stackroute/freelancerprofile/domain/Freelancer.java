@@ -19,6 +19,7 @@ import java.util.List;
 @AllArgsConstructor
 @Component
 @Builder
+
 public class Freelancer {
     @Id
     private String id;
@@ -27,4 +28,5 @@ public class Freelancer {
     private String freelancerAddress;
     private int yearsOfExpertise;
     private ArrayList<String> skills;
+
 }

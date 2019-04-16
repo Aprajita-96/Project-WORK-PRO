@@ -14,9 +14,13 @@ import javax.mail.internet.MimeMessage;
 import com.stackroute.freelancerprofile.domain.EmailMessage;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.stereotype.Service;
 
 @Configuration
+@Service
 public class GeneratemailApplication{
+    public GeneratemailApplication() {
+    }
 
     @Value("${gmail.username}")
     private String username;

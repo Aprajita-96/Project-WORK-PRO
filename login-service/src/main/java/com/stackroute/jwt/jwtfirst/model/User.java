@@ -37,5 +37,4 @@ public class User implements Serializable {
     @Column(name = "date")
     private Date date;
 
-
 }

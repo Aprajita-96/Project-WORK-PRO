@@ -22,10 +22,10 @@
     <div *ngIf="!isLogin; else elseBlock2">
       <ul class="navbar-nav mr-auto">
         <li class="nav-item">
-          <a class="nav-link" [routerLink]="['/register']">Register!!</a>
+          <a class="nav-link" [routerLink]="['/register']">Register</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" [routerLink]="['/login']">Login!!</a>
+          <a class="nav-link" [routerLink]="['/login']">Login</a>
         </li>
       </ul>
     </div>
@@ -33,7 +33,7 @@
   <ng-template #elseBlock2>
     <ul class="navbar-nav mr-auto">
       <li class="nav-item">
-        <a class="nav-link" [routerLink]="['/#']">Logout!!</a>
+        <a class="nav-link" [routerLink]="['/#']">Logout</a>
       </li>
 
     </ul>
@@ -44,24 +44,24 @@
 
   <mat-drawer #drawer class="example-sidenav" mode="side">
     <div class="inner">
-      <div class="container">
-          <img src="../assets/images/logo1.png" alt="logo" style="margin-bottom:10px">
+      <div class="container-logo">
+          <img src="../assets/images/logo5.png" alt="logo" style="margin-bottom:10px">
       </div>
       <mat-divider></mat-divider>
 
       <div *ngIf="role == 'ADMIN'; else elseBlock">
-        <mat-nav-list>
+        <mat-nav-list style="margin-top: 40px">
           <mat-list-item>
-            <a class="nav-link" routerLink="projectownerdashboard">ProjectOwnerDashboard</a>
+            <a class="nav-link" routerLink="podashboard">ProjectOwnerDashboard</a>
           </mat-list-item>
           <mat-list-item>
-            <a class="nav-link" routerLink="productownermyprojects">My project Product Owner</a>
+            <a class="nav-link" routerLink="productownermyprojects">My project</a>
           </mat-list-item>
           <mat-list-item>
-            <a class="nav-link" routerLink="project">Details</a>
+            <a class="nav-link" routerLink="poprofile">My Profile</a>
           </mat-list-item>
           <mat-list-item>
-            <a class="nav-link" routerLink="projectDetailForm">ProjectDetailForm</a>
+            <a class="nav-link" routerLink="editpoprofile">Edit Profile</a>
           </mat-list-item>
          
         </mat-nav-list>

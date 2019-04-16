@@ -19,7 +19,7 @@ data:any
     }
 
     getProjectDetails(value){
-      return this.http.get("http://13.234.155.75:8080/projectdetailservicegit/api/v1/projectOwner/"+value+"/project");
+      return this.http.get("http://13.234.155.75:8080/projectdetailservice/api/v1/projectOwner/"+value+"/project");
     }
     getProjectDetailsById(value,value2){
       return this.http.get("http://13.234.155.75:8080/projectdetailservice/api/v1/projectOwner/"+value+"/projects/"+value2);

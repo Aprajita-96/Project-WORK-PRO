@@ -2,6 +2,7 @@ import { Component, OnInit } from "@angular/core";
 import { JwtHelperService } from "@auth0/angular-jwt";
 import { UserserviceService } from './userservice.service';
 import {LoginAuthService} from './login-auth.service';
+import { Router } from '@angular/router';
 
 
 
@@ -12,7 +13,7 @@ import {LoginAuthService} from './login-auth.service';
 })
 export class AppComponent implements OnInit {
   title = "workpro-frontend";
-   constructor(private userService:UserserviceService,private loginauthservice:LoginAuthService){
+   constructor(private userService:UserserviceService,private loginauthservice:LoginAuthService,private route:Router){
      this.userService=userService;
    }
    
@@ -32,6 +33,11 @@ export class AppComponent implements OnInit {
         localStorage.setItem("role",this.role);
       }      
           
+  }
+
+  logout(){
+    localStorage.clear();
+    this.route.navigate(["/"]);
   }
 
 }

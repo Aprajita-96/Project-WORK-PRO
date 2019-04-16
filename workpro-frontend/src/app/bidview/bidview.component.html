@@ -18,5 +18,5 @@
   </div>
   
 
-  <button type="submit" class="btn" (click)="savebid(form.value,user)">Submit</button>
+  <button type="submit" class="btn" [mat-dialog-close] (click)="savebid(form.value,user)">Submit</button>
 </form>

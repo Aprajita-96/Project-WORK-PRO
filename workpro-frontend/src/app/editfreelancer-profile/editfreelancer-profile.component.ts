@@ -59,22 +59,13 @@ export class EditfreelancerProfileComponent implements OnInit {
     this.freelancerDetailsService.getDetailsOfFreelancers(this.email).subscribe(data => {
       this.details = data;
 
-      console.log(this.details.freelancerEmail)
-
-      if (this.details.freelancerEmail === null) {
-        this.freelancerDetailsService.postFreelancerDetails(user).subscribe(console.log);
-       
-      }
-      else {
-        this.freelancerDetailsService.updateDetailsofFreelancers(this.email, user).subscribe(data => {
-          console.log(data, "this is  the response from the backend!!")
-        })
+      console.log(this.details.freelancerEmail, "what is this ????")
+      this.freelancerDetailsService.postFreelancerDetails(user).subscribe(data => {
         this.route.navigate(['freelancerprofile']);
-      }
+      });     
+    }, (err) => {
+      console.log("this is comming here !!!!! look carefully ")
     });
-
-
-
   }
 
 

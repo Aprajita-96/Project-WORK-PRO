@@ -50,6 +50,12 @@ const routes: Routes = [
     path: "freelancerprofile",
     component: FreelancerprofileComponent,
   },
+  
+    {
+      path: "freelancerprofile/:email",
+      component: FreelancerprofileComponent,
+    },
+  
   {
     path: "editfreelancerprofile",
     component: EditfreelancerProfileComponent,

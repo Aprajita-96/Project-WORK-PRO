@@ -23,10 +23,12 @@ loginUser(user:any){
     if(response){
       localStorage.setItem('token',JSON.stringify(response.token));
       console.log(response)
-      if(response.user.role === 'ADMIN'){
-         this.router.navigate(['/podashboard']);
+      console.log(response.user.role)
+      if(response.user.role === 'USER'){
+        this.router.navigateByUrl('/userdashboard')
+         
       }else{
-        this.router.navigate(['/userdashboard'])
+        this.router.navigateByUrl('/podashboard');
       }
     }
 })

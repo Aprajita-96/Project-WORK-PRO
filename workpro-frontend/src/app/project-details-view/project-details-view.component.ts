@@ -40,7 +40,7 @@ export class ProjectDetailsViewComponent implements OnInit {
 
   openDialog(){
     const dialogRef = this.dialog.open(BidviewComponent,{
-        data: { pid:this.id,pname:this.pname,poemail:this.email }
+        data: { pid:this.id,pname:this.pname,poemail:this.email,freelanceremail:localStorage.getItem('email')}
     
     });
     dialogRef.afterClosed().subscribe(result => {

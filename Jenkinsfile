@@ -12,9 +12,9 @@ pipeline {
         stage('Deploy') {
                     steps {
                        sh 'rsync -rva . ubuntu@13.234.155.75:/home/ubuntu/project/ibm-wave4-workpro'
-                       sh 'ssh ubuntu@13.234.155.75 'cd ~/ibm-wave4-workpro ; mvn clean package'
-                       sh 'ssh ubuntu@13.234.155.75 'cd ~/ibm-wave4-workpro ; docker-compose up --build -d'
-                       sh 'ssh ubuntu@13.234.155.75 'cd ~/ibm-wave4-workpro ; sleep 20 ; docker ps'
+                       sh 'ssh ubuntu@13.234.155.75 'cd ~/ibm-wave4-workpro ; mvn clean package''
+                       sh 'ssh ubuntu@13.234.155.75 'cd ~/ibm-wave4-workpro ; docker-compose up --build -d''
+                       sh 'ssh ubuntu@13.234.155.75 'cd ~/ibm-wave4-workpro ; sleep 20 ; docker ps''
                     }
                 }
     }

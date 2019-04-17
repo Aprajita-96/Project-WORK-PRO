@@ -102,6 +102,7 @@ public class FreelancerController {
             }
 
         }
+//        producer.sendFreelancer(freelancer);
         return new ResponseEntity<String>("here", HttpStatus.OK);
     }
 
@@ -119,7 +120,7 @@ public class FreelancerController {
 //        if (token != null) {
             Bid resultbid = bidService.save(bid);
 
-            producer.send(bid);
+            producer.sendBid(bid);
             return new ResponseEntity<Bid>(resultbid, HttpStatus.OK);
 //        } else
 //            throw new UnauthorizedException("login please");
@@ -162,19 +163,5 @@ public class FreelancerController {
     }
 
 
-
-//
-//    @Autowired
-//    private Consumer consumer;
-//
-//    @GetMapping("/produce")
-//    public String consumeData() {
-//
-////        LOGGER.info("REQUEST BODY..!! "+  car);
-//
-////        producer.send("hjghjgf");
-//
-//        return "Received from Kafka Topic !!";
-//
-//    }
+    
 }

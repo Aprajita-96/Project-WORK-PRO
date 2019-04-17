@@ -81,7 +81,7 @@
                         <div class="form-group">
               <label class="col-sm-3 control-label"></label>
               <div class="col-sm-8">
-                <button matStepperNext (click) = "addEditAddress(editAddress.value)" class="btn btn-primary" value="Save">Save</button>
+                <!-- <button matStepperNext (click) = "addEditAddress(editAddress.value)" class="btn btn-primary" value="Save">Save</button> -->
                 <span></span>
               </div>
             </div>
@@ -90,7 +90,7 @@
       </div>
           <div class="mat-button">
         <button class="btn btn-primary" 
-          [routerLink]="['/poprofile']"  (click)="saveUser()">Submit</button>
+         (click)="saveUser(editAddress.value,user)">Submit</button>
         <button class="btn btn-warning" (click)="stepper.reset()">Reset</button>
       </div>
     </form>

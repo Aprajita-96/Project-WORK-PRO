@@ -40,7 +40,7 @@ const routes: Routes = [
   {
     path: "poprofile",
     component: ProjectOwnerProfileComponent,
-    canActivate: [AuthGuard1Guard,AuthGuard]
+    // canActivate: [AuthGuard1Guard,AuthGuard]
   },
   {
     path: "editpoprofile",
@@ -50,10 +50,16 @@ const routes: Routes = [
     path: "freelancerprofile",
     component: FreelancerprofileComponent,
   },
+  
+    {
+      path: "freelancerprofile/:email",
+      component: FreelancerprofileComponent,
+    },
+  
   {
     path: "editfreelancerprofile",
     component: EditfreelancerProfileComponent,
-    canActivate: [AuthGuard]
+    // canActivate: [AuthGuard]
   },
   {
     path: '',
@@ -62,7 +68,7 @@ const routes: Routes = [
   {
     path: "projectDetailsComponent/:id/:email",
     component: ProjectDetailsComponent,
-    canActivate: [AuthGuard]
+    // canActivate: [AuthGuard]
   },
 
   {
@@ -76,12 +82,12 @@ const routes: Routes = [
   {
     path: "login",
     component: LoginComponent,
-    canActivate: [AuthGuard]
+    // canActivate: [AuthGuard]
   },
   {
     path: "userdashboard",
     component: UserDashboardComponent,
-    canActivate:[AuthGuard]
+    // canActivate:[AuthGuard]
   },
   {
     path: 'projectDetailFormComponent',
@@ -91,10 +97,12 @@ const routes: Routes = [
     path: "freelancerdetails",
     component: FreelancerdetailsComponent
   },
-  // {
-  //   path: "podashboard",
-  //   component: ProjectOwnerDashboardComponent,
-  // },
+  {
+    path: "podashboard",
+    component: ProjectOwnerDashboardComponent,
+    // canActivate:[AuthGuard]
+
+  },
   {
     path: "mybids",
     component: MybidsComponent
@@ -103,11 +111,11 @@ const routes: Routes = [
     path: "projectOwnerDetails",
     component: ProductownerprofileComponent,
   },
-  {
-    path: "projectownerdashboard",
-    component: ProjectOwnerDashboardComponent,
-    canActivate:[AuthGuard]
-  },
+  // {
+  //   path: "projectownerdashboard",
+  //   component: ProjectOwnerDashboardComponent,
+   
+  // },
   {
     path: "productownermyprojects",
     component: MyprojectsComponent,
@@ -121,7 +129,7 @@ const routes: Routes = [
 ];
 
 @NgModule({
-  imports: [RouterModule.forRoot(routes)],
+  imports: [RouterModule.forRoot(routes, {useHash: true})],
   exports: [RouterModule]
 })
 export class AppRoutingModule { }

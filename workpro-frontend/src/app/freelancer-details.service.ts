@@ -8,32 +8,32 @@ export class FreelancerDetailsService {
   data:any;
   constructor(private http:HttpClient) { }
   getDetailsOfFreelancers(value) {
-    return this.http.get("http://localhost:8082/api/v1/freelancer/"+value);
+    return this.http.get("http://13.234.155.75:8080/freelancerservice/api/v1/freelancer/"+value);
   }
   
 
-  updateDetailsofFreelancers(data){
-    return this.http.put("http://localhost:8082/api/v1/freelancerprofile/"+data.freelancerEmail,data);
+  updateDetailsofFreelancers(email,data){
+    return this.http.put("http://13.234.155.75:8080/freelancerservice/api/v1/freelancerprofile/"+email,data);
   }
 
   
 
   getBidsofFreelancer(value){
-    return this.http.get("http://localhost:8082/api/v1/bid/allbids/"+value);
+    return this.http.get("http://13.234.155.75:8080/freelancerservice/api/v1/bid/allbids/"+value);
   }
   postFreelancerDetails(value)
   {
-      return this.http.post("http://localhost:8082/api/v1/freelancerprofile/postDetails",value);
+      return this.http.post("http://13.234.155.75:8080/freelancerservice/api/v1/freelancerprofile/postDetails",value, {responseType: 'text'});
     
   }
 
 
   getSearchResults(skill) {
-    return this.http.get("http://localhost:8082/api/v1/skill/" + skill);
+    return this.http.get("http://13.234.155.75:8080/freelancerservice/api/v1/skill/" + skill);
   }
 
-  postBids(poemail,pid,body){
-    return this.http.post("http://localhost:8090/api/v1//projectOwner/"+poemail+"/projects/"+pid+"/bid",body);
+  postBids(body){
+    return this.http.post("http://13.234.155.75:8080/freelancerservice/api/v1//bid/bidDetails",body);
   }
   
 }

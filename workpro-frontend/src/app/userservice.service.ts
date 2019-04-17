@@ -9,11 +9,12 @@ export class UserserviceService {
     this.http = http;
   }
   saveUser(user: any) {
-    return this.http.post("http://localhost:8080/registration", user);
+    return this.http.post("http://13.234.155.75:8080/login/api/v1/registration", user);
+    
   }
   loginUser(user: any): Observable<any> {
     const headers = new HttpHeaders({ "Access-Control-Allow-Orgin": "*" });
-    return this.http.post("http://localhost:8080/login", user, {
+    return this.http.post("http://13.234.155.75:8080/login/api/v1/login", user, {
       headers: headers
     });
   }

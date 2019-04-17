@@ -8,7 +8,7 @@ import { ProductownerdetailsService } from '../productownerdetails.service';
 })
 export class MyprojectsComponent implements OnInit {
   projects = [];
-  projects1:any;
+  projects1:any=[];
   email:String=localStorage.getItem("email");
   constructor(private productownerdetailsService: ProductownerdetailsService) { }
 
@@ -17,7 +17,7 @@ export class MyprojectsComponent implements OnInit {
     this.productownerdetailsService.getProjectDetails(this.email).subscribe(data=>{
       this.projects1= data
       console.log(this.projects1)
-      this.projects = this.projects1["projectDetailsList"];
+      this.projects = this.projects1.projectDetailsList;
     });
     
    }

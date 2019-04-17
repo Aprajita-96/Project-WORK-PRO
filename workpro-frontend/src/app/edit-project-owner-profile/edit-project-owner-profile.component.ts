@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { ProductownerdetailsService } from '../productownerdetails.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-edit-project-owner-profile',
@@ -12,7 +13,7 @@ export class EditProjectOwnerProfileComponent implements OnInit {
   firstFormGroup: FormGroup;
   secondFormGroup: FormGroup;
   public user: any = {};
-  constructor(private _formBuilder: FormBuilder , private productownerdetailservice: ProductownerdetailsService) { }
+  constructor(private _formBuilder: FormBuilder , private productownerdetailservice: ProductownerdetailsService,private route:Router) { }
   email: String;
   personalDetails;
   address;
@@ -29,28 +30,26 @@ export class EditProjectOwnerProfileComponent implements OnInit {
     });
   }
 
-  saveUser() {
+  saveUser(value,user) {
+    this.address = value;
+    this.location=value;
 
-    let user = {
-      "name": this.personalDetails.name,
-      "email": this.personalDetails.email,
-      "address": this.address.address,
-      "location":this.location.location,
-      "number": this.personalDetails.number
-    }
+    
+      user.name= this.personalDetails.name,
+      user.email= this.personalDetails.email,
+      user.address= this.address.address,
+      user.location=this.location.location,
+      user.number= this.personalDetails.number
+    
 
     console.log(user);
-    this.productownerdetailservice.updateDetailsOfProjectOwner(user).subscribe(data => {
+    this.productownerdetailservice.postDetailsOfProjectOwner(user).subscribe(data => {
       console.log(data, "this is  the response from the backend!!")
     })
+    this.route.navigate(['/poprofile']);
   }
   addPersonalDetails(value) {
     this.personalDetails = value
-  }
-
-  addEditAddress(value) {
-    this.address = value;
-    this.location=value;
   }
 }
 

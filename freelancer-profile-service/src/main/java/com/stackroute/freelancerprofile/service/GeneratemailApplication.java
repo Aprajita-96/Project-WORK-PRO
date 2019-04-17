@@ -46,10 +46,12 @@ public class GeneratemailApplication{
         msg.setFrom(new InternetAddress(username, false));
 
         msg.setRecipients(Message.RecipientType.TO, InternetAddress.parse(emailmessage.getTo()));
-        msg.setSubject(emailmessage.getSubject());
+        msg.setSubject("Congratulations! you are invited!!" );
+        System.out.println(msg.getSubject());
         msg.setContent(emailmessage.getBody(), "text/html");
-        // msg.setContent("<h1>sending html mail check</h1>","text/html" );
-        msg.setSentDate(new Date());
+//         msg.setContent("<h3>Hello Freelancer!! </h3><br><h2>Greetings for the day!</h2><br> you have been invited for bidding on a project.Please refer the link below for further details<br> http://workpro.stackroute.io/#/projectDetailsComponent/b3125687-784d-459c-80e8-b4ea725849c3/ajaykapil15@gmail.com","text/html" );
+        System.out.println(msg.getContent());
+         msg.setSentDate(new Date());
         Transport.send(msg);
 
     }

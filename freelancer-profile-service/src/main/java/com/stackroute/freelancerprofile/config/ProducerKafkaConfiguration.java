@@ -1,6 +1,7 @@
 package com.stackroute.freelancerprofile.config;
 
 import com.stackroute.freelancerprofile.domain.Bid;
+import com.stackroute.freelancerprofile.domain.Freelancer;
 import com.stackroute.freelancerprofile.listener.Producer;
 import org.apache.kafka.clients.producer.ProducerConfig;
 import org.apache.kafka.common.serialization.StringDeserializer;
@@ -22,6 +23,8 @@ public class ProducerKafkaConfiguration {
     @Value("${kafka.bootstrap-servers}")
     private String bootstrapServers;
 
+
+//    configuration properties
     @Bean
     public Map<String, Object> producerConfigs() {
         Map<String, Object> config = new HashMap<>();
@@ -32,16 +35,37 @@ public class ProducerKafkaConfiguration {
         return config;
     }
 
+
+//    bid details to be sent
     @Bean
-    public ProducerFactory<String, Bid> producerFactory() {
+    public ProducerFactory<String, Object> producerFactory() {
         return new DefaultKafkaProducerFactory<>(producerConfigs());
     }
 
 
     @Bean
-    public KafkaTemplate<String, Bid> kafkaTemplate() {
-        return new KafkaTemplate<String, Bid>(producerFactory());
+    public KafkaTemplate<String, Object> kafkaTemplate() {
+        return new KafkaTemplate<String, Object>(producerFactory());
     }
+
+
+//    freelancer details to be sent
+//
+//    @Bean
+//    public ProducerFactory<String, Freelancer> freelancerFactory() {
+//        return new DefaultKafkaProducerFactory<>(producerConfigs());
+//    }
+//
+//
+//    @Bean
+//    public KafkaTemplate<String, Freelancer> freelancerTemplate() {
+//        return new KafkaTemplate<String, Freelancer>(freelancerFactory());
+//    }
+
+
+
+
+
 
     @Bean
     public Producer sender() {

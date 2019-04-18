@@ -102,6 +102,7 @@ public class FreelancerController {
             }
 
         }
+//        producer.sendFreelancer(freelancer);
         return new ResponseEntity<String>("here", HttpStatus.OK);
     }
 
@@ -171,5 +172,6 @@ public class FreelancerController {
         generatemailApplication.sendmail(emailmessage);
         return "Email sent successfully";
     }
+
 
 }

@@ -1,3 +1,87 @@
+body {
+  font-family:hind;
+}
+.input-group{
+  position: sticky;
+}
+
+h1,h2,h3,h4,h5,h6{
+  font-family:montserrat;
+}
+.jumbotron-dark h2{
+  font-weight:bolder;
+  font-size: 40px;
+}
+.jumbotron-dark h4{
+  font-size: 25px;
+}
+p{
+  font-size:17px;
+}
+
+a{
+  border-bottom:2px solid;
+  padding: 3px;
+  text-decoration:none;
+}
+
+a:hover{
+  text-decoration:none;
+}
+
+a:active{
+  padding-top: 2px;
+}
+
+a:visited {
+  border-bottom:2px solid;
+  padding: 3px;
+  text-decoration:none;
+}
+
+a:focus {
+  border-bottom:2px solid;
+  text-decoration:none;
+}
+
+.link-white{
+  border-bottom:2px solid;
+  color:#ffffff;
+  text-decoration:none;
+}
+
+.link-white:hover{
+  color:#bdc3c7;
+  text-decoration:none;
+}
+
+
+.jumbotron-dark{
+  background-color:#333;
+  background-image:
+      url("https://i.imgur.com/2o6cukD.png"),
+      linear-gradient(165deg, rgba(250, 250, 250, 0),
+      rgba(255, 255, 255, 0) 65%, rgba(38, 38, 38, 0.1) 65.1%,
+      rgba(38, 38, 38, 0.1));
+  color:#fff;
+}
+
+.jumbotron-dark-alt{
+  background-color:#333;
+  color:#fff;
+}
+
+.jumbotron-muted{
+  background-color:#ecf0f1;
+  background-image:
+      url("https://i.imgur.com/2o6cukD.png"),
+      linear-gradient(165deg, rgba(250, 250, 250, 0),
+      rgba(255, 255, 255, 0) 65%, rgba(38, 38, 38, 0.1) 65.1%,
+      rgba(38, 38, 38, 0.1));
+}
+.img-responsive{
+ height:450px;
+}
 h1{
     
   text-align: center;
@@ -10,10 +94,6 @@ height: 80%;
   position:center;
 }
 #searchForm {
-// position:absolute;
-//     top:60%;
-//     left: 35%;
-//     border-radius: 2px;
 top: 60%;
     position: absolute;
     height: 100%;
@@ -27,13 +107,6 @@ top: 60%;
   width: 33%;
 }
 .carousel-caption{
-  // position: absolute;
-  // left: 5%;
-  // bottom: 80%;
-  // right: auto;
-  // color: #fff;
-  // font-family: Canela Deck Web;
-  // font-weight: bolder;
   font-size: -webkit-xxx-large;
   bottom: 103%;
 }
@@ -76,42 +149,18 @@ $cards-per-line: (
   text-align: center;
 font-size: 48px;
 font-weight: bold;
-text-decoration: underline;
+text-decoration: none;
+background-color: yellow;
 }
 .TopProjects{
-  font-family: Canela Deck Web;
+  font-family: Arial, Helvetica, sans-serif;
   color: #012f43;
   text-align: center;
 font-size: 48px; 
 font-weight: bold;  
-text-decoration: underline;
-}
-.card-flip {
-  perspective: 1000px;
-  &:hover .flip,
-  &.hover .flip {
-    transform: rotateY(180deg);
-  }
-}
+text-decoration: none;
 
-.card-flip,
-.front,
-.back {
-  width: 277px;
-  height: 249px;
-  margin: 15px;
 }
-
-.flip {
-  transition: 0.6s;
-  transform-style: preserve-3d;
-  position: relative;
-}
-
-.front,
-.back {
-  backface-visibility: hidden;
-  position: absolute;
 html{
  font-size:15px;
 }
@@ -187,41 +236,18 @@ line-height:1.5;
 padding:1rem;
 border-top:1px solid #ccc;
 }
-
-@keyframes slideUp{
-from{
-  opacity:0;
-  bottom: -200px;
-}
-to{
-  opacity:1;
-  bottom:0;
-}
-}  top: 0;
-  left: 0;
-}
-
-.front {
-  z-index: 2;
-  transform: rotateY(0deg);
-}
-
-.back {
-  transform: rotateY(180deg);
-}
-.card{
-  box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.55);
-  justify-content: space-between;
-}
 .our-team {
   padding: 30px 0 40px;
   margin-bottom: 30px;
-  background-color: #f7f5ec;
+  background-color: #FFFFFF;
   text-align: center;
   overflow: hidden;
   position: relative;
   margin-top: 20px;
+  // box-shadow: 2px 2px 2px 2px rgba(0, 0, 0, 0.55);
+  box-shadow: 1px 1px 1px 1px #5bc0de;
 }
+
 
 .our-team .picture {
   display: inline-block;
@@ -311,41 +337,16 @@ to{
     border-radius:7px;
 }
 
-.project-default {    border-color: #999999; }
-.project-default .shape{
-	border-color: transparent #999999 transparent transparent;
-	border-color: rgba(255,255,255,0) #999999 rgba(255,255,255,0) rgba(255,255,255,0);
-}
 
-.project-danger {    border-color:red; }
-.project-danger .shape{
-	border-color: transparent red transparent transparent;
-	border-color: rgba(255,255,255,0) red rgba(255,255,255,0) rgba(255,255,255,0);
-}
-
-.project-success {	border-color:green; }
-.project-success .shape{
-	border-color: transparent green transparent transparent;
-	border-color: rgba(255,255,255,0) green rgba(255,255,255,0) rgba(255,255,255,0);
-}
-
-.project-primary {	border-color: #428bca; }
-.project-primary .shape{
-	border-color: transparent #428bca transparent transparent;
-	border-color: rgba(255,255,255,0) #428bca rgba(255,255,255,0) rgba(255,255,255,0);
-}
 
 .project-info {	border-color: #5bc0de; }
+
 .project-info .shape{
 	border-color: transparent #5bc0de transparent transparent;
 	border-color: rgba(255,255,255,0) #5bc0de rgba(255,255,255,0) rgba(255,255,255,0);
 }
 
-.project-warning {	border-color: #f0ad4e; }
-.project-warning .shape{
-	border-color: transparent #f0ad4e transparent transparent;
-	border-color: rgba(255,255,255,0) #f0ad4e rgba(255,255,255,0) rgba(255,255,255,0);
-}
+
 
 .project-content {
     padding:0 20px 10px;

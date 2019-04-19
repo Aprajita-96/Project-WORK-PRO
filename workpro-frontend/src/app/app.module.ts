@@ -44,8 +44,6 @@ import { ProjectOwnerProfileComponent } from './project-owner-profile/project-ow
 import { ProjectDetailsViewComponent } from './project-details-view/project-details-view.component';
 import { ViewProfileDailogComponent } from './view-profile-dailog/view-profile-dailog.component';
 import { BidviewComponent } from './bidview/bidview.component';
-import { SearchComponentComponent } from './search-component/search-component.component';
-import { ProductownerdetailsService } from './productownerdetails.service';
 @NgModule({
   declarations: [
     AppComponent,
@@ -74,8 +72,7 @@ import { ProductownerdetailsService } from './productownerdetails.service';
     ProjectDetailsViewComponent,
     ProjectDetailsComponent,
     ViewProfileDailogComponent,
-    BidviewComponent,
-    SearchComponentComponent
+    BidviewComponent
   ],
   imports: [
     BrowserModule,
@@ -99,10 +96,10 @@ import { ProductownerdetailsService } from './productownerdetails.service';
     FreelancerDetailsService,
     AuthGuard,
     HttpClientModule,
-    ProductownerdetailsService,
     FormsModule
   ],
   entryComponents: [ViewProfileDailogComponent, BidviewComponent],
   bootstrap: [AppComponent]
 })
 export class AppModule {}
+

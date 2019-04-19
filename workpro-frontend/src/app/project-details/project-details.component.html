@@ -1,34 +1,70 @@
 <div class="container mt-5">
   <div class="card">
     <div>
-        <div *ngIf="isroleAdmin">
-      <ul>
-        <li>
-          <button routerLink="#" class="btn btn-primary text-white">
-            Edit
-          </button>
-        </li>
-        <li>
-          <button routerLink="#" class="btn btn-primary text-white ml-4">
-            Delete
-          </button>
-        </li>
-      </ul>
+      <div *ngIf="isroleAdmin">
+        <ul>
+          <li>
+            <button routerLink="#" class="btn btn-primary text-white">
+              Edit
+            </button>
+          </li>
+          <li>
+            <button routerLink="#" class="btn btn-primary text-white ml-4">
+              Delete
+            </button>
+          </li>
+        </ul>
       </div>
     </div>
-    <div class="card-body">
-   
-      <h4 class="card-title">{{projects1.projectName}}</h4>
-      <p class="card-text">{{ projects1.projectDescription }}</p>
-      <p class="card-text">{{projects1.skillsSetList}}</p>
-     
-      <p class="card-text">{{bidsInfromation.maximumBudget}}</p>
-      <p class="card-text">{{ bidsInfromation.minimumBudget }}</p>
-      <p class="card-text">{{ projects1.projectCompletionDate}}</p>
-      <div *ngIf="isrole; else elseBlock">
-          <button routerLink="/detailsview/{{id}}/{{email}}" class="btn btn-primary text-white">
-            Bid
-          </button>
+    <div class="card-body projectDetail">
+      <div class="table-responsive">
+        <table class="table">
+          <tr>
+            <th><h4 class="card-title">Project Name:-</h4></th>
+            <td>
+              <h4>{{ projects1.projectName }}</h4>
+            </td>
+          </tr>
+          <tr>
+            <th><p class="card-text">Project Description:-</p></th>
+            <td>
+              <p>{{ projects1.projectDescription }}</p>
+            </td>
+          </tr>
+          <tr>
+            <th><p class="card-text">Skills Required:-</p></th>
+            <td>
+              <p>{{ projects1.skillsSetList }}</p>
+            </td>
+          </tr>
+
+          <tr>
+            <th><p class="card-text">Maximum Budget (in $):-</p></th>
+            <td>
+              <p>{{ bidsInfromation.maximumBudget }}</p>
+            </td>
+          </tr>
+          <tr>
+            <th><p class="card-text">Minimum Budget (in $):-</p></th>
+            <td>
+              <p>{{ bidsInfromation.minimumBudget }}</p>
+            </td>
+          </tr>
+          <tr>
+            <th><p class="card-text">Project Completion Date:-</p></th>
+            <td>
+              <p>{{ projects1.projectCompletionDate }}</p>
+            </td>
+          </tr>
+          <div *ngIf="isrole; else elseBlock">
+            <button
+              routerLink="/detailsview/{{ id }}/{{ email }}"
+              class="btn btn-primary text-white"
+            >
+              Bid
+            </button>
+          </div>
+        </table>
       </div>
     </div>
   </div>
@@ -43,16 +79,13 @@
       <p class="card-text">{{ bid.bidAmount }}</p>
       <p class="card-text">{{ bid.proposedCompletionDate }}</p>
       <div>
-        <button routerLink="/productownermyprojects" (click)="projectassign(bid.freelancerEmailId)" class="btn btn-primary text-white">
+        <button  (click)="projectassign(bid.freelancerEmailId)" class="btn btn-primary text-white">
           Accept
         </button>
         <button routerLink="/freelancerprofile/{{bid.freelancerEmailId}}" class="btn btn-primary text-white">
           Details
         </button>
       </div>
-      
     </div>
   </div>
-</div>
-
 </div>

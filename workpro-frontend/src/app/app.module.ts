@@ -75,7 +75,8 @@ import { ProductownerdetailsService } from './productownerdetails.service';
     ProjectDetailsComponent,
     ViewProfileDailogComponent,
     BidviewComponent,
-    SearchComponentComponent
+    SearchComponentComponent,
+    
   ],
   imports: [
     BrowserModule,
@@ -100,7 +101,8 @@ import { ProductownerdetailsService } from './productownerdetails.service';
     AuthGuard,
     HttpClientModule,
     ProductownerdetailsService,
-    FormsModule
+    FormsModule,
+    Location
   ],
   entryComponents: [ViewProfileDailogComponent, BidviewComponent],
   bootstrap: [AppComponent]

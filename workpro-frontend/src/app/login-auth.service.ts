@@ -7,6 +7,7 @@ import { JwtHelperService } from '@auth0/angular-jwt';
 })
 export class LoginAuthService {
   private subject = new Subject<any>();
+  loggedIn = new Subject()
   isLoggedIn(){
     if(localStorage.getItem('token')){
       this.subject.next({status: true});

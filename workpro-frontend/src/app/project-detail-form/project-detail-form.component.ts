@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ProductownerdetailsService } from '../productownerdetails.service';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
+import { Router } from '@angular/router';
 
 
 @Component({
@@ -16,7 +17,7 @@ export class ProjectDetailFormComponent implements OnInit {
   skills = [];
   bid = [];
   addBidToProjects = false;
-  constructor(private _formBuilder: FormBuilder,private productownerdetailsService: ProductownerdetailsService) { }
+  constructor(private _formBuilder: FormBuilder,private productownerdetailsService: ProductownerdetailsService,private route:Router) { }
   email: String;
 
 
@@ -52,6 +53,8 @@ export class ProjectDetailFormComponent implements OnInit {
 
     this.productownerdetailsService.setProjectDetails(project).subscribe(console.log);
 
+    this.route.navigateByUrl(`/productownermyprojects`);
+
   }
 
  
@@ -79,7 +82,7 @@ export class ProjectDetailFormComponent implements OnInit {
 
   removeSkill(skill) {
     this.skills = this.skills.filter(e => {
-      return e.name !== skill
+      return e !== skill
     })
   }
 }

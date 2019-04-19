@@ -40,8 +40,8 @@
     
                   <div *ngFor="let skill of skills">
                     <h3><span class="badge badge-pill badge-info">
-                        {{skill.skillName}}
-                        <button (click)="removeSkill(skill.name)" type="button" class="close" aria-label="Close">
+                        {{skill}}
+                        <button (click)="removeSkill(skill)" type="button" class="close" aria-label="Close">
                           <span aria-hidden="true">&times;</span>
                         </button>
                       </span></h3>
@@ -106,7 +106,7 @@
             </div>
             <div class="mat-button">
               <button class="btn btn-primary" 
-                [routerLink]="['/productownermyprojects']"  (click)="addBid(bidDetails.value)" (click)="saveUser(personalDetails.value,user,userForm)">Submit</button>
+                (click)="addBid(bidDetails.value)" (click)="saveUser(personalDetails.value,user,userForm)">Submit</button>
               <button class="btn btn-warning" (click)="stepper.reset()">Reset</button>
             </div>
         </mat-step>

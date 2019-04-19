@@ -17,6 +17,11 @@ export class HomeComponent implements OnInit {
   ngOnInit() {
   }
 
+  
+  searchProject(value){
+    console.log(value)
+    this.router.navigateByUrl(`/search/${value}`);
+  }
   // openDialog() {
   //   const dialogRef = this.dialog.open(ViewProfileDailogComponent);
 
@@ -25,13 +30,9 @@ export class HomeComponent implements OnInit {
   //   });
   //   console.log("this is happening ??")
   // }
-
-  // searchProject(value){
-  //   this.router.navigate([`serach/${value}`]);
-  // }
-//   freelancers = [
-//     {
-//       "name": "Sadie Olson",
+  //   freelancers = [
+    //     {
+      //       "name": "Sadie Olson",
 //       "email": "sadieolson@pharmex.com",
 //       "skills": " Android / Java / Mobile App Development / MySQL / PHP ",
 //       "profilePicUrl": "../assets/images/dummy-user.png"

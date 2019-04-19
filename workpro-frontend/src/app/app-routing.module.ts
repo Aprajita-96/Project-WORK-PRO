@@ -116,10 +116,10 @@ const routes: Routes = [
     component: MybidsComponent,
     canActivate:[Authguard2Guard]
   },
-  {
-    path: "projectOwnerDetails",
-    component: ProductownerprofileComponent
-  },
+  // {
+  //   path: "projectOwnerDetails",
+  //   component: ProductownerprofileComponent
+  // },
   // {
   //   path: "projectownerdashboard",
   //   component: ProjectOwnerDashboardComponent,

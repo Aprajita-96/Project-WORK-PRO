@@ -43,7 +43,7 @@
       <p class="card-text">{{ bid.bidAmount }}</p>
       <p class="card-text">{{ bid.proposedCompletionDate }}</p>
       <div>
-        <button routerLink="/productownermyprojects" (click)="projectassign(bid.freelancerEmailId)" class="btn btn-primary text-white">
+        <button  (click)="projectassign(bid.freelancerEmailId)" class="btn btn-primary text-white">
           Accept
         </button>
         <button routerLink="/freelancerprofile/{{bid.freelancerEmailId}}" class="btn btn-primary text-white">

@@ -23,9 +23,6 @@ export class AuthGuard implements CanActivate {
             });
             return true;
 
-
-
-
         }
         else if (localStorage.getItem('role') === 'ADMIN') {
             this.productownerdetailsService.getDtailsOfProjectOwner(localStorage.getItem('email')).subscribe(data => {

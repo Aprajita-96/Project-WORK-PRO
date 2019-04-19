@@ -25,7 +25,7 @@ export class BidviewComponent implements OnInit {
       "projectOwnerEmail":this.data.poemail,
 
       "freelancerEmail":this.data.freelanceremail,
-      "proposedCompletionDate":user.duration,
+      "duration":user.duration,
       "bidAmount":+user.amount,
       "projectAwarded":false,
       "status":"open"

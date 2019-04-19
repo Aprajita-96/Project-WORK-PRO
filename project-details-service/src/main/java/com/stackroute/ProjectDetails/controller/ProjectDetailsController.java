@@ -183,6 +183,7 @@ public class ProjectDetailsController {
                 }
             }
         }
+        producer.sendProjectDetails(projectsOfProjectOwner);
         return new ResponseEntity<String>("Project owner adds a project", HttpStatus.OK);
     }
 
@@ -233,7 +234,7 @@ public class ProjectDetailsController {
         for(BidKafka bid:listBid) {
             if (bid.getFreelancerEmail().equals(email)){
                 bid.setAwarded(true);
-                producer.send(bid);
+                producer.sendBid(bid);
                 System.out.println(bid+"produced..........................................");
             }
         }

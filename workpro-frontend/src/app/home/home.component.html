@@ -1,41 +1,39 @@
-<link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
-<script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
-<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
+<script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
 <!------ Include the above in your HEAD tag ---------->
 
-<section class="search-banner text-white py-3 form1" id="search-banner">
-    <div class="container py-5 my-5">
-        <div class="row text-center pb-4">
-            <div class="col-md-12">
-                <h2 class="text-white text1">Hire Freelancers</h2>
-                <h2 class="text-white text1">Make Things Happen</h2>
-            </div>
-        </div>
-        <div class="row">
-            <div class="col-md-12">
-                <div class="card search-form">
-                    <div class="card-body">
-                        <div class="row">
-                        </div>
-                        <div class="row">
-                            <div class="col-md-9">
-                                <div class="form-group ">
-                                    <input id="search-input" type="text" class="form-control" placeholder="Search for Projects" name="search" #search type="search">
-                                </div>
-                            </div>
-                            <div class="col-md-3">
-                                <button class="btn btn-success pl-5 pr-5"  routerLink="search/{{search.value}}" style="margin-left: 5px"type="submit" >Search</button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+<link href="//fonts.googleapis.com/css?family=Hind" rel="stylesheet" type="text/css">
+<link href="//fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet" type="text/css">
+<link href="//fonts.googleapis.com/css?family=Montserrat" rel="stylesheet" type="text/css">
+<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
 
-            </div>
-        </div>
-    </div>
-</section>
+
+<div class="jumbotron jumbotron-dark">
+<div class="container">
+<div class="col-lg-6">
+
+<h2>Hire expert freelancers for any job, online</h2>
+<h4>
+    Millions of small businesses use Freelancer to turn their ideas into reality.
+</h4>
+<p class="lead">We make Things Happen!</p>
+<div class="input-group">
+<input type="text" class="form-control" placeholder="Search for Projects" name="search" #search type="search">
+<span class="input-group-btn">
+<button class="btn btn-primary" type="button" (click)="searchProject(search.value)">Search</button>
+</span>
+</div>
+<br>
+
+</div>
+<div class="col-lg-6">
+    <img class="img-responsive" src="../assets/images/img1.png/">
+</div>
+</div>
+</div>
 <!-- TOP FREELANCERS -->
-<!-- <p class="TopProjects">Top Freelancers</p> -->
+<p class="TopProjects">Top Freelancers</p>
 <div class="container">
     <div class="row">
       <div *ngFor="let freelancer of freelancers" class="col-12 col-sm-6 col-md-4 col-lg-3">
@@ -54,10 +52,10 @@
   </div>
 
 <!-- Top Projects -->
-<!-- <p class="TopProjects">Top Projects</p>       -->
+<p class="TopProjects">Top Projects</p>      
 <div class="container">
       <div class="row1">
-        <div *ngFor="let project of projects" class="col-xs-3">
+        <div *ngFor="let project of projects" class="col-12 col-sm-6 col-md-4 col-lg-3">
 			<div class="project project-info">
 				<div class="shape">
 					<div class="shape-text">
@@ -71,7 +69,7 @@
 					<p style="color:blue">
 						{{project.skills}}
           </p>
-          <button class="btn btn-dark" type="button" [routerLink]="['/detailsview']">View details</button>
+          <button class="btn btn-primary" type="button" [routerLink]="['/detailsview']">View details</button>
 				</div>
 			</div>
     </div>

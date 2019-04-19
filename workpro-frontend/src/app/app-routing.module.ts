@@ -21,8 +21,8 @@ import { ProjectOwnerProfileComponent } from './project-owner-profile/project-ow
 import { ProjectDetailsViewComponent } from './project-details-view/project-details-view.component';
 import { SearchComponentComponent } from './search-component/search-component.component';
 import { AuthGuard } from './auth-guard';
-import { CanActivate } from '@angular/router/src/utils/preactivation';
 import { AuthGuard1Guard } from './auth-guard1.guard';
+import { Authguard2Guard } from './authguard2.guard';
 const routes: Routes = [
 
   {
@@ -40,26 +40,30 @@ const routes: Routes = [
   {
     path: "poprofile",
     component: ProjectOwnerProfileComponent,
-    // canActivate: [AuthGuard1Guard,AuthGuard]
+    canActivate: [AuthGuard1Guard,AuthGuard]
   },
   {
     path: "editpoprofile",
-    component: EditProjectOwnerProfileComponent
+    component: EditProjectOwnerProfileComponent,
+    canActivate: [AuthGuard1Guard]
   },
   {
     path: "freelancerprofile",
     component: FreelancerprofileComponent,
+    canActivate:[AuthGuard,Authguard2Guard]
   },
   
     {
       path: "freelancerprofile/:email",
       component: FreelancerprofileComponent,
+      canActivate:[AuthGuard1Guard]
     },
   
   {
     path: "editfreelancerprofile",
     component: EditfreelancerProfileComponent,
-    // canActivate: [AuthGuard]
+    canActivate:[AuthGuard,Authguard2Guard]
+    
   },
   {
     path: '',
@@ -68,7 +72,7 @@ const routes: Routes = [
   {
     path: "projectDetailsComponent/:id/:email",
     component: ProjectDetailsComponent,
-    // canActivate: [AuthGuard]
+  
   },
 
   {
@@ -77,17 +81,20 @@ const routes: Routes = [
   },
   {
     path: "register",
-    component: RegisterComponent
+    component: RegisterComponent,
+    // canActivate:[AuthGuard1Guard,Authguard2Guard]
+
   },
   {
     path: "login",
     component: LoginComponent,
-    // canActivate: [AuthGuard]
+    // canActivate:[AuthGuard]
+   
   },
   {
     path: "userdashboard",
     component: UserDashboardComponent,
-    // canActivate:[AuthGuard]
+    canActivate:[AuthGuard,Authguard2Guard]
   },
   {
     path: 'projectDetailFormComponent',
@@ -95,21 +102,23 @@ const routes: Routes = [
   },
   {
     path: "freelancerdetails",
-    component: FreelancerdetailsComponent
+    component: FreelancerdetailsComponent,
+    canActivate:[AuthGuard,Authguard2Guard]
   },
   {
     path: "podashboard",
     component: ProjectOwnerDashboardComponent,
-    // canActivate:[AuthGuard]
+    canActivate:[AuthGuard,AuthGuard1Guard]
 
   },
   {
     path: "mybids",
-    component: MybidsComponent
+    component: MybidsComponent,
+    canActivate:[Authguard2Guard]
   },
   {
     path: "projectOwnerDetails",
-    component: ProductownerprofileComponent,
+    component: ProductownerprofileComponent
   },
   // {
   //   path: "projectownerdashboard",

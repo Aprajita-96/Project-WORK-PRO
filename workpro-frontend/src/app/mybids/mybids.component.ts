@@ -20,8 +20,8 @@ export class MybidsComponent implements OnInit {
     this.freelancerdetails.getBidsofFreelancer(this.email).subscribe(data=>{
       this.projects1=data;
       console.log(this.projects1);
+      this.projects=this.projects1;
     });
-    this.projects=this.projects1;
     
   }
 
@@ -42,7 +42,7 @@ export class MybidsComponent implements OnInit {
   }
   filterWonBids() {
     this.projects = this.projects1.filter(e => {
-      if (e.status === "won" ) {
+      if (e.awarded === "true" ) {
         return e;
       }
     });

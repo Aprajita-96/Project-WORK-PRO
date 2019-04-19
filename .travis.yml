@@ -1,5 +1,10 @@
 language: java
-jdk: openjdk11
+jdk: - openjdk8
+       - oraclejdk8
+       - openjdk11     # LTS
+       - oraclejdk11
+       - openjdk-ea    # Early access
+  #  - oraclejdk-ea
 script: echo "npm test temporarily disabled"
 cache:
   directories:

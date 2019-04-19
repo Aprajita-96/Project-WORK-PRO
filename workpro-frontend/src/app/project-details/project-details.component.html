@@ -69,30 +69,22 @@
     </div>
   </div>
 
-  <div *ngIf="isroleAdmin">
-    <div class="text-center">
-      <h3>Bids</h3>
-    </div>
-    <div *ngFor="let bid of biders" class="card mt-3">
-      <div class="card-body">
-        <h4 class="card-title">{{ bid.freelancerEmailId }}</h4>
-        <p class="card-text">{{ bid.bidAmount }}</p>
-        <p class="card-text">{{ bid.proposedCompletionDate }}</p>
-        <div>
-          <button
-            routerLink="/productownermyprojects"
-            (click)="projectassign(bid.freelancerEmailId)"
-            class="btn btn-primary text-white"
-          >
-            Accept
-          </button>
-          <button
-            routerLink="/freelancerprofile/{{ bid.freelancerEmailId }}"
-            class="btn btn-primary text-white"
-          >
-            Details
-          </button>
-        </div>
+    <div *ngIf="isroleAdmin">
+  <div class="text-center">
+    <h3>Bids</h3>
+  </div>
+  <div *ngFor="let bid of biders" class="card mt-3">
+    <div class="card-body">
+      <h4 class="card-title">{{ bid.freelancerEmailId }}</h4>
+      <p class="card-text">{{ bid.bidAmount }}</p>
+      <p class="card-text">{{ bid.proposedCompletionDate }}</p>
+      <div>
+        <button  (click)="projectassign(bid.freelancerEmailId)" class="btn btn-primary text-white">
+          Accept
+        </button>
+        <button routerLink="/freelancerprofile/{{bid.freelancerEmailId}}" class="btn btn-primary text-white">
+          Details
+        </button>
       </div>
     </div>
   </div>

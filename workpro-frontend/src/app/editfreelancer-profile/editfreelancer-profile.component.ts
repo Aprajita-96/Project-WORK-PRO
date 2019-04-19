@@ -49,7 +49,7 @@ export class EditfreelancerProfileComponent implements OnInit {
 
     let user = {
       "freelancerName": this.personalDetails.Name,
-      "freelancerEmail": this.personalDetails.email,
+      "freelancerEmail": this.email,
       "freelancerAddress": this.address.address,
       "yearsOfExpertise": 1,
       "skills": this.addedSkills

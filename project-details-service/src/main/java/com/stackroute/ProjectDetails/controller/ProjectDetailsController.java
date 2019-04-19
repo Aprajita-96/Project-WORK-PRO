@@ -183,7 +183,14 @@ public class ProjectDetailsController {
                 }
             }
         }
-        producer.sendProjectDetails(projectsOfProjectOwner);
+
+        ProduceProject p = new ProduceProject();
+        p.setProjectId(projectsOfProjectOwner.getProjectOwnerEmailId());
+//        p.setSkillsSetList();
+        System.out.println(projectsOfProjectOwner);
+        producer.sendProjectDetails(p);
+        System.out.println("Producing -----------------------------");
+
         return new ResponseEntity<String>("Project owner adds a project", HttpStatus.OK);
     }
 

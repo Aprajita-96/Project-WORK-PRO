@@ -50,6 +50,7 @@ public class FreelancerController {
     }
 
 
+//    freelancer registers for the first time
     @PostMapping("/freelancerprofile/postDetails")
     public ResponseEntity<?> postDetail(@RequestBody Freelancer newfreelancer) {
         freelancerService.save(newfreelancer);

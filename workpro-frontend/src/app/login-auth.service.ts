@@ -7,8 +7,9 @@ import { JwtHelperService } from '@auth0/angular-jwt';
 })
 export class LoginAuthService {
   private subject = new Subject<any>();
+  loggedIn = new Subject()
   isLoggedIn(){
-    if(localStorage.getItem('currentUser')){
+    if(localStorage.getItem('token')){
       this.subject.next({status: true});
     }else{
       this.subject.next({status: false});
@@ -19,7 +20,7 @@ export class LoginAuthService {
    getStatus():Observable<any>{
     return this.subject.asObservable();
   }
-  checkToken():any{
+  checkToken(){
     const helper = new JwtHelperService();
     const decodedToken = helper.decodeToken(localStorage.getItem('token'));
     return decodedToken;

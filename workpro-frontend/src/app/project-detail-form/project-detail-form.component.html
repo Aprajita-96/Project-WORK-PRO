@@ -25,7 +25,7 @@
                             <div class="form-group">
                 <label class="col-md-3 control-label">Project Description:</label>
                 <div class="col-md-8">
-                    <textarea class="form-control" id="projectDescription" rows="3"></textarea>
+                    <textarea class="form-control" id="projectDescription" name="projectDescription" ngModel rows="3"></textarea>
                 </div>
               </div>
               <div class="form-group">
@@ -40,8 +40,8 @@
     
                   <div *ngFor="let skill of skills">
                     <h3><span class="badge badge-pill badge-info">
-                        {{skill.skillName}}
-                        <button (click)="removeSkill(skill.name)" type="button" class="close" aria-label="Close">
+                        {{skill}}
+                        <button (click)="removeSkill(skill)" type="button" class="close" aria-label="Close">
                           <span aria-hidden="true">&times;</span>
                         </button>
                       </span></h3>
@@ -59,12 +59,28 @@
                   <input name="projectLocation" ngModel class="form-control" type="text" value="">
                 </div>
               </div>
-              <div class="form-group">
+              <!-- <div class="form-group">
                   <label class="col-md-3 control-label">Preference:</label>
                   <div class="col-md-8">
                     <input name="projectPreference" ngModel class="form-control" type="text" value="">
                   </div>
-                </div>
+                </div> -->
+
+                <div class="form-group">
+                    <label for="preference" class="col-md-3 control-label"><i class="fas fa-user-tag"></i> Preference</label>
+                    <div class="col-md-8">
+                    <select
+                      class="form-control"
+                      id="firstName"
+                      [(ngModel)]="user.preference"
+                      name="preference"
+                    >
+                      <option value="">Select Preference</option>
+                      <option value="Remote">Remote</option>
+                      <option value="Onsite">Onsite</option>
+                    </select>
+                    </div>
+                  </div>
               <div class="form-group">
                 <label class="col-md-3 control-label"></label>
                 <div class="col-md-8">
@@ -84,21 +100,21 @@
               <div class="col-sm-9 personal-info">
                 <form class="form-horizontal" role="form" #bidDetails="ngForm">
                     <div class="form-group">
-                        <label class="col-md-3 control-label">Max Budget:</label>
+                        <label class="col-md-3 control-label">Max Budget ($):</label>
                         <div class="col-md-8">
-                          <input name="maximumBudget" ngModel class="form-control" type="text" value="">
+                          <input name="maximumBudget" placeholder="Amount in $" ngModel class="form-control" type="text" value="">
                         </div>
                       </div>
                       <div class="form-group">
-                          <label class="col-md-3 control-label">Min Budget:</label>
+                          <label class="col-md-3 control-label">Min Budget ($):</label>
                           <div class="col-md-8">
-                            <input name="minimumBudget" ngModel class="form-control" type="text" value="">
+                            <input name="minimumBudget" placeholder="Amount in $" ngModel class="form-control" type="text" value="">
                           </div>
                         </div>
                         <div class="form-group">
                             <label class="col-md-3 control-label">Bid Duration:</label>
                             <div class="col-md-8">
-                              <input name="bidLastDate" ngModel class="form-control" type="text" value="">
+                              <input name="bidLastDate" placeholder="Number of Days" ngModel class="form-control" type="number" value="">
                             </div>
                           </div>   
                 </form>
@@ -106,7 +122,7 @@
             </div>
             <div class="mat-button">
               <button class="btn btn-primary" 
-                [routerLink]="['/productownermyprojects']"  (click)="addBid(bidDetails.value)" (click)="saveUser(personalDetails.value,user,userForm)">Submit</button>
+                (click)="addBid(bidDetails.value)" (click)="saveUser(personalDetails.value,user,userForm)">Submit</button>
               <button class="btn btn-warning" (click)="stepper.reset()">Reset</button>
             </div>
         </mat-step>

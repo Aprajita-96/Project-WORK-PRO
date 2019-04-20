@@ -1,5 +1,5 @@
 import { Component, OnInit, Inject } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { FreelancerDetailsService } from '../freelancer-details.service';
 import {MAT_DIALOG_DATA} from '@angular/material';
 
@@ -12,7 +12,7 @@ export class BidviewComponent implements OnInit {
 
   pid:String;
   poemail:String;
-  constructor(private freelancerDetailsService:FreelancerDetailsService,private route:ActivatedRoute,@Inject(MAT_DIALOG_DATA) public data: any) { }
+  constructor(private freelancerDetailsService:FreelancerDetailsService,private route:ActivatedRoute,@Inject(MAT_DIALOG_DATA) public data: any,private router:Router) { }
 
   ngOnInit() {
    console.log(this.data)
@@ -24,12 +24,15 @@ export class BidviewComponent implements OnInit {
       "projectName":this.data.pname,
       "projectOwnerEmail":this.data.poemail,
 
-      freelancerEmailId:localStorage.getItem('email'),
-      "proposedCompletionDate":user.duration,
+      "freelancerEmail":this.data.freelanceremail,
+      "duration":user.duration,
       "bidAmount":+user.amount,
-      "projectAwarded":false
+      "projectAwarded":false,
+      "status":"open"
     }
+    console.log(bidinfo)
     this.freelancerDetailsService.postBids(bidinfo).subscribe(console.log);
     console.log(bidinfo);
+    this.router.navigateByUrl("/mybids");
   }
 }

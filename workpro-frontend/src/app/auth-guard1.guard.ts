@@ -22,14 +22,12 @@ export class AuthGuard1Guard implements CanActivate {
       else {
         this.router.navigate(['/userdashboard'])
         return false;
-      }
+      }    
 
     }
 
     this.router.navigate(['/login']);
     return false;
-
-
   }
 
 }

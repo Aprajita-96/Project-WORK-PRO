@@ -50,9 +50,11 @@ public class FreelancerController {
     }
 
 
+//    freelancer registers for the first time
     @PostMapping("/freelancerprofile/postDetails")
     public ResponseEntity<?> postDetail(@RequestBody Freelancer newfreelancer) {
-        freelancerService.save(newfreelancer);
+        freelancer = freelancerService.save(newfreelancer);
+
 
 
         for (String string : newfreelancer.getSkills()) {
@@ -102,6 +104,8 @@ public class FreelancerController {
             }
 
         }
+        System.out.println(freelancer);
+        producer.sendFreelancer(freelancer);
         return new ResponseEntity<String>("here", HttpStatus.OK);
     }
 
@@ -109,7 +113,7 @@ public class FreelancerController {
     @GetMapping("/freelancer/{id}")
     public ResponseEntity<?> getDetails(@PathVariable("id") String id) {
         Freelancer freelancer = freelancerService.search(id);
-        return new ResponseEntity<Freelancer>(freelancer, HttpStatus.FOUND);
+        return new ResponseEntity<Freelancer>(freelancer, HttpStatus.OK);
     }
 
     @PostMapping("/bid/bidDetails")
@@ -119,8 +123,8 @@ public class FreelancerController {
 //        if (token != null) {
             Bid resultbid = bidService.save(bid);
 
-            producer.send(bid);
-            return new ResponseEntity<Bid>(resultbid, HttpStatus.ACCEPTED);
+            producer.sendBid(bid);
+            return new ResponseEntity<Bid>(resultbid, HttpStatus.OK);
 //        } else
 //            throw new UnauthorizedException("login please");
 
@@ -162,19 +166,5 @@ public class FreelancerController {
     }
 
 
-
-//
-//    @Autowired
-//    private Consumer consumer;
-//
-//    @GetMapping("/produce")
-//    public String consumeData() {
-//
-////        LOGGER.info("REQUEST BODY..!! "+  car);
-//
-////        producer.send("hjghjgf");
-//
-//        return "Received from Kafka Topic !!";
-//
-//    }
+    
 }

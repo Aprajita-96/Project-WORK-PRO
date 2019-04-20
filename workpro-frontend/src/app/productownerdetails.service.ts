@@ -26,7 +26,7 @@ data:any
     }
 
     awardProject(value,value1,value2){
-      return this.http.put("http://13.234.155.75:8080/projectdetailservice/api/v1/projectOwner/"+value+"/projects/"+value1+"/bid/accept/"+value2,{});
+      return this.http.put("http://13.234.155.75:8080/projectdetailservice/api/v1/projectOwner/"+value+"/projects/"+value1+"/bid/accept/"+value2,{responseType:'text'});
     }
    
     getResults(skillName){

@@ -46,6 +46,7 @@ import { ViewProfileDailogComponent } from './view-profile-dailog/view-profile-d
 import { BidviewComponent } from './bidview/bidview.component';
 import { ProductownerdetailsService } from './productownerdetails.service';
 import { SearchComponentComponent } from './search-component/search-component.component';
+import { InviteFreelancerComponent } from './invite-freelancer/invite-freelancer.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -76,6 +77,7 @@ import { SearchComponentComponent } from './search-component/search-component.co
     ViewProfileDailogComponent,
     BidviewComponent,
     SearchComponentComponent,
+    InviteFreelancerComponent,
     
   ],
   imports: [

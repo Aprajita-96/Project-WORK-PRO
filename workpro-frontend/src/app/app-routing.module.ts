@@ -23,6 +23,8 @@ import { SearchComponentComponent } from './search-component/search-component.co
 import { AuthGuard } from './auth-guard';
 import { AuthGuard1Guard } from './auth-guard1.guard';
 import { Authguard2Guard } from './authguard2.guard';
+import { InviteFreelancerComponent } from './invite-freelancer/invite-freelancer.component';
+import { Authguard3Guard } from './authguard3.guard';
 const routes: Routes = [
 
   {
@@ -68,6 +70,7 @@ const routes: Routes = [
   {
     path: '',
     component: HomeComponent,
+    canActivate:[Authguard3Guard]
   },
   {
     path: "projectDetailsComponent/:id/:email",
@@ -82,13 +85,13 @@ const routes: Routes = [
   {
     path: "register",
     component: RegisterComponent,
-    // canActivate:[AuthGuard1Guard,Authguard2Guard]
+    canActivate:[Authguard3Guard]
 
   },
   {
     path: "login",
     component: LoginComponent,
-    // canActivate:[AuthGuard]
+    canActivate:[Authguard3Guard]
    
   },
   {
@@ -133,6 +136,10 @@ const routes: Routes = [
     path: "freelancerprofile/:id",
     component: FreelancerprofileComponent
   },
+  {
+    path:"invitefreelancer/:id",
+    component:InviteFreelancerComponent
+  }
 
 
 ];

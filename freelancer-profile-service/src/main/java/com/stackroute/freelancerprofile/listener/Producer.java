@@ -29,6 +29,7 @@ public class Producer {
 
 
     public void sendFreelancer(Object object){
+        System.out.println(object);
         System.out.println("Sending");
         kafkaTemplate.send("freelancerTopic",object);
     }

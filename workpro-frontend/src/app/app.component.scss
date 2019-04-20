@@ -1,9 +1,14 @@
 .navbar {
   background-color: #122c34;
-  max-height: 9%;
+  max-height: 10%;
   display: flex;
+  border-radius: 0;
+  
 }
 
+.example-sidenav{
+  overflow: hidden;
+}
 // .nav-pills .nav-link.active {
 //   background-color: #222222;
 // }
@@ -55,7 +60,7 @@ footer{
   background-color: #122C34;
   margin-top: 0;
   padding: 0;
-  height: 7%;  
+  height: 8%;  
 }
 .container-logo{
   margin-bottom: 20px;

@@ -33,11 +33,13 @@ const routes: Routes = [
   },
   {
     path: "detailsview/:id/:email",
-    component: ProjectDetailsViewComponent
+    component: ProjectDetailsViewComponent,
+    // canActivate:[Authguard2Guard,AuthGuard1Guard,AuthGuard]
   },
   {
     path: "detailsview",
-    component: ProjectDetailsViewComponent
+    component: ProjectDetailsViewComponent,
+    // canActivate:[Authguard2Guard,AuthGuard1Guard,AuthGuard]
   },
   {
     path: "poprofile",
@@ -75,6 +77,7 @@ const routes: Routes = [
   {
     path: "projectDetailsComponent/:id/:email",
     component: ProjectDetailsComponent,
+  
   
   },
 

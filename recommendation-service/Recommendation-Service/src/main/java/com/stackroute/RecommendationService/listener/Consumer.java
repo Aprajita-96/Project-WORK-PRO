@@ -59,16 +59,16 @@ public class Consumer {
         System.out.println(freelancers);
 //        freelancerService.saveFreelancers(freelancers.getFreelancerEmail());
     }
-    @KafkaListener(topics = "projectTopic")
-    public void receiveProject(ProjectKafka message) {
-
-        System.out.println(message);
-//        Gson gson =new Gson();
-//        Projects projects=gson.fromJson(gson.fromJson(gson.toJson(message), Map.class).get("value").toString(),Projects.class);
-
-//        System.out.println(projects);
-//        projectService.saveProjects(projects.getProjectId());
-    }
+//    @KafkaListener(topics = "projectTopic")
+//    public void receiveProject(ProjectKafka message) {
+//
+//        System.out.println(message);
+////        Gson gson =new Gson();
+////        Projects projects=gson.fromJson(gson.fromJson(gson.toJson(message), Map.class).get("value").toString(),Projects.class);
+//
+////        System.out.println(projects);
+////        projectService.saveProjects(projects.getProjectId());
+//    }
 
 
 }

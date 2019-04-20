@@ -2,6 +2,7 @@ package com.stackroute.RecommendationService.controller;
 
 
 import com.stackroute.RecommendationService.domain.Freelancers;
+import com.stackroute.RecommendationService.domain.ProjectKafka;
 import com.stackroute.RecommendationService.domain.Projects;
 import com.stackroute.RecommendationService.service.FreelancerService;
 import com.stackroute.RecommendationService.service.ProjectService;
@@ -65,5 +66,9 @@ public class RecommendationController {
         return new ResponseEntity<>(projects, HttpStatus.OK);
     }
 
+    @PostMapping("/project/projectDetailService")
+    public static void anymethod(@RequestBody ProjectKafka a) {
+        System.out.println(a);
+    }
 
 }

@@ -41,5 +41,6 @@ data:any
   postDetailsOfProjectOwner(data){
     return this.http.post("http://13.234.155.75:8080/projectownerservice/api/v1/projectOwner/projectOwnerId",data);
   }
+
  
 }

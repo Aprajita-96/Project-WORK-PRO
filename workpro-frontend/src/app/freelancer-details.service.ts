@@ -27,13 +27,22 @@ export class FreelancerDetailsService {
     
   }
 
+  getAwardedBids(value){
+    return this.http.get("http://13.234.155.75:8080/freelancerservice/api/v1/bid/awardedBids/"+value)
+  }
+
 
   getSearchResults(skill) {
     return this.http.get("http://13.234.155.75:8080/freelancerservice/api/v1/skill/" + skill);
   }
 
   postBids(body){
-    return this.http.post("http://13.234.155.75:8080/freelancerservice/api/v1//bid/bidDetails",body);
+    return this.http.post("http://13.234.155.75:8080/freelancerservice/api/v1/bid/bidDetails",body);
+  }
+
+
+  inviteFreelancer(body){
+    return this.http.post("http://13.234.155.75:8080/freelancerservice/api/v1/send",body);
   }
   
 }

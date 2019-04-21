@@ -29,9 +29,9 @@ public class Producer {
     }
 
 
-    public void  sendProjectDetails(Object object) {
-//        LOGGER.info("sending car='{}'", car.toString());
-        //System.out.println(string);
-        kafkaTemplate.send("projectTopic", object);
-    }
+//    public void  sendProjectDetails(Object object) {
+////        LOGGER.info("sending car='{}'", car.toString());
+//        //System.out.println(string);
+//        kafkaTemplate.send("projectTopic", object);
+//    }
 }

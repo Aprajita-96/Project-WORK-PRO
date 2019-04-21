@@ -4,14 +4,17 @@ package com.stackroute.RecommendationService.controller;
 import com.stackroute.RecommendationService.domain.Freelancers;
 import com.stackroute.RecommendationService.domain.ProjectKafka;
 import com.stackroute.RecommendationService.domain.Projects;
+import com.stackroute.RecommendationService.domain.ProjectsNeo4j;
 import com.stackroute.RecommendationService.service.FreelancerService;
 import com.stackroute.RecommendationService.service.ProjectService;
+import com.stackroute.RecommendationService.service.ProjectsNeo4jService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Collection;
 import java.util.List;
 
@@ -20,11 +23,12 @@ import java.util.List;
 public class RecommendationController {
     private FreelancerService freelancerService;
     private ProjectService projectService;
-
+    private ProjectsNeo4jService projectsNeo4jService;
     @Autowired
-    public RecommendationController(FreelancerService freelancerService, ProjectService projectService) {
+    public RecommendationController(FreelancerService freelancerService, ProjectService projectService,ProjectsNeo4jService projectsNeo4jService) {
         this.freelancerService = freelancerService;
         this.projectService = projectService;
+        this.projectsNeo4jService=projectsNeo4jService;
     }
 
 
@@ -56,19 +60,32 @@ public class RecommendationController {
     }
 
     @GetMapping("/recommendations/allProjects/Skill/{skillName}")
-    public ResponseEntity<Iterable<Projects>> getAllProjects(@PathVariable List<String> skillName) {
-        List<Projects> projects= new ArrayList<>() ;
+    public ResponseEntity<Iterable<ProjectsNeo4j>> getAllProjects(@PathVariable List<String> skillName) {
+        List<ProjectsNeo4j> projects= new ArrayList<>() ;
         for (String param : skillName) {
             System.out.println(param);
-            projects.addAll(projectService.getAllProjects(param));
+            projects.addAll(projectsNeo4jService.getAllProjects(param));
         }
 
         return new ResponseEntity<>(projects, HttpStatus.OK);
     }
-
     @PostMapping("/project/projectDetailService")
-    public static void anymethod(@RequestBody ProjectKafka a) {
-        System.out.println(a);
+    public void anymethod(@RequestBody ProjectKafka a)
+    {
+//        List<String> allrequiredSkills = Arrays.asList(a.getSkillsSetList().split(","));
+//        System.out.println(allrequiredSkills);
+        a.getSkillsSetList().trim();
+        List<String> allrequiredSkills = Arrays.asList(a.getSkillsSetList().split(" "));
+        System.out.println(allrequiredSkills);
+        String pid=a.getProjectId();
+        this.projectsNeo4jService.saveProjects(pid);
+
+//        List<Projects> projects= new ArrayList<>() ;
+        for (String param : allrequiredSkills) {
+            System.out.println(param);
+          this.projectsNeo4jService.saveBySkill(pid,param);
+        }
+
     }
 
 }

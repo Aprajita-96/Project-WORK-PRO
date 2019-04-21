@@ -28,5 +28,8 @@ public class FreelancerService {
         return freelancerRecommendationRepository.saveByEmailId(emailId);
     }
 
+        public Iterable<Freelancers> saveBySkill(String EmailId,String skillName){
+        return freelancerRecommendationRepository.saveBySkill(EmailId,skillName);
+        }
 
 }

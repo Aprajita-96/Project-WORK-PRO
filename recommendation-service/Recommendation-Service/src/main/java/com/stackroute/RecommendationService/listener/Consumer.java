@@ -57,7 +57,14 @@ public class Consumer {
         Freelancers freelancers=gson.fromJson(gson.fromJson(gson.toJson(message), Map.class).get("value").toString(),Freelancers.class);
 
         System.out.println(freelancers);
-//        freelancerService.saveFreelancers(freelancers.getFreelancerEmail());
+        freelancerService.saveFreelancers(freelancers.getFreelancerEmail());
+        String emailId=freelancers.getFreelancerEmail();
+        for (String param : freelancers.getSkills()) {
+            System.out.println(param);
+            freelancerService.saveBySkill(emailId,param);
+        }
+
+//        freelancerService.saveBySkill(freelancers.getSkills());
     }
 //    @KafkaListener(topics = "projectTopic")
 //    public void receiveProject(ProjectKafka message) {

@@ -25,4 +25,8 @@ public class ProjectService {
     public Iterable<Projects> saveProjects(String ProjectId){
         return projectRecommendationsRepository.saveByProjectId(ProjectId);
     }
+
+    public Iterable<Projects> saveBySkill(String ProjectId,String skillName) {
+        return projectRecommendationsRepository.saveBySkill(ProjectId,skillName);
+    }
 }

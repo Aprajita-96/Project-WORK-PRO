@@ -11,10 +11,7 @@ import java.util.List;
 @NoArgsConstructor
 public class ProjectKafka {
     private String projectId;
-    private List<skills> skillsSetList;
+    private String skillsSetList;
 }
 
-class skills {
-    String skillName;
-}
 

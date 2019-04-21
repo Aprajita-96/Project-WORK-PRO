@@ -186,12 +186,35 @@ public class ProjectDetailsController {
             }
         }
 
+
         ProduceProject p = new ProduceProject();
-        p.setProjectId(projectsOfProjectOwner.getProjectOwnerEmailId());
+       // p.setProjectId(projectsOfProjectOwner.getProjectOwnerEmailId());
+        String a = "";
+
+
+        for(ProjectDetails details: projectsOfProjectOwner.getProjectDetailsList())
+        {
+            String b=details.getProjectId();
+            p.setProjectId(b);
+            for(String skillsFromProjectOwner:details.getSkillsSetList())
+            {
+
+                System.out.println(skillsFromProjectOwner);
+                a = a + skillsFromProjectOwner + " ";
+//                System.out.println(a);
+//                p.getSkillsSetList().add(skillsFromProjectOwner);
+
+            }
+        }
+
+
+        System.out.println(a);
+        p.setSkillsSetList(a);
+
 //        p.setSkillsSetList();
         this.postToRecommendationService(p);
-        System.out.println(projectsOfProjectOwner);
-        producer.sendProjectDetails(p);
+//        System.out.println(projectsOfProjectOwner);
+
         System.out.println("Producing -----------------------------");
 
         return new ResponseEntity<String>("Project owner adds a project", HttpStatus.OK);

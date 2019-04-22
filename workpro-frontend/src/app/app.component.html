@@ -1,12 +1,16 @@
 <!--The content below is only a placeholder and can be replaced.-->
 <!--Navbar -->
-<nav class="mb-1 navbar navbar-expand-lg navbar navbar-expand-lg navbar-dark secondary-color lighten-1">
+<nav class="navbar-expand-md navbar navbar-dark secondary-color lighten-1  row">
   <button mat-icon-button (click)="drawer.toggle()">
-    <span class="navbar-toggler-icon"></span>
+    <span class="navbar-toggler-icon "></span>
   </button>
 
-
-  <a class="navbar-brand ml-2" href="#">WorkPro</a>
+  <a
+    class="navbar-brand ml-2 col-sm-2
+  "
+    href="#"
+    >WorkPro</a
+  >
   <!-- <button
     class="navbar-toggler"
     type="button"
@@ -18,44 +22,51 @@
   > -->
   <!-- <span class="navbar-toggler-icon"></span> -->
   <!-- </button> -->
-  <div class="navbar navbar-expand-lg navbar-dark bg-dark">
-    <div *ngIf="!isLogin; else elseBlock2">
-      <ul class="navbar-nav mr-auto">
-        <li class="nav-item">
-          <a class="nav-link" [routerLink]="['/register']">Register</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" [routerLink]="['/login']">Login</a>
-        </li>
-      </ul>
-    </div>
+  <!-- <div class="navbar navbar-expand-lg navbar-dark bg-light"> -->
+  <div *ngIf="!isLogin; else elseBlock2" class="d-flex justify-content-end">
+    <ul class="navbar-nav mr-auto d-flex justify-content-end">
+      <li class="nav-item ">
+        <a class="nav-link" [routerLink]="['/register']">Register</a>
+      </li>
+
+      <li class="nav-item">
+        <a class="nav-link" [routerLink]="['/login']">Login</a>
+      </li>
+    </ul>
   </div>
+  <!-- </div> -->
   <ng-template #elseBlock2>
     <ul class="navbar-nav mr-auto">
       <li class="nav-item">
-        <a class="nav-link" (click)=logout()>Logout</a>
+        <a class="nav-link" (click)="logout()">Logout</a>
       </li>
-
     </ul>
   </ng-template>
 </nav>
 
 <mat-sidenav-container class="example-container">
-
   <mat-drawer #drawer class="example-sidenav" mode="side">
     <div class="inner">
       <div class="container-logo">
-          <img src="../assets/images/logo5.png" alt="logo" style="margin-bottom:10px">
+        <img
+          src="../assets/images/logo5.png"
+          alt="logo"
+          style="margin-bottom:10px"
+        />
       </div>
       <mat-divider></mat-divider>
 
       <div *ngIf="role == 'ADMIN'; else elseBlock">
         <mat-nav-list style="margin-top: 40px">
           <mat-list-item>
-            <a class="nav-link" routerLink="podashboard">ProjectOwnerDashboard</a>
+            <a class="nav-link" routerLink="podashboard"
+              >ProjectOwnerDashboard</a
+            >
           </mat-list-item>
           <mat-list-item>
-            <a class="nav-link" routerLink="productownermyprojects">My project</a>
+            <a class="nav-link" routerLink="productownermyprojects"
+              >My project</a
+            >
           </mat-list-item>
           <mat-list-item>
             <a class="nav-link" routerLink="poprofile">My Profile</a>
@@ -63,7 +74,6 @@
           <mat-list-item>
             <a class="nav-link" routerLink="editpoprofile">Edit Profile</a>
           </mat-list-item>
-         
         </mat-nav-list>
       </div>
 
@@ -71,11 +81,15 @@
         <div *ngIf="role == 'USER'; else elseBlock1">
           <mat-nav-list>
             <mat-list-item>
-              <a class="nav-link" [routerLink]="['/userdashboard']">Userdashboard</a>
+              <a class="nav-link" [routerLink]="['/userdashboard']"
+                >Userdashboard</a
+              >
             </mat-list-item>
 
             <mat-list-item>
-              <a class="nav-link" [routerLink]="['/freelancerprofile']">My Profile</a>
+              <a class="nav-link" [routerLink]="['/freelancerprofile']"
+                >My Profile</a
+              >
             </mat-list-item>
 
             <mat-list-item>
@@ -85,7 +99,6 @@
             <!-- <mat-list-item>
               <a class="nav-link" routerLink="freelancerdetails">Freelancer Details Form</a>
             </mat-list-item> -->
-
           </mat-nav-list>
         </div>
       </ng-template>
@@ -106,6 +119,7 @@
   <div class="footer-copyright text-center py-3" style="color:white">
     © 2019 Copyright:
     <a href="https://mdbootstrap.com/education/angular/" style="color:white">
-      WorkPro.com</a>
+      WorkPro.com</a
+    >
   </div>
 </footer>

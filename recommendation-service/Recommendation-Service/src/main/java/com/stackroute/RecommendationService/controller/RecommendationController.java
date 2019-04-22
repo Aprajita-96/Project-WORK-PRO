@@ -74,12 +74,16 @@ public class RecommendationController {
     {
 //        List<String> allrequiredSkills = Arrays.asList(a.getSkillsSetList().split(","));
 //        System.out.println(allrequiredSkills);
+        System.out.println(a);
         a.getSkillsSetList().trim();
         List<String> allrequiredSkills = Arrays.asList(a.getSkillsSetList().split(" "));
         System.out.println(allrequiredSkills);
         String pid=a.getProjectId();
-        this.projectsNeo4jService.saveProjects(pid);
+        String emailId=a.getProjectOwnerEmailId();
 
+        String desc=a.getProjectDescription();
+        System.out.println(emailId+"This is emailId");
+        this.projectsNeo4jService.saveProjects(pid,emailId,desc);
 //        List<Projects> projects= new ArrayList<>() ;
         for (String param : allrequiredSkills) {
             System.out.println(param);

@@ -188,13 +188,15 @@ public class ProjectDetailsController {
 
 
         ProduceProject p = new ProduceProject();
-       // p.setProjectId(projectsOfProjectOwner.getProjectOwnerEmailId());
+        p.setProjectOwnerEmailId(projectsOfProjectOwner.getProjectOwnerEmailId());
         String a = "";
 
 
         for(ProjectDetails details: projectsOfProjectOwner.getProjectDetailsList())
         {
+            String desc=details.getProjectDescription();
             String b=details.getProjectId();
+            p.setProjectDescription(b);
             p.setProjectId(b);
             for(String skillsFromProjectOwner:details.getSkillsSetList())
             {
@@ -208,9 +210,9 @@ public class ProjectDetailsController {
         }
 
 
-        System.out.println(a);
+//        System.out.println(a);
         p.setSkillsSetList(a);
-
+//        System.out.println(p);
 //        p.setSkillsSetList();
         this.postToRecommendationService(p);
 //        System.out.println(projectsOfProjectOwner);

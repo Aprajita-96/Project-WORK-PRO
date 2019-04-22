@@ -10,6 +10,8 @@ import java.util.List;
 @AllArgsConstructor
 @NoArgsConstructor
 public class ProjectKafka {
+    private String projectOwnerEmailId;
+    private String projectDescription;
     private String projectId;
     private String skillsSetList;
 }

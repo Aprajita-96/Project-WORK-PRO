@@ -11,6 +11,8 @@ import java.util.List;
 @NoArgsConstructor
 @AllArgsConstructor
 public class ProduceProject {
+    private String projectOwnerEmailId;
+    private String projectDescription;
     private String projectId;
     private String skillsSetList;
 

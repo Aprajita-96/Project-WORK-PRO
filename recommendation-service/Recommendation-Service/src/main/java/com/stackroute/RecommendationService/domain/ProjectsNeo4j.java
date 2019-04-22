@@ -21,7 +21,8 @@ import java.util.List;
 public class ProjectsNeo4j {
     @Id
     private String ProjectId;
-
+    private String projectOwnerEmailId;
+    private String projectDescription;
     @Relationship(type = "RequiresSkill",direction = Relationship.OUTGOING)
     List<Skill> skills;
 }

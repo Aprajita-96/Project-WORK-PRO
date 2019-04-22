@@ -201,7 +201,7 @@ services:
       - NEO4J_AUTH=neo4j/1234
 
   recommendation-service:
-    build: recommendation-service/rrecommendation-service/
+    build: rrecommendation-service/
     restart: always
     network_mode: "host"
     hostname: localhost

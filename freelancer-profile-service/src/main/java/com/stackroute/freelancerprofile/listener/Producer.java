@@ -1,5 +1,6 @@
 package com.stackroute.freelancerprofile.listener;
 
+import com.fasterxml.jackson.databind.ObjectMapper;
 import com.stackroute.freelancerprofile.domain.Bid;
 import com.stackroute.freelancerprofile.domain.Freelancer;
 import org.apache.kafka.common.protocol.types.Field;
@@ -21,6 +22,7 @@ public class Producer {
     private KafkaTemplate<String, Object> kafkaTemplate;
 
 
+
     public void  sendBid(Object object) {
         System.out.println("Sending");
         kafkaTemplate.send("myTopic", object);
@@ -32,6 +34,9 @@ public class Producer {
         System.out.println(object);
         System.out.println("Sending");
         kafkaTemplate.send("freelancerTopic",object);
+
     }
+
+
 }
 

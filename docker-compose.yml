@@ -200,8 +200,8 @@ services:
     environment:
       - NEO4J_AUTH=neo4j/1234
 
-  recommendation-Service:
-    build: recommendation-service/rrecommendation-Service/
+  recommendation-service:
+    build: recommendation-service/rrecommendation-service/
     restart: always
     network_mode: "host"
     hostname: localhost

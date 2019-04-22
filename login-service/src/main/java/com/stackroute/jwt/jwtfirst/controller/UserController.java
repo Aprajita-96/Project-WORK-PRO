@@ -2,7 +2,7 @@ package com.stackroute.jwt.jwtfirst.controller;
 
 
 import com.stackroute.jwt.jwtfirst.model.User;
-import com.stackroute.jwt.jwtfirst.service.UserService;
+import com.stackroute.jwt.jwtfirst.service.UserServiceImpl;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -21,7 +21,7 @@ import java.util.List;
 public class UserController {
 
     @Autowired
-    private UserService userService;
+    private UserServiceImpl userService;
 
     @GetMapping(value = "/users")
     @PreAuthorize("hasRole('ADMIN')")

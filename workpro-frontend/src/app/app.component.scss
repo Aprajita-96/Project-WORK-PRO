@@ -1,12 +1,16 @@
 .navbar {
   background-color: #122c34;
-  max-height: 9%;
+  max-height: 10%;
   display: flex;
+  border-radius: 0;
 }
 
-.nav-pills .nav-link.active {
-  background-color: #222222;
+.example-sidenav {
+  overflow: hidden;
 }
+// .nav-pills .nav-link.active {
+//   background-color: #222222;
+// }
 div {
   // border-right: 1px solid rgb(168, 168, 180);
   height: 100%;
@@ -53,7 +57,7 @@ footer {
   background-color: #122c34;
   margin-top: 0;
   padding: 0;
-  height: 7%;
+  height: 8%;
 }
 .container-logo {
   margin-bottom: 20px;

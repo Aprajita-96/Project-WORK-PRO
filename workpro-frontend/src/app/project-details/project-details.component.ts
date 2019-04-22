@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ProductownerdetailsService } from '../productownerdetails.service';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 
 @Component({
   selector: 'app-project-details',
@@ -20,7 +20,7 @@ export class ProjectDetailsComponent implements OnInit {
   biders=[];
   productid=String;
   id:String;
-  constructor(private productownerdetailsService:ProductownerdetailsService, private route:  ActivatedRoute) { 
+  constructor(private productownerdetailsService:ProductownerdetailsService, private route:  ActivatedRoute,private router:Router) { 
 
 
   }
@@ -61,8 +61,7 @@ export class ProjectDetailsComponent implements OnInit {
   projectassign(value){
     console.log(this.email,this.id,value);
     this.productownerdetailsService.awardProject(this.email,this.id,value).subscribe(console.log);
-
-
+    this.router.navigateByUrl("/productownermyprojects");
   }
   
 

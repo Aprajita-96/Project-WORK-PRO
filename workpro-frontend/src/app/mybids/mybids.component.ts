@@ -41,10 +41,9 @@ export class MybidsComponent implements OnInit {
     });
   }
   filterWonBids() {
-    this.projects = this.projects1.filter(e => {
-      if (e.awarded === "true" ) {
-        return e;
-      }
+    this.freelancerdetails.getAwardedBids(this.email).subscribe(data=>{
+      this.projects1=data;
+      this.projects=this.projects1;      
     });
   }
  

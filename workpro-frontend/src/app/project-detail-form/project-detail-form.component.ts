@@ -51,9 +51,12 @@ export class ProjectDetailFormComponent implements OnInit {
     }
     console.log(project,"project")
 
-    this.productownerdetailsService.setProjectDetails(project).subscribe(console.log);
+    this.productownerdetailsService.setProjectDetails(project).subscribe(data=>{
+      console.log(data)
+      this.route.navigate(['productownermyprojects']);
+    });
 
-    this.route.navigateByUrl(`/productownermyprojects`);
+   
 
   }
 

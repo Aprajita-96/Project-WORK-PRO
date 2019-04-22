@@ -1,5 +1,6 @@
 package com.stackroute.jwt.jwtfirst.service;
 
+import com.stackroute.jwt.jwtfirst.exception.UserAlreadyException;
 import com.stackroute.jwt.jwtfirst.model.User;
 import com.stackroute.jwt.jwtfirst.repo.UserRepository;
 import com.stackroute.jwt.jwtfirst.security.PasswordUtil;
@@ -12,25 +13,33 @@ import java.util.List;
 
 @Service
 @Transactional
-public class UserServiceImpl implements UserService {
+public class UserServiceImpl {
     @Autowired
     private UserRepository userRepository;
 
-    @Override
-    public User save(User user) {
-        String password= PasswordUtil.getPasswordHash(user.getPassword());
-        user.setPassword(password);
-        user.setDate(new Date());
+
+    public User save(User user) throws UserAlreadyException{
+        List<User> list = (List<User>) userRepository.findAll();
+        for (User user1 : list) {
+            if ((user1.getEmail()).equals(user.getEmail())) {
+                throw new UserAlreadyException("user Already exists");
+            }
+        }
+            String password = PasswordUtil.getPasswordHash(user.getPassword());
+            user.setPassword(password);
+            user.setDate(new Date());
+
+
         return userRepository.save(user);
     }
 
-    @Override
+
     public List<User> findall() {
       List<User> userlist= (List<User>) userRepository.findAll();
       return userlist;
     }
 
-    @Override
+
     public User getUserByEmail(String email) {
         return userRepository.findByEmailIgnoreCase(email);
     }

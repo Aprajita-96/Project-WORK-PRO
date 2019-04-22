@@ -22,6 +22,7 @@ export class EditProjectOwnerProfileComponent implements OnInit {
 
   ngOnInit() {
     this.email = localStorage.getItem("email");
+    console.log(this.email)
     this.firstFormGroup = this._formBuilder.group({
       firstCtrl: ['', Validators.required]
     });
@@ -36,7 +37,7 @@ export class EditProjectOwnerProfileComponent implements OnInit {
 
     
       user.name= this.personalDetails.name,
-      user.email= this.personalDetails.email,
+      user.email= this.email,
       user.address= this.address.address,
       user.location=this.location.location,
       user.number= this.personalDetails.number
@@ -45,8 +46,9 @@ export class EditProjectOwnerProfileComponent implements OnInit {
     console.log(user);
     this.productownerdetailservice.postDetailsOfProjectOwner(user).subscribe(data => {
       console.log(data, "this is  the response from the backend!!")
+      this.route.navigate(['/poprofile']);
     })
-    this.route.navigate(['/poprofile']);
+   
   }
   addPersonalDetails(value) {
     this.personalDetails = value

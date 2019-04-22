@@ -53,7 +53,8 @@ public class FreelancerController {
 //    freelancer registers for the first time
     @PostMapping("/freelancerprofile/postDetails")
     public ResponseEntity<?> postDetail(@RequestBody Freelancer newfreelancer) {
-        freelancerService.save(newfreelancer);
+        freelancer = freelancerService.save(newfreelancer);
+
 
 
         for (String string : newfreelancer.getSkills()) {
@@ -103,7 +104,8 @@ public class FreelancerController {
             }
 
         }
-//        producer.sendFreelancer(freelancer);
+        System.out.println(freelancer);
+        producer.sendFreelancer(freelancer);
         return new ResponseEntity<String>("here", HttpStatus.OK);
     }
 
@@ -156,13 +158,23 @@ public class FreelancerController {
     }
 
 
-    @PostMapping("/send")
-    public String sendEmail(@RequestBody EmailMessage emailmessage) throws AddressException, MessagingException, IOException {
+
+    @PostMapping("/send/{projectID}/{email}")
+    public String sendEmail(@RequestBody EmailMessage emailmessage,@PathVariable("email") String email,@PathVariable("projectID") String projectID) throws AddressException, MessagingException, IOException {
+//        emailmessage.setSubject("congratulations! You have been invited");
+//        System.out.println(emailmessage.getSubject());
+
+        emailmessage.setBody("Hello Freelancer!! \n  " +
+                "Greetings for the day! \n" +
+                "You re been invited for bidding.Kindly go through the link to start the process of bidding \n"+
+                "http://workpro.stackroute.io/#/projectDetailsComponent/"+projectID+"/"+email );
+
+
+
 
         generatemailApplication.sendmail(emailmessage);
         return "Email sent successfully";
     }
 
 
-    
 }

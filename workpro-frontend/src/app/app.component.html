@@ -1,47 +1,12 @@
 <!--The content below is only a placeholder and can be replaced.-->
 <!--Navbar -->
-<nav class="navbar-expand-md navbar navbar-dark secondary-color lighten-1  row">
+<nav
+  class="mb-0 navbar navbar-expand-lg navbar navbar-expand-lg navbar-dark secondary-color lighten-1"
+>
   <button mat-icon-button (click)="drawer.toggle()">
     <span class="navbar-toggler-icon "></span>
   </button>
-
-  <a
-    class="navbar-brand ml-2 col-sm-2
-  "
-    href="#"
-    >WorkPro</a
-  >
-  <!-- <button
-    class="navbar-toggler"
-    type="button"
-    data-toggle="collapse"
-    data-target="#navbarSupportedContent-555"
-    aria-controls="navbarSupportedContent-555"
-    aria-expanded="true"
-    aria-label="Toggle navigation"
-  > -->
-  <!-- <span class="navbar-toggler-icon"></span> -->
-  <!-- </button> -->
-  <!-- <div class="navbar navbar-expand-lg navbar-dark bg-light"> -->
-  <div *ngIf="!isLogin; else elseBlock2" class="d-flex justify-content-end">
-    <ul class="navbar-nav mr-auto d-flex justify-content-end">
-      <li class="nav-item ">
-        <a class="nav-link" [routerLink]="['/register']">Register</a>
-      </li>
-
-      <li class="nav-item">
-        <a class="nav-link" [routerLink]="['/login']">Login</a>
-      </li>
-    </ul>
-  </div>
-  <!-- </div> -->
-  <ng-template #elseBlock2>
-    <ul class="navbar-nav mr-auto">
-      <li class="nav-item">
-        <a class="nav-link" (click)="logout()">Logout</a>
-      </li>
-    </ul>
-  </ng-template>
+  <a class="navbar-brand ml-2" href="#">WorkPro</a>
 </nav>
 
 <mat-sidenav-container class="example-container">
@@ -54,7 +19,22 @@
           style="margin-bottom:10px"
         />
       </div>
+      <br /><br />
       <mat-divider></mat-divider>
+
+      <div *ngIf="!isLogin">
+        <mat-nav-list>
+          <mat-list-item>
+            <a class="nav-link" [routerLink]="['/register']">Register</a>
+          </mat-list-item>
+          <mat-list-item>
+            <a class="nav-link" [routerLink]="['/login']">Login</a>
+          </mat-list-item>
+          <mat-list-item>
+            <a class="nav-link" href="#">About Us</a>
+          </mat-list-item>
+        </mat-nav-list>
+      </div>
 
       <div *ngIf="role == 'ADMIN'; else elseBlock">
         <mat-nav-list style="margin-top: 40px">
@@ -71,8 +51,9 @@
           <mat-list-item>
             <a class="nav-link" routerLink="poprofile">My Profile</a>
           </mat-list-item>
+
           <mat-list-item>
-            <a class="nav-link" routerLink="editpoprofile">Edit Profile</a>
+            <a class="nav-link" routerLink="" (click)="logout()">Logout</a>
           </mat-list-item>
         </mat-nav-list>
       </div>
@@ -81,34 +62,21 @@
         <div *ngIf="role == 'USER'; else elseBlock1">
           <mat-nav-list>
             <mat-list-item>
-              <a class="nav-link" [routerLink]="['/userdashboard']"
-                >Userdashboard</a
-              >
+              <a class="nav-link" routerLink="userdashboard">Userdashboard</a>
             </mat-list-item>
 
             <mat-list-item>
-              <a class="nav-link" [routerLink]="['/freelancerprofile']"
-                >My Profile</a
-              >
+              <a class="nav-link" routerLink="freelancerprofile">My Profile</a>
             </mat-list-item>
 
             <mat-list-item>
-              <a class="nav-link" [routerLink]="['/mybids']">My Bids</a>
+              <a class="nav-link" routerLink="mybids">My Bids</a>
             </mat-list-item>
-
-            <!-- <mat-list-item>
-              <a class="nav-link" routerLink="freelancerdetails">Freelancer Details Form</a>
-            </mat-list-item> -->
+            <mat-list-item>
+              <a class="nav-link" routerLink="" (click)="logout()">Logout</a>
+            </mat-list-item>
           </mat-nav-list>
         </div>
-      </ng-template>
-
-      <ng-template #elseBlock1>
-        <mat-nav-list>
-          <mat-list-item>
-            <a class="nav-link" href="#">About Us</a>
-          </mat-list-item>
-        </mat-nav-list>
       </ng-template>
     </div>
   </mat-drawer>

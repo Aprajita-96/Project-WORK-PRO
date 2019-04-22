@@ -196,7 +196,7 @@ public class ProjectDetailsController {
         {
             String desc=details.getProjectDescription();
             String b=details.getProjectId();
-            p.setProjectDescription(b);
+            p.setProjectDescription(desc);
             p.setProjectId(b);
             for(String skillsFromProjectOwner:details.getSkillsSetList())
             {

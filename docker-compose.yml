@@ -204,6 +204,8 @@ services:
     build: rrecommendation-service/
     restart: always
     network_mode: "host"
+    expose:
+      - 8075
     hostname: localhost
     ports:
       - 8075:8075

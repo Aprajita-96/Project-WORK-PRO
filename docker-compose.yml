@@ -200,7 +200,7 @@ services:
     environment:
       - NEO4J_AUTH=neo4j/1234
 
-  Recommendation-Service:
+  recommendation-Service:
     build: recommendation-service/Recommendation-Service/
     image: recommendation-service/Recommendation-Service
     restart: always

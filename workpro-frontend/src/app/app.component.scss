@@ -2,11 +2,16 @@
   background-color: #122c34;
   max-height: 10%;
   display: flex;
+  border-radius: 0;
+  
 }
 
-.nav-pills .nav-link.active {
-  background-color: #222222;
+.example-sidenav{
+  overflow: hidden;
 }
+// .nav-pills .nav-link.active {
+//   background-color: #222222;
+// }
 div {
   // border-right: 1px solid rgb(168, 168, 180);
   height: 100%;
@@ -45,7 +50,6 @@ mat-drawer {
 
 a:hover{
   color: #85B5AD;
-
 }
 
 .navbar-toggler-icon {

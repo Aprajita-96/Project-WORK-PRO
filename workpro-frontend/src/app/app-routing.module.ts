@@ -21,8 +21,10 @@ import { ProjectOwnerProfileComponent } from './project-owner-profile/project-ow
 import { ProjectDetailsViewComponent } from './project-details-view/project-details-view.component';
 import { SearchComponentComponent } from './search-component/search-component.component';
 import { AuthGuard } from './auth-guard';
-import { CanActivate } from '@angular/router/src/utils/preactivation';
 import { AuthGuard1Guard } from './auth-guard1.guard';
+import { Authguard2Guard } from './authguard2.guard';
+import { InviteFreelancerComponent } from './invite-freelancer/invite-freelancer.component';
+import { Authguard3Guard } from './authguard3.guard';
 const routes: Routes = [
 
   {
@@ -31,44 +33,52 @@ const routes: Routes = [
   },
   {
     path: "detailsview/:id/:email",
-    component: ProjectDetailsViewComponent
+    component: ProjectDetailsViewComponent,
+    // canActivate:[Authguard2Guard,AuthGuard1Guard,AuthGuard]
   },
   {
     path: "detailsview",
-    component: ProjectDetailsViewComponent
+    component: ProjectDetailsViewComponent,
+    // canActivate:[Authguard2Guard,AuthGuard1Guard,AuthGuard]
   },
   {
     path: "poprofile",
     component: ProjectOwnerProfileComponent,
-    // canActivate: [AuthGuard1Guard,AuthGuard]
+    canActivate: [AuthGuard1Guard,AuthGuard]
   },
   {
     path: "editpoprofile",
-    component: EditProjectOwnerProfileComponent
+    component: EditProjectOwnerProfileComponent,
+    canActivate: [AuthGuard1Guard]
   },
   {
     path: "freelancerprofile",
     component: FreelancerprofileComponent,
+    canActivate:[AuthGuard,Authguard2Guard]
   },
   
     {
       path: "freelancerprofile/:email",
       component: FreelancerprofileComponent,
+      canActivate:[AuthGuard1Guard]
     },
   
   {
     path: "editfreelancerprofile",
     component: EditfreelancerProfileComponent,
-    // canActivate: [AuthGuard]
+    canActivate:[AuthGuard,Authguard2Guard]
+    
   },
   {
     path: '',
     component: HomeComponent,
+    canActivate:[Authguard3Guard]
   },
   {
     path: "projectDetailsComponent/:id/:email",
     component: ProjectDetailsComponent,
-    // canActivate: [AuthGuard]
+  
+  
   },
 
   {
@@ -77,17 +87,20 @@ const routes: Routes = [
   },
   {
     path: "register",
-    component: RegisterComponent
+    component: RegisterComponent,
+    canActivate:[Authguard3Guard]
+
   },
   {
     path: "login",
     component: LoginComponent,
-    // canActivate: [AuthGuard]
+    canActivate:[Authguard3Guard]
+   
   },
   {
     path: "userdashboard",
     component: UserDashboardComponent,
-    // canActivate:[AuthGuard]
+    canActivate:[AuthGuard,Authguard2Guard]
   },
   {
     path: 'projectDetailFormComponent',
@@ -95,22 +108,24 @@ const routes: Routes = [
   },
   {
     path: "freelancerdetails",
-    component: FreelancerdetailsComponent
+    component: FreelancerdetailsComponent,
+    canActivate:[AuthGuard,Authguard2Guard]
   },
   {
     path: "podashboard",
     component: ProjectOwnerDashboardComponent,
-    // canActivate:[AuthGuard]
+    canActivate:[AuthGuard,AuthGuard1Guard]
 
   },
   {
     path: "mybids",
-    component: MybidsComponent
+    component: MybidsComponent,
+    canActivate:[Authguard2Guard]
   },
-  {
-    path: "projectOwnerDetails",
-    component: ProductownerprofileComponent,
-  },
+  // {
+  //   path: "projectOwnerDetails",
+  //   component: ProductownerprofileComponent
+  // },
   // {
   //   path: "projectownerdashboard",
   //   component: ProjectOwnerDashboardComponent,
@@ -124,6 +139,10 @@ const routes: Routes = [
     path: "freelancerprofile/:id",
     component: FreelancerprofileComponent
   },
+  {
+    path:"invitefreelancer/:id",
+    component:InviteFreelancerComponent
+  }
 
 
 ];

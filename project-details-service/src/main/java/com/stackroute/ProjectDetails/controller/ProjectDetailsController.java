@@ -1,6 +1,7 @@
 package com.stackroute.ProjectDetails.controller;
 
 
+import com.fasterxml.jackson.databind.ObjectMapper;
 import com.stackroute.ProjectDetails.domain.*;
 import com.stackroute.ProjectDetails.exceptions.UnauthorizedException;
 import com.stackroute.ProjectDetails.listener.Producer;
@@ -15,6 +16,7 @@ import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
+import org.springframework.web.client.RestTemplate;
 
 import javax.servlet.http.HttpServletRequest;
 import java.util.ArrayList;
@@ -183,7 +185,38 @@ public class ProjectDetailsController {
                 }
             }
         }
-        producer.sendProjectDetails(projectsOfProjectOwner);
+
+
+        ProduceProject p = new ProduceProject();
+       // p.setProjectId(projectsOfProjectOwner.getProjectOwnerEmailId());
+        String a = "";
+
+
+        for(ProjectDetails details: projectsOfProjectOwner.getProjectDetailsList())
+        {
+            String b=details.getProjectId();
+            p.setProjectId(b);
+            for(String skillsFromProjectOwner:details.getSkillsSetList())
+            {
+
+                System.out.println(skillsFromProjectOwner);
+                a = a + skillsFromProjectOwner + " ";
+//                System.out.println(a);
+//                p.getSkillsSetList().add(skillsFromProjectOwner);
+
+            }
+        }
+
+
+        System.out.println(a);
+        p.setSkillsSetList(a);
+
+//        p.setSkillsSetList();
+        this.postToRecommendationService(p);
+//        System.out.println(projectsOfProjectOwner);
+
+        System.out.println("Producing -----------------------------");
+
         return new ResponseEntity<String>("Project owner adds a project", HttpStatus.OK);
     }
 
@@ -258,5 +291,16 @@ public class ProjectDetailsController {
             }
         }
         return new ResponseEntity<String>("Project Not Found", HttpStatus.OK);
+    }
+
+    public static void postToRecommendationService(ProduceProject message) {
+//
+//        ObjectMapper Obj = new ObjectMapper();
+//        String a = Obj.writeValueAsString(message)
+
+        RestTemplate  rest = new RestTemplate();
+        String  url = "http://localhost:8075/api/v1/project/projectDetailService";
+        String a = rest.postForObject(url, message,  String.class);
+
     }
 }

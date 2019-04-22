@@ -50,9 +50,11 @@ public class FreelancerController {
     }
 
 
+//    freelancer registers for the first time
     @PostMapping("/freelancerprofile/postDetails")
     public ResponseEntity<?> postDetail(@RequestBody Freelancer newfreelancer) {
-        freelancerService.save(newfreelancer);
+        freelancer = freelancerService.save(newfreelancer);
+
 
 
         for (String string : newfreelancer.getSkills()) {
@@ -102,7 +104,8 @@ public class FreelancerController {
             }
 
         }
-//        producer.sendFreelancer(freelancer);
+        System.out.println(freelancer);
+        producer.sendFreelancer(freelancer);
         return new ResponseEntity<String>("here", HttpStatus.OK);
     }
 

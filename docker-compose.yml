@@ -200,6 +200,7 @@ services:
     environment:
       - NEO4J_AUTH=none
 
+
   recommendation-service:
     build: rrecommendation-service/
     restart: always

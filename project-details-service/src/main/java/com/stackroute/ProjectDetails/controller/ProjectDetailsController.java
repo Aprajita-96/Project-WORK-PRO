@@ -301,7 +301,7 @@ public class ProjectDetailsController {
 //        String a = Obj.writeValueAsString(message)
 
         RestTemplate  rest = new RestTemplate();
-        String  url = "http://13.234.155.75:8075/api/v1/project/projectDetailService";
+        String  url = "http://localhost:8075/api/v1/project/projectDetailService";
         String a = rest.postForObject(url, message,  String.class);
 
     }

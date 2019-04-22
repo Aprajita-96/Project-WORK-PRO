@@ -20,11 +20,11 @@ services:
 
   Recommendation-Service:
     build: .
-    image: Recommendation-Service
+    image: recommendation-service/Recommendation-Service
     restart: always
     network_mode: "host"
     hostname: localhost
     ports:
-      - 8095:8095
+      - 8075:8075
     depends_on:
       - neo4j

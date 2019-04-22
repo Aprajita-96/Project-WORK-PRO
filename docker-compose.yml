@@ -198,7 +198,8 @@ services:
       - /data/neo4j:/data
       - /data/neo4j/import:/import
     environment:
-      - NEO4J_AUTH=neo4j/pass
+      - NEO4J_AUTH=none
+
 
   recommendation-service:
     build: rrecommendation-service/

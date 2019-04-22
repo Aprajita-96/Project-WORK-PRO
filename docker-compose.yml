@@ -202,7 +202,6 @@ services:
 
   recommendation-Service:
     build: recommendation-service/rrecommendation-Service/
-    image: recommendation-service/rrecommendation-Service
     restart: always
     network_mode: "host"
     hostname: localhost

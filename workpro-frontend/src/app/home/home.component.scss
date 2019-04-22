@@ -79,69 +79,9 @@ a:focus {
       rgba(255, 255, 255, 0) 65%, rgba(38, 38, 38, 0.1) 65.1%,
       rgba(38, 38, 38, 0.1));
 }
-
-.jumbotron-primary{
-  background-color:#3498db;
-  background-image:
-      url("https://i.imgur.com/2o6cukD.png"),
-      linear-gradient(165deg,
-      rgba(255, 255, 255, 0),
-      rgba(255, 255, 255, 0) 65%, rgba(38, 38, 38, 0.1) 65.1%,
-      rgba(38, 38, 38, 0.1))
-  ;
-  color:#ffffff;
-}
-
-.jumbotron-success{
-  background-color:#2ecc71;
-  background-image:
-      url("https://i.imgur.com/2o6cukD.png"),
-      linear-gradient(165deg,
-      rgba(255, 255, 255, 0),
-      rgba(255, 255, 255, 0) 65%,
-      rgba(38, 38, 38, 0.1) 65.1%,
-      rgba(38, 38, 38, 0.1));
-      color:#ffffff;
-}
-
-.jumbotron-info{
-  background-color:#9b59b6;
-  background-image:
-      url("https://i.imgur.com/2o6cukD.png"),
-      linear-gradient(165deg, rgba(255, 255, 255, 0),
-      rgba(255, 255, 255, 0) 65%, rgba(38, 38, 38, 0.1) 65.1%,
-      rgba(38, 38, 38, 0.1));
-  color:#ffffff;
-}
-
-.jumbotron-warning{
-  background-color:#f39c12;
-  background-image:
-      url("https://i.imgur.com/2o6cukD.png"),
-      linear-gradient(165deg,
-      rgba(255, 255, 255, 0),
-      rgba(255, 255, 255, 0) 65%,
-      rgba(38, 38, 38, 0.1) 65.1%,
-      rgba(38, 38, 38, 0.1));
-  color:#ffffff;
-}
-
 .img-responsive{
  height:450px;
 }
-.jumbotron-danger{
-  background-color:#e74c3c;
-  background-image:
-      url("https://i.imgur.com/5BUTk9z.png"),
-      linear-gradient(165deg,
-      rgba(255, 255, 255, 0),
-      rgba(255, 255, 255, 0) 65%,
-      rgba(38, 38, 38, 0.1) 65.1%,
-      rgba(38, 38, 38, 0.1));
-  color:#ffffff;
-}
-
-
 h1{
     
   text-align: center;
@@ -154,10 +94,6 @@ height: 80%;
   position:center;
 }
 #searchForm {
-// position:absolute;
-//     top:60%;
-//     left: 35%;
-//     border-radius: 2px;
 top: 60%;
     position: absolute;
     height: 100%;
@@ -171,13 +107,6 @@ top: 60%;
   width: 33%;
 }
 .carousel-caption{
-  // position: absolute;
-  // left: 5%;
-  // bottom: 80%;
-  // right: auto;
-  // color: #fff;
-  // font-family: Canela Deck Web;
-  // font-weight: bolder;
   font-size: -webkit-xxx-large;
   bottom: 103%;
 }
@@ -220,16 +149,16 @@ $cards-per-line: (
   text-align: center;
 font-size: 48px;
 font-weight: bold;
-text-decoration: underline;
+text-decoration: none;
 background-color: yellow;
 }
 .TopProjects{
-  font-family: Canela Deck Web;
+  font-family: Arial, Helvetica, sans-serif;
   color: #012f43;
   text-align: center;
 font-size: 48px; 
 font-weight: bold;  
-text-decoration: underline;
+text-decoration: none;
 
 }
 html{
@@ -310,12 +239,15 @@ border-top:1px solid #ccc;
 .our-team {
   padding: 30px 0 40px;
   margin-bottom: 30px;
-  background-color: #f7f5ec;
+  background-color: #FFFFFF;
   text-align: center;
   overflow: hidden;
   position: relative;
   margin-top: 20px;
+  // box-shadow: 2px 2px 2px 2px rgba(0, 0, 0, 0.55);
+  box-shadow: 1px 1px 1px 1px #5bc0de;
 }
+
 
 .our-team .picture {
   display: inline-block;
@@ -405,41 +337,16 @@ border-top:1px solid #ccc;
     border-radius:7px;
 }
 
-.project-default {    border-color: #999999; }
-.project-default .shape{
-	border-color: transparent #999999 transparent transparent;
-	border-color: rgba(255,255,255,0) #999999 rgba(255,255,255,0) rgba(255,255,255,0);
-}
 
-.project-danger {    border-color:red; }
-.project-danger .shape{
-	border-color: transparent red transparent transparent;
-	border-color: rgba(255,255,255,0) red rgba(255,255,255,0) rgba(255,255,255,0);
-}
-
-.project-success {	border-color:green; }
-.project-success .shape{
-	border-color: transparent green transparent transparent;
-	border-color: rgba(255,255,255,0) green rgba(255,255,255,0) rgba(255,255,255,0);
-}
-
-.project-primary {	border-color: #428bca; }
-.project-primary .shape{
-	border-color: transparent #428bca transparent transparent;
-	border-color: rgba(255,255,255,0) #428bca rgba(255,255,255,0) rgba(255,255,255,0);
-}
 
 .project-info {	border-color: #5bc0de; }
+
 .project-info .shape{
 	border-color: transparent #5bc0de transparent transparent;
 	border-color: rgba(255,255,255,0) #5bc0de rgba(255,255,255,0) rgba(255,255,255,0);
 }
 
-.project-warning {	border-color: #f0ad4e; }
-.project-warning .shape{
-	border-color: transparent #f0ad4e transparent transparent;
-	border-color: rgba(255,255,255,0) #f0ad4e rgba(255,255,255,0) rgba(255,255,255,0);
-}
+
 
 .project-content {
     padding:0 20px 10px;

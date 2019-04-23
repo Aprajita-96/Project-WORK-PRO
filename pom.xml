@@ -35,6 +35,7 @@
 		<module>freelancer-profile-service</module>
 		<module>project-details-service</module>
 		<module>project-owner-profile-service</module>
+		<module>rrecommendation-service</module>
 	</modules>
 
 	<dependencies>

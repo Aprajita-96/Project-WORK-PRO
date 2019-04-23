@@ -1,6 +1,6 @@
 
-<!-- Banner with search bar -->
-<div class="heroBanner">
+
+<!-- <div class="heroBanner">
   <div class="jumbotron-unstyled">
     <div class="jumbotron" style="background-image: url('../../assets/images/banner.jpg')">
       <div class="container-fluid">
@@ -36,25 +36,39 @@
 </div>
 <!-- Banner with search bar -->
 
-<div *ngIf="isSearch">
-    <div class="container">
-        <div class="row">
-          <div *ngFor="let project of recommendedProjects" class="card col-md-12 p-3">
-            <div class="row ">
-              <div class="col-md-8">
-                <div class="card-block">
-                  <h6 class="card-title">{{project.projectName}}</h6>
-                  <p class="card-text text-justify">{{project.projectDescription}}</p>
-                  <p class="card-text1" style="color: blue">{{project.skillsSetList}}</p>
-                  <button  class="card-link btn btn-primary" routerLink="/projectDetailsComponent/{{project.projectId}}/{{project.projectOwnerEmailId}}">Details</button>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-    </div>
+<link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
+<script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+<!------ Include the above in your HEAD tag ---------->
 
-</div>
+<link href="//fonts.googleapis.com/css?family=Hind" rel="stylesheet" type="text/css">
+<link href="//fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet" type="text/css">
+<link href="//fonts.googleapis.com/css?family=Montserrat" rel="stylesheet" type="text/css">
+<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+
+<div class="jumbotron jumbotron-dark">
+  <div class="container">
+  <div class="col-lg-5">
+  
+  <h2>Hire expert freelancers for any job, online</h2>
+  <h4>
+      Millions of small businesses use Freelancer to turn their ideas into reality.
+  </h4>
+  <p class="lead">We make Things Happen!</p>
+  <div class="input-group">
+  <input type="text" class="form-control" placeholder="Search for Projects" name="search" #search type="search">
+  <span class="input-group-btn">
+  <button class="btn btn-primary" type="button" (click)="searchProject(search.value)">Search</button>
+  </span>
+  </div>
+  <br>
+  
+  </div>
+  <div class="col-lg-6">
+      <img class="img-responsive" src="../assets/images/img1.png/">
+  </div>
+  </div>
+  </div>
 
 <div class="container">
   <div *ngFor="let project of projects">

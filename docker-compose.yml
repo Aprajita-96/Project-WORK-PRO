@@ -172,7 +172,7 @@ services:
     image: prom/node-exporter:latest
     ports:
       - "9100:9100"
-    network_mode: host
+    network_mode: "host"
 
   grafana:
     image: grafana/grafana
@@ -180,3 +180,34 @@ services:
        - "3000:3000"
     depends_on:
        - prom
+    network_mode: "host"
+    hostname: localhost
+
+  neo4j:
+    image: neo4j:3.5.3
+    ports:
+      - 7474:7474
+      - 7687:7687
+
+    container_name: neo4j_docker
+    network_mode: "host"
+    hostname: localhost
+    restart: always
+    volumes:
+      - /data/neo4j/data:/data
+      - /data/neo4j/import:/import
+    environment:
+      - NEO4J_AUTH=none
+
+
+  recommendation-service:
+    build: rrecommendation-service/
+    restart: always
+    network_mode: "host"
+    expose:
+      - 8075
+    hostname: localhost
+    ports:
+      - 8075:8075
+    depends_on:
+      - neo4j

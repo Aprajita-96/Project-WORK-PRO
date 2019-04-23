@@ -27,6 +27,7 @@ export class FreelancerprofileComponent implements OnInit {
     this.freelancerdetails.getDetailsOfFreelancers(this.email).subscribe(data=>{
       console.log(data);
       this.profile=data;
+      
     });
   }
   else

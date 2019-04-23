@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { FreelancerserviceService } from "../freelancerservice.service";
 import { ProductownerdetailsService } from '../productownerdetails.service';
+import { RecommendationService } from '../recommendation.service';
+import { FreelancerDetailsService } from '../freelancer-details.service';
 
 @Component({
   selector: 'app-user-dashboard',
@@ -9,12 +11,44 @@ import { ProductownerdetailsService } from '../productownerdetails.service';
 })
 export class UserDashboardComponent implements OnInit {
 
-  constructor(private projectService: ProductownerdetailsService ) { }
+  constructor(private projectService: ProductownerdetailsService,private recommendation:RecommendationService,private freelancerdetails:FreelancerDetailsService ) { }
   projects;
+  skill:any;
+  recommendedProjects:any;
+  profile:any=[];
+  isSearch:boolean=true
+  // skills:String
+  
 
    ngOnInit() {
+     var skills = new String();
+    this.freelancerdetails.getDetailsOfFreelancers(localStorage.getItem('email')).subscribe(data=>{
+      console.log(data);
+      this.profile=data;
+      this.skill=this.profile.skills;
+      console.log(this.skill)
+      let lastindex=this.skill.length;
+     
+      for(var i of this.skill){
+        let indexof=this.skill.lastIndexOf(i)
+        if(indexof===lastindex-1){
+        skills=skills.concat(i)
+        }
+        else{
+          skills=skills.concat(i+",")
+        }
+        
+
+      }
+      console.log(skills)
+     this.recommendation.getAllProjectRecommendation(skills).subscribe(data=>{
+      this.recommendedProjects=data
+      console.log(this.recommendedProjects)
+     })
+    });
 }
 searchProject(skill) {
+  this.isSearch=false;
   this.projectService.getResults(skill).subscribe((data: any) => {
     console.log(data)
     this.projects = data;

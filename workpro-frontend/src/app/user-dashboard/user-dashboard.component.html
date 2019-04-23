@@ -36,7 +36,23 @@
 </div>
 <!-- Banner with search bar -->
 
-<div>
+<div *ngIf="isSearch">
+    <div class="container">
+        <div class="row">
+          <div *ngFor="let project of recommendedProjects" class="card col-md-12 p-3">
+            <div class="row ">
+              <div class="col-md-8">
+                <div class="card-block">
+                  <h6 class="card-title">{{project.projectName}}</h6>
+                  <p class="card-text text-justify">{{project.projectDescription}}</p>
+                  <p class="card-text1" style="color: blue">{{project.skillsSetList}}</p>
+                  <button  class="card-link btn btn-primary" routerLink="/projectDetailsComponent/{{project.projectId}}/{{project.projectOwnerEmailId}}">Details</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+    </div>
 
 </div>
 

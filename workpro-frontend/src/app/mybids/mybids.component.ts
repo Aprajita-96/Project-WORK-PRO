@@ -12,15 +12,18 @@ export class MybidsComponent implements OnInit {
   projects1:any=[];
   projects=[];
   email:String;
+  wonProjects:any=[]
   constructor(private freelancerdetails:FreelancerDetailsService,private loginauth:LoginAuthService) { }
   @Input()
   ngOnInit() {
-    // this.filterOpenBids();
    this.email=localStorage.getItem("email");
     this.freelancerdetails.getBidsofFreelancer(this.email).subscribe(data=>{
       this.projects1=data;
       console.log(this.projects1);
       this.projects=this.projects1;
+    });
+    this.freelancerdetails.getAwardedBids(this.email).subscribe(data=>{
+      this.wonProjects=data;         
     });
     
   }
@@ -41,60 +44,8 @@ export class MybidsComponent implements OnInit {
     });
   }
   filterWonBids() {
-    this.freelancerdetails.getAwardedBids(this.email).subscribe(data=>{
-      this.projects1=data;
-      this.projects=this.projects1;      
-    });
+    this.projects=this.wonProjects
+    
   }
  
-  // projects1 = [
-  //   {
-  //     projectName: "Project1",
-  //     freeLanceremail:"someemail@gmail.com",
-  //     bidAmount: 23323,
-  //     duration: "33",
-  //     status: "close",
-  //     awarded: true
-  //   },
-  //   {
-  //     projectName: "Project2",
-  //     freeLanceremail:"someemail@gmail.com",
-  //     bidAmount: 23323,
-  //     duration: "33",
-  //     status: "open",
-  //     awarded: false
-  //   },
-  //   {
-  //     projectName: "Project3",
-  //     freeLanceremail:"someemail@gmail.com",
-  //     bidAmount: 23323,
-  //     duration: "33",
-  //     status: "close",
-  //     awarded: true
-  //   },
-  //   {
-  //     projectName: "Project4",
-  //     freeLanceremail:"someemail@gmail.com",
-  //     bidAmount: 23323,
-  //     duration: "33",
-  //     status: "open",
-  //     awarded: false
-  //   },
-  //   {
-  //     projectName: "Project5",
-  //     freeLanceremail:"someemail@gmail.com",
-  //     bidAmount: 23323,
-  //     duration: "33",
-  //     status: "open",
-  //     awarded: false
-  //   },
-  //   {
-  //     projectName: "Project6",
-  //     freeLanceremail:"someemail1@gmail.com",
-  //     bidAmount: 23323,
-  //     duration: "33",
-  //     status: "open",
-  //     awarded: false
-  //   }
-  // ];
 }

@@ -10,10 +10,10 @@ import { FreelancerserviceService } from '../freelancerservice.service';
 })
 export class UsercardProjectOwnerDashboardComponent implements OnInit {
   @Input() freelancer;
-  constructor(private search:FreelancerserviceService) { }
- arraySearch:any=[];
+  constructor(private search: FreelancerserviceService) { }
+  arraySearch: any = [];
   ngOnInit() {
- 
+
   }
 
 }

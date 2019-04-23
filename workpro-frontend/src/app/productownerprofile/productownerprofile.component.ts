@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FreelancerDetailsService} from '../freelancer-details.service';
+import { FreelancerDetailsService } from '../freelancer-details.service';
 import { Router } from '@angular/router'
 
 @Component({
@@ -8,15 +8,12 @@ import { Router } from '@angular/router'
   styleUrls: ['./productownerprofile.component.scss']
 })
 export class ProductownerprofileComponent implements OnInit {
-  productowner:any={};
-  constructor(private po:FreelancerDetailsService, private router:Router) { }
+  productowner: any = {};
+  constructor(private po: FreelancerDetailsService, private router: Router) { }
 
   ngOnInit() {
   }
-  save(productowner){
-    console.log(productowner);
-    console.log("user details entered")
-    // this.po.setDetailsofProductOwner(productowner).subscribe(console.log);
+  save(productowner) {
     this.router.navigateByUrl('projectownerdashboard')
   }
 

@@ -3,12 +3,12 @@ import { NgModule } from "@angular/core";
 import { MatSidenavModule } from "@angular/material/sidenav";
 import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
 import { MatButtonModule } from "@angular/material/button";
-import {MatListModule} from '@angular/material/list';
-import {MatDividerModule} from '@angular/material/divider';
-import {MatStepperModule} from '@angular/material/stepper';
-import {MatFormFieldModule} from '@angular/material/form-field';
-import {MatInputModule} from '@angular/material';
-import {MatDialogModule} from '@angular/material';
+import { MatListModule } from '@angular/material/list';
+import { MatDividerModule } from '@angular/material/divider';
+import { MatStepperModule } from '@angular/material/stepper';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatInputModule } from '@angular/material';
+import { MatDialogModule } from '@angular/material';
 
 
 import { AppRoutingModule } from './app-routing.module';
@@ -67,7 +67,7 @@ import { InviteFreelancerComponent } from './invite-freelancer/invite-freelancer
     UsercardProjectOwnerDashboardComponent,
     MyprojectsComponent,
     ProjectCardProductOwnerMyprojectComponent,
-    HomeComponent,EditfreelancerProfileComponent,
+    HomeComponent, EditfreelancerProfileComponent,
     FreelancerprofileComponent,
     EditProjectOwnerProfileComponent,
     ProjectOwnerProfileComponent,
@@ -78,7 +78,7 @@ import { InviteFreelancerComponent } from './invite-freelancer/invite-freelancer
     BidviewComponent,
     SearchComponentComponent,
     InviteFreelancerComponent,
-    
+
   ],
   imports: [
     BrowserModule,
@@ -109,5 +109,5 @@ import { InviteFreelancerComponent } from './invite-freelancer/invite-freelancer
   entryComponents: [ViewProfileDailogComponent, BidviewComponent],
   bootstrap: [AppComponent]
 })
-export class AppModule {}
+export class AppModule { }
 

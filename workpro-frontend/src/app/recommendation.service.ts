@@ -6,15 +6,15 @@ import { HttpClient } from '@angular/common/http';
 })
 export class RecommendationService {
 
-  constructor(private http:HttpClient) { }
+  constructor(private http: HttpClient) { }
 
-  getAllFreelancerRecommendation(value:any){
-    return this.http.get("http://13.234.155.75:8080/recommendations/api/v1/recommendations/allfreelancer/Skill/"+value);
+  getAllFreelancerRecommendation(value: any) {
+    return this.http.get("http://13.234.155.75:8080/recommendations/api/v1/recommendations/allfreelancer/Skill/" + value);
   }
 
-  getAllProjectRecommendation(value:any){
-    return this.http.get("http://13.234.155.75:8080/recommendations/api/v1/recommendations/allProjects/Skill/"+value);
-  
+  getAllProjectRecommendation(value: any) {
+    return this.http.get("http://13.234.155.75:8080/recommendations/api/v1/recommendations/allProjects/Skill/" + value);
+
   }
 
 }

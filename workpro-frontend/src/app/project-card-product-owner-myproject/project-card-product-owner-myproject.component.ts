@@ -7,9 +7,9 @@ import { MyprojectsComponent } from "../myprojects/myprojects.component";
   styleUrls: ["./project-card-product-owner-myproject.component.scss"]
 })
 export class ProjectCardProductOwnerMyprojectComponent implements OnInit {
-  constructor() {}
+  constructor() { }
   @Input() project;
-  ngOnInit() {}
+  ngOnInit() { }
 }
 
 

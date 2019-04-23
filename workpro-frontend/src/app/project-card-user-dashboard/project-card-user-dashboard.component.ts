@@ -1,4 +1,4 @@
-import { Component, OnInit, Input  } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import { FreelancerserviceService } from '../freelancerservice.service';
 import { ProductownerdetailsService } from '../productownerdetails.service';
 @Component({
@@ -9,12 +9,10 @@ import { ProductownerdetailsService } from '../productownerdetails.service';
 export class ProjectCardUserDashboardComponent implements OnInit {
 
   @Input() project;
-  
-  constructor(private search: ProductownerdetailsService ) { }
-  arraySearch:any=[];
+
+  constructor(private search: ProductownerdetailsService) { }
+  arraySearch: any = [];
   ngOnInit() {
-      
-  
-    
+
   }
 }

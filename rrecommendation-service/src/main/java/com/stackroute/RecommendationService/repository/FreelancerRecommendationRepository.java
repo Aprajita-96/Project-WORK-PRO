@@ -11,7 +11,7 @@ import java.util.List;
 
 @Repository
 public interface FreelancerRecommendationRepository extends Neo4jRepository<Freelancers,String> {
-    @Query("MATCH (f:Freelancers),(s:Field) where s.name=({skillName}) match(s)<-[:hasSkill]-(f) RETURN f LIMIT 10")
+    @Query("MATCH (f:Freelancers),(s:Field) where s.name=({skillName}) match(s)<-[:hasSkill]-(f) RETURN f LIMIT 1000")
     List<Freelancers> findBySkills(String skillName);
     //The above method gives all freelancers who has the desired skill'
     @Query("CREATE (f:Freelancers{EmailId:({EmailId})})")

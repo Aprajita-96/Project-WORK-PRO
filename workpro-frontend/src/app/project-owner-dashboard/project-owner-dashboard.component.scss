@@ -41,10 +41,20 @@ h1 {
 .img-responsive {
   height: 450px;
 }
-// .input-group{
-//   position: initial;
-// }
+.input-group{
+  position: initial;
+}
 
 .form-control{
   position: initial!important;
+}
+
+.TopFreelancers{
+  font-family: 'Roboto';
+  color: dimgrey;
+  text-align: center;
+font-size: 48px;
+font-weight: lighter;
+text-decoration: none;
+// background-color: yellow;
 }

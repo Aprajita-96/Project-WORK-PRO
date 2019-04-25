@@ -32,14 +32,14 @@
   </div>
 </div>
 
-<div *ngIf="isSearch">
+<div *ngIf="isSearch; else elseBlock1">
     <p class="TopProjects">Projects</p>
 
 <div class="container" *ngFor="let project of projectsArray">
     <div class="card-holder">
       <div class="card">
         <div class="card-body">
-          <h3 class="card-title">PROJECT NAME</h3>
+          <h3 class="card-title">{{project.projectName}}</h3>
           <p class="card-text">{{project.projectDescription}}</p>
           <!-- <p class="card-text1" style="color: blue">{{project.skillsSetList}}</p> -->
           <button class="card-link btn btn-primary"
@@ -53,7 +53,7 @@
 
 
 
-
+<ng-template #elseBlock1>
 <div class="container">
     <p class="TopProjects">Projects</p>
   <div *ngFor="let project of projects">
@@ -61,3 +61,4 @@
     <app-project-card-user-dashboard [project]=project></app-project-card-user-dashboard>
   </div>
 </div>
+</ng-template>

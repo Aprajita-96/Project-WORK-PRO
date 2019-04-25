@@ -30,6 +30,6 @@ export class BidviewComponent implements OnInit {
       "status": "open"
     }
     this.freelancerDetailsService.postBids(bidinfo).subscribe(console.log);
-    this.router.navigateByUrl("/mybids");
+    this.router.navigate(['mybids']);
   }
 }

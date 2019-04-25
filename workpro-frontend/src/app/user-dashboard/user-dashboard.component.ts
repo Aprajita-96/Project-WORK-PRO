@@ -42,11 +42,14 @@ export class UserDashboardComponent implements OnInit {
         this.recommendedProjects = data
         for (let i in this.recommendedProjects) {
           let p = this.recommendedProjects[i].p
+          console.log(p)
           let propertyList = p.propertyList
           let Projects1 = {
             "projectOwnerEmailId": propertyList[0].value,
             "projectDescription": propertyList[1].value,
-            "ProjectId": propertyList[2].value
+            "ProjectId": propertyList[2].value,
+            "projectName":propertyList[3].value
+
           }
           this.projectsArray.push(Projects1)
         }

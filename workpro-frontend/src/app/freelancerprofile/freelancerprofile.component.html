@@ -31,8 +31,10 @@
 				<button class="btn btn-light" [routerLink]="['/editfreelancerprofile']">Edit Profile</button>
 			</div>
 			<ng-template #elseBlock>
+					<div class="col-md-2" >
 					<button class="card-link btn btn-warning"
 					routerLink="/invitefreelancer/{{profile.freelancerEmail}}">Invite</button>
+				</div>
 			</ng-template>
 		</div>
 		<div class="row">

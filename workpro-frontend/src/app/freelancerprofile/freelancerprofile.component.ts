@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FreelancerDetailsService } from '../freelancer-details.service';
 import { Params, ActivatedRoute } from '@angular/router';
+import { Profile } from 'selenium-webdriver/firefox';
 
 @Component({
   selector: 'app-freelancerprofile',
@@ -26,6 +27,7 @@ export class FreelancerprofileComponent implements OnInit {
       this.isFreelancer = true;
       this.freelancerdetails.getDetailsOfFreelancers(this.email).subscribe(data => {
         this.profile = data;
+        console.log(this.profile)
 
       });
     }

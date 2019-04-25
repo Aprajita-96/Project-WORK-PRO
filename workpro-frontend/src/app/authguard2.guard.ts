@@ -7,19 +7,19 @@ import { CanActivate, ActivatedRouteSnapshot, RouterStateSnapshot, UrlTree, Rout
 export class Authguard2Guard implements CanActivate {
 
   constructor(private router: Router) { }
-  canActivate(next: ActivatedRouteSnapshot, state: RouterStateSnapshot){
-  if (localStorage.getItem('token')) {
-    if (localStorage.getItem('role') === 'USER') {
-      return true;
+  canActivate(next: ActivatedRouteSnapshot, state: RouterStateSnapshot) {
+    if (localStorage.getItem('token')) {
+      if (localStorage.getItem('role') === 'USER') {
+        return true;
+      }
+      else {
+        this.router.navigate(['/podashboard'])
+        return false;
+      }
     }
-    else {
-      this.router.navigate(['/podashboard'])
-      return false;
-    }    
+    this.router.navigate(['/login']);
+    return false;
   }
-  this.router.navigate(['/login']);
-  return false;
-}
 
-  
+
 }

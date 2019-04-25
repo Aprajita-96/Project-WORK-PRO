@@ -9,19 +9,17 @@ import { ActivatedRoute } from '@angular/router';
 })
 export class SearchComponentComponent implements OnInit {
 
-  id:String;
-  constructor(private projectService: ProductownerdetailsService,private route:ActivatedRoute) { }
+  id: String;
+  constructor(private projectService: ProductownerdetailsService, private route: ActivatedRoute) { }
   projects;
 
   ngOnInit() {
-    this.route.params.subscribe(data=>{
-      this.id=data.id;
-      console.log(this.id)
+    this.route.params.subscribe(data => {
+      this.id = data.id;
     })
     this.projectService.getResults(this.id).subscribe((data: any) => {
-      console.log(data)
       this.projects = data;
     });
-}
+  }
 
 }

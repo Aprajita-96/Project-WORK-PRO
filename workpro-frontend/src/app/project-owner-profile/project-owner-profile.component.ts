@@ -8,16 +8,15 @@ import { ProductownerdetailsService } from '../productownerdetails.service';
 })
 export class ProjectOwnerProfileComponent implements OnInit {
 
-  constructor(private productownerdetails:ProductownerdetailsService) { }
-  email:String
-  profile:any=[];
-  role:String;
+  constructor(private productownerdetails: ProductownerdetailsService) { }
+  email: String
+  profile: any = [];
+  role: String;
   ngOnInit() {
-    this.role=localStorage.getItem("role");
-    this.email=localStorage.getItem("email");
-    this.productownerdetails.getDtailsOfProjectOwner(this.email).subscribe(data=>{
-      this.profile=data;
-      console.log(data)
-  });
-}
+    this.role = localStorage.getItem("role");
+    this.email = localStorage.getItem("email");
+    this.productownerdetails.getDtailsOfProjectOwner(this.email).subscribe(data => {
+      this.profile = data;
+    });
+  }
 }

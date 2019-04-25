@@ -4,9 +4,9 @@ import { FreelancerDetailsService } from '../freelancer-details.service';
 import { Router } from '@angular/router';
 
 @Component({
- selector: 'app-editfreelancer-profile',
- templateUrl: './editfreelancer-profile.component.html',
- styleUrls: ['./editfreelancer-profile.component.scss']
+  selector: 'app-editfreelancer-profile',
+  templateUrl: './editfreelancer-profile.component.html',
+  styleUrls: ['./editfreelancer-profile.component.scss']
 })
 export class EditfreelancerProfileComponent implements OnInit {
 
@@ -22,7 +22,7 @@ export class EditfreelancerProfileComponent implements OnInit {
   details: any = [];
   userPresent: boolean = false;
 
-  constructor(private _formBuilder: FormBuilder, private freelancerDetailsService: FreelancerDetailsService,private route:Router) { }
+  constructor(private _formBuilder: FormBuilder, private freelancerDetailsService: FreelancerDetailsService, private route: Router) { }
 
 
   ngOnInit() {
@@ -42,8 +42,6 @@ export class EditfreelancerProfileComponent implements OnInit {
         this.userPresent = true;
       }
     });
-
-    // console.log(this.addedSkills)
   }
   saveUser() {
 
@@ -54,15 +52,11 @@ export class EditfreelancerProfileComponent implements OnInit {
       "yearsOfExpertise": 1,
       "skills": this.addedSkills
     }
-    console.log(user)
-
     this.freelancerDetailsService.getDetailsOfFreelancers(this.email).subscribe(data => {
       this.details = data;
-
-      console.log(this.details.freelancerEmail, "what is this ????")
       this.freelancerDetailsService.postFreelancerDetails(user).subscribe(data => {
         this.route.navigate(['freelancerprofile']);
-      });     
+      });
     }, (err) => {
       console.log("this is comming here !!!!! look carefully ")
     });
@@ -71,33 +65,24 @@ export class EditfreelancerProfileComponent implements OnInit {
 
   addSkill(skill) {
     this.addedSkills = this.addedSkills || [];
-    console.log(skill)
     this.addedSkills.push(skill)
-    console.log(this.addedSkills)
-
-
   }
 
   removeSkill(skill) {
-    console.log(skill)
     this.addedSkills = this.addedSkills.filter(e => {
-      console.log(e, skill, "this is some va")
       return e !== skill
     })
   }
 
   addPersonalDetails(value) {
-    console.log(value)
     this.personalDetails = value
   }
 
   addEditAddress(value) {
-    console.log(value)
     this.address = value;
   }
 
   addprofessionaldetails(value) {
-    console.log(value)
     this.professionalDetails = this.addedSkills;
   }
 }

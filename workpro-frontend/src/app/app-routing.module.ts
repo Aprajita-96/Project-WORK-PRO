@@ -44,7 +44,7 @@ const routes: Routes = [
   {
     path: "poprofile",
     component: ProjectOwnerProfileComponent,
-    canActivate: [AuthGuard1Guard,AuthGuard]
+    canActivate: [AuthGuard1Guard, AuthGuard]
   },
   {
     path: "editpoprofile",
@@ -54,31 +54,31 @@ const routes: Routes = [
   {
     path: "freelancerprofile",
     component: FreelancerprofileComponent,
-    canActivate:[AuthGuard,Authguard2Guard]
+    canActivate: [AuthGuard, Authguard2Guard]
   },
-  
-    {
-      path: "freelancerprofile/:email",
-      component: FreelancerprofileComponent,
-      canActivate:[AuthGuard1Guard]
-    },
-  
+
+  {
+    path: "freelancerprofile/:email",
+    component: FreelancerprofileComponent,
+    canActivate: [AuthGuard1Guard]
+  },
+
   {
     path: "editfreelancerprofile",
     component: EditfreelancerProfileComponent,
-    canActivate:[AuthGuard,Authguard2Guard]
-    
+    canActivate: [AuthGuard, Authguard2Guard]
+
   },
   {
     path: '',
     component: HomeComponent,
-    canActivate:[Authguard3Guard]
+    canActivate: [Authguard3Guard]
   },
   {
     path: "projectDetailsComponent/:id/:email",
     component: ProjectDetailsComponent,
-  
-  
+
+
   },
 
   {
@@ -88,19 +88,19 @@ const routes: Routes = [
   {
     path: "register",
     component: RegisterComponent,
-    canActivate:[Authguard3Guard]
+    canActivate: [Authguard3Guard]
 
   },
   {
     path: "login",
     component: LoginComponent,
-    canActivate:[Authguard3Guard]
-   
+    canActivate: [Authguard3Guard]
+
   },
   {
     path: "userdashboard",
     component: UserDashboardComponent,
-    canActivate:[AuthGuard,Authguard2Guard]
+    canActivate: [AuthGuard, Authguard2Guard]
   },
   {
     path: 'projectDetailFormComponent',
@@ -109,18 +109,18 @@ const routes: Routes = [
   {
     path: "freelancerdetails",
     component: FreelancerdetailsComponent,
-    canActivate:[AuthGuard,Authguard2Guard]
+    canActivate: [AuthGuard, Authguard2Guard]
   },
   {
     path: "podashboard",
     component: ProjectOwnerDashboardComponent,
-    canActivate:[AuthGuard,AuthGuard1Guard]
+    canActivate: [AuthGuard, AuthGuard1Guard]
 
   },
   {
     path: "mybids",
     component: MybidsComponent,
-    canActivate:[Authguard2Guard]
+    canActivate: [Authguard2Guard]
   },
   // {
   //   path: "projectOwnerDetails",
@@ -129,7 +129,7 @@ const routes: Routes = [
   // {
   //   path: "projectownerdashboard",
   //   component: ProjectOwnerDashboardComponent,
-   
+
   // },
   {
     path: "productownermyprojects",
@@ -140,15 +140,15 @@ const routes: Routes = [
     component: FreelancerprofileComponent
   },
   {
-    path:"invitefreelancer/:id",
-    component:InviteFreelancerComponent
+    path: "invitefreelancer/:id",
+    component: InviteFreelancerComponent
   }
 
 
 ];
 
 @NgModule({
-  imports: [RouterModule.forRoot(routes, {useHash: true})],
+  imports: [RouterModule.forRoot(routes, { useHash: true })],
   exports: [RouterModule]
 })
 export class AppRoutingModule { }

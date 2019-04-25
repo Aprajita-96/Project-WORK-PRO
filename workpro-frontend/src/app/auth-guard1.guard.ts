@@ -22,7 +22,7 @@ export class AuthGuard1Guard implements CanActivate {
       else {
         this.router.navigate(['/userdashboard'])
         return false;
-      }    
+      }
 
     }
 

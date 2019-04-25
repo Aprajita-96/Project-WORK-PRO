@@ -13,7 +13,6 @@ export class FreelancerdetailsComponent implements OnInit {
   skills = [];
   domains = [];
   samplelinks = [];
-  // domainName:any;
   ngOnInit() {
 
 
@@ -22,14 +21,10 @@ export class FreelancerdetailsComponent implements OnInit {
     data.skills = this.skills
     data.domain = this.domains
     data.link = this.samplelinks
-    // this.fservice.setDetailsofFreelancers(data).subscribe(console.log)
     this.router.navigateByUrl("userdashboard")
   }
 
-  // save1(data1) {
-  //   data1.domains = this.domains
-  //   this.fservice.setDetailsofFreelancers(data1).subscribe(console.log)
-  // }
+
 
   addSkill(skill) {
     let skillDetails = {
@@ -61,44 +56,44 @@ export class FreelancerdetailsComponent implements OnInit {
     this.domains = this.domains.filter(e => e.domainName !== domain.domainName)
   }
   freelancers = []
-  freelancer1 = 
-{
-  id: 1,
-    freelancerName: "Prateema",
+  freelancer1 =
+    {
+      id: 1,
+      freelancerName: "Prateema",
       freelancerEmail: "pratima447@gmail.com",
-        freelancerAddress: "ythtkyuyuku143432345345",
-          yearsOfExpertise: 2,
-            skills: "java/Angular",
-            
-};
-freelancer2 = 
-{
-  id: 1,
-    freelancerName: "Prateema",
+      freelancerAddress: "ythtkyuyuku143432345345",
+      yearsOfExpertise: 2,
+      skills: "java/Angular",
+
+    };
+  freelancer2 =
+    {
+      id: 1,
+      freelancerName: "Prateema",
       freelancerEmail: "pratima447@gmail.com",
-        freelancerAddress: "ythtkyuyuku143432345345",
-          yearsOfExpertise: 2,
-            skills: "java/Angular",
-            
-};
-freelancer3 = 
-{
-  id: 1,
-    freelancerName: "Prateema",
+      freelancerAddress: "ythtkyuyuku143432345345",
+      yearsOfExpertise: 2,
+      skills: "java/Angular",
+
+    };
+  freelancer3 =
+    {
+      id: 1,
+      freelancerName: "Prateema",
       freelancerEmail: "pratima447@gmail.com",
-        freelancerAddress: "ythtkyuyuku143432345345",
-          yearsOfExpertise: 2,
-            skills: "java/Angular",
-            
-};
-freelancer4 = 
-{
-  id: 1,
-    freelancerName: "Prateema",
+      freelancerAddress: "ythtkyuyuku143432345345",
+      yearsOfExpertise: 2,
+      skills: "java/Angular",
+
+    };
+  freelancer4 =
+    {
+      id: 1,
+      freelancerName: "Prateema",
       freelancerEmail: "pratima447@gmail.com",
-        freelancerAddress: "ythtkyuyuku143432345345",
-          yearsOfExpertise: 2,
-            skills: "java/Angular",
-            
-}
+      freelancerAddress: "ythtkyuyuku143432345345",
+      yearsOfExpertise: 2,
+      skills: "java/Angular",
+
+    }
 }

@@ -28,7 +28,7 @@ export class FreelancerProjectDetailsComponent implements OnInit {
           projcetLocation: "Mumbai",
           projectDescription: "this is description",
           bidSpecProvidedByProjectOwner: {
-            maximumBudget:2093,
+            maximumBudget: 2093,
             minimumBudget: 1380,
             bidLastDate: "this is Date"
           },

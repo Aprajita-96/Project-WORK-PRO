@@ -20,47 +20,56 @@
       <div class="table-responsive">
         <table class="table">
           <tr>
-            <th><h4 class="card-title">Project Name:-</h4></th>
+            <th>
+              <h4 class="card-title">Project Name:-</h4>
+            </th>
             <td>
               <h4>{{ projects1.projectName }}</h4>
             </td>
           </tr>
           <tr>
-            <th><p class="card-text">Project Description:-</p></th>
+            <th>
+              <p class="card-text">Project Description:-</p>
+            </th>
             <td>
               <p>{{ projects1.projectDescription }}</p>
             </td>
           </tr>
           <tr>
-            <th><p class="card-text">Skills Required:-</p></th>
+            <th>
+              <p class="card-text">Skills Required:-</p>
+            </th>
             <td>
               <p>{{ projects1.skillsSetList }}</p>
             </td>
           </tr>
 
           <tr>
-            <th><p class="card-text">Maximum Budget (in $):-</p></th>
+            <th>
+              <p class="card-text">Maximum Budget (in $):-</p>
+            </th>
             <td>
               <p>{{ bidsInfromation.maximumBudget }}</p>
             </td>
           </tr>
           <tr>
-            <th><p class="card-text">Minimum Budget (in $):-</p></th>
+            <th>
+              <p class="card-text">Minimum Budget (in $):-</p>
+            </th>
             <td>
               <p>{{ bidsInfromation.minimumBudget }}</p>
             </td>
           </tr>
           <tr>
-            <th><p class="card-text">Project Completion Date:-</p></th>
+            <th>
+              <p class="card-text">Project Completion Date:-</p>
+            </th>
             <td>
               <p>{{ projects1.projectCompletionDate }}</p>
             </td>
           </tr>
           <div *ngIf="isrole; else elseBlock">
-            <button
-              routerLink="/detailsview/{{ id }}/{{ email }}"
-              class="btn btn-primary text-white"
-            >
+            <button routerLink="/detailsview/{{ id }}/{{ email }}" class="btn btn-primary text-white">
               Bid
             </button>
           </div>
@@ -69,23 +78,23 @@
     </div>
   </div>
 
-    <div *ngIf="isroleAdmin">
-  <div class="text-center">
-    <h3>Bids</h3>
-  </div>
-  <div *ngFor="let bid of biders" class="card mt-3">
-    <div class="card-body">
-      <h4 class="card-title">{{ bid.freelancerEmailId }}</h4>
-      <p class="card-text">{{ bid.bidAmount }}</p>
-      <p class="card-text">{{ bid.proposedCompletionDate }}</p>
-      <div>
-        <button  (click)="projectassign(bid.freelancerEmailId)" class="btn btn-primary text-white">
-          Accept
-        </button>
-        <button routerLink="/freelancerprofile/{{bid.freelancerEmailId}}" class="btn btn-primary text-white">
-          Details
-        </button>
+  <div *ngIf="isroleAdmin">
+    <div class="text-center">
+      <h3>Bids</h3>
+    </div>
+    <div *ngFor="let bid of biders" class="card mt-3">
+      <div class="card-body">
+        <h4 class="card-title">{{ bid.freelancerEmailId }}</h4>
+        <p class="card-text">{{ bid.bidAmount }}</p>
+        <p class="card-text">{{ bid.proposedCompletionDate }}</p>
+        <div>
+          <button (click)="projectassign(bid.freelancerEmailId)" class="btn btn-primary text-white">
+            Accept
+          </button>
+          <button routerLink="/freelancerprofile/{{bid.freelancerEmailId}}" class="btn btn-primary text-white">
+            Details
+          </button>
+        </div>
       </div>
     </div>
   </div>
-</div>

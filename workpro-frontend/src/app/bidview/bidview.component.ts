@@ -1,7 +1,7 @@
 import { Component, OnInit, Inject } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { FreelancerDetailsService } from '../freelancer-details.service';
-import {MAT_DIALOG_DATA} from '@angular/material';
+import { MAT_DIALOG_DATA } from '@angular/material';
 
 @Component({
   selector: 'app-bidview',
@@ -10,29 +10,26 @@ import {MAT_DIALOG_DATA} from '@angular/material';
 })
 export class BidviewComponent implements OnInit {
 
-  pid:String;
-  poemail:String;
-  constructor(private freelancerDetailsService:FreelancerDetailsService,private route:ActivatedRoute,@Inject(MAT_DIALOG_DATA) public data: any,private router:Router) { }
+  pid: String;
+  poemail: String;
+  constructor(private freelancerDetailsService: FreelancerDetailsService, private route: ActivatedRoute, @Inject(MAT_DIALOG_DATA) public data: any, private router: Router) { }
 
   ngOnInit() {
-   console.log(this.data)
   }
 
-  savebid(user){
-    let bidinfo={
-      "projectId":this.data.pid,
-      "projectName":this.data.pname,
-      "projectOwnerEmail":this.data.poemail,
+  savebid(user) {
+    let bidinfo = {
+      "projectId": this.data.pid,
+      "projectName": this.data.pname,
+      "projectOwnerEmail": this.data.poemail,
 
-      "freelancerEmail":this.data.freelanceremail,
-      "duration":user.duration,
-      "bidAmount":+user.amount,
-      "projectAwarded":false,
-      "status":"open"
+      "freelancerEmail": this.data.freelanceremail,
+      "duration": user.duration,
+      "bidAmount": +user.amount,
+      "projectAwarded": false,
+      "status": "open"
     }
-    console.log(bidinfo)
     this.freelancerDetailsService.postBids(bidinfo).subscribe(console.log);
-    console.log(bidinfo);
     this.router.navigateByUrl("/mybids");
   }
 }

@@ -1,4 +1,4 @@
-import { Component, OnInit,Input } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import { projection } from '@angular/core/src/render3';
 
 @Component({
@@ -9,7 +9,7 @@ import { projection } from '@angular/core/src/render3';
 export class MybidscardComponent implements OnInit {
 
   constructor() { }
-@Input() project;
+  @Input() project;
   ngOnInit() {
   }
 

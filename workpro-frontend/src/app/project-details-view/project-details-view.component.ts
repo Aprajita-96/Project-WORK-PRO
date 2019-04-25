@@ -11,37 +11,34 @@ import { ProductownerdetailsService } from '../productownerdetails.service';
 })
 export class ProjectDetailsViewComponent implements OnInit {
   isLoggedIn = false;
-  id:String;
-  email:String;
-  project:any=[];
-  skills:any;
-  pname:String
+  id: String;
+  email: String;
+  project: any = [];
+  skills: any;
+  pname: String
 
-  constructor(public dialog: MatDialog,private route:  ActivatedRoute,private productownerdetailsService:ProductownerdetailsService) { }
-  
+  constructor(public dialog: MatDialog, private route: ActivatedRoute, private productownerdetailsService: ProductownerdetailsService) { }
+
   ngOnInit() {
-    if(localStorage.getItem('token') !== null) {
-      this.isLoggedIn = true;      
+    if (localStorage.getItem('token') !== null) {
+      this.isLoggedIn = true;
     }
-    this.route.params.subscribe(data=>{
-      this.id=data.id;
-      this.email=data.email;
-      console.log(this.id)
-      console.log(this.email)
+    this.route.params.subscribe(data => {
+      this.id = data.id;
+      this.email = data.email;
+
     });
-    this.productownerdetailsService.getProjectDetailsById(this.email,this.id).subscribe(data=>{
-      this.project=data;
-      this.pname=this.project.projectName;
-      this.skills=this.project['skillsSetList']
+    this.productownerdetailsService.getProjectDetailsById(this.email, this.id).subscribe(data => {
+      this.project = data;
+      this.pname = this.project.projectName;
+      this.skills = this.project['skillsSetList']
     })
+  }
 
+  openDialog() {
+    const dialogRef = this.dialog.open(BidviewComponent, {
+      data: { pid: this.id, pname: this.pname, poemail: this.email, freelanceremail: localStorage.getItem('email') }
 
-}
-
-  openDialog(){
-    const dialogRef = this.dialog.open(BidviewComponent,{
-        data: { pid:this.id,pname:this.pname,poemail:this.email,freelanceremail:localStorage.getItem('email')}
-    
     });
     dialogRef.afterClosed().subscribe(result => {
       console.log(`Dialog result: ${result}`);

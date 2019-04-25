@@ -33,11 +33,12 @@
                 <input name="number" ngModel class="form-control" type="text" value="">
               </div>
             </div>
-            
+
             <div class="form-group">
               <label class="col-md-3 control-label"></label>
               <div class="col-md-8">
-                <button matStepperNext type="button" class="btn btn-primary" (click) = "addPersonalDetails(personalDetails.value)">Save Changes</button>
+                <button matStepperNext type="button" class="btn btn-primary"
+                  (click)="addPersonalDetails(personalDetails.value)">Save Changes</button>
                 <span></span>
                 <button type="reset" class="btn btn-warning" value="Cancel">Cancel</button>
               </div>
@@ -48,7 +49,7 @@
     </form>
   </mat-step>
   <mat-step [stepControl]="secondFormGroup">
-    <form [formGroup]="secondFormGroup" >
+    <form [formGroup]="secondFormGroup">
       <ng-template matStepLabel>Edit address</ng-template>
       <div class="row form-container">
         <div class="col-sm-9 personal-info">
@@ -56,18 +57,18 @@
             <div class="form-group">
               <label class="col-sm-3 control-label">Address:</label>
               <div class="col-sm-8">
-                <textarea id="address" name="address" ngModel type="text" placeholder="address"
-                  class="form-control">
+                <textarea id="address" name="address" ngModel type="text" placeholder="address" class="form-control">
 </textarea>
               </div>
             </div>
             <div class="form-group">
               <label class="col-md-3 control-label">Location:</label>
               <div class="col-md-8">
-                <input name="location" ngModel class="form-control" type="text" placeholder="Location of project" value="">
+                <input name="location" ngModel class="form-control" type="text" placeholder="Location of project"
+                  value="">
               </div>
             </div>
-                        <div class="form-group">
+            <div class="form-group">
               <label class="col-sm-3 control-label"></label>
               <div class="col-sm-8">
                 <!-- <button matStepperNext (click) = "addEditAddress(editAddress.value)" class="btn btn-primary" value="Save">Save</button> -->
@@ -77,9 +78,8 @@
           </form>
         </div>
       </div>
-          <div class="mat-button">
-        <button class="btn btn-primary" 
-         (click)="saveUser(editAddress.value,user)">Submit</button>
+      <div class="mat-button">
+        <button class="btn btn-primary" (click)="saveUser(editAddress.value,user)">Submit</button>
         <button class="btn btn-warning" (click)="stepper.reset()">Reset</button>
       </div>
     </form>

@@ -1,8 +1,6 @@
 <!--The content below is only a placeholder and can be replaced.-->
 <!--Navbar -->
-<nav
-  class="mb-0 navbar navbar-expand-lg navbar navbar-expand-lg navbar-dark secondary-color lighten-1"
->
+<nav class="mb-0 navbar navbar-expand-lg navbar navbar-expand-lg navbar-dark secondary-color lighten-1">
   <button mat-icon-button (click)="drawer.toggle()">
     <span class="navbar-toggler-icon "></span>
   </button>
@@ -13,11 +11,7 @@
   <mat-drawer #drawer class="example-sidenav" mode="side">
     <div class="inner">
       <div class="container-logo">
-        <img
-          src="../assets/images/logo5.png"
-          alt="logo"
-          style="margin-bottom:10px"
-        />
+        <img src="../assets/images/logo5.png" alt="logo" style="margin-bottom:10px" />
       </div>
       <br /><br />
       <mat-divider></mat-divider>
@@ -39,14 +33,10 @@
       <div *ngIf="role == 'ADMIN'; else elseBlock">
         <mat-nav-list style="margin-top: 40px">
           <mat-list-item>
-            <a class="nav-link" routerLink="podashboard"
-              >ProjectOwnerDashboard</a
-            >
+            <a class="nav-link" routerLink="podashboard">ProjectOwnerDashboard</a>
           </mat-list-item>
           <mat-list-item>
-            <a class="nav-link" routerLink="productownermyprojects"
-              >My project</a
-            >
+            <a class="nav-link" routerLink="productownermyprojects">My project</a>
           </mat-list-item>
           <mat-list-item>
             <a class="nav-link" routerLink="poprofile">My Profile</a>
@@ -87,7 +77,6 @@
   <div class="footer-copyright text-center py-3" style="color:white">
     © 2019 Copyright:
     <a href="https://mdbootstrap.com/education/angular/" style="color:white">
-      WorkPro.com</a
-    >
+      WorkPro.com</a>
   </div>
 </footer>

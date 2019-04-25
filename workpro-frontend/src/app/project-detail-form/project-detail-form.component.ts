@@ -17,7 +17,7 @@ export class ProjectDetailFormComponent implements OnInit {
   skills = [];
   bid = [];
   addBidToProjects = false;
-  constructor(private _formBuilder: FormBuilder,private productownerdetailsService: ProductownerdetailsService,private route:Router) { }
+  constructor(private _formBuilder: FormBuilder, private productownerdetailsService: ProductownerdetailsService, private route: Router) { }
   email: String;
 
 
@@ -32,37 +32,28 @@ export class ProjectDetailFormComponent implements OnInit {
   }
   saveUser(user: any, userForm: any) {
     user.skillsSetList = this.skills;
-    console.log(this.skills)
     user.projectName = user.projectName;
     user.projectStatus = "open";
-    user.allBidsOfFreelancers=[];
+    user.allBidsOfFreelancers = [];
     user.projectDescription = user.projectDescription;
     user.projectCompletionDate = user.projectCompletionDate;
     user.projectPreference = user.projectPreference;
     user.projectLocation = user.projectLocation;
-    user.projectOwnerEmailId=this.email;
-    user.bidSpecsProvidedByProjectOwners=this.bid;
+    user.projectOwnerEmailId = this.email;
+    user.bidSpecsProvidedByProjectOwners = this.bid;
 
-    console.log(user,"user");
-  
+
     let project = {
       projectOwnerEmailId: this.email,
       projectDetailsList: [user],
     }
-    console.log(project,"project")
 
-    this.productownerdetailsService.setProjectDetails(project).subscribe(data=>{
-      console.log(data)
+    this.productownerdetailsService.setProjectDetails(project).subscribe(data => {
       this.route.navigate(['productownermyprojects']);
     });
-
-   
-
   }
 
- 
   addSkill(skill) {
-    // console.log(skill, "slkdjflkjsdlkfjsd")
     this.skills.push(skill)
   }
 
@@ -80,8 +71,6 @@ export class ProjectDetailFormComponent implements OnInit {
   deleteSkill(skill) {
     this.skills = this.skills.filter(e => e.skillName !== skill.skillName)
   }
-
-
 
   removeSkill(skill) {
     this.skills = this.skills.filter(e => {

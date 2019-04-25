@@ -10,7 +10,7 @@ export class UserserviceService {
   }
   saveUser(user: any) {
     return this.http.post("http://13.234.155.75:8080/login/api/v1/registration", user);
-    
+
   }
   loginUser(user: any): Observable<any> {
     const headers = new HttpHeaders({ "Access-Control-Allow-Orgin": "*" });
@@ -18,5 +18,5 @@ export class UserserviceService {
       headers: headers
     });
   }
-  
+
 }

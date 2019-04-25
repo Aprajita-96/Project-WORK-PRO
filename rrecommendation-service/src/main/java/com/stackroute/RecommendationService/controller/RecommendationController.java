@@ -80,10 +80,12 @@ public class RecommendationController {
         System.out.println(allrequiredSkills);
         String pid=a.getProjectId();
         String emailId=a.getProjectOwnerEmailId();
+        String projectName=a.getProjectName();
 
         String desc=a.getProjectDescription();
         System.out.println(emailId+"This is emailId");
-        this.projectsNeo4jService.saveProjects(pid,emailId,desc);
+        System.out.println(projectName+"This is projectName");
+        this.projectsNeo4jService.saveProjects(pid,emailId,desc,projectName);
 //        List<Projects> projects= new ArrayList<>() ;
         for (String param : allrequiredSkills) {
             System.out.println(param);

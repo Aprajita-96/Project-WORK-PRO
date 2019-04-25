@@ -22,8 +22,9 @@ public class ProjectsNeo4jService {
         return projectsNeo4jRecommendationRepository.findBySkills(skillName);
     }
 
-    public Iterable<ProjectsNeo4j> saveProjects(String ProjectId,String projectOwnerEmailId,String projectDescription){
-        return projectsNeo4jRecommendationRepository.saveByProjectId(ProjectId,projectOwnerEmailId,projectDescription);
+    public Iterable<ProjectsNeo4j> saveProjects(String ProjectId,String projectOwnerEmailId,String projectDescription,String projectName){
+        System.out.println(projectName+" This is inside service");
+        return projectsNeo4jRecommendationRepository.saveByProjectId(ProjectId,projectOwnerEmailId,projectDescription,projectName);
     }
 
     public Iterable<ProjectsNeo4j> saveBySkill(String ProjectId,String skillName) {

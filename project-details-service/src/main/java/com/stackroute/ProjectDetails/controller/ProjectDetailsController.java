@@ -196,8 +196,10 @@ public class ProjectDetailsController {
         {
             String desc=details.getProjectDescription();
             String b=details.getProjectId();
+            String projectName=details.getProjectName();
             p.setProjectDescription(desc);
             p.setProjectId(b);
+            p.setProjectName(projectName);
             for(String skillsFromProjectOwner:details.getSkillsSetList())
             {
 

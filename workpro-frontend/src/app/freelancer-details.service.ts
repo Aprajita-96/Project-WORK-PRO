@@ -40,8 +40,8 @@ export class FreelancerDetailsService {
   }
 
 
-  inviteFreelancer(body) {
-    return this.http.post("http://13.234.155.75:8080/freelancerservice/api/v1/send", body);
+  inviteFreelancer(id,email,body) {
+    return this.http.post("http://13.234.155.75:8080/freelancerservice/api/v1/send/"+id+"/"+email,body);
   }
 
 }

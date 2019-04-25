@@ -38,7 +38,7 @@ export class InviteFreelancerComponent implements OnInit {
         "subject": null,
        "body":null
       }
-      this.freelancerdetaisservice.inviteFreelancer(value,this.id,email).subscribe(console.log)
+      this.freelancerdetaisservice.inviteFreelancer(value,localStorage.getItem('email'),email).subscribe(console.log)
     })
   }
 }

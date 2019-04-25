@@ -27,9 +27,13 @@
 					</ul>
 				</div>
 			</div>
-			<div class="col-md-2" *ngIf="isFreelancer">
+			<div class="col-md-2" *ngIf="isFreelancer; else elseBlock">
 				<button class="btn btn-light" [routerLink]="['/editfreelancerprofile']">Edit Profile</button>
 			</div>
+			<ng-template #elseBlock>
+					<button class="card-link btn btn-warning"
+					routerLink="/invitefreelancer/{{profile.freelancerEmail}}">Invite</button>
+			</ng-template>
 		</div>
 		<div class="row">
 			<div class="col-md-4">

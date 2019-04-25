@@ -32,17 +32,13 @@ export class InviteFreelancerComponent implements OnInit {
       this.id = data.id;
 
       console.log(this.id)
-      let body = {
-        "projectId": value,
-        "projectOwnerMail": localStorage.getItem('email'),
-        "freelancerEmail": this.id,
-      }
+    
       let email = {
         "to": this.id,
-        "subject": "Projects",
-        "body": body
+        "subject": null,
+       "body":null
       }
-      this.freelancerdetaisservice.inviteFreelancer(email).subscribe(console.log)
+      this.freelancerdetaisservice.inviteFreelancer(value,this.id,email).subscribe(console.log)
     })
   }
 }

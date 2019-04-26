@@ -31,7 +31,7 @@ export class BidviewComponent implements OnInit {
     }
     this.freelancerDetailsService.postBids(bidinfo).subscribe(data=>{
       console.log(data)
+      this.router.navigate(['mybids']);
     });
-    this.router.navigateByUrl("/mybids");
   }
 }

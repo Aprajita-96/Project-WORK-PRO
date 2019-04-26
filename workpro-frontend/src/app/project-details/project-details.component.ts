@@ -63,11 +63,8 @@ export class ProjectDetailsComponent implements OnInit {
     }
     this.productownerdetailsService.awardProject(this.email, this.id, value,notify).subscribe(data=>{
       console.log(data);
-    });
-    
-
-   
-    this.router.navigateByUrl("/productownermyprojects");
+      this.router.navigate(['/productownermyprojects']);
+    });   
   }
 
 }

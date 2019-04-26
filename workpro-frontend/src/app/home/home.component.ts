@@ -42,9 +42,9 @@ export class HomeComponent implements OnInit {
     this.recommendation.getAllProjectRecommendation("Angular,Java").subscribe(data => {
       this.recommendedProjects = data
       console.log(this.recommendedProjects,"all")
-      // var j=0
+      var j=0
       for (let i in this.recommendedProjects) {
-        
+        if(j<=3){
         let p = this.recommendedProjects[i].p
         console.log(p)
         let propertyList = p.propertyList
@@ -56,7 +56,8 @@ export class HomeComponent implements OnInit {
 
         }
         this.projectsArray.push(Projects1)
-        
+        j++;
+      }
     }
     })
     console.log(this.projectsArray,"projects")

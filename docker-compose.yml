@@ -193,9 +193,9 @@ services:
     network_mode: "host"
     hostname: localhost
     restart: always
-    volumes:
-      - /data/neo4j/data:/data
-      - /data/neo4j/import:/import
+#    volumes:
+#      - /data/neo4j/data:/data
+#      - /data/neo4j/import:/import
     environment:
       - NEO4J_AUTH=none
 

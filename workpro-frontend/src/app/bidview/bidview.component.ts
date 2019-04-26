@@ -29,7 +29,9 @@ export class BidviewComponent implements OnInit {
       "projectAwarded": false,
       "status": "open"
     }
-    this.freelancerDetailsService.postBids(bidinfo).subscribe(console.log);
-    this.router.navigate(['mybids']);
+    this.freelancerDetailsService.postBids(bidinfo).subscribe(data=>{
+      console.log(data)
+    });
+    this.router.navigateByUrl("/mybids");
   }
 }

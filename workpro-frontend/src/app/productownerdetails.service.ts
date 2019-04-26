@@ -25,8 +25,8 @@ export class ProductownerdetailsService {
     return this.http.get("http://13.234.155.75:8080/projectdetailservice/api/v1/projectOwner/" + value + "/projects/" + value2);
   }
 
-  awardProject(value, value1, value2) {
-    return this.http.put("http://13.234.155.75:8080/projectdetailservice/api/v1/projectOwner/" + value + "/projects/" + value1 + "/bid/accept/" + value2, { responseType: 'text' });
+  awardProject(value, value1, value2,value3) {
+    return this.http.put("http://13.234.155.75:8080/projectdetailservice/api/v1/projectOwner/" + value + "/projects/" + value1 + "/bid/accept/" + value2,value3, { responseType: 'text' });
   }
 
   getResults(skillName) {

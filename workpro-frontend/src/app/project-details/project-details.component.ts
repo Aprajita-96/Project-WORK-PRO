@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ProductownerdetailsService } from '../productownerdetails.service';
 import { ActivatedRoute, Router } from '@angular/router';
+import { FreelancerDetailsService } from '../freelancer-details.service';
 
 @Component({
   selector: 'app-project-details',
@@ -20,7 +21,7 @@ export class ProjectDetailsComponent implements OnInit {
   biders = [];
   productid = String;
   id: String;
-  constructor(private productownerdetailsService: ProductownerdetailsService, private route: ActivatedRoute, private router: Router) {
+  constructor(private productownerdetailsService: ProductownerdetailsService, private route: ActivatedRoute, private router: Router,private freelancerdetaisservice:FreelancerDetailsService) {
 
 
   }
@@ -55,8 +56,18 @@ export class ProjectDetailsComponent implements OnInit {
   }
 
   projectassign(value) {
-    this.productownerdetailsService.awardProject(this.email, this.id, value).subscribe(console.log);
-    this.router.navigate(['productownermyprojects']);
+    let notify = {
+      "to": value,
+      "subject": null,
+     "body":null
+    }
+    this.productownerdetailsService.awardProject(this.email, this.id, value,notify).subscribe(data=>{
+      console.log(data);
+    });
+    
+
+   
+    this.router.navigateByUrl("/productownermyprojects");
   }
 
 }

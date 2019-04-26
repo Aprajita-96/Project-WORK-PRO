@@ -56,7 +56,7 @@ export class ProjectDetailsComponent implements OnInit {
 
   projectassign(value) {
     this.productownerdetailsService.awardProject(this.email, this.id, value).subscribe(console.log);
-    this.router.navigateByUrl("/productownermyprojects");
+    this.router.navigate(['productownermyprojects']);
   }
 
 }

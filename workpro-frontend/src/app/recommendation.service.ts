@@ -13,8 +13,8 @@ export class RecommendationService {
   }
 
   getAllProjectRecommendation(value: any) {
+    console.log(value)
     return this.http.get("http://13.234.155.75:8080/recommendations/api/v1/recommendations/allProjects/Skill/" + value);
-
   }
 
 }

@@ -7,6 +7,7 @@ import com.stackroute.ProjectDetails.repository.SkillRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.Optional;
 
 
 @Service
@@ -33,10 +34,8 @@ public class ProjectOwnerProjectsServiceImpl implements ProjectOwnerProjectsServ
     public ProjectsOfProjectOwner getProjectsByEmailId(String projectOwnerEmailId) {
         return projectsOfProjectOwnerRepository.findByProjectOwnerEmailId(projectOwnerEmailId);
     }
-
-
-
-
-
-
+    public ProjectsOfProjectOwner getProjectsById(String projectOwnerEmailId){
+        Optional<ProjectsOfProjectOwner> ob= projectsOfProjectOwnerRepository.findById(projectOwnerEmailId);
+        return ob.get();
+    }
 }

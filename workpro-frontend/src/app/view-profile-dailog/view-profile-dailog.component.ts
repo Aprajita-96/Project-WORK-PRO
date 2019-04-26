@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Inject } from '@angular/core';
+import { MAT_DIALOG_DATA } from '@angular/material';
 
 @Component({
   selector: 'app-view-profile-dailog',
@@ -7,9 +8,15 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ViewProfileDailogComponent implements OnInit {
 
-  constructor() { }
+  constructor(@Inject(MAT_DIALOG_DATA) public data: any) { }
 
+  name:String
+  skills:any
   ngOnInit() {
+    this.name=this.data.name;
+    this.skills=this.data.skill;
+    console.log(this.skills)
+    
   }
 
   freelancers = [

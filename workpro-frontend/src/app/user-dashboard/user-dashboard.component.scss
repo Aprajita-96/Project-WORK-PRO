@@ -23,12 +23,24 @@ h1{
   .img-responsive{
     height:450px;
    }
-   .card {
-
-    box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.55);
-  }
+   .card-holder {
+    margin: 10px;
+    box-shadow: 2px 2px 2px 1px rgba(0,0,0,0.55);
+}
   
   .form-control {
     position: initial!important;
   }
+  p{
+    font-size:17px;
+  }
+
+  .TopProjects{
+    font-family: 'Roboto';
+    color: dimgray;
+    text-align: center;
+  font-size: 48px; 
+  font-weight: lighter;  
+  text-decoration: none;
   
+  }

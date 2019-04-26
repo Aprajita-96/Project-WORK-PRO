@@ -34,7 +34,8 @@
 </div>
 
 
-<div class="container" *ngIf="isSearch">
+<div class="container" *ngIf="isSearch; else elseBlock1">
+    <p class="TopFreelancers">Freelancers</p>
 
   <div class="card-body row" *ngFor="let freelancer of freelancerArray">
     <div class="col-md-2">
@@ -61,8 +62,9 @@
 
 </div>
 
-
+<ng-template #elseBlock1>
 <div class="container">
+    <p class="TopFreelancers">Freelancers</p>
   <div *ngFor="let freelancer of freelancers">
 
     <app-usercard-project-owner-dashboard [freelancer]=freelancer></app-usercard-project-owner-dashboard>
@@ -70,3 +72,4 @@
 
   </div>
 </div>
+</ng-template>

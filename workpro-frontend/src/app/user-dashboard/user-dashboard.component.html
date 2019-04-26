@@ -32,25 +32,33 @@
   </div>
 </div>
 
+<div *ngIf="isSearch; else elseBlock1">
+    <p class="TopProjects">Projects</p>
+
 <div class="container" *ngFor="let project of projectsArray">
-  <div *ngIf="isSearch">
-    <div class="card conatiner mt-3">
-      <div class="card-body">
-        <h5 class="card-title">{{project.projectDescription}}</h5>
-        <!-- <p class="card-text">asdsa</p> -->
-        <button class="card-link btn btn-primary"
-          routerLink="/projectDetailsComponent/{{project.ProjectId}}/{{project.projectOwnerEmailId}}">
-          Details
-        </button>
+    <div class="card-holder">
+      <div class="card">
+        <div class="card-body">
+          <h3 class="card-title">{{project.projectName}}</h3>
+          <p class="card-text">{{project.projectDescription}}</p>
+          <!-- <p class="card-text1" style="color: blue">{{project.skillsSetList}}</p> -->
+          <button class="card-link btn btn-primary"
+            routerLink="/projectDetailsComponent/{{project.ProjectId}}/{{project.projectOwnerEmailId}}">Details</button>
+          <!-- <button class="card-link btn btn-warning">Bid</button>  -->
+        </div>
       </div>
     </div>
   </div>
 </div>
 
 
+
+<ng-template #elseBlock1>
 <div class="container">
+    <p class="TopProjects">Projects</p>
   <div *ngFor="let project of projects">
 
     <app-project-card-user-dashboard [project]=project></app-project-card-user-dashboard>
   </div>
 </div>
+</ng-template>

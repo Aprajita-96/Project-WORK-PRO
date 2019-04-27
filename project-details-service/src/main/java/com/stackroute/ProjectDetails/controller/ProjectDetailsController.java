@@ -9,6 +9,7 @@ import com.stackroute.ProjectDetails.exceptions.ProjectAlreadyExistsException;
 import com.stackroute.ProjectDetails.exceptions.ProjectBidAlreadyAwardedException;
 import com.stackroute.ProjectDetails.exceptions.ProjectDoesNotExistException;
 import com.stackroute.ProjectDetails.service.BidService;
+import com.stackroute.ProjectDetails.service.GeneratemailApplication;
 import com.stackroute.ProjectDetails.service.ProjectOwnerProjectsServiceImpl;
 import com.stackroute.ProjectDetails.service.SkillsServiceImpl;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -18,7 +19,10 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.client.RestTemplate;
 
+import javax.mail.MessagingException;
+import javax.mail.internet.AddressException;
 import javax.servlet.http.HttpServletRequest;
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -247,19 +251,32 @@ public class ProjectDetailsController {
      * @return Project owner accepts a bid
      * @throws ProjectBidAlreadyAwardedException
      */
+    @Autowired
+    GeneratemailApplication generatemailApplication;
+
     @PutMapping("/projectOwner/{projectOwnerId}/projects/{projectId}/bid/accept/{freelancerEmail}")
-    public ResponseEntity<?> ownerAcceptsBid(@PathVariable("freelancerEmail") String email,@PathVariable("projectId") String projectId, @PathVariable("projectOwnerId") String projectOwnerId) throws ProjectBidAlreadyAwardedException {
+    public ResponseEntity<?> ownerAcceptsBid(@RequestBody EmailMessage emailMessage,@PathVariable("freelancerEmail") String email,@PathVariable("projectId") String projectId, @PathVariable("projectOwnerId") String projectOwnerId) throws ProjectBidAlreadyAwardedException,AddressException, MessagingException, IOException{
+        System.out.println(projectOwnerId+"   This is projectownerid");
+        System.out.println(projectId+"   This is projectid");
+        System.out.println(email+"   This is freelancerEmailId");
         ProjectsOfProjectOwner allProjectsOfProjectOwner = projectOwnerProjectsService.getProjectsByEmailId(projectOwnerId);
+
+        System.out.println("uhykuhkjhkjhkhkjhkhkhkhkhkhkh");
         List<BidKafka> listBid=bidService.getAll();
+        System.out.println(allProjectsOfProjectOwner + "this guy is going null");
+        System.out.println("^^^^^^^^^^^^^^^^^^^^^^^^^^^");
         for (ProjectDetails details : allProjectsOfProjectOwner.getProjectDetailsList()) {
+            System.out.println("Inside project details");
             if (details.getProjectId().equals(projectId)) {
 
                 details.setProjectStatus("closed");
 
                 for (BidOfFreelancer freelancer : details.getAllBidsOfFreelancers()) {
+                    System.out.println("Inside all bids of freelancers");
                     if (freelancer.getFreelancerEmailId().equals(email)) {
                         freelancer.setProjectAwarded(true);
                         System.out.println(freelancer.isProjectAwarded());
+                        System.out.println("project awarded");
                         this.projectOwnerProjectsService.addProjects(allProjectsOfProjectOwner);
                         break;
                     }
@@ -268,6 +285,7 @@ public class ProjectDetailsController {
             }
         }
 
+        System.out.println("hfhgfhgfhfhfhfhfhfhff");
         for(BidKafka bid:listBid) {
             if (bid.getFreelancerEmail().equals(email)){
                 bid.setAwarded(true);
@@ -275,6 +293,12 @@ public class ProjectDetailsController {
                 System.out.println(bid+"produced..........................................");
             }
         }
+        System.out.println(emailMessage);
+        emailMessage.setBody("Hello Freelancer!! \n Greetings for the day! \n You have been awarded a bid. Click on the link to view \n http://workpro.stackroute.io/#/projectDetailsComponent/"+projectId+"/"+ projectOwnerId );
+
+
+        System.out.println("hjhjghjgjhghjghjghjgjjhgjhghjgj");
+        generatemailApplication.sendmail(emailMessage);
         return new ResponseEntity<String>("Project owner accepts a bid", HttpStatus.OK);
     }
 
@@ -287,6 +311,7 @@ public class ProjectDetailsController {
      */
     @GetMapping("/projectOwner/{projectOwnerId}/projects/{projectId}/bids")
     public ResponseEntity<?> projectOwnerViewsAllBids(@PathVariable("projectId") String projectId, @PathVariable("projectOwnerId") String projectOwnerId) {
+
         ProjectsOfProjectOwner list = projectOwnerProjectsService.getProjectsByEmailId(projectOwnerId);
         for (ProjectDetails details : list.getProjectDetailsList()) {
             if (details.getProjectId().equals(projectId)){

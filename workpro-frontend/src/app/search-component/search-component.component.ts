@@ -11,7 +11,8 @@ export class SearchComponentComponent implements OnInit {
 
   id: String;
   constructor(private projectService: ProductownerdetailsService, private route: ActivatedRoute) { }
-  projects;
+  projects:any=[];
+  message=false
 
   ngOnInit() {
     this.route.params.subscribe(data => {
@@ -19,6 +20,10 @@ export class SearchComponentComponent implements OnInit {
     })
     this.projectService.getResults(this.id).subscribe((data: any) => {
       this.projects = data;
+      console.log(this.projects)
+      if(this.projects===null){
+        this.message=true
+      }
     });
   }
 

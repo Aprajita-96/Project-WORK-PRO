@@ -18,6 +18,7 @@ export class UserDashboardComponent implements OnInit {
   profile: any = [];
   isSearch: boolean = true
   projectsArray: any = []
+  message=false
 
 
   ngOnInit() {
@@ -61,6 +62,9 @@ export class UserDashboardComponent implements OnInit {
     this.isSearch = false;
     this.projectService.getResults(skill).subscribe((data: any) => {
       this.projects = data;
+      if(this.projects===null){
+        this.message=true;
+      }
     });
   }
 }

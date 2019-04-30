@@ -77,12 +77,12 @@
       </div>
     </div>
   </div>
-
-  <div *ngIf="isroleAdmin">
+<div *ngIf="isroleAdmin" >
+  <div  *ngFor="let bid of biders">
     <div class="text-center">
       <h3>Bids</h3>
     </div>
-    <div *ngFor="let bid of biders" class="card mt-3">
+    <div class="card mt-3">
       <div class="card-body">
           <table class="table">
       <tr>
@@ -125,3 +125,5 @@
       </div>
     </div>
   </div>
+  </div>
+  

@@ -14,6 +14,7 @@ export class ProjectOwnerDashboardComponent implements OnInit {
   recommendedFreelancers: any
   freelancerArray: any = []
   isSearch: boolean = true
+  message=false
 
   ngOnInit() {
 
@@ -32,6 +33,9 @@ export class ProjectOwnerDashboardComponent implements OnInit {
     this.isSearch = false
     this.freelancerService.getSearchResults(skill).subscribe((data: any) => {
       this.freelancers = data.list;
+      if(this.freelancers===null){
+        this.message=true
+      }
     })
   }
 }

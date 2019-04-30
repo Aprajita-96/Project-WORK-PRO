@@ -54,11 +54,16 @@
 
 
 <ng-template #elseBlock1>
-<div class="container">
+<div class="container" *ngIf="!message; else elseBlock2">
     <p class="TopProjects">Projects</p>
   <div *ngFor="let project of projects">
 
     <app-project-card-user-dashboard [project]=project></app-project-card-user-dashboard>
   </div>
 </div>
+<ng-template #elseBlock2>
+<div class="container mt-5">
+  <h6>NO RESULT FOUND</h6>
+</div>
+</ng-template>
 </ng-template>

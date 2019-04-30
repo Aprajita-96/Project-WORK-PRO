@@ -3,7 +3,7 @@
 <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 <!------ Include the above in your HEAD tag ---------->
 
-<div class="container">
+<div class="container" *ngIf="!message; else elseBlock">
   <div class="row">
     <div *ngFor="let project of projects" class="card col-md-12 p-3">
       <div class="row ">
@@ -20,3 +20,8 @@
     </div>
   </div>
 </div>
+<ng-template #elseBlock>
+  <div class="container mt-5">
+    <h6>NO RESULT FOUND</h6>
+  </div>
+</ng-template>
